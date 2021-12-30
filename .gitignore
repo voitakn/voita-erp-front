@@ -9,3 +9,6 @@ modern.json*
 .idea
 *.idea
 *.idea*
+docker-compose.yml
+Dockerfile-dev
+Dockerfile
