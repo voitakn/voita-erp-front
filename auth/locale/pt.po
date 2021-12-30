@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-04-08 10:08+0200\n"
+"PO-Revision-Date: 2021-04-08 10:14+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language: pt_PT\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "carousel"
+msgstr "carousel"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "collapse"
+msgstr "collapse"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "dropdown"
+msgstr "dropdown"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "modal"
+msgstr "modal"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "scrollspy"
+msgstr "scrollspy"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "toast"
+msgstr "toast"
+
+#: src/js/emailconfirm.js:34
+msgid "Voita APP - Email verification page"
+msgstr "Voita APP - Página de verificação por e-mail"
+
+#: src/js/emailconfirm.js:35
+msgid "The process of verifying your email is in progress."
+msgstr "O processo de verificação do seu e-mail está em curso."
+
+#: src/js/emailconfirm.js:36
+msgid ""
+"After a few seconds, you will be automatically redirected to the login page!"
+msgstr ""
+"Após alguns segundos, será automaticamente redireccionado para a página de "
+"login!"
+
+#: src/js/emailconfirm.js:37
+msgid "Excellent! Verification of your email was successful."
+msgstr "Excelente! A verificação do seu e-mail foi bem sucedida."
+
+#: src/js/emailconfirm.js:38
+msgid "Thank you for choosing us!"
+msgstr "Obrigado por nos ter escolhido!"
+
+#: src/js/emailconfirm.js:39
+msgid "Now you can sign in to our application!"
+msgstr "Agora pode inscrever-se na nossa candidatura!"
+
+#: src/js/emailconfirm.js:40 src/js/emailconfirm.js:45 src/js/login.js:64
+msgid "Sign In"
+msgstr "Entrar"
+
+#: src/js/emailconfirm.js:42
+msgid "Sorry, there was an error while verifying your email."
+msgstr "Desculpe, houve um erro ao verificar o seu e-mail."
+
+#: src/js/emailconfirm.js:43
+msgid ""
+"Perhaps your credentials are missing or verification has already passed "
+"earlier."
+msgstr ""
+"Talvez as suas credenciais estejam em falta ou a verificação já tenha "
+"passado antes."
+
+#: src/js/emailconfirm.js:44
+msgid "You can go to the authorisation page or visit our website."
+msgstr "Pode ir para a página de autorização ou visitar o nosso sítio web."
+
+#: src/js/login.js:63
+msgid "Voita APP - Sign In page"
+msgstr "Voita APP - Página de login"
+
+#: src/js/login.js:65
+msgid "Sorry, we could not find your credentials, please try again."
+msgstr ""
+"Desculpe, não conseguimos encontrar as suas credenciais, por favor tente "
+"novamente."
+
+#: src/js/login.js:66
+msgid "Login (Email)"
+msgstr "Login (Email)"
+
+#: src/js/login.js:67
+msgid "Please enter your email"
+msgstr "Por favor, introduza o seu e-mail"
+
+#: src/js/login.js:68
+msgid "Password"
+msgstr "Senha"
+
+#: src/js/login.js:69
+msgid "Please enter your password"
+msgstr "Por favor, insira a sua palavra-passe"
+
+#: src/js/login.js:70
+msgid "Don’t have a Voita account?"
+msgstr "Não tem uma conta Voita APP?"
+
+#: src/js/login.js:71
+msgid "Sign Up"
+msgstr "Registar"

@@ -1,0 +1,303 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-11-03 19:37+0000\n"
+"PO-Revision-Date: 2021-11-03 19:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "carousel"
+msgstr "carousel"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "collapse"
+msgstr "collapse"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "dropdown"
+msgstr "dropdown"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "modal"
+msgstr "modal"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "scrollspy"
+msgstr "scrollspy"
+
+#: bootstrap/js/bootstrap.min.js:6
+msgid "toast"
+msgstr "scrollspy"
+
+#: src/js/changepassword.js:53
+msgid "Voita APP - Change password page"
+msgstr "Voita APP - Página de cambio de contraseña"
+
+#: src/js/changepassword.js:54
+msgid "Please enter a valid password"
+msgstr "Por favor, introduzca una contraseña válida"
+
+#: src/js/changepassword.js:55
+msgid "The passwords entered are different"
+msgstr "Las contraseñas introducidas son diferentes"
+
+#: src/js/emailconfirm.js:34
+msgid "Voita APP - Email verification page"
+msgstr "Voita APP - Página de verificación del correo electrónico"
+
+#: src/js/emailconfirm.js:35
+msgid "The process of verifying your email is in progress."
+msgstr "El proceso de verificación de su correo electrónico está en curso."
+
+#: src/js/emailconfirm.js:36
+msgid ""
+"After a few seconds, you will be automatically redirected to the login page!"
+msgstr ""
+"¡Después de unos segundos, será redirigido automáticamente a la página de "
+"inicio de sesión!"
+
+#: src/js/emailconfirm.js:37
+msgid "Excellent! Verification of your email was successful."
+msgstr "Excelente La verificación de su correo electrónico fue exitosa."
+
+#: src/js/emailconfirm.js:38
+msgid "Thank you for choosing us!"
+msgstr "¡Gracias por elegirnos!"
+
+#: src/js/emailconfirm.js:39
+msgid "Now you can sign in to our application!"
+msgstr "¡Ahora puedes registrarte en nuestra aplicación!"
+
+#: src/js/emailconfirm.js:40 src/js/emailconfirm.js:45 src/js/login.js:77
+#: src/js/register.js:136
+msgid "Sign In"
+msgstr "Iniciar sesión"
+
+#: src/js/emailconfirm.js:42
+msgid "Sorry, there was an error while verifying your email."
+msgstr "Lo sentimos, hubo un error al verificar su correo electrónico."
+
+#: src/js/emailconfirm.js:43
+msgid ""
+"Perhaps your credentials are missing or verification has already passed "
+"earlier."
+msgstr ""
+"Tal vez falten sus credenciales o la verificación ya haya pasado antes."
+
+#: src/js/emailconfirm.js:44
+msgid "You can go to the authorisation page or visit our website."
+msgstr "Puede ir a la página de autorización o visitar nuestro sitio web."
+
+#: src/js/forgot.js:57
+msgid "Voita APP - Recovery password page"
+msgstr "Voita APP - Página de recuperación de la contraseña"
+
+#: src/js/forgot.js:58
+msgid "Enter your email address to recover your password"
+msgstr ""
+"Introduzca su dirección de correo electrónico para recuperar su contraseña"
+
+#: src/js/forgot.js:59
+msgid "Sorry, we could not find your credentials, please try again"
+msgstr ""
+"Lo sentimos, no hemos podido encontrar sus credenciales, por favor inténtelo "
+"de nuevo"
+
+#: src/js/forgot.js:60
+msgid "Enter your email"
+msgstr "Ingrese su email"
+
+#: src/js/forgot.js:61
+msgid "Please enter valid email"
+msgstr "Por favor, introduzca un correo electrónico válido"
+
+#: src/js/forgot.js:62
+msgid "Recovery Password"
+msgstr "Recuperación de la contraseña"
+
+#: src/js/forgot.js:63
+msgid ""
+"We have sent a letter to your email with instructions to reset your "
+"password. Please check your email."
+msgstr ""
+"Hemos enviado una carta a su correo electrónico con instrucciones para "
+"restablecer su contraseña. Por favor, compruebe su correo electrónico."
+
+#: src/js/login.js:76
+msgid "Voita APP - Sign In page"
+msgstr "Voita APP - Página de inicio de sesión"
+
+#: src/js/login.js:78
+msgid "Sorry, we could not find your credentials, please try again."
+msgstr ""
+"Lo sentimos, no hemos podido encontrar sus credenciales, por favor inténtelo "
+"de nuevo."
+
+#: src/js/login.js:79
+msgid "Login (Email)"
+msgstr "Inicio de sesión (correo electrónico)"
+
+#: src/js/login.js:80
+msgid "Please enter your email"
+msgstr "Por favor, introduzca su dirección de correo electrónico"
+
+#: src/js/login.js:81
+msgid "Password"
+msgstr "Contraseña"
+
+#: src/js/login.js:82
+msgid "Please enter your password"
+msgstr "Por favor, introduce tu contraseña"
+
+#: src/js/login.js:83
+msgid "Don’t have a Voita account?"
+msgstr "¿No tienes una cuenta Voita APP?"
+
+#: src/js/login.js:84
+msgid "Sign Up"
+msgstr "Registrarse"
+
+#: src/js/login.js:85
+msgid "Forgot your password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: src/js/register.js:118
+msgid "Voita APP - Create new account"
+msgstr "Voita APP - Crear una nueva cuenta"
+
+#: src/js/register.js:119
+msgid "Let`s create your account"
+msgstr "Cree su cuenta"
+
+#: src/js/register.js:120
+msgid "Choose country *"
+msgstr "Elija el país *"
+
+#: src/js/register.js:121
+msgid "To register, choose a country from the list"
+msgstr "Para registrarse, elija un país de la lista"
+
+#: src/js/register.js:122
+msgid "Country name *"
+msgstr "Nombre del país *"
+
+#: src/js/register.js:123
+msgid "Please enter your country name"
+msgstr "Introduzca el nombre de su país"
+
+#: src/js/register.js:124
+msgid "Email address *"
+msgstr "Email *"
+
+#: src/js/register.js:125
+msgid "Please enter a valid email address"
+msgstr "Por favor introduce una dirección de correo electrónico válida"
+
+#: src/js/register.js:126
+msgid "Create a password *"
+msgstr "Crear una contraseña *"
+
+#: src/js/register.js:127
+msgid "Password is not strong enough"
+msgstr "La contraseña no es fuerte"
+
+#: src/js/register.js:128
+msgid "Repeat password *"
+msgstr "Repetir Contraseña *"
+
+#: src/js/register.js:129
+msgid "Password and verification password are not the same"
+msgstr "La contraseña y la contraseña de verificación no son las mismas"
+
+#: src/js/register.js:130
+msgid ""
+"The password must have at least 8 characters of the Latin alphabet, and "
+"contain a lowercase, uppercase, number, and any of the following characters"
+msgstr ""
+"La contraseña debe tener al menos 8 caracteres del alfabeto latino y "
+"contener una minúscula, una mayúscula, un número y cualquiera de los "
+"siguientes caracteres"
+
+#: src/js/register.js:131
+msgid "I agree to the"
+msgstr "Estoy de acuerdo con los"
+
+#: src/js/register.js:132
+msgid "privacy policy"
+msgstr "política de privacidad"
+
+#: src/js/register.js:133
+msgid "Sign Up for FREE"
+msgstr "Inscríbete GRATIS"
+
+#: src/js/register.js:134
+msgid "Do you already have an account?"
+msgstr "Ya tienes cuenta?"
+
+#: src/js/register.js:135
+msgid "Go to"
+msgstr "Ir a la pagina"
+
+#: src/js/register.js:137
+msgid "Voita APP for POS selling and B2B"
+msgstr "Voita APP para la venta en el POS y el B2B"
+
+#: src/js/register.js:138
+msgid "Manage your purchases and supplies"
+msgstr "Gestione sus compras y suministros"
+
+#: src/js/register.js:139
+msgid "Manage your POS and selling of products and services"
+msgstr "Gestione su POS y la venta de productos y servicios"
+
+#: src/js/register.js:140
+msgid "Manage your expenses and profits"
+msgstr "Gestione sus gastos y beneficios"
+
+#: src/js/register.js:141
+msgid "Manage your stock and movement of goods"
+msgstr "Gestione sus existencias y movimientos de mercancías"
+
+#: src/js/register.js:143
+msgid "Successful registration"
+msgstr "Registro exitoso"
+
+#: src/js/register.js:144
+msgid "Your account has been successfully created!"
+msgstr "¡Su cuenta ha sido creada con éxito!"
+
+#: src/js/register.js:145
+msgid "We have sent you an email with a link to activate your account."
+msgstr ""
+"Le hemos enviado un correo electrónico con un enlace para activar su cuenta."
+
+#: src/js/register.js:146
+msgid "Thank you for choosing our service!"
+msgstr "¡Gracias por elegir nuestro servicio!"
+
+#: src/js/register.js:147 src/js/register.js:152
+msgid "Close"
+msgstr "Cerrar"
+
+#: src/js/register.js:149
+msgid "Registration error"
+msgstr "Error de registro"
+
+#: src/js/register.js:150
+msgid "An error occurred during registration!"
+msgstr "¡Se ha producido un error durante el registro!"
+
+#: src/js/register.js:151
+msgid "Please check all fields of the registration form and try again!"
+msgstr ""
+"¡Por favor, compruebe todos los campos del formulario de registro e "
+"inténtelo de nuevo!"

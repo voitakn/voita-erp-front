@@ -1,0 +1,234 @@
+
+// iOS native app status bar does not take up space, so we need to pad out the application by 20px
+// in order to bring the app below it.
+a, a:visited, a:active {
+  color: $erp-link !important;
+  text-decoration: none;
+  &:hover {
+    color: $erp-blue !important;
+  }
+}
+body.x-ios.x-webview.x-portrait {
+  margin-top: 20px;
+}
+.red {
+  color: $erp-red !important;
+  .x-icon-el {
+    color: $erp-red !important;
+  }
+}
+.green {
+  color: $erp-green !important;
+  .x-icon-el {
+    color: $erp-green !important;
+  }
+}
+.green-dark {
+  color: $erp-green-dark !important;
+  .x-icon-el {
+    color: $erp-green-dark !important;
+  }
+}
+.blue {
+  color: $erp-blue !important;
+  .x-icon-el {
+    color: $erp-blue !important;
+  }
+}
+.orange {
+  color: $erp-orange !important;
+  .x-icon-el {
+    color: $erp-orange !important;
+  }
+}
+.white {
+  color: #ffffff !important;
+  .x-icon-el {
+    color: #ffffff !important;
+  }
+}
+.status-confirm {
+  background-color: rgba(0, 107, 52, 0.2) !important;
+}
+.status-failed {
+  background-color: rgba(152, 37, 0, 0.2) !important;
+}
+.status-progress {
+  background-color: rgba(255, 140, 0, 0.2) !important;
+}
+.blue-bg {
+  background-color: $erp-blue !important;
+}
+.orange-bg {
+  background-color: $erp-orange !important;
+}
+
+.red-dark-bg {
+  background-color: $erp-red !important;
+}
+
+.green-dark-bg {
+  background-color: $erp-green-dark !important;
+}
+
+.gray-bg {
+  background-color: $erp-gray !important;
+}
+
+.gray-light-bg {
+  background-color: $erp-light-gray !important;
+}
+
+.yellow-bg {
+  background-color: $color-soft-orange !important;
+}
+
+.blue-light-bg {
+  background-color: $erp-light-blue !important;
+}
+
+.size-14 {
+  font-size: 14px !important;
+
+  .x-icon-el:before {
+    font-size: 14px !important;
+  }
+}
+.size-15 {
+  font-size: 15px !important;
+  .x-icon-el:before {
+    font-size: 15px !important;
+  }
+}
+.size-16 {
+  font-size: 16px !important;
+  .x-icon-el:before {
+    font-size: 16px !important;
+  }
+}
+.size-18 {
+  font-size: 18px !important;
+  .x-icon-el:before {
+    font-size: 10px !important;
+  }
+}
+.size-20 {
+  font-size: 20px !important;
+  .x-icon-el:before {
+    font-size: 20px !important;
+  }
+}
+.size-22 {
+  font-size: 22px !important;
+  .x-icon-el:before {
+    font-size: 22px !important;
+  }
+}
+.size-24 {
+  font-size: 24px !important;
+  .x-icon-el:before {
+    font-size: 24px !important;
+  }
+}
+.size-26 {
+  font-size: 26px !important;
+  .x-icon-el:before {
+    font-size: 26px !important;
+  }
+}
+.size-28 {
+  font-size: 28px !important;
+  .x-icon-el:before {
+    font-size: 28px !important;
+  }
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.line-35 {
+  line-height: 35px !important;
+}
+
+.bolder {font-weight: bold !important;}
+.text-center {text-align: center !important;}
+.text-right {text-align: right !important;}
+.padding-0 {padding: 0px !important;}
+.padding-20 {padding: 20px;}
+.padding-15 {padding: 15px;}
+.padding-15-30 {padding: 15px 30px;}
+.h1-logo {margin: 0; font-size: 30px; line-height: 1em;}
+
+.notice-msg {
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  > .x-fas {
+    font-size: 24px;
+  }
+  > .msg-text {
+    font-size: 16px;
+    flex: 1;
+    margin-left: 15px;
+  }
+}
+.flexes {
+  display: flex;
+  flex-flow: row wrap;
+  >.flex-1 {
+    flex: 1
+  }
+  >.flex-2 {
+    flex: 2
+  }
+  >.flex-3 {
+    flex: 3
+  }
+}
+
+.border-top {
+  border-top: 1px solid $button-border-color !important;
+  border-top-width: 1px !important;
+}
+.border-bottom {
+  border-bottom: 1px solid $button-border-color !important;
+  border-bottom-width: 1px !important;
+}
+.x-action-col-icon {
+  font-size: 16px !important;
+}
+.erp-fieldset .x-form-fieldset-title {
+  font-weight: bold !important;
+}
+
+.x-button .x-icon-el {
+  width: 20px !important;
+}
+.x-menuradioitem.x-checked {
+  background-color: $menucheckitem-checked-background-color !important;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border: solid 1px #b6ccd9;
+  border-radius: 3px;
+  box-shadow: 0 0 6px #b6ccd9;
+  margin: 8px;
+}
+.margin-sh {
+  margin: 8px;
+}
+
+@include textfield-ui(
+    $ui: 'payment',
+    $input-line-height: 35px,
+    $input-font-size: 20px,
+    $input-padding: 7px,
+    $input-border-color: $erp-link,
+    $input-border-width: 1px,
+    $input-border-style: 'solid',
+    $input-color: $erp-blue,
+    $input-font-weight : 600,
+);

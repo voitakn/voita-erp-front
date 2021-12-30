@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link type="text/css" rel="stylesheet" href="/auth/bootstrap/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/auth/bootstrap/css/bootstrap-utilities.min.css" />
+    <link type="text/css" rel="stylesheet" href="/auth/bootstrap/css/bootstrap-reboot.min.css" />
+    <link type="text/css" rel="stylesheet" href="/auth/src/css/index.css" />
+    <link rel="icon" type="image/webp" href="/auth/src/images/voita-logo.webp" />
+    <script type="text/javascript" src="/auth/src/js/Gettext.js"></script>
+    <script type="text/javascript" src="/auth/src/js/i18n.js"></script>
+    <title>Voita APP - Recovery password page</title>
+</head>
+<body>
+<div class="d-flex h-100">
+    <div class="align-self-stretch flex-fill m-2 m-lg-3 erp-center-bg rounded">
+        <div class="row justify-content-center h-100">
+            <div class="col-10 col-md-8 col-lg-3 align-self-center shadow-sm py-2 p-lg-3 px-lg-5 bg-white border border-1 rounded" style="min-width: 230px">
+                <div class="my-4">
+                    <div class="text-center" style="height: 50px"><img src="/auth/src/images/voita-logo-full.webp" alt="Voita ERP" class="h-100"></div>
+                </div>
+                <div class="info text-center fw-bold">Enter your email address to recover your password</div>
+                <form id="recoveryForm" class="needs-validation">
+                    <div class="row justify-content-md-center">
+                        <div class="col p-3">
+                            <div class="form-floating div-recovery-email">
+                                <input type="email" class="form-control form-control-lg" id="erpEmailRecoveryField" placeholder="Enter your email" value="" required>
+                                <label for="erpEmailRecoveryField">Enter your email</label>
+                                <div class="invalid-feedback">
+                                    Please enter valid email
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="recoveryFormError" class="row justify-content-md-center d-none">
+                        <div class="text-center text-danger">Sorry, we could not find your credentials, please try again</div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col pt-3 text-center">
+                            <button type="submit" id="erpBtnRecovery" class="btn btn-success btn-lg" disabled>Recovery Password</button><br/><br/>
+                        </div>
+                    </div>
+                </form>
+                <div id="recoverySuccess" class="row justify-content-md-center d-none lead">
+                    <div class="text-center text-success">We have sent a letter to your email with instructions to reset your password. Please check your email.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/auth/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/auth/bootstrap/js/bootstrap.min.js"></script>
+<script src="/auth/src/js/forgot.js"></script>
+</body>
+</html>

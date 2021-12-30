@@ -1,0 +1,1286 @@
+<style>
+
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;     font: 8.5pt "Tahoma", "Arial";
+    /*line-height:1.5;*/
+  }
+
+  @media print {
+    body{
+      background-color:#fff !important;
+    }
+
+  }
+
+
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
+  .text-big{
+    font-size:11pt;
+  }
+
+  .muted-text{
+    color:#666;
+  }
+
+  .text-small{
+    font-size:7pt;
+  }
+
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 20mm;
+    margin: 10mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow:hidden;
+  }
+  .subpage {
+    /*padding: 1cm;*/
+    height: 257mm;
+    overflow:hidden;
+  }
+
+  @page {
+    size: A4;
+    margin: 1mm;
+  }
+
+  @media print {     html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+    .page {
+      background:red;
+      margin: 0;
+      border: initial;
+      border-radius: initial;
+      width: initial;
+      min-height: initial;
+      box-shadow: initial;
+      background: initial;
+      page-break-after: always;
+    }
+  }
+  .row{ width:100%; overflow:hidden; }
+  .row.bg{ background:#eaeaea; }
+  .row-line{
+    border-bottom:1px solid #333;
+    font-size:8.5pt;
+  }
+
+  .row-line-top{
+    border-top:1px solid #333;
+  }
+
+
+  .row-double-line{
+    border-bottom:2px solid #333;
+  }
+
+  .row-double-line-top{
+    border-top:2px solid #333;
+  }
+
+  .row-valign{
+    display:-ms-flexbox;
+
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+
+    -webkit-box-align:center;
+    white-space:nowrap;
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+
+  }
+
+  .body-pdf{
+    background:#fff;
+  }
+
+  .row-1{ height: 4.0196875mm; }
+  .row-2{ height: 8.039375mm; }
+  .row-3{ height: 12.0590625mm; }
+  .row-4{ height: 16.07875mm; }
+  .row-5{ height: 20.0984375mm; }
+  .row-6{ height: 24.118125mm; }
+  .row-7{ height: 28.1378125mm; }
+  .row-8{ height: 32.1575mm; }
+  .row-9{ height: 36.1771875mm; }
+  .row-10{ height: 40.196875mm; }
+  .row-11{ height: 44.2165625mm; }
+  .row-12{ height: 48.23625mm; }
+  .row-13{ height: 52.2559375mm; }
+  .row-14{ height: 56.275625mm; }
+  .row-15{ height: 60.2953125mm; }
+  .row-16{ height: 64.315mm; }
+  .row-17{ height: 68.3346875mm; }
+  .row-18{ height: 72.354375mm; }
+  .row-19{ height: 76.3740625mm; }
+  .row-20{ height: 80.39375mm; }
+  .row-21{ height: 84.4134375mm; }
+  .row-22{ height: 88.433125mm; }
+  .row-23{ height: 92.4528125mm; }
+  .row-24{ height: 96.4725mm; }
+  .row-25{ height: 100.4921875mm; }
+  .row-26{ height: 104.511875mm; }
+  .row-27{ height: 108.5315625mm; }
+  .row-28{ height: 112.55125mm; }
+  .row-29{ height: 116.5709375mm; }
+  .row-30{ height: 120.590625mm; }
+  .row-31{ height: 124.6103125mm; }
+  .row-32{ height: 128.63mm; }
+  .row-33{ height: 132.6496875mm; }
+  .row-34{ height: 136.669375mm; }
+  .row-35{ height: 140.6890625mm; }
+  .row-36{ height: 144.70875mm; }
+  .row-37{ height: 148.7284375mm; }
+  .row-38{ height: 152.748125mm; }
+  .row-39{ height: 156.7678125mm; }
+  .row-40{ height: 160.7875mm; }
+  .row-41{ height: 164.8071875mm; }
+  .row-42{ height: 168.826875mm; }
+  .row-43{ height: 172.8465625mm; }
+  .row-44{ height: 176.86625mm; }
+  .row-45{ height: 180.8859375mm; }
+  .row-46{ height: 184.905625mm; }
+  .row-47{ height: 188.9253125mm; }
+  .row-48{ height: 192.945mm; }
+  .row-49{ height: 196.9646875mm; }
+  .row-50{ height: 200.984375mm; }
+  .row-51{ height: 205.0040625mm; }
+  .row-52{ height: 209.02375mm; }
+  .row-53{ height: 213.0434375mm; }
+  .row-54{ height: 217.063125mm; }
+  .row-55{ height: 221.0828125mm; }
+  .row-56{ height: 225.1025mm; }
+  .row-57{ height: 229.1221875mm; }
+  .row-58{ height: 233.141875mm; }
+  .row-59{ height: 237.1615625mm; }
+  .row-60{ height: 241.18125mm; }
+  .row-61{ height: 245.2009375mm; }
+  .row-62{ height: 249.220625mm; }
+  .row-63{ height: 253.2403125mm; }
+  .row-64{ height: 257.26mm; }
+
+  .col-group{
+    clear:always;
+    width:100%;
+  }
+
+  .col-group::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .col{float:left; min-height:1px;}
+
+  .col-split-2{ width:50%; }
+  .col-split-3{ width:33.33333%;  }
+  .col-split-4{ width:25%; }
+  .col-split-5{ width:20%; }
+
+  .col-5{ width:5%; }
+  .col-6-half{ width:6.5%; }
+  .col-10{ width:10%; }
+  .col-15{ width:15%; }
+  .col-20{ width:20%; }
+  .col-25{ width:25%; }
+  .col-30{ width:30%; }
+  .col-35{ width:35%; }
+  .col-40{ width:40%; }
+  .col-45{ width:45%; }
+  .col-50{ width:50%; }
+  .col-55{ width:55%; }
+  .col-60{ width:60%; }
+  .col-70{ width:70%; }
+  .col-75{ width:75%; }
+  .col-80{ width:80%; }
+  .col-85{ width:85%; }
+  .col-90{ width:90%; }
+  .col-100{ width:100%; }
+
+  .col-space{ width:10%; }
+  .col-split{ width:40%; }
+
+  .text-right{
+    text-align:right;
+  }
+
+  table{
+    margin:0;
+    padding:0;
+    border-collapse:collapse;
+    width:100%;
+    font: 9pt "Tahoma", "Arial";
+  }
+
+  th{
+    text-align:left;
+    border-bottom:1px solid #333;
+    xpadding:3px 0px;
+  }
+
+  td{
+  }
+
+  td.number{
+    white-space:nowrap;
+  }
+
+
+  .border-bottom{
+    border-bottom:1px solid #000;
+  }
+
+  .border-top{
+    border-top:1px solid #000;
+  }
+
+  .border-bottom-light{
+    border-bottom:1px solid #999;
+  }
+
+  .products th{
+    padding-right:5px;
+  }
+
+  .products th:last-of-type,
+  .products td:last-of-type{
+    padding-right:0px;
+  }
+
+  .products td{
+    xpadding-top:1px;
+    xpadding-bottom:3px;
+    vertical-align:top;
+    padding-right:5px;
+  }
+
+  .products-muted-text{
+    color:#5c5c5c;
+
+    font-size:8pt;
+    line-height:1.3;
+    display:block;
+  }
+  .line-spaced{
+    line-height:2;
+  }
+  .txt-lang {
+    font-weight:300;
+    font-size: 11px;
+  }
+
+  .txt-lang-xs {
+    font-size: 10px;
+  } </style>
+<div class="document">
+  <div class='page'>
+    <div class='row row-9'>
+      <div class='col-group'>
+        <div class='col col-50'>
+          <!--  Company Name -->
+          <b>NEXPERIENCE LDA</b><br/>
+          Rua da Lionesa, 446, G20<br/>
+          4465-671 Leça do Baliobr/>
+          <!--  Fiscal Id -->
+          <b>Contribuinte:</b> 509442013<br />
+          <!--  Website -->
+          <!--  Breakline? -->
+          <!--  Socialcapital? -->
+          <b>Capital Social:</b> 50000.00 EUR<br/>
+          <!-- Conservatory -->
+        </div>
+        <div class='col col-5'></div>
+        <div class='col col-45'>
+          <div class='row row-4'></div>
+          <div class='row row-2'></div>
+          Exmo.(s) Sr.(s) <br />
+          <b>Consumidor Final </b><br/>
+        </div>
+      </div>
+    </div>
+
+    <div class='row row-1 '></div>
+    <div class='row row-2 row-valign row-double-line'>
+      <div class='col-group'>
+        <div class='col col-split-2 text-big'>
+          Fatura nº FT T01P2021/10
+        </div>
+        <div class='col col-split-2 text-right'>
+          Original
+        </div>
+      </div>
+    </div>
+    <!--  header -->
+    <div class='row row-2'>
+      <div class='col-group'>
+        <div class='col col-45'>
+          <!-- Sub Group 1 -->
+          <div class='col-group'>
+            <div class='col col-45'>
+              <div class='row-2 row-valign row-line'>
+                Data
+              </div>
+            </div>
+            <div class='col col-10'><!-- White Space --></div>
+            <div class='col col-45'>
+              <div class='row-2 row-valign row-line'>
+                Vencimento
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='col col-10'><!-- White Space --></div>
+        <div class='col col-45'>
+          <!-- Sub Group 2 -->
+          <div class='col-group'>
+            <div class='col col-45'>
+              <div class='row-2 row-valign row-line'>
+                Contribuinte
+              </div>
+            </div>
+            <div class='col col-10'><!-- White Space --></div>
+            <div class='col col-45'>
+              <div class='row-2 row-valign row-line'>
+                V/ Ref.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row row-1'>
+      <div class='col-group'>
+        <div class='col col-45'>
+          <div class='col-group'>
+            <div class='col col-45'>
+              <div class='row-1 row-valign'>
+                2021-06-08
+              </div>
+            </div>
+            <div class='col col-10'></div>
+            <div class='col col-45'>
+              <div class='row-1 row-valign'>
+                2021-06-08
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='col col-10'></div>
+        <div class='col col-45'>
+          <div class='col-group'>
+            <div class='col col-45'>
+              <div class='row-1 row-valign'>
+                ---------
+              </div>
+            </div>
+            <div class='col col-10'></div>
+            <div class='col col-45'>
+              <div class='row-1 row-valign'>
+                FT T01P2021/10                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row row-2 '></div>
+    <div class='row row-2 row-valign row-line'>
+      <b>Observações</b>
+    </div>
+    <div class='row row-2' style="padding-top:5px">
+      Documento emitido para fins de Formação. Não tem validade fiscal.
+    </div>
+    <div class='row row-2 '></div>
+    <div class='row row-36 row-double-line-top'>
+      <table class='row-line products row-double-line'>
+        <tr class='row row-2'>
+          <th width="105" class='border-bottom-light padding-bottom'>
+            Código
+          </th>
+          <th width="265" class='border-bottom-light padding-bottom'>
+            Descrição
+          </th>
+          <th width="40" class='text-right border-bottom-light padding-bottom' style='white-space:nowrap'>
+            P. Uni.
+          </th>
+          <th width="70" class='text-right border-bottom-light padding-bottom'>
+            Uni.
+          </th>
+          <th width="40" class='text-right border-bottom-light padding-bottom'>
+            Qtd.
+          </th>
+          <th width="50" class='text-right border-bottom-light padding-bottom'>
+            IVA
+          </th>
+          <th width="90" class='text-right border-bottom-light padding-bottom'>
+            Total
+          </th>
+        </tr>
+        <tr>
+          <td class='number'>demov.1<br/></td>
+          <td>Caderno Personalizado</td>
+          <td class='text-right number'>€ 5,55</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 5,55</td>
+        </tr>
+        <tr>
+          <td class='number'>demov.2<br/></td>
+          <td>Caneca Full Print</td>
+          <td class='text-right number'>€ 1,85</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 1,85</td>
+        </tr>
+        <tr>
+          <td class='number'>demov.3<br/></td>
+          <td>Mealheiro com moldura</td>
+          <td class='text-right number'>€ 1,99</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 1,99</td>
+        </tr>
+        <tr>
+          <td class='number'>demov.1<br/></td>
+          <td>Caderno Personalizado</td>
+          <td class='text-right number'>€ 5,55</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 5,55</td>
+        </tr>
+        <tr>
+          <td class='number'>demov.2<br/></td>
+          <td>Caneca Full Print</td>
+          <td class='text-right number'>€ 1,85</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 1,85</td>
+        </tr>
+        <tr>
+          <td class='number'>demov.3<br/></td>
+          <td>Mealheiro com moldura</td>
+          <td class='text-right number'>€ 1,99</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 1,99</td>
+        </tr>
+        <tr>
+          <td class='number'>demov.1<br/></td>
+          <td>Caderno Personalizado</td>
+          <td class='text-right number'>€ 5,55</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 5,55</td>
+        </tr>
+        <tr>
+          <td class='number'>demov.2<br/></td>
+          <td>Caneca Full Print</td>
+          <td class='text-right number'>€ 1,85</td>
+          <td class='text-right number'>Uni</td>
+          <td class='text-right number'>1</td>
+          <td class='text-right number'>23%</td>
+          <td class='text-right number'>€ 1,85</td>
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.3<br/></td>
+
+          <td>Mealheiro com moldura</td>
+
+          <td class='text-right number'>€ 1,99</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 1,99                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.4<br/></td>
+
+          <td>Baralho de Cartas</td>
+
+          <td class='text-right number'>€ 0,78</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,78                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.5<br/></td>
+
+          <td>Yo-Yo Centium</td>
+
+          <td class='text-right number'>€ 0,89</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,89                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.6<br/></td>
+
+          <td>Mini Mikado</td>
+
+          <td class='text-right number'>€ 1,75</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 1,75                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.4<br/></td>
+
+          <td>Baralho de Cartas</td>
+
+          <td class='text-right number'>€ 0,78</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,78                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.5<br/></td>
+
+          <td>Yo-Yo Centium</td>
+
+          <td class='text-right number'>€ 0,89</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,89                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.6<br/></td>
+
+          <td>Mini Mikado</td>
+
+          <td class='text-right number'>€ 1,75</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 1,75                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.4<br/></td>
+
+          <td>Baralho de Cartas</td>
+
+          <td class='text-right number'>€ 0,78</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,78                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.5<br/></td>
+
+          <td>Yo-Yo Centium</td>
+
+          <td class='text-right number'>€ 0,89</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,89                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.6<br/></td>
+
+          <td>Mini Mikado</td>
+
+          <td class='text-right number'>€ 1,75</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 1,75                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>VNEW8-21060327<br/></td>
+
+          <td>New produce</td>
+
+          <td class='text-right number'>€ 15,32</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>2</td>
+
+
+          <td class='text-right number'>13%</td>
+
+
+          <td class='text-right number'>
+            € 30,65                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.5<br/></td>
+
+          <td>Yo-Yo Centium</td>
+
+          <td class='text-right number'>€ 0,89</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,89                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>VNEW8-21060327<br/></td>
+
+          <td>New produce</td>
+
+          <td class='text-right number'>€ 15,32</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>13%</td>
+
+
+          <td class='text-right number'>
+            € 15,32                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.6<br/></td>
+
+          <td>Mini Mikado</td>
+
+          <td class='text-right number'>€ 1,75</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 1,75                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>VNEW8-21060327<br/></td>
+
+          <td>New produce</td>
+
+          <td class='text-right number'>€ 15,32</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>13%</td>
+
+
+          <td class='text-right number'>
+            € 15,32                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.4<br/></td>
+
+          <td>Baralho de Cartas</td>
+
+          <td class='text-right number'>€ 0,78</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 0,78                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>VNEW8-21060327<br/></td>
+
+          <td>New produce</td>
+
+          <td class='text-right number'>€ 15,32</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>13%</td>
+
+
+          <td class='text-right number'>
+            € 15,32                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.1<br/></td>
+
+          <td>Caderno Personalizado</td>
+
+          <td class='text-right number'>€ 5,55</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 5,55                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.2<br/></td>
+
+          <td>Caneca Full Print</td>
+
+          <td class='text-right number'>€ 1,85</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 1,85                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>demov.3<br/></td>
+
+          <td>Mealheiro com moldura</td>
+
+          <td class='text-right number'>€ 1,99</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>23%</td>
+
+
+          <td class='text-right number'>
+            € 1,99                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+
+
+        <tr>
+          <td class='number'>VNEW8-21060327<br/></td>
+
+          <td>New produce</td>
+
+          <td class='text-right number'>€ 15,32</td>
+
+          <td class='text-right number'>Uni</td>
+
+          <td class='text-right number'>1</td>
+
+
+          <td class='text-right number'>13%</td>
+
+
+          <td class='text-right number'>
+            € 15,32                                            </td>
+
+        </tr>
+
+
+        </tr>
+
+      </table>
+    </div>
+
+    <div class='row row-0 '></div><div class='row row-1 '></div><div class='row row-2'>
+      <div class='col col-55'><!--  white space --></div>
+      <div class='col col-45'>
+        <table class="table-total row-double-line-top line-spaced" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width='70%'><b style="width:10%">Valor a Transitar</b> <span style="width:80%;text-align:right;"></span></td>
+            <td width='30%' style='text-align:right'>€ 143,18</td>
+          </tr>
+        </table>
+      </div>
+    </div><div class='row row-1 '></div><div class='row row-2'>
+      <div class='col-group'>
+        <div class='col col-30'>
+          Página 1/2        </div>
+      </div>
+    </div></div>
+  <div class='page'>
+    <div class='row row-2 row-valign'>
+      <div class='col-group'>
+        <div class='col col-split-2 text-big'>
+          FT T01P2021/10
+        </div>
+        <div class='col col-split-2 text-right text-big'>
+          Valor Transitado: € 143,18
+        </div>
+  </div>
+</div>
+  <div class='row row-49 row-double-line-top'>
+  <table class='row-line products row-double-line'>
+    <tr class='row row-2'>
+
+      <th width="105" class='border-bottom-light padding-bottom'>
+        Código                </th>
+
+      <th width="265" class='border-bottom-light padding-bottom'>
+        Descrição
+      </th>
+
+      <th width="40" class='text-right border-bottom-light padding-bottom' style='white-space:nowrap'>
+        P. Uni.                </th>
+
+      <th width="70" class='text-right border-bottom-light padding-bottom'>
+        Uni.                </th>
+
+      <th width="40" class='text-right border-bottom-light padding-bottom'>
+        Qtd.            </th>
+
+
+      <th width="50" class='text-right border-bottom-light padding-bottom'>
+
+        IVA                    </th>
+
+
+      <th width="90" class='text-right border-bottom-light padding-bottom'>
+        Total                </th>
+
+    </tr>
+
+
+    <tr>
+      <td class='number'>demov.4<br/></td>
+
+      <td>Baralho de Cartas</td>
+
+      <td class='text-right number'>€ 0,78</td>
+
+      <td class='text-right number'>Uni</td>
+
+      <td class='text-right number'>1</td>
+
+
+      <td class='text-right number'>23%</td>
+
+
+      <td class='text-right number'>
+        € 0,78                                            </td>
+
+    </tr>
+
+
+    </tr>
+
+
+
+    <tr>
+      <td class='number'>demov.5<br/></td>
+
+      <td>Yo-Yo Centium</td>
+
+      <td class='text-right number'>€ 0,89</td>
+
+      <td class='text-right number'>Uni</td>
+
+      <td class='text-right number'>1</td>
+
+
+      <td class='text-right number'>23%</td>
+
+
+      <td class='text-right number'>
+        € 0,89                                            </td>
+
+    </tr>
+
+
+    </tr>
+
+
+
+    <tr>
+      <td class='number'>demov.6<br/></td>
+
+      <td>Mini Mikado</td>
+
+      <td class='text-right number'>€ 1,75</td>
+
+      <td class='text-right number'>Uni</td>
+
+      <td class='text-right number'>1</td>
+
+
+      <td class='text-right number'>23%</td>
+
+
+      <td class='text-right number'>
+        € 1,75                                            </td>
+
+    </tr>
+
+
+    </tr>
+
+  </table>
+</div>
+
+  <div class='row row-1 '></div>    <div style="background:#FED500;text-align:center;z-index:1000;font-size:20px;padding:16px 0px;position:absolute;margin:auto;margin-top:-70px;width:170mm">
+    Documento emitido para fins de Formação. Não tem validade fiscal.    </div>
+
+  <div class='row row-6'>
+    <div class='col col-45'>
+      <table>
+
+        <tr class='row-line'>
+          <th class="">Taxa</th>
+          <th class="text-right">Base</th>
+          <th class="text-right">IVA </th>
+          <th class="text-right">Total</th>
+        </tr>
+        <tr>
+          <td>23 %</td>
+          <td class="text-right">€ 44,44</td>
+          <td class="text-right">€ 10,22</td>
+          <td class="text-right">€ 54,66</td>
+
+        </tr>
+        <tr>
+          <td>13 %</td>
+          <td class="text-right">€ 81,36</td>
+          <td class="text-right">€ 10,58</td>
+          <td class="text-right">€ 91,94</td>
+
+        </tr>
+      </table>
+
+      <!--  PAYMENTS -->
+      <br />
+      <table cellspacing="0">
+        <tr>
+          <th colspan="2">Meio de Pagamento</th>
+        </tr>
+        <tr>
+          <td>Dinheiro </td>
+          <td class="text-right">€ 146,60</td>
+        </tr>
+
+
+      </table>
+
+
+
+
+    </div>
+
+    <div class='col col-10'><!--  WHITE SPACE --></div>
+
+    <div class='col col-45'>
+      <table cellspacing="0">
+        <tr>
+          <th colspan="2">Sumário                                </th>
+        </tr>
+
+
+
+        <tr>
+          <td>S/IVA
+            : </td>
+          <td class="text-right">€ 125,80</td>
+        </tr>
+
+        <tr>
+          <td>IVA: </td>
+          <td class="text-right">€ 20,80</td>
+        </tr>
+
+
+
+
+      </table>
+    </div>
+  </div>
+  <div class='row row-2'>
+    <div class='col col-55'><!--  white space --></div>
+    <div class='col col-45'>
+      <table class="table-total row-double-line-top text-big line-spaced" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width='15%' style=''>
+            <b>Total</b>            </td>
+          <td width='85%' valign='top' style='text-align:right'>€ 146,60</td>
+        </tr>
+
+        <tr>
+          <td colspan='2'></td>
+        </tr>
+
+      </table>
+    </div>
+  </div><div class='row row-1 '></div><div class='row row-2'>
+    <div class='col-group'>
+      <div class='col col-30'>
+        Página 2/2        </div>
+      <div class='col col-70 text-right text-small'>
+
+
+
+        gZWX-Processado por programa certificado n. 2230/AT - www.vendus.pt
+
+      </div>
+    </div>
+  </div></div>        </div>

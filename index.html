@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>Voita APP - cloud ERP service</title>
+    <link rel="icon" type="image/webp+xml" href="resources/shared/images/voita-logo.webp">
+    <link type="text/css" rel="stylesheet" href="/auth/bootstrap/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/auth/src/css/spiner.css" />
+    <link type="text/css" rel="stylesheet" href="/auth/src/css/receipt.css" />
+    <link type="text/css" rel="stylesheet" href="/auth/src/css/no-print.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="/auth/src/css/print.css" />
+    <script src="/auth/src/js/JedParser.js"></script>
+    <script src="/auth/src/js/Jed.js"></script>
+    <!--<script src="https://www.paypal.com/sdk/js?client-id=AW8qnVp5wLsfKOIEb1gL6NceWglq2uIxw40MBIGXNQnO2liT8u-yYEmua-ooRa-DzmpvV-ziLLvOXop3&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+   -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            position: relative;
+            background-color: #5ba1ca;
+        }
+        .erp-body-bg {
+            background-color: #5ba1ca;
+        }
+        .erp-center-bg {
+            background-color: #F7FCFF;
+        }
+    </style>
+
+    <script type="text/javascript">
+        let authKey = localStorage.getItem('authKey');
+        let authExp = localStorage.getItem('authExp');
+        var i18n;
+        var Ext = Ext || {};
+        Ext.erpLng = ['es'];
+        Ext.getNavLocale = function() {
+            var navigatorLang = (
+                    navigator.browserLanguage
+                    || (navigator.languages && navigator.languages[0])
+                    || navigator.language
+                    || navigator.userLanguage
+                    || ''
+                ),
+                locale = location.href.match(/locale=([\w-]+)/);
+
+            locale = (locale && locale[1])
+                || navigatorLang.split('-')[0]
+                || 'en';
+            return locale;
+        };
+        Ext.beforeLoad = (tags) => {
+            if (!authKey || authKey === '' || (Math.floor((new Date()).getTime() / 1000) > Number(authExp))) {
+                //document.location.href = 'auth/login.html';
+            }
+            const loadMoLng = async (url) => {
+                const response = await fetch(url);
+                const respBlob = await response.blob();
+                const respBuf = await respBlob.arrayBuffer();
+                var locale_data = jedGettextParser.mo.parse(respBuf);
+                i18n = new Jed({
+                    "domain" : "messages",
+                    "locale_data" : locale_data
+                });
+                Ext.manifest ='bootstrap';
+            };
+            const loadDefLng = () => {
+                i18n = new Jed({
+                    "domain" : "messages",
+                    "locale_data" : {
+                        "messages" : {
+                            "" : {
+                                "domain"        : "messages",
+                                "lang"          : "en",
+                                "plural-forms"  : "nplurals=2; plural=(n != 1);"
+                            },
+                            "test" : ["test_translation_output"]
+                        }
+                    }
+                });
+            };
+            let locale =  Ext.getNavLocale();
+            if(locale && locale !== 'en') {
+                if(Ext.erpLng.indexOf(locale) > -1) {
+                    loadMoLng(`resources/lng/${locale}.mo`);
+                    return;
+                }
+            }
+            loadDefLng();
+            Ext.manifest ='bootstrap';
+        };
+        var stripe = Stripe('pk_test_51JRuvxCvPhmwoDSLTA9vN6gZIqjQ6HmazKfFKbQFrTsrj09zMheICPgtSftq669hxnmSKMxrZkV6L0MoJDmiCfgH001INV5oFi');
+    </script>
+
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" data-app="20a7a5b6-8a27-4a54-8eaf-aab90e4124a9" type="text/javascript" src="bootstrap.js"></script>
+</head>
+<body class="launching h-100">
+<div id="splash" class="d-flex h-100">
+    <div class="align-self-stretch flex-fill m-2 m-lg-3 erp-center-bg rounded">
+        <div class="row justify-content-center h-100">
+            <div class="col-10 col-md-8 col-lg-6 align-self-center shadow-sm py-2 p-lg-3 px-lg-5 bg-white border border-1 rounded">
+                <div class="my-3">
+                    <div class="text-center" style="height: 60px"><img src="/auth/src/images/voita-logo-full.webp" alt="Voita ERP" class="h-100"></div>
+                </div>
+                <div id="erp-verify" class="row justify-content-center">
+                    <div class="text-center mt-3">
+                        <p class="text-center lead text-1">Loading Voita APP...</p>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="lds-dual-ring"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="erp-container-print"></div>
+
+<script src="/auth/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

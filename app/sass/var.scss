@@ -1,0 +1,166 @@
+// //https://www.sencha.com/blog/build-a-completely-custom-ext-js-theme-in-less-than-10-minutes/
+// //Defining Colors
+
+// $white_chocolate:      #A99386;
+// $milk_chocolate :      #523027;
+// $caramel_chocolate:    #9C6D51;
+// $dark_chocolate :      #5D4446;
+// $silver_spoons:        #a79c8e;
+// $strawberry_chocolate: #f1bbba;
+// $strawberry_mousse:    #EB9F9F;
+
+// // ***** Sencha Sass Variable Below *****
+
+// // Global Colors
+// $base-color : $dark_chocolate;
+// $neutral_color : $white_chocolate;
+// $body_background_color : lighten($caramel_chocolate,50%);
+
+// // Window Colors
+// $window_body_background_color : $white_chocolate;
+// $window_header_background_color: $dark_chocolate;
+
+// // Panel Colors
+// $panel_body_background_color : lighten($white_chocolate,45%);
+// $panel_header_background_color: $dark_chocolate;
+
+// // Grid Colors
+// $grid-row-cell-focus-color: $strawberry_mousse;
+// $grid-row-cell-selected-background-color: $strawberry_chocolate;
+// $grid-row-cell-focus-background-color: lighten($strawberry_chocolate, 15%);
+
+// // Buttons
+// $button-default-base-color : $milk_chocolate;
+// $button_toolbar_color : $milk_chocolate;
+
+// // Progress Bars
+// $progress_bar_background_color: $strawberry_mousse;
+
+// // Toolbar
+// $toolbar-background-color: lighten($white_chocolate,30%);
+
+// // Tab Panel
+// $tab_base_color: $milk_chocolate;
+// $tab_color: lighten($white_chocolate,25%);
+// $tab_font_size: 18px;
+
+// // ***** Fonts  **********
+
+// // Importing Google Fonts
+// @import url(http://fonts.googleapis.com/css?family=Chewy);
+
+// $chewy: 'Chewy', cursive;
+// $font-family: $chewy;
+// $font-size: 14px;
+// $color: $white_chocolate;
+/* Шрифты */
+
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+$font-family: dynamic('Montserrat', sans-serif);
+$enable-big:  dynamic(false);
+$enable-font-awesome: dynamic(true);
+//$base-color-name: dynamic('blue-grey');
+$tool-font-size: dynamic(24px);
+$toolbar-font-size: dynamic(14px);
+$toolbar-line-height: dynamic(14px);
+
+//$base-color: dynamic(#495759);
+$font-size: dynamic(14px);
+$panel-body-font-size: dynamic(13px);
+
+//$panel-navigation-background-color: dynamic(#32404e);
+$panel-navigation-item-line-height: dynamic(64px);
+//$panel-navigation-item-text-color: dynamic(#ADB3B8);
+
+$progress-bar-background-color: dynamic(#458fd2);
+
+//Form and Toolbar Button UI colors
+
+$color-blue: dynamic(#167abc);
+$color-soft-cyan: dynamic(#03b4d5);
+$color-soft-blue: dynamic(#2eadf5);
+$color-soft-green: dynamic(#9cc96b);
+$color-soft-orange: dynamic(#ffc107);
+$color-soft-red: dynamic(#e44959);
+$color-soft-purple: dynamic(#925e8b);
+$color-gray: dynamic(#949495);
+$color-green: dynamic(#16b603);
+
+$chart-icon-background-color: dynamic(#f1f1f1);
+
+$grid-item-edit-btn-color: dynamic(#e9e9e9);
+$grid-item-close-btn-color: dynamic(#fc8999);
+$grid-item-ban-btn-color: dynamic(#ffc000);
+$legend-research: dynamic(#6aa5db);
+$legend-marketing: dynamic(#ee929c);
+
+$force-background-color: dynamic(#56B750);
+
+$like-comment-btn-background-color: dynamic(#f4f4f4);
+$article-comment-color: dynamic(#eee);
+
+//----------------------------------------------------
+// Wizards
+
+$wizard-primary-background-color: dynamic(#579ddb);
+$wizard-button-background-color: dynamic(#579ddb);
+
+$wizard-two-primary-background-color: dynamic(#986291);
+$wizard-two-button-background-color: dynamic(#925e8b);
+
+$wizard-three-primary-background-color: dynamic(#9cc96b);
+$wizard-three-button-background-color: dynamic(#9cc96b);
+
+$toast-color: dynamic(#303030);
+$toast-background-color: dynamic(#ffffff);
+$toast-border-color: dynamic(#303030);
+$toast-shadow: dynamic($material-shadow-3);
+
+$erp-green-dark: dynamic(#006B34);
+$erp-green: dynamic(#00A451);
+$erp-blue: dynamic(#005E95);
+$erp-red: dynamic(#982500);
+$erp-orange: dynamic(#EA3800);
+$erp-gold: dynamic(#EA8100);
+$erp-link: dynamic(#3392CA);
+$erp-gray: dynamic(#303030);
+$erp-light-gray: dynamic(#c7c7c7);
+$erp-light-blue: dynamic(#ebf4fa);
+
+
+
+$tooltip-header-title-padding: dynamic(0 10px 0 15px);
+$field-label-font-size: dynamic(15px);
+
+$button-border-width: dynamic(1px);
+$button-border-style: dynamic(solid);
+$button-border-radius: dynamic(2px);
+$button-border-color: dynamic(rgba($erp-blue, 0.3));
+$button-color: dynamic(rgba($erp-blue, 0.9));
+
+$listitem-padding: dynamic(8px);
+$listitem-padding-big: dynamic(12px 10px);
+
+$gridcolumn-padding: dynamic(12px 8px);
+$gridcolumn-padding-big:  dynamic(12px 10px);
+$gridcolumn-font-weight: dynamic(bold);
+
+$tooltip-header-font-size: dynamic(16px);
+
+$textfield-placeholder-color: dynamic($toast-border-color);
+$textfield-disabled-placeholder-color: dynamic($toast-color);
+$textfield-focused-placeholder-color: dynamic($erp-blue);
+$textfield-invalid-placeholder-color: dynamic($erp-red);
+
+$menuradioitem-active-background-color: dynamic(#eeeeee);
+$menuitem-active-background-color: dynamic(#eeeeee);
+$menucheckitem-active-background-color: dynamic(#eeeeee);
+$menucheckitem-checked-background-color: dynamic(#e1e1e1);
+$dialog-body-color: dynamic($toast-color);
+
+$field-label-color: #000000;
+$field-label-font-size: 13px;
+$field-label-font-weight: bold;
+$menu-icon-column-width: 34px;

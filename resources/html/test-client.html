@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+</head>
+<body>
+<h1>Redirect</h1>
+<script>
+    const link = new URLSearchParams(location.search).get('link');
+    if (link) {
+        setTimeout(()=>{
+            location.href = link;
+        },3000);
+    }
+</script>
+</body>
+</html>

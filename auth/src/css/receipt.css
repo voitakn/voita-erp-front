@@ -1,0 +1,91 @@
+#erp-receipt-pt * {
+    font-family: sans-serif;
+}
+#erp-receipt-pt .receipt-main {
+    width: 90%;
+    font-size: 11px;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+#erp-receipt-pt .receipt-width {
+    width: 100%;
+}
+#erp-receipt-pt .receipt-width.date {
+    font-size: 9px;
+}
+
+#erp-receipt-pt .receipt-border-top {
+    border-top: #000 dashed 1px;
+}
+#erp-receipt-pt .receipt-border-bottom {
+    border-bottom: #000 dashed 1px;
+}
+#erp-receipt-pt .receipt-header {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+}
+#erp-receipt-pt .receipt-header .title {
+    font-size: 20px;
+}
+#erp-receipt-pt .receipt-header h2 {
+    font-size: 1.2em;
+}
+#erp-receipt-pt .receipt-header h2 {
+    font-size: 1em;
+}
+
+#erp-receipt-pt .receipt-main table {
+    font-size: 11px;
+}
+#erp-receipt-pt .receipt-main .to-right {
+    text-align: right;
+}
+#erp-receipt-pt .receipt-main .to-center {
+    text-align: center;
+}
+#erp-receipt-pt .receipt-main .receipt-type {
+    width: 100%;
+    border-bottom: #000 dashed 1px;
+    border-top: #000 dashed 1px;
+    margin: 5px 0;
+}
+#erp-receipt-pt .receipt-main .receipt-type tr {
+    line-height: 16px;
+}
+#erp-receipt-pt .receipt-products {
+    margin: 10px 0 10px 0;
+    border-collapse: collapse;
+}
+#erp-receipt-pt .receipt-products tr td {
+    vertical-align: text-top;
+    padding: 2px 0;
+}
+#erp-receipt-pt .receipt-totals {
+    line-height: 1.4;
+}
+#erp-receipt-pt .receipt-totals tr td {
+    width: 40%;
+    text-align: right;
+}
+#erp-receipt-pt .receipt-totals tr td.first {
+    width: 60%;
+    text-align: left;
+}
+#erp-receipt-pt .receipt-totals .main {
+    font-size: 17px;
+}
+#erp-receipt-pt .receipt-totals .change {
+    font-size: 17px;
+}
+#erp-receipt-pt .receipt-taxes {
+    margin: 10px 0 20px 0;
+    border-collapse: collapse;
+}
+#erp-receipt-pt .receipt-taxes tr td {
+    padding: 1px 0;
+}
+#erp-receipt-pt .receipt-footer {
+    margin-bottom: 20px;
+}

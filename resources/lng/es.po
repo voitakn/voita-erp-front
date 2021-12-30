@@ -1,0 +1,4260 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-10-28 18:01+0100\n"
+"PO-Revision-Date: 2021-10-28 18:05+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ../../../app\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: shared\n"
+"X-Poedit-SearchPath-1: desktop\n"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:4
+msgid "Select function from the list"
+msgstr "Seleccione la función de la lista"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:11
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:126
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:107
+#: desktop/src/view/sell/pos_sell/edit/SellConfig.js:64
+msgid "Apply"
+msgstr "Aplicar"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:12
+#: desktop/src/view/catalog/edit/Catalog.js:29
+#: desktop/src/view/company/edit/CompanyEdit.js:141
+#: desktop/src/view/company/edit/LogoEdit.js:83
+#: desktop/src/view/employee/edit/EditCard.js:76
+#: desktop/src/view/expense/edit/NewExpense.js:47
+#: desktop/src/view/inventory/edit/QuantityEdit.js:106
+#: desktop/src/view/movement/add/AddCtrl.js:206
+#: desktop/src/view/movement/add/edit/Amount.js:120
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:116
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:97
+#: desktop/src/view/myprofile/edit/ChangePassword.js:89
+#: desktop/src/view/myprofile/edit/EditUser.js:47
+#: desktop/src/view/place/edit/NewPoint.js:100
+#: desktop/src/view/point/edit/EditCheckout.js:32
+#: desktop/src/view/point/edit/EditPoint.js:90
+#: desktop/src/view/produce/edit/MainPrice.js:19
+#: desktop/src/view/produce/edit/PriceEdit.js:16
+#: desktop/src/view/produce/edit/Produce.js:22
+#: desktop/src/view/purchase/buy/edit/Amount.js:43
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:99
+#: desktop/src/view/purchase/card/edit/PaidForm.js:52
+#: desktop/src/view/sell/pos/PosCtrl.js:366
+#: desktop/src/view/sell/pos/edit/Amount.js:91
+#: desktop/src/view/sell/pos/edit/PayCard.js:93
+#: desktop/src/view/sell/pos/edit/PayCash.js:245
+#: desktop/src/view/sell/pos_sell/edit/Amount.js:91
+#: desktop/src/view/sell/pos_sell/edit/PayCard.js:93
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:212
+#: desktop/src/view/sell/pos_sell/edit/SellConfig.js:54
+#: desktop/src/view/sell/retail/RetailCtrl.js:227
+#: desktop/src/view/sell/retail/edit/Amount.js:180
+#: desktop/src/view/sell/retail/edit/PayCard.js:124
+#: desktop/src/view/sell/retail/edit/PayCash.js:184
+#: desktop/src/view/sell/retail/edit/Receipt.js:24
+#: desktop/src/view/supplier/edit/EditSupplier.js:115
+#: desktop/src/view/supplier/edit/NewSupplier.js:121
+#: desktop/src/view/worker/edit/NewWorker.js:126
+#: shared/src/base/GridRowedit.js:12 shared/src/common/CatalogField.js:110
+#: shared/src/common/DeleteConfirm.js:21 shared/src/common/GroupField.js:60
+#: shared/src/common/PlaceField.js:61
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:79
+msgid "Function name (ID)"
+msgstr "Nombre de la función (ID)"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:83
+#: desktop/src/view/admin/groles/GrolesGrid.js:95
+#: desktop/src/view/admin/group/SignRoles.js:69
+msgid "Level"
+msgstr "Nivel"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:87
+#: desktop/src/view/admin/groles/GrolesGrid.js:193
+#: desktop/src/view/admin/group/SignRoles.js:73
+#: desktop/src/view/produce/MainInfo.js:152
+#: shared/src/common/ProduceSelect.js:81
+msgid "Description"
+msgstr "Descripción"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:91
+#: desktop/src/view/admin/group/GroupsGrid.js:27
+#: desktop/src/view/admin/group/SignRoles.js:77
+msgid "Request"
+msgstr "Solicitud"
+
+#: desktop/src/view/admin/common/GrolesSelect.js:99
+#: desktop/src/view/admin/country/List.js:57
+#: desktop/src/view/admin/groles/GrolesGrid.js:117
+#: desktop/src/view/admin/group/GroupsGrid.js:39
+#: desktop/src/view/admin/group/SignRoles.js:85
+#: desktop/src/view/employee/Employee.js:161
+#: desktop/src/view/employee/edit/EditCard.js:61
+#: desktop/src/view/produce/PlacesPrice.js:36
+#: desktop/src/view/sell/pos_list/Grid.js:139
+#: desktop/src/view/sell/revert_list/Grid.js:213
+#: desktop/src/view/subscription/SubscriptionCtrl.js:111
+#: desktop/src/view/worker/Grid.js:65
+#: desktop/src/view/worker/edit/NewWorker.js:113
+msgid "Active"
+msgstr "Activo"
+
+#: desktop/src/view/admin/country/CountryRightPanel.js:21
+msgid "Select country from the list"
+msgstr "Seleccione el país de la lista"
+
+#: desktop/src/view/admin/country/CountryRightPanel.js:41
+#: desktop/src/view/admin/customer/NewForm.js:20
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:24
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:36
+#: desktop/src/view/catalog/edit/NewProduce.js:27
+#: desktop/src/view/catalog/edit/NewService.js:20
+#: desktop/src/view/employee/Employee.js:40
+#: desktop/src/view/expense/RightCnt.js:14
+#: desktop/src/view/movement/add/Add.js:42
+#: desktop/src/view/movement/card/Invoice.js:18
+#: desktop/src/view/point/Point.js:38 desktop/src/view/produce/Card.js:39
+#: desktop/src/view/purchase/card/Invoice.js:18
+#: desktop/src/view/purchase/list/InvoiceInfo.js:12
+#: desktop/src/view/sell/bills/Invoice.js:60
+#: desktop/src/view/sell/card/Invoice.js:18
+#: desktop/src/view/supplier/SupplierRight.js:43 shared/src/base/Dialog.js:18
+msgid "Back"
+msgstr "Volver"
+
+#: desktop/src/view/admin/country/CountryRightPanel.js:48
+#: desktop/src/view/admin/customer/NewForm.js:14
+#: desktop/src/view/catalog/edit/Catalog.js:38
+#: desktop/src/view/catalog/edit/NewProduce.js:32
+#: desktop/src/view/catalog/edit/NewService.js:25
+#: desktop/src/view/company/edit/CompanyEdit.js:148
+#: desktop/src/view/company/edit/LogoEdit.js:89
+#: desktop/src/view/employee/edit/EditCard.js:81
+#: desktop/src/view/inventory/edit/QuantityEdit.js:114
+#: desktop/src/view/myprofile/edit/ChangePassword.js:95
+#: desktop/src/view/myprofile/edit/EditUser.js:53
+#: desktop/src/view/place/edit/NewPoint.js:105
+#: desktop/src/view/point/edit/EditCheckout.js:38
+#: desktop/src/view/point/edit/EditPoint.js:95
+#: desktop/src/view/produce/edit/MainPrice.js:25
+#: desktop/src/view/produce/edit/PriceEdit.js:22
+#: desktop/src/view/produce/edit/Produce.js:29
+#: desktop/src/view/purchase/buy/Invoice.js:36
+#: desktop/src/view/purchase/card/edit/PaidForm.js:60
+#: desktop/src/view/supplier/edit/EditSupplier.js:123
+#: desktop/src/view/supplier/edit/NewSupplier.js:129
+#: desktop/src/view/worker/edit/NewWorker.js:132 shared/src/base/Dialog.js:29
+#: shared/src/common/GroupField.js:65 shared/src/common/PlaceField.js:66
+msgid "Save"
+msgstr "Guardar"
+
+#: desktop/src/view/admin/country/List.js:28
+msgid "Countries management"
+msgstr "Gestionar países"
+
+#: desktop/src/view/admin/country/List.js:33
+msgid "New country"
+msgstr "Nuevo país"
+
+#: desktop/src/view/admin/country/List.js:42
+msgid "id"
+msgstr "id"
+
+#: desktop/src/view/admin/country/List.js:47
+msgid "Country_en"
+msgstr "País_es"
+
+#: desktop/src/view/admin/country/List.js:52
+msgid "Country_orig"
+msgstr "País_origen"
+
+#: desktop/src/view/admin/country/Panel.js:7
+msgid "Countries JSON"
+msgstr "Países JSON"
+
+#: desktop/src/view/admin/customer/CustomerCtrl.js:39
+msgid "Store"
+msgstr "Tienda"
+
+#: desktop/src/view/admin/customer/CustomerCtrl.js:43
+#: desktop/src/view/movement/add/edit/Receipt.js:201
+#: desktop/src/view/purchase/buy/Invoice.js:265
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:227
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:227
+msgid "Products"
+msgstr "Productos"
+
+#: desktop/src/view/admin/customer/CustomerCtrl.js:44
+msgid "Services"
+msgstr "Servicios"
+
+#: desktop/src/view/admin/customer/CustomerCtrl.js:47
+msgid "Retail"
+msgstr "Menudeo"
+
+#: desktop/src/view/admin/customer/NewForm.js:10
+msgid "New organization"
+msgstr "Nueva organización"
+
+#: desktop/src/view/admin/customer/NewForm.js:32
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:43
+msgid "Main information"
+msgstr "Información principal"
+
+#: desktop/src/view/admin/customer/NewForm.js:36
+msgid "Organization title"
+msgstr "Título de la organización"
+
+#: desktop/src/view/admin/customer/NewForm.js:52
+msgid "Select the country"
+msgstr "Seleccione el país"
+
+#: desktop/src/view/admin/customer/NewForm.js:65
+#: desktop/src/view/admin/customer/cmp/List.js:83
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:62
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:116
+#: desktop/src/view/admin/customer/cmp/TabUsers.js:22
+#: desktop/src/view/company/CompanyInfo.js:123
+#: desktop/src/view/company/edit/CompanyEdit.js:90
+#: desktop/src/view/dashboard/DashboardCtrl.js:92
+#: desktop/src/view/dashboard/StatMain.js:81
+#: desktop/src/view/employee/Employee.js:143
+#: desktop/src/view/employee/edit/EditCard.js:54
+#: desktop/src/view/movement/add/Add.js:136
+#: desktop/src/view/movement/add/edit/Receipt.js:88
+#: desktop/src/view/myprofile/Myprofile.js:131
+#: desktop/src/view/myprofile/edit/EditUser.js:34
+#: desktop/src/view/place/Grid.js:63 desktop/src/view/place/edit/NewPoint.js:37
+#: desktop/src/view/point/Point.js:106
+#: desktop/src/view/point/edit/EditPoint.js:34
+#: desktop/src/view/supplier/SupplierRight.js:125
+#: desktop/src/view/supplier/edit/EditSupplier.js:104
+#: desktop/src/view/supplier/edit/NewSupplier.js:110
+#: desktop/src/view/worker/Grid.js:60
+#: desktop/src/view/worker/edit/NewWorker.js:65
+msgid "Phone"
+msgstr "Teléfono"
+
+#: desktop/src/view/admin/customer/NewForm.js:77
+msgid "The phone number should be like this: +1234567890"
+msgstr "El número de teléfono debe ser el siguiente: +1234567890"
+
+#: desktop/src/view/admin/customer/NewForm.js:82
+#: desktop/src/view/admin/customer/cmp/List.js:87
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:67
+#: desktop/src/view/catalog/edit/NewProduce.js:115
+#: desktop/src/view/catalog/edit/NewService.js:56
+#: desktop/src/view/company/CompanyInfo.js:177
+msgid "Currency"
+msgstr "Moneda"
+
+#: desktop/src/view/admin/customer/NewForm.js:97
+#: desktop/src/view/place/edit/NewPoint.js:24
+#: desktop/src/view/point/edit/EditPoint.js:20
+msgid "Name of point"
+msgstr "Nombre del punto"
+
+#: desktop/src/view/admin/customer/NewForm.js:106
+msgid "Taxes of the selected country"
+msgstr "Impuestos del país seleccionado"
+
+#: desktop/src/view/admin/customer/NewForm.js:127
+msgid "Settings of the catalogs and sales"
+msgstr "Configuración de los catálogos y ventas"
+
+#: desktop/src/view/admin/customer/NewForm.js:135
+msgid "Name of the products catalog"
+msgstr "Nombre del catálogo de productos"
+
+#: desktop/src/view/admin/customer/NewForm.js:144
+msgid "Name of the service catalog"
+msgstr "Nombre del catálogo de servicios"
+
+#: desktop/src/view/admin/customer/NewForm.js:159
+msgid "Price name"
+msgstr "Nombre del precio"
+
+#: desktop/src/view/admin/customer/NewForm.js:168
+msgid "Default margin in %"
+msgstr "Margen por defecto en %"
+
+#: desktop/src/view/admin/customer/NewForm.js:186
+msgid "Settings of the administrator account"
+msgstr "Configuración de la cuenta de administrador"
+
+#: desktop/src/view/admin/customer/NewForm.js:194
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:101
+#: desktop/src/view/admin/customer/cmp/TabUsers.js:18
+#: desktop/src/view/employee/Employee.js:89
+#: desktop/src/view/employee/edit/EditCard.js:35
+#: desktop/src/view/myprofile/Myprofile.js:97
+#: desktop/src/view/place/edit/CheckoutRow.js:14
+#: desktop/src/view/supplier/SupplierLeft.js:58
+#: desktop/src/view/supplier/SupplierRight.js:71
+#: desktop/src/view/supplier/edit/EditSupplier.js:87
+#: desktop/src/view/supplier/edit/NewSupplier.js:93
+#: desktop/src/view/worker/Grid.js:55
+#: desktop/src/view/worker/edit/NewWorker.js:51
+msgid "Name"
+msgstr "Nombre"
+
+#: desktop/src/view/admin/customer/NewForm.js:203
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:106
+#: desktop/src/view/worker/edit/NewWorker.js:58
+msgid "Last name"
+msgstr "Apellido"
+
+#: desktop/src/view/admin/customer/NewForm.js:218
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:111
+#: desktop/src/view/admin/customer/cmp/TabUsers.js:14
+#: desktop/src/view/company/CompanyInfo.js:144
+#: desktop/src/view/company/edit/CompanyEdit.js:79
+#: desktop/src/view/employee/edit/EditCard.js:19
+#: desktop/src/view/supplier/edit/EditSupplier.js:32
+#: desktop/src/view/supplier/edit/NewSupplier.js:38
+#: desktop/src/view/worker/Grid.js:35 desktop/src/view/worker/Grid.js:45
+#: desktop/src/view/worker/edit/NewWorker.js:30
+msgid "E-mail"
+msgstr "E-mail"
+
+#: desktop/src/view/admin/customer/NewForm.js:228
+#: desktop/src/view/worker/edit/NewWorker.js:41
+msgid "Password"
+msgstr "Contraseña"
+
+#: desktop/src/view/admin/customer/cmp/List.js:32
+msgid "Customers management"
+msgstr "Gestionar de clientes"
+
+#: desktop/src/view/admin/customer/cmp/List.js:35
+#: desktop/src/view/expense/edit/NewExpense.js:54
+#: desktop/src/view/movement/add/edit/Amount.js:127
+#: desktop/src/view/purchase/buy/edit/Amount.js:51
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:107
+#: desktop/src/view/sell/pos/edit/Amount.js:99
+#: desktop/src/view/sell/pos_sell/edit/Amount.js:98
+#: desktop/src/view/sell/retail/edit/Amount.js:187
+msgid "Add"
+msgstr "Añadir"
+
+#: desktop/src/view/admin/customer/cmp/List.js:52
+msgid "Filter by country"
+msgstr "Filtrar por país"
+
+#: desktop/src/view/admin/customer/cmp/List.js:66
+msgid "Search by title"
+msgstr "Buscar por título"
+
+#: desktop/src/view/admin/customer/cmp/List.js:75
+#: desktop/src/view/admin/customer/cmp/Tabs.js:8
+#: desktop/src/view/home/Home.js:26
+msgid "Organization"
+msgstr "Organización"
+
+#: desktop/src/view/admin/customer/cmp/List.js:79
+#: desktop/src/view/dashboard/StatMain.js:92
+#: desktop/src/view/employee/Employee.js:125
+#: desktop/src/view/subscription/Form0.js:164
+#: desktop/src/view/supplier/SupplierRight.js:143
+msgid "Email"
+msgstr "Email"
+
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:46
+#: desktop/src/view/admin/customer/cmp/TabPlaces.js:14
+#: desktop/src/view/dashboard/StatMain.js:48
+#: desktop/src/view/expense/LeftCnt.js:46
+#: desktop/src/view/expense/RightCnt.js:35
+#: desktop/src/view/movement/card/Grid.js:11
+#: desktop/src/view/purchase/card/Grid.js:11
+#: desktop/src/view/purchase/list/ProdItems.js:10
+#: desktop/src/view/sell/bills/Invoice.js:11
+#: desktop/src/view/sell/card/Grid.js:14
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:11
+#: desktop/src/view/supplier/edit/EditSupplier.js:18
+#: desktop/src/view/supplier/edit/NewSupplier.js:24
+#: shared/src/common/ProduceSelect.js:50
+msgid "Title"
+msgstr "Título"
+
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:51
+msgid "Creation date"
+msgstr "Fecha de creacion"
+
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:57
+#: desktop/src/view/company/CompanyInfo.js:55
+#: desktop/src/view/company/edit/CompanyEdit.js:57
+#: desktop/src/view/supplier/SupplierRight.js:89
+msgid "Country"
+msgstr "País"
+
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:73
+#: desktop/src/view/purchase/list/Grid.js:151
+#: desktop/src/view/sell/retail/edit/Receipt.js:275
+msgid "Taxes"
+msgstr "Impuestos"
+
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:85
+msgid "Local"
+msgstr "Local"
+
+#: desktop/src/view/admin/customer/cmp/TabOrg.js:98
+msgid "Administrator data"
+msgstr "Datos del administrador"
+
+#: desktop/src/view/admin/customer/cmp/TabUsers.js:26
+msgid "Enable"
+msgstr "Habilitar"
+
+#: desktop/src/view/admin/customer/cmp/Tabs.js:11
+#: shared/src/common/MenuCompany.js:82
+msgid "Users"
+msgstr "Usuarios"
+
+#: desktop/src/view/admin/customer/cmp/Tabs.js:14
+msgid "Places of business"
+msgstr "Lugares de trabajo"
+
+#: desktop/src/view/admin/customer/cmp/View.js:33
+msgid "Select organization from the list or add new one."
+msgstr "Seleccione una organización de la lista o añada una nueva."
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:14
+msgid "Roles management"
+msgstr "Gestionar de funciones"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:22
+#: desktop/src/view/admin/groles/GrolesGrid.js:80
+msgid "Scheme"
+msgstr "Esquema"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:23
+msgid "Any scheme"
+msgstr "Cualquier esquema"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:40
+msgid "Is cluster"
+msgstr "Es el clúster"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:41
+msgid "Any"
+msgstr "Ninguna"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:49
+#: desktop/src/view/inventory/edit/QuantityCheck.js:104
+#: desktop/src/view/purchase/buy/Invoice.js:153
+#: desktop/src/view/sell/pos_list/Grid.js:66
+#: desktop/src/view/sell/revert_list/Grid.js:58
+#: desktop/src/view/sell/revert_list/RevertModel.js:13
+#: desktop/src/view/supplier/edit/EditSupplier.js:43
+#: desktop/src/view/supplier/edit/NewSupplier.js:49 shared/src/base/Msg.js:10
+msgid "Yes"
+msgstr "Sí"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:52
+#: desktop/src/view/inventory/edit/QuantityCheck.js:96
+#: desktop/src/view/movement/add/edit/TrashConfirm.js:12
+#: desktop/src/view/movement/edit/ReceiveConfirm.js:12
+#: desktop/src/view/movement/edit/SentConfirm.js:12
+#: desktop/src/view/sell/pos/edit/TrashConfirm.js:12
+#: desktop/src/view/sell/pos_sell/edit/TrashConfirm.js:12
+#: desktop/src/view/sell/revert_list/RevertModel.js:12 shared/src/base/Msg.js:7
+msgid "No"
+msgstr "No"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:59
+msgid "Add role"
+msgstr "Añadir rol"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:70
+msgid "Update on server"
+msgstr "Actualización en el servidor"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:88
+#: desktop/src/view/admin/group/SignRoles.js:64
+msgid "Function name"
+msgstr "Nombre de la función"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:104
+msgid "Allow"
+msgstr "Permitir"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:130
+msgid "Edit data"
+msgstr "Editar los datos"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:143
+msgid "Is Cluster"
+msgstr "Es Cluster"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:165
+msgid "Roles in groups"
+msgstr "Roles en los grupos"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:174
+#: desktop/src/view/company/Company.js:27
+#: desktop/src/view/employee/Employee.js:45
+#: desktop/src/view/myprofile/Myprofile.js:31
+#: desktop/src/view/point/CheckoutItem.js:16 desktop/src/view/point/Point.js:43
+#: desktop/src/view/produce/MainInfo.js:23
+#: desktop/src/view/produce/PriceContainer.js:63
+#: desktop/src/view/purchase/buy/Invoice.js:327
+#: desktop/src/view/supplier/SupplierRight.js:55
+#: shared/src/common/CatalogField.js:11
+msgid "Edit"
+msgstr "Editar"
+
+#: desktop/src/view/admin/groles/GrolesGrid.js:184
+msgid "Delete role"
+msgstr "Borrar el rol"
+
+#: desktop/src/view/admin/groles/Groups.js:8
+msgid "Assigned in groups"
+msgstr "Asignados en grupos"
+
+#: desktop/src/view/admin/group/Group.js:19
+#: desktop/src/view/admin/group/Group.js:37
+msgid "Groups management"
+msgstr "Gestionar de grupos"
+
+#: desktop/src/view/admin/group/Group.js:42
+msgid "Add group"
+msgstr "Añadir grupo"
+
+#: desktop/src/view/admin/group/Group.js:77
+msgid "To see the functions list select the group"
+msgstr "Para ver la lista de funciones seleccione el grupo"
+
+#: desktop/src/view/admin/group/GroupCtrl.js:120
+#: desktop/src/view/main/MainCtrl.js:88
+msgid "Error!"
+msgstr "¡Error!"
+
+#: desktop/src/view/admin/group/GroupCtrl.js:120
+#: desktop/src/view/place/Grid.js:5 desktop/src/view/sell/bills/Grid.js:5
+msgid "Data was not found!"
+msgstr "¡No se han encontrado los datos!"
+
+#: desktop/src/view/admin/group/GroupsGrid.js:20
+msgid "Name of group"
+msgstr "Nombre del grupo"
+
+#: desktop/src/view/admin/group/SignRoles.js:33
+msgid "Functions assigned to the group"
+msgstr "Funciones asignadas al grupo"
+
+#: desktop/src/view/admin/group/SignRoles.js:36
+msgid "Add functions"
+msgstr "Añadir funciones"
+
+#: desktop/src/view/admin/group/SignRoles.js:48
+msgid "Delete selected"
+msgstr "Eliminar seleccionado"
+
+#: desktop/src/view/catalog/CatalogCtrl.js:83
+msgid "Section editing"
+msgstr "Edición de la sección"
+
+#: desktop/src/view/catalog/CatalogCtrl.js:105
+#: desktop/src/view/catalog/CatalogModel.js:8
+msgid "Section adding"
+msgstr "Sección que añade"
+
+#: desktop/src/view/catalog/CatalogCtrl.js:213
+#: desktop/src/view/purchase/buy/BuyCtrl.js:238
+msgid "Successfully"
+msgstr "Exitosamente"
+
+#: desktop/src/view/catalog/CatalogCtrl.js:217
+msgid "To list"
+msgstr "Para listar"
+
+#: desktop/src/view/catalog/CatalogCtrl.js:227
+msgid "To card"
+msgstr "A la tarjeta"
+
+#: desktop/src/view/catalog/ProdGrid.js:22
+msgid "Product"
+msgstr "Producto"
+
+#: desktop/src/view/catalog/ProdGrid.js:30
+msgid "Service"
+msgstr "Servicio"
+
+#: desktop/src/view/catalog/ProdGrid.js:41
+msgid "Search by name and barcode (at least 3 characters)"
+msgstr "Búsqueda por nombre y código de barras (al menos 3 caracteres)"
+
+#: desktop/src/view/catalog/ProdGrid.js:51
+#: desktop/src/view/catalog/edit/NewProduce.js:52
+#: desktop/src/view/inventory/InventoryProduce.js:59
+#: desktop/src/view/produce/edit/Produce.js:37
+#: desktop/src/view/purchase/buy/ProduceGrid.js:81
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:16
+#: shared/src/util/receipt/PrintInvoice.js:112
+#: shared/src/util/receipt/PrintInvoice.js:125
+msgid "Product name"
+msgstr "Nombre del producto"
+
+#: desktop/src/view/catalog/ProdGrid.js:56
+#: desktop/src/view/catalog/edit/NewProduce.js:92
+#: desktop/src/view/catalog/edit/NewService.js:49
+#: desktop/src/view/inventory/InventoryProduce.js:111
+#: desktop/src/view/movement/add/AddPanel.js:180
+#: desktop/src/view/movement/add/edit/ReceiptGrid.js:30
+#: desktop/src/view/movement/card/Grid.js:29
+#: desktop/src/view/price_monitor/Grid.js:74
+#: desktop/src/view/produce/PlacesPrice.js:22
+#: desktop/src/view/sell/bills/Invoice.js:30
+#: desktop/src/view/sell/card/Grid.js:33
+#: desktop/src/view/sell/pos/PosModel.js:110
+#: desktop/src/view/sell/pos/PosPanel.js:181
+#: desktop/src/view/sell/pos/edit/Amount.js:63
+#: desktop/src/view/sell/pos/edit/PosReceiptGrid.js:30
+#: desktop/src/view/sell/pos_sell/PosModel.js:107
+#: desktop/src/view/sell/pos_sell/PosPanel.js:161
+#: desktop/src/view/sell/pos_sell/edit/Amount.js:63
+#: desktop/src/view/sell/pos_sell/edit/PosReceiptGrid.js:30
+#: desktop/src/view/sell/retail/ProduceGrid.js:88
+#: desktop/src/view/sell/retail/RetailModel.js:96
+#: desktop/src/view/sell/retail/RetailRightPanel.js:188
+#: desktop/src/view/sell/retail/RetailRightPanel.js:192
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:28
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:34
+#: desktop/src/view/subscription/Form0.js:43
+#: shared/src/common/ProduceSelect.js:65
+#: shared/src/util/receipt/PrintInvoice.js:114
+#: shared/src/util/receipt/PrintInvoice.js:127
+msgid "Price"
+msgstr "Precio"
+
+#: desktop/src/view/catalog/ProdGrid.js:59
+#: desktop/src/view/price_monitor/Grid.js:77
+#: desktop/src/view/produce/PlacesPrice.js:25
+#: desktop/src/view/produce/PriceContainer.js:26
+#: desktop/src/view/produce/edit/MainPrice.js:50
+msgid "Basic price"
+msgstr "Precio básico"
+
+#: desktop/src/view/catalog/ProdGrid.js:60
+#: desktop/src/view/movement/card/Invoice.js:217
+#: desktop/src/view/price_monitor/Grid.js:78
+#: desktop/src/view/produce/PlacesPrice.js:26
+#: desktop/src/view/produce/PriceContainer.js:50
+#: desktop/src/view/produce/edit/MainPrice.js:63
+#: desktop/src/view/produce/edit/PriceEdit.js:73
+#: desktop/src/view/purchase/list/Grid.js:142
+#: desktop/src/view/sell/retail/edit/PayCard.js:16
+#: desktop/src/view/sell/retail/edit/PayCash.js:64
+#: desktop/src/view/subscription/Form0.js:94
+#: shared/src/util/receipt/PrintInvoice.js:115
+#: shared/src/util/receipt/PrintInvoice.js:128
+msgid "Total price"
+msgstr "Precio total"
+
+#: desktop/src/view/catalog/ProdGrid.js:63
+#: desktop/src/view/price_monitor/Grid.js:82
+#: desktop/src/view/produce/PlacesPrice.js:29
+#: desktop/src/view/produce/PriceContainer.js:38
+#: desktop/src/view/produce/edit/MainPrice.js:104
+#: desktop/src/view/produce/edit/PriceEdit.js:117
+#: desktop/src/view/sell/bills/Invoice.js:230
+#: desktop/src/view/sell/card/Invoice.js:207
+#: desktop/src/view/sell/retail/ProduceGrid.js:95
+#: desktop/src/view/sell/retail/RetailRightPanel.js:182
+#: desktop/src/view/sell/retail/edit/Receipt.js:229
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:33
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:56
+msgid "Discount"
+msgstr "Descuento"
+
+#: desktop/src/view/catalog/ProdGrid.js:70
+#: desktop/src/view/movement/add/AddPanel.js:173
+#: desktop/src/view/price_monitor/Grid.js:90
+#: desktop/src/view/sell/bills/Grid.js:82
+#: desktop/src/view/sell/bills/Invoice.js:214
+#: desktop/src/view/sell/pos/PosPanel.js:174
+#: desktop/src/view/sell/pos_sell/PosPanel.js:154
+#: desktop/src/view/sell/retail/RetailRightPanel.js:191
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:32
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:55
+msgid "Tax"
+msgstr "Impuestos"
+
+#: desktop/src/view/catalog/ProdGrid.js:77
+#: desktop/src/view/catalog/edit/NewProduce.js:64
+#: desktop/src/view/inventory/edit/QuantityCheck.js:45
+#: desktop/src/view/produce/MainInfo.js:64
+#: desktop/src/view/produce/edit/Produce.js:65
+#: desktop/src/view/purchase/buy/ProduceGrid.js:98
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:28
+#: desktop/src/view/sell/retail/RetailRightPanel.js:170
+#: shared/src/common/ProduceSelect.js:73
+msgid "Barcode"
+msgstr "Código de barras"
+
+#: desktop/src/view/catalog/Tree.js:31
+#: desktop/src/view/sell/retail/ProduceGrid.js:63
+#: shared/src/common/ProduceSelect.js:17
+msgid "Products and services"
+msgstr "Productos y servicios"
+
+#: desktop/src/view/catalog/Tree.js:36 desktop/src/view/inventory/Tree.js:35
+msgid "Close all sections"
+msgstr "Cerrar todas las secciones"
+
+#: desktop/src/view/catalog/Tree.js:41 desktop/src/view/inventory/Tree.js:40
+msgid "Open all sections"
+msgstr "Abrir todas las secciones"
+
+#: desktop/src/view/catalog/Tree.js:50 desktop/src/view/inventory/Tree.js:50
+msgid "Category"
+msgstr "Categoría"
+
+#: desktop/src/view/catalog/Tree.js:63
+msgid "Edit section"
+msgstr "Editar sección"
+
+#: desktop/src/view/catalog/Tree.js:73
+msgid "Add child section"
+msgstr "Añadir sección infantil"
+
+#: desktop/src/view/catalog/edit/Catalog.js:16
+msgid "Catalog name"
+msgstr "Nombre del catálogo"
+
+#: desktop/src/view/catalog/edit/NewProduce.js:25
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:6
+msgid "New product"
+msgstr "Nuevo producto"
+
+#: desktop/src/view/catalog/edit/NewProduce.js:73
+#: desktop/src/view/catalog/edit/NewService.js:71
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:37
+msgid "tax VAT"
+msgstr "impuesto IVA"
+
+#: desktop/src/view/catalog/edit/NewProduce.js:103
+#: desktop/src/view/produce/MainInfo.js:90
+#: desktop/src/view/produce/edit/Produce.js:77
+msgid "Unit type per"
+msgstr "Tipo de unidad por"
+
+#: desktop/src/view/catalog/edit/NewProduce.js:124
+#: desktop/src/view/produce/edit/Produce.js:107
+msgid "Full description"
+msgstr "Descripción completa"
+
+#: desktop/src/view/catalog/edit/NewService.js:18
+msgid "New service"
+msgstr "Nuevo servicio"
+
+#: desktop/src/view/catalog/edit/NewService.js:36
+msgid "Service name"
+msgstr "Nombre del servicio"
+
+#: desktop/src/view/catalog/edit/NewService.js:85
+msgid "Full dеscription"
+msgstr "Dеscripción completa"
+
+#: desktop/src/view/company/Company.js:25
+#: desktop/src/view/dashboard/StatMain.js:44
+msgid "Company information"
+msgstr "Información de la empresa"
+
+#: desktop/src/view/company/CompanyConfig.js:14
+msgid "Company configuration"
+msgstr "Configuración de la empresa"
+
+#: desktop/src/view/company/CompanyConfig.js:24
+msgid "Enable VAT taxes"
+msgstr "Activar los impuestos del IVA"
+
+#: desktop/src/view/company/CompanyConfig.js:25
+msgid "Used when printing invoices and calculate taxes"
+msgstr "Se utiliza cuando se imprimen las facturas y se calculan los impuestos"
+
+#: desktop/src/view/company/CompanyConfig.js:34
+msgid "Enable strict POS mode"
+msgstr "Activar el modo POS estricto"
+
+#: desktop/src/view/company/CompanyConfig.js:35
+msgid "Allow retail selling only through pos and virtual checkouts"
+msgstr "Permitir la venta al por menor sólo a través de cajas pos y virtuales"
+
+#: desktop/src/view/company/CompanyInfo.js:39
+#: desktop/src/view/company/edit/CompanyEdit.js:28
+#: desktop/src/view/home/Home.js:63 desktop/src/view/home/Home.js:64
+msgid "Company name"
+msgstr "Nombre de la empresa"
+
+#: desktop/src/view/company/CompanyInfo.js:72
+#: desktop/src/view/company/edit/CompanyEdit.js:111
+#: desktop/src/view/point/Point.js:141
+#: desktop/src/view/point/edit/EditPoint.js:59
+#: desktop/src/view/supplier/edit/EditSupplier.js:58
+#: desktop/src/view/supplier/edit/NewSupplier.js:64
+msgid "Postcode"
+msgstr "Código postal"
+
+#: desktop/src/view/company/CompanyInfo.js:89
+#: desktop/src/view/company/edit/CompanyEdit.js:102
+#: desktop/src/view/movement/add/Add.js:102
+#: desktop/src/view/movement/add/edit/Receipt.js:54
+#: desktop/src/view/point/Point.js:124
+#: desktop/src/view/point/edit/EditPoint.js:50
+#: desktop/src/view/supplier/edit/EditSupplier.js:67
+#: desktop/src/view/supplier/edit/NewSupplier.js:73
+msgid "City"
+msgstr "Ciudad"
+
+#: desktop/src/view/company/CompanyInfo.js:106
+#: desktop/src/view/company/edit/CompanyEdit.js:123
+#: desktop/src/view/dashboard/DashboardCtrl.js:103
+#: desktop/src/view/dashboard/StatMain.js:59
+#: desktop/src/view/movement/add/Add.js:119
+#: desktop/src/view/movement/add/edit/Receipt.js:71
+#: desktop/src/view/point/Point.js:158
+#: desktop/src/view/point/edit/EditPoint.js:68
+#: desktop/src/view/supplier/SupplierLeft.js:64
+#: desktop/src/view/supplier/SupplierRight.js:107
+#: desktop/src/view/supplier/edit/EditSupplier.js:77
+#: desktop/src/view/supplier/edit/NewSupplier.js:83
+msgid "Address"
+msgstr "Dirección"
+
+#: desktop/src/view/company/CompanyInfo.js:161
+#: desktop/src/view/company/CompanyModel.js:21
+msgid "Tax number"
+msgstr "Número de identificación fiscal"
+
+#: desktop/src/view/company/LogoView.js:29
+#: desktop/src/view/company/edit/LogoEdit.js:11
+msgid "Edit Logo"
+msgstr "Editar Logo"
+
+#: desktop/src/view/company/edit/CompanyEdit.js:7
+msgid "Edit company"
+msgstr "Editar empresa"
+
+#: desktop/src/view/company/edit/LogoEdit.js:26
+msgid "Preview Company Logo"
+msgstr "Vista previa del logotipo de la empresa"
+
+#: desktop/src/view/company/edit/LogoEdit.js:42
+msgid "Clear Logo"
+msgstr "Logo clara"
+
+#: desktop/src/view/company/edit/LogoEdit.js:54
+msgid ""
+"Drag and drop the image here. Supported formats: jpeg, png, bmp. Size up to "
+"2mb"
+msgstr ""
+"Arrastre y suelte la imagen aquí. Formatos admitidos: jpeg, png, bmp. Tamaño "
+"hasta 2mb"
+
+#: desktop/src/view/dashboard/Dashboard.js:19
+#: desktop/src/view/main/MainModel.js:22
+msgid "Dashboard"
+msgstr "Escritorio"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:114
+#: desktop/src/view/dashboard/StatMain.js:70
+msgid "Location"
+msgstr "Ubicación"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:130
+#: desktop/src/view/dashboard/StatMain.js:131
+msgid "Today"
+msgstr "Hoy"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:135
+#: desktop/src/view/dashboard/DashboardCtrl.js:188
+#: desktop/src/view/dashboard/DashboardCtrl.js:242
+#: desktop/src/view/dashboard/StatMain.js:135
+#: desktop/src/view/dashboard/StatMain.js:216
+#: desktop/src/view/dashboard/StatMain.js:297
+msgid "Sales amount"
+msgstr "Cantidad de ventas"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:146
+#: desktop/src/view/dashboard/DashboardCtrl.js:199
+#: desktop/src/view/dashboard/DashboardCtrl.js:253
+#: desktop/src/view/dashboard/StatMain.js:160
+#: desktop/src/view/dashboard/StatMain.js:241
+#: desktop/src/view/dashboard/StatMain.js:322
+msgid "Purchases amount"
+msgstr "Importe de las compras"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:157
+#: desktop/src/view/dashboard/DashboardCtrl.js:210
+#: desktop/src/view/dashboard/DashboardCtrl.js:264
+msgid "Movements sent"
+msgstr "Movimientos enviados"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:168
+#: desktop/src/view/dashboard/DashboardCtrl.js:221
+#: desktop/src/view/dashboard/DashboardCtrl.js:275
+msgid "Movements received"
+msgstr "Movimientos recibidos"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:184
+#: desktop/src/view/dashboard/StatMain.js:212
+msgid "This month"
+msgstr "Este mes"
+
+#: desktop/src/view/dashboard/DashboardCtrl.js:237
+#: desktop/src/view/dashboard/StatMain.js:293
+msgid "Previous month"
+msgstr "Mes anterior"
+
+#: desktop/src/view/dashboard/StatMain.js:103
+#: desktop/src/view/subscription/SubsData.js:91
+msgid "Number of POS"
+msgstr "Número de puntos de venta"
+
+#: desktop/src/view/dashboard/StatMain.js:114
+msgid "Number of users"
+msgstr "Número de usuarios"
+
+#: desktop/src/view/dashboard/StatMain.js:146
+#: desktop/src/view/dashboard/StatMain.js:227
+#: desktop/src/view/dashboard/StatMain.js:308
+msgid "Number of sales"
+msgstr "Número de ventas"
+
+#: desktop/src/view/dashboard/StatMain.js:171
+#: desktop/src/view/dashboard/StatMain.js:252
+#: desktop/src/view/dashboard/StatMain.js:333
+msgid "Number of purchases"
+msgstr "Número de compras"
+
+#: desktop/src/view/dashboard/StatMain.js:185
+#: desktop/src/view/dashboard/StatMain.js:266
+#: desktop/src/view/dashboard/StatMain.js:347
+msgid "Expenses amount"
+msgstr "Importe de los gastos"
+
+#: desktop/src/view/dashboard/StatMain.js:196
+#: desktop/src/view/dashboard/StatMain.js:277
+#: desktop/src/view/dashboard/StatMain.js:358
+msgid "Number of expenses"
+msgstr "Número de gastos"
+
+#: desktop/src/view/dashboard/StatPos.js:9
+msgid "POS statistics"
+msgstr "Estadísticas de los POS"
+
+#: desktop/src/view/employee/Employee.js:35
+msgid "User information"
+msgstr "Información para el usuario"
+
+#: desktop/src/view/employee/Employee.js:107
+#: desktop/src/view/employee/edit/EditCard.js:44
+#: desktop/src/view/myprofile/Myprofile.js:114
+#: desktop/src/view/myprofile/edit/EditUser.js:27
+#: desktop/src/view/supplier/edit/EditSupplier.js:95
+#: desktop/src/view/supplier/edit/NewSupplier.js:101
+msgid "Surname"
+msgstr "Apellido"
+
+#: desktop/src/view/employee/Employee.js:176
+msgid "Can work in application"
+msgstr "Puede trabajar en la aplicación"
+
+#: desktop/src/view/employee/GroupsGrid.js:8
+msgid "No user group assigned!"
+msgstr "¡No se ha asignado ningún grupo de usuarios!"
+
+#: desktop/src/view/employee/GroupsGrid.js:31
+msgid "Edit user groups"
+msgstr "Editar grupos de usuarios"
+
+#: desktop/src/view/employee/GroupsGrid.js:43
+#: desktop/src/view/main/MainModel.js:94 shared/src/common/GroupField.js:14
+msgid "Groups"
+msgstr "Grupos"
+
+#: desktop/src/view/employee/GroupsGrid.js:48
+#: desktop/src/view/employee/PlacesGrid.js:48
+msgid "Changed"
+msgstr "Cambiado"
+
+#: desktop/src/view/employee/PlacesGrid.js:8
+msgid "User is not assigned to the places of business!"
+msgstr "¡El usuario no está asignado a los lugares de trabajo!"
+
+#: desktop/src/view/employee/PlacesGrid.js:31
+msgid "Edit user points"
+msgstr "Editar los puntos del usuario"
+
+#: desktop/src/view/employee/PlacesGrid.js:43 desktop/src/view/place/Grid.js:15
+#: shared/src/common/MenuCompany.js:73
+msgid "Points of sale"
+msgstr "Puntos de venta"
+
+#: desktop/src/view/employee/edit/EditCard.js:8
+msgid "Edit employee"
+msgstr "Editar empleado"
+
+#: desktop/src/view/employee/edit/EditCard.js:62
+msgid "Yes! Can work in application"
+msgstr "¡Sí! Puede trabajar en la aplicación"
+
+#: desktop/src/view/expense/LeftCnt.js:24
+msgid "Expenses"
+msgstr "Gastos"
+
+#: desktop/src/view/expense/LeftCnt.js:29
+#: desktop/src/view/purchase/buy/ProduceGrid.js:35
+msgid "Add new"
+msgstr "Añadir nuevo"
+
+#: desktop/src/view/expense/LeftCnt.js:51
+#: desktop/src/view/expense/RightCnt.js:50
+#: desktop/src/view/movement/card/CardModel.js:34
+#: desktop/src/view/movement/list/Grid.js:137
+#: desktop/src/view/purchase/list/InvoiceInfo.js:82
+msgid "Created"
+msgstr "Creado"
+
+#: desktop/src/view/expense/LeftCnt.js:56
+#: desktop/src/view/expense/RightCnt.js:65
+#: desktop/src/view/expense/edit/NewExpense.js:32
+#: desktop/src/view/purchase/card/Grid.js:31
+#: desktop/src/view/purchase/list/ProdItems.js:30
+#: desktop/src/view/sell/bills/Grid.js:79
+#: desktop/src/view/sell/bills/Invoice.js:41
+#: desktop/src/view/sell/pos_list/Grid.js:111
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:51
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:57
+#: desktop/src/view/subscription/SubsData.js:400
+#: desktop/src/view/supplier/PurchaseList.js:21
+msgid "Amount"
+msgstr "Cantidad"
+
+#: desktop/src/view/expense/RightCnt.js:12
+msgid "Expense card"
+msgstr "Tarjeta de gastos"
+
+#: desktop/src/view/expense/edit/NewExpense.js:6
+msgid "New expense"
+msgstr "Nuevo gasto"
+
+#: desktop/src/view/expense/edit/NewExpense.js:15
+msgid "Expense name"
+msgstr "Nombre del gasto"
+
+#: desktop/src/view/expense/edit/NewExpense.js:21
+#: desktop/src/view/movement/card/Invoice.js:113
+#: desktop/src/view/purchase/buy/Invoice.js:117
+#: desktop/src/view/sell/bills/Grid.js:34
+#: desktop/src/view/sell/bills/Invoice.js:118
+#: desktop/src/view/sell/card/Invoice.js:93
+#: desktop/src/view/sell/pos_list/Grid.js:46
+#: desktop/src/view/sell/retail/edit/Receipt.js:62
+#: desktop/src/view/supplier/PurchaseList.js:16
+msgid "Date"
+msgstr "Fecha"
+
+#: desktop/src/view/home/Expenses.js:27 desktop/src/view/home/Purchases.js:27
+#: desktop/src/view/home/Sales.js:27 desktop/src/view/price_monitor/Grid.js:52
+msgid "Date from"
+msgstr "Fecha desde"
+
+#: desktop/src/view/home/Expenses.js:44 desktop/src/view/home/Purchases.js:44
+#: desktop/src/view/home/Sales.js:44
+msgid "Date to"
+msgstr "Fecha hasta"
+
+#: desktop/src/view/home/Expenses.js:65 desktop/src/view/home/Purchases.js:65
+#: desktop/src/view/home/Sales.js:65
+msgid "Period"
+msgstr "Periodo"
+
+#: desktop/src/view/home/Home.js:109 desktop/src/view/home/Home.js:110
+msgid "Company Points"
+msgstr "Puntos de la empresa"
+
+#: desktop/src/view/home/Home.js:155 desktop/src/view/home/Home.js:156
+msgid "Company Employee"
+msgstr "Empleado de la empresa"
+
+#: desktop/src/view/home/Home.js:201 desktop/src/view/home/Home.js:202
+msgid "Purchases from the period"
+msgstr "Compras del periodo"
+
+#: desktop/src/view/home/Home.js:247 desktop/src/view/home/Home.js:248
+msgid "Sales from the period"
+msgstr "Ventas del periodo"
+
+#: desktop/src/view/home/Home.js:293 desktop/src/view/home/Home.js:294
+msgid "Expenses from the period"
+msgstr "Gastos del período"
+
+#: desktop/src/view/home/Home.js:334
+msgid "Purchases for the period"
+msgstr "Compras del periodo"
+
+#: desktop/src/view/home/Home.js:350
+msgid "Sales for the period"
+msgstr "Ventas del periodo"
+
+#: desktop/src/view/home/Home.js:366
+msgid "Expenses for the period"
+msgstr "Gastos del período"
+
+#: desktop/src/view/inventory/InventoryProduce.js:26
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:37
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:37
+#: desktop/src/view/movement/list/Grid.js:42 desktop/src/view/place/Grid.js:56
+#: desktop/src/view/point/Point.js:88 desktop/src/view/price_monitor/Grid.js:39
+#: desktop/src/view/purchase/buy/Invoice.js:76
+#: desktop/src/view/purchase/card/Invoice.js:125
+#: desktop/src/view/purchase/list/Grid.js:38
+#: desktop/src/view/purchase/list/InvoiceInfo.js:112
+#: desktop/src/view/sell/bills/Grid.js:55
+#: desktop/src/view/sell/bills/Invoice.js:148
+#: desktop/src/view/sell/card/Invoice.js:123
+#: desktop/src/view/sell/pos/edit/SellConfig.js:40
+#: desktop/src/view/sell/pos_list/Grid.js:33
+#: desktop/src/view/sell/pos_list/Grid.js:75
+#: desktop/src/view/sell/pos_sell/edit/SellConfig.js:34
+#: desktop/src/view/sell/retail/edit/Receipt.js:98
+#: desktop/src/view/sell/revert_list/Grid.js:39
+msgid "Point of sale"
+msgstr "Punto de venta"
+
+#: desktop/src/view/inventory/InventoryProduce.js:38
+msgid "Only not inventory"
+msgstr "Sólo que no hay inventario"
+
+#: desktop/src/view/inventory/InventoryProduce.js:39
+#: desktop/src/view/sell/retail/ProduceGrid.js:20
+msgid "Switch on"
+msgstr "Encender"
+
+#: desktop/src/view/inventory/InventoryProduce.js:47
+#: desktop/src/view/sell/retail/ProduceGrid.js:27
+msgid "By name or barcode"
+msgstr "Por nombre o código de barras"
+
+#: desktop/src/view/inventory/InventoryProduce.js:49
+#: desktop/src/view/sell/retail/ProduceGrid.js:29
+msgid "By name and barcode (at least 3 characters)"
+msgstr "Búsqueda por nombre y código de barras (al menos 3 caracteres)"
+
+#: desktop/src/view/inventory/InventoryProduce.js:67
+#: desktop/src/view/inventory/edit/QuantityCheck.js:69
+#: desktop/src/view/movement/add/AddPanel.js:39
+#: desktop/src/view/movement/add/AddPanel.js:166
+#: desktop/src/view/movement/add/edit/Amount.js:10
+#: desktop/src/view/movement/add/edit/Amount.js:102
+#: desktop/src/view/movement/add/edit/Receipt.js:209
+#: desktop/src/view/movement/card/Grid.js:20
+#: desktop/src/view/purchase/buy/Invoice.js:296
+#: desktop/src/view/purchase/buy/edit/Amount.js:24
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:63
+#: desktop/src/view/purchase/card/Invoice.js:231
+#: desktop/src/view/purchase/list/InvoiceInfo.js:219
+#: desktop/src/view/sell/bills/Invoice.js:21
+#: desktop/src/view/sell/bills/Invoice.js:198
+#: desktop/src/view/sell/card/Grid.js:24
+#: desktop/src/view/sell/card/Invoice.js:175
+#: desktop/src/view/sell/pos/PosPanel.js:40
+#: desktop/src/view/sell/pos/PosPanel.js:167
+#: desktop/src/view/sell/pos/edit/Amount.js:10
+#: desktop/src/view/sell/pos/edit/Amount.js:73
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:245
+#: desktop/src/view/sell/pos_sell/PosPanel.js:38
+#: desktop/src/view/sell/pos_sell/PosPanel.js:147
+#: desktop/src/view/sell/pos_sell/edit/Amount.js:73
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:245
+#: desktop/src/view/sell/retail/ProduceGrid.js:80
+#: desktop/src/view/sell/retail/RetailRightPanel.js:39
+#: desktop/src/view/sell/retail/RetailRightPanel.js:176
+#: desktop/src/view/sell/retail/edit/Amount.js:6
+#: desktop/src/view/sell/retail/edit/Amount.js:162
+#: desktop/src/view/sell/retail/edit/Receipt.js:210
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:45
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: desktop/src/view/inventory/InventoryProduce.js:76
+msgid "Actions"
+msgstr "Acciones"
+
+#: desktop/src/view/inventory/InventoryProduce.js:89
+msgid "Confirm quantity"
+msgstr "Confirme la cantidad"
+
+#: desktop/src/view/inventory/InventoryProduce.js:95
+msgid "Correct quantity"
+msgstr "Cantidad correcta"
+
+#: desktop/src/view/inventory/InventoryProduce.js:102
+msgid "Previous quantity"
+msgstr "Cantidad anterior"
+
+#: desktop/src/view/inventory/InventoryProduce.js:103
+msgid "qty."
+msgstr "cant."
+
+#: desktop/src/view/inventory/Tree.js:30 desktop/src/view/main/MainModel.js:85
+msgid "Stock"
+msgstr "Stock"
+
+#: desktop/src/view/inventory/edit/QuantityCheck.js:7
+msgid "Confirm quantity store"
+msgstr "Confirme la cantidad de la tienda"
+
+#: desktop/src/view/inventory/edit/QuantityCheck.js:82
+msgid "Do you confirm this quantity of the product in the store?"
+msgstr "¿Confirman esta cantidad del producto en la tienda?"
+
+#: desktop/src/view/inventory/edit/QuantityEdit.js:8
+msgid "Correct the product quantity"
+msgstr "Corregir la cantidad de producto"
+
+#: desktop/src/view/inventory/edit/QuantityEdit.js:45
+msgid "Barcode:"
+msgstr "Código de barras:"
+
+#: desktop/src/view/inventory/edit/QuantityEdit.js:68
+msgid "Previous quantity:"
+msgstr "Cantidad anterior:"
+
+#: desktop/src/view/inventory/edit/QuantityEdit.js:84
+msgid "New quantity"
+msgstr "Nueva cantidad"
+
+#: desktop/src/view/inventory/edit/QuantityEdit.js:90
+msgid "Reason for the change"
+msgstr "Motivo del cambio"
+
+#: desktop/src/view/main/MainCtrl.js:88
+msgid "Data was not received!"
+msgstr "¡Los datos no se han recibido!"
+
+#: desktop/src/view/main/MainCtrl.js:117 desktop/src/view/main/MainModel.js:35
+#: desktop/src/view/movement/add/AddTreeCatalog.js:23
+#: desktop/src/view/produce/MainInfo.js:129
+#: shared/src/store/CatalogEditStore.js:13 shared/src/store/Catalogs.js:13
+msgid "Catalog"
+msgstr "Catálogo"
+
+#: desktop/src/view/main/MainLeft.js:43
+msgid "Go to the profile"
+msgstr "Ir al perfil"
+
+#: desktop/src/view/main/MainLeft.js:56 desktop/src/view/main/MainModel.js:11
+#: desktop/src/view/main/MainModel.js:149
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: desktop/src/view/main/MainModel.js:30 shared/src/common/MenuCompany.js:45
+msgid "Company"
+msgstr "Empresa"
+
+#: desktop/src/view/main/MainModel.js:40 desktop/src/view/main/MainModel.js:45
+#: desktop/src/view/purchase/list/Grid.js:160
+#: desktop/src/view/sell/pos/PosRetail.js:41
+#: desktop/src/view/sell/pos_sell/PosSell.js:41
+msgid "POS"
+msgstr "POS"
+
+#: desktop/src/view/main/MainModel.js:49
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:37
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:37
+msgid "Sellings"
+msgstr "Ventas"
+
+#: desktop/src/view/main/MainModel.js:55
+#: desktop/src/view/place/edit/NewPoint.js:65
+#: desktop/src/view/sell/pos_list/Grid.js:24
+msgid "Cash registers"
+msgstr "Cajas registradoras"
+
+#: desktop/src/view/main/MainModel.js:60
+#: desktop/src/view/sell/revert_list/Grid.js:17
+msgid "Refunds"
+msgstr "Devoluciones"
+
+#: desktop/src/view/main/MainModel.js:65
+msgid "Price Monitor"
+msgstr "Monitor de precios"
+
+#: desktop/src/view/main/MainModel.js:70
+#: desktop/src/view/movement/list/Grid.js:19
+msgid "Movements"
+msgstr "Movimientos"
+
+#: desktop/src/view/main/MainModel.js:74
+#: desktop/src/view/purchase/list/Grid.js:18
+#: desktop/src/view/supplier/SupplierRight.js:193
+msgid "Purchases"
+msgstr "Compras"
+
+#: desktop/src/view/main/MainModel.js:80
+#: desktop/src/view/supplier/SupplierLeft.js:32
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#: desktop/src/view/main/MainModel.js:89
+msgid "Settings"
+msgstr "Ajustes"
+
+#: desktop/src/view/main/MainModel.js:98
+msgid "Roles"
+msgstr "Roles"
+
+#: desktop/src/view/main/MainModel.js:102
+msgid "Customers"
+msgstr "Clientes"
+
+#: desktop/src/view/main/MainModel.js:106
+msgid "Countries"
+msgstr "Países"
+
+#: desktop/src/view/main/MainView.js:50
+msgid ""
+"Sorry, some of the functions are not available. You need to pay your "
+"subscription."
+msgstr ""
+"Lo sentimos, algunas de las funciones no están disponibles. Tienes que pagar "
+"tu suscripción."
+
+#: desktop/src/view/main/MainView.js:55
+msgid "Update subscription"
+msgstr "Actualizar la suscripción"
+
+#: desktop/src/view/main/MainView.js:77
+msgid "Yor subscription will be cancelled:"
+msgstr "Su suscripción será cancelada:"
+
+#: desktop/src/view/main/MainView.js:92
+msgid "You need to renew your subscription."
+msgstr "Debe renovar su suscripción."
+
+#: desktop/src/view/main/MainView.js:97
+#: desktop/src/view/subscription/SubsData.js:218
+msgid "Renew subscription"
+msgstr "Renovar la suscripción"
+
+#: desktop/src/view/main/MainView.js:120
+msgid "Your trial period will be finished on"
+msgstr "Su período de prueba terminará el"
+
+#: desktop/src/view/main/MainView.js:135
+msgid "After that you need to start your subscription."
+msgstr "A continuación, deberá iniciar su suscripción."
+
+#: desktop/src/view/movement/add/Add.js:40
+msgid "New movement"
+msgstr "Nuevo movimiento"
+
+#: desktop/src/view/movement/add/Add.js:47
+#: desktop/src/view/movement/list/Grid.js:228
+msgid "Source POS"
+msgstr "Fuente POS"
+
+#: desktop/src/view/movement/add/Add.js:60
+msgid "Change point from movement products"
+msgstr "Punto de cambio de los productos de movimiento"
+
+#: desktop/src/view/movement/add/Add.js:156
+#: desktop/src/view/movement/card/Invoice.js:166
+#: desktop/src/view/place/edit/NewPoint.js:54
+#: desktop/src/view/point/edit/EditPoint.js:76
+#: desktop/src/view/purchase/list/Grid.js:165
+msgid "Manager"
+msgstr "Gerente"
+
+#: desktop/src/view/movement/add/Add.js:173
+#: desktop/src/view/movement/card/Invoice.js:200
+#: desktop/src/view/movement/list/Grid.js:218
+msgid "Boxes"
+msgstr "Cajas"
+
+#: desktop/src/view/movement/add/Add.js:190
+#: desktop/src/view/movement/list/Grid.js:248
+#: desktop/src/view/purchase/buy/Invoice.js:128
+#: desktop/src/view/purchase/card/Invoice.js:155
+#: desktop/src/view/purchase/list/InvoiceInfo.js:142
+msgid "Comment"
+msgstr "Comentario"
+
+#: desktop/src/view/movement/add/Add.js:211
+msgid "Select products by"
+msgstr "Seleccione los productos por"
+
+#: desktop/src/view/movement/add/Add.js:225
+#: desktop/src/view/sell/pos/PosRetail.js:94
+#: desktop/src/view/sell/pos_sell/PosSell.js:68
+#: desktop/src/view/sell/retail/Retail.js:57
+msgid "BARCODE"
+msgstr "CÓDIGO DE BARRAS"
+
+#: desktop/src/view/movement/add/Add.js:226
+#: desktop/src/view/sell/pos/PosRetail.js:95
+#: desktop/src/view/sell/pos_sell/PosSell.js:69
+#: desktop/src/view/sell/retail/Retail.js:58
+msgid "CATALOG"
+msgstr "Catálogo"
+
+#: desktop/src/view/movement/add/AddCtrl.js:199
+#: desktop/src/view/sell/pos/PosCtrl.js:359
+#: desktop/src/view/sell/retail/RetailCtrl.js:220
+#: shared/src/common/DeleteConfirm.js:6
+msgid "Attention"
+msgstr "Atención"
+
+#: desktop/src/view/movement/add/AddCtrl.js:211
+#: desktop/src/view/movement/add/edit/TrashConfirm.js:21
+#: desktop/src/view/movement/edit/ReceiveConfirm.js:21
+#: desktop/src/view/movement/edit/SentConfirm.js:21
+#: desktop/src/view/sell/pos/PosCtrl.js:371
+#: desktop/src/view/sell/pos/edit/TrashConfirm.js:21
+#: desktop/src/view/sell/pos_sell/edit/TrashConfirm.js:21
+#: desktop/src/view/sell/retail/RetailCtrl.js:232
+#: desktop/src/view/sell/retail/edit/PayCard.js:62
+#: shared/src/common/DeleteConfirm.js:26
+msgid "Yes!"
+msgstr "¡Sí!"
+
+#: desktop/src/view/movement/add/AddCtrl.js:218
+#: desktop/src/view/sell/pos_sell/PosCtrl.js:241
+msgid "Do you want to clear all positions from the list?"
+msgstr "¿Quiere borrar todas las posiciones de la lista?"
+
+#: desktop/src/view/movement/add/AddModel.js:46
+#: desktop/src/view/sell/pos/PosModel.js:49
+#: desktop/src/view/sell/pos_sell/PosModel.js:48
+msgid "Yes, continue"
+msgstr "Si, continuar"
+
+#: desktop/src/view/movement/add/AddPanel.js:83
+#: desktop/src/view/sell/pos/PosPanel.js:84
+#: desktop/src/view/sell/pos_sell/PosPanel.js:75
+#: desktop/src/view/sell/retail/RetailRightPanel.js:72
+msgid "Find by Barcode or Article"
+msgstr "Buscar por código de barras o por artículo"
+
+#: desktop/src/view/movement/add/AddPanel.js:123
+#: desktop/src/view/sell/pos/PosPanel.js:124
+#: desktop/src/view/sell/pos_sell/PosPanel.js:106
+#: desktop/src/view/sell/retail/RetailRightPanel.js:114
+msgid "Last found Barcode or Article"
+msgstr "Último código de barras o artículo encontrado"
+
+#: desktop/src/view/movement/add/AddPanel.js:159
+#: desktop/src/view/sell/pos/PosPanel.js:160
+#: desktop/src/view/sell/pos_sell/PosPanel.js:140
+#: desktop/src/view/sell/retail/RetailRightPanel.js:150
+msgid "Last produce"
+msgstr "Últimos productos"
+
+#: desktop/src/view/movement/add/AddPanel.js:191
+#: desktop/src/view/movement/add/AddProduceGrid.js:43
+#: desktop/src/view/purchase/buy/ProduceGrid.js:91
+#: desktop/src/view/sell/pos/PosPanel.js:192
+#: desktop/src/view/sell/pos/PosProduceGrid.js:44
+#: desktop/src/view/sell/pos_sell/PosPanel.js:172
+#: desktop/src/view/sell/pos_sell/PosProduceGrid.js:44
+#: desktop/src/view/sell/retail/ProduceGrid.js:73
+#: desktop/src/view/sell/retail/RetailRightPanel.js:160
+#: shared/src/common/CatalogField.js:116 shared/src/common/ProduceSelect.js:58
+msgid "Select"
+msgstr "Seleccionar"
+
+#: desktop/src/view/movement/add/AddProduceGrid.js:13
+#: desktop/src/view/movement/add/edit/ReceiptGrid.js:11
+#: desktop/src/view/sell/pos/edit/PosReceiptGrid.js:11
+#: desktop/src/view/sell/pos_sell/edit/PosReceiptGrid.js:11
+msgid "Produce"
+msgstr "Produce"
+
+#: desktop/src/view/movement/add/AddProduceGrid.js:22
+#: desktop/src/view/movement/add/edit/ReceiptGrid.js:20
+#: desktop/src/view/sell/pos/PosProduceGrid.js:23
+#: desktop/src/view/sell/pos/edit/PosReceiptGrid.js:20
+#: desktop/src/view/sell/pos_sell/PosProduceGrid.js:23
+#: desktop/src/view/sell/pos_sell/edit/PosReceiptGrid.js:20
+msgid "Qty"
+msgstr "Cantidad"
+
+#: desktop/src/view/movement/add/AddProduceGrid.js:32
+#: desktop/src/view/sell/pos/PosProduceGrid.js:33
+#: desktop/src/view/sell/pos_sell/PosProduceGrid.js:33
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:40
+#: shared/src/store/Units.js:10
+msgid "Item"
+msgstr "Artículo"
+
+#: desktop/src/view/movement/add/edit/Amount.js:29
+#: desktop/src/view/sell/retail/edit/Amount.js:25
+msgid "Item price"
+msgstr "Precio producto"
+
+#: desktop/src/view/movement/add/edit/Amount.js:50
+#: desktop/src/view/purchase/card/Grid.js:16
+#: desktop/src/view/purchase/list/ProdItems.js:15
+#: desktop/src/view/sell/bills/Invoice.js:16
+#: desktop/src/view/sell/card/Grid.js:19
+#: desktop/src/view/sell/retail/edit/Amount.js:46
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:44
+msgid "Tax rate"
+msgstr "Tasa de impuesto"
+
+#: desktop/src/view/movement/add/edit/Amount.js:71
+#: desktop/src/view/sell/retail/edit/Amount.js:67
+msgid "Item tax"
+msgstr "Impuesto sobre la renta"
+
+#: desktop/src/view/movement/add/edit/Amount.js:92
+#: desktop/src/view/sell/pos/edit/Amount.js:42
+#: desktop/src/view/sell/pos_sell/edit/Amount.js:42
+#: desktop/src/view/sell/retail/edit/Amount.js:88
+msgid "Item discount"
+msgstr "Descuento en el artículo"
+
+#: desktop/src/view/movement/add/edit/PrintDialog.js:6
+msgid "Print Documents"
+msgstr "Imprimir documentos"
+
+#: desktop/src/view/movement/add/edit/PrintDialog.js:22
+#: desktop/src/view/sell/pos/edit/SellConfig.js:132
+msgid "Exit"
+msgstr "Salir"
+
+#: desktop/src/view/movement/add/edit/PrintDialog.js:28
+msgid "Print Stickers"
+msgstr "Imprimir pegatinas"
+
+#: desktop/src/view/movement/add/edit/PrintDialog.js:34
+msgid "Print Invoice"
+msgstr "Imprimir factura"
+
+#: desktop/src/view/movement/add/edit/Receipt.js:12
+#: desktop/src/view/movement/list/Grid.js:238
+msgid "Destination POS"
+msgstr "Destino POS"
+
+#: desktop/src/view/movement/add/edit/Receipt.js:23
+msgid "Change point to movement"
+msgstr "Cambiar el punto por el movimiento"
+
+#: desktop/src/view/movement/add/edit/Receipt.js:124
+#: desktop/src/view/movement/add/edit/Receipt.js:226
+#: desktop/src/view/movement/card/Grid.js:39
+#: desktop/src/view/purchase/buy/Invoice.js:240
+#: desktop/src/view/purchase/buy/Invoice.js:318
+#: desktop/src/view/sell/bills/Grid.js:83
+#: desktop/src/view/sell/bills/Invoice.js:262
+#: desktop/src/view/sell/bills/Invoice.js:296
+#: desktop/src/view/sell/card/Grid.js:43
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:99
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:265
+#: desktop/src/view/sell/pos_list/Grid.js:115
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:99
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:265
+#: desktop/src/view/sell/retail/ProduceGrid.js:92
+#: desktop/src/view/sell/retail/edit/Receipt.js:164
+#: desktop/src/view/sell/retail/edit/Receipt.js:256
+msgid "Total"
+msgstr "Total"
+
+#: desktop/src/view/movement/add/edit/Receipt.js:134
+#: desktop/src/view/place/edit/CheckoutRow.js:29
+#: desktop/src/view/point/CheckoutItem.js:27
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:109
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:109
+msgid "Delete"
+msgstr "Borrar"
+
+#: desktop/src/view/movement/add/edit/Receipt.js:147
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:122
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:122
+msgid "Clear"
+msgstr "Limpiar"
+
+#: desktop/src/view/movement/add/edit/Receipt.js:249
+msgid "Save Invoice"
+msgstr "Guardar factura"
+
+#: desktop/src/view/movement/add/edit/ReceiptGrid.js:40
+#: desktop/src/view/sell/pos/edit/PosReceiptGrid.js:40
+#: desktop/src/view/sell/pos_sell/edit/PosReceiptGrid.js:40
+#: desktop/src/view/sell/retail/edit/ReceiptGrid.js:21
+msgid "Remove from list"
+msgstr "Remover de la lista"
+
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:6
+msgid "Select a source POS"
+msgstr "Seleccione un POS de origen"
+
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:53
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:53
+msgid "Address:"
+msgstr "Dirección:"
+
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:62
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:62
+msgid "City:"
+msgstr "Ciudad:"
+
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:71
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:71
+msgid "Postcode:"
+msgstr "Código Postal:"
+
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:79
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:79
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:89
+msgid "Comment: "
+msgstr "Comentar: "
+
+#: desktop/src/view/movement/add/edit/SelectPlaceFrom.js:98
+msgid "Boxes:"
+msgstr "CAJAS:"
+
+#: desktop/src/view/movement/add/edit/SelectPlaceTo.js:6
+msgid "Select a destination POS"
+msgstr "Seleccione un punto de venta de destino"
+
+#: desktop/src/view/movement/add/edit/TrashConfirm.js:5
+#: desktop/src/view/sell/pos/edit/TrashConfirm.js:5
+#: desktop/src/view/sell/pos_sell/edit/TrashConfirm.js:5
+msgid "Delete receipt"
+msgstr "Borrar el recibo"
+
+#: desktop/src/view/movement/add/edit/TrashConfirm.js:6
+#: desktop/src/view/sell/pos_sell/edit/TrashConfirm.js:6
+msgid "Do you want to clear all positions and delete this receipt?"
+msgstr "¿Desea borrar todas las posiciones y eliminar este recibo?"
+
+#: desktop/src/view/movement/card/CardModel.js:34
+#: desktop/src/view/movement/card/CardModel.js:37
+#: desktop/src/view/movement/card/CardModel.js:40
+#: desktop/src/view/movement/card/CardModel.js:43
+#: desktop/src/view/movement/card/CardModel.js:46
+#: desktop/src/view/movement/card/CardModel.js:50
+#: desktop/src/view/movement/card/CardModel.js:54
+#: desktop/src/view/movement/card/CardModel.js:58
+#: desktop/src/view/movement/list/Grid.js:129
+#: desktop/src/view/purchase/list/Grid.js:126
+#: desktop/src/view/sell/bills/Grid.js:98
+#: desktop/src/view/sell/card/CardModel.js:38
+#: desktop/src/view/sell/card/CardModel.js:41
+#: desktop/src/view/sell/card/CardModel.js:45
+#: desktop/src/view/sell/card/CardModel.js:48
+#: desktop/src/view/sell/revert_list/Grid.js:174
+#: desktop/src/view/subscription/SubsData.js:387
+msgid "Status"
+msgstr "Estado"
+
+#: desktop/src/view/movement/card/CardModel.js:37
+msgid "Sending"
+msgstr "Enviando"
+
+#: desktop/src/view/movement/card/CardModel.js:40
+#: desktop/src/view/movement/list/Grid.js:143
+msgid "Is not complete"
+msgstr "No está completo"
+
+#: desktop/src/view/movement/card/CardModel.js:43
+#: desktop/src/view/movement/list/Grid.js:146
+msgid "Item sent back"
+msgstr "Artículo devuelto"
+
+#: desktop/src/view/movement/card/CardModel.js:46
+#: desktop/src/view/movement/list/Grid.js:149
+msgid "Item returned"
+msgstr "Artículo devuelto"
+
+#: desktop/src/view/movement/card/CardModel.js:50
+#: desktop/src/view/movement/list/Grid.js:152
+#: desktop/src/view/sell/retail/edit/PayCash.js:86
+msgid "Received"
+msgstr "Recibido"
+
+#: desktop/src/view/movement/card/CardModel.js:54
+#: desktop/src/view/movement/list/Grid.js:155
+msgid "Lost"
+msgstr "Perdido"
+
+#: desktop/src/view/movement/card/CardModel.js:58
+#: desktop/src/view/movement/list/Grid.js:158
+msgid "Undefined"
+msgstr "Indefinido"
+
+#: desktop/src/view/movement/card/Grid.js:15
+#: desktop/src/view/purchase/card/Grid.js:15
+#: desktop/src/view/purchase/list/ProdItems.js:14
+#: desktop/src/view/sell/bills/Invoice.js:15
+#: desktop/src/view/sell/card/Grid.js:18
+msgid "Go to the product card"
+msgstr "Ir a la ficha de producto"
+
+#: desktop/src/view/movement/card/Invoice.js:13
+msgid "Movement Invoice"
+msgstr "Factura de movimiento"
+
+#: desktop/src/view/movement/card/Invoice.js:34
+msgid "Send Products"
+msgstr "Enviar productos"
+
+#: desktop/src/view/movement/card/Invoice.js:45
+msgid "Receive Products"
+msgstr "Recibir Productos"
+
+#: desktop/src/view/movement/card/Invoice.js:56
+#: desktop/src/view/purchase/list/InvoiceInfo.js:18
+#: desktop/src/view/sell/bills/Invoice.js:65
+msgid "Print"
+msgstr "Imprimir"
+
+#: desktop/src/view/movement/card/Invoice.js:98
+#: desktop/src/view/purchase/card/Invoice.js:71
+#: desktop/src/view/purchase/list/InvoiceInfo.js:67
+#: desktop/src/view/sell/bills/Invoice.js:103
+#: desktop/src/view/sell/card/Invoice.js:78
+#: desktop/src/view/supplier/PurchaseList.js:15
+msgid "Document"
+msgstr "Documento"
+
+#: desktop/src/view/movement/card/Invoice.js:129
+msgid "Moving from"
+msgstr "Pasar de"
+
+#: desktop/src/view/movement/card/Invoice.js:145
+msgid "Moving to"
+msgstr "Mudanza a"
+
+#: desktop/src/view/movement/card/Invoice.js:183
+msgid "Quantity total"
+msgstr "Cantidad total"
+
+#: desktop/src/view/movement/edit/ReceiveConfirm.js:5
+msgid "Receive invoice"
+msgstr "Recibir la factura"
+
+#: desktop/src/view/movement/edit/ReceiveConfirm.js:6
+msgid ""
+"Attention, changing the status increases the number of balances of goods "
+"indicated in the invoice. Do you agree to change the status of the invoice?"
+msgstr ""
+"Atención, el cambio de estado aumenta el número de saldos de mercancías "
+"indicados en la factura. ¿Está de acuerdo en cambiar el estado de la factura?"
+
+#: desktop/src/view/movement/edit/SentConfirm.js:5
+msgid "Sent invoice"
+msgstr "Factura enviada"
+
+#: desktop/src/view/movement/edit/SentConfirm.js:6
+msgid ""
+"Attention, changing the status reduces the number of balances of goods "
+"indicated in the invoice. Do you agree to change the status of the invoice?"
+msgstr ""
+"Atención, el cambio de estado reduce el número de saldos de mercancías "
+"indicados en la factura. ¿Está de acuerdo en cambiar el estado de la factura?"
+
+#: desktop/src/view/movement/list/Grid.js:25
+msgid "Add Movement"
+msgstr "Añadir movimiento"
+
+#: desktop/src/view/movement/list/Grid.js:57
+#: desktop/src/view/purchase/list/Grid.js:66
+#: desktop/src/view/sell/revert_list/Grid.js:65
+msgid "Filter by year and period"
+msgstr "Filtrar por año y periodo"
+
+#: desktop/src/view/movement/list/Grid.js:89
+#: desktop/src/view/purchase/list/Grid.js:99
+#: desktop/src/view/sell/revert_list/Grid.js:97
+msgid "January"
+msgstr "Enero"
+
+#: desktop/src/view/movement/list/Grid.js:89
+#: desktop/src/view/purchase/list/Grid.js:99
+#: desktop/src/view/sell/revert_list/Grid.js:97
+msgid "Jan"
+msgstr "Ene"
+
+#: desktop/src/view/movement/list/Grid.js:90
+#: desktop/src/view/purchase/list/Grid.js:100
+#: desktop/src/view/sell/revert_list/Grid.js:98
+msgid "February"
+msgstr "Febrero"
+
+#: desktop/src/view/movement/list/Grid.js:90
+#: desktop/src/view/purchase/list/Grid.js:100
+#: desktop/src/view/sell/revert_list/Grid.js:98
+msgid "Feb"
+msgstr "Feb"
+
+#: desktop/src/view/movement/list/Grid.js:91
+#: desktop/src/view/purchase/list/Grid.js:101
+#: desktop/src/view/sell/revert_list/Grid.js:99
+msgid "March"
+msgstr "Marzo"
+
+#: desktop/src/view/movement/list/Grid.js:91
+#: desktop/src/view/purchase/list/Grid.js:101
+#: desktop/src/view/sell/revert_list/Grid.js:99
+msgid "Mar"
+msgstr "Mar"
+
+#: desktop/src/view/movement/list/Grid.js:92
+#: desktop/src/view/purchase/list/Grid.js:102
+#: desktop/src/view/sell/revert_list/Grid.js:100
+msgid "April"
+msgstr "Abril"
+
+#: desktop/src/view/movement/list/Grid.js:92
+#: desktop/src/view/purchase/list/Grid.js:102
+#: desktop/src/view/sell/revert_list/Grid.js:100
+msgid "Apr"
+msgstr "Abr"
+
+#: desktop/src/view/movement/list/Grid.js:93
+#: desktop/src/view/purchase/list/Grid.js:103
+#: desktop/src/view/sell/revert_list/Grid.js:101
+msgid "May"
+msgstr "Mayo"
+
+#: desktop/src/view/movement/list/Grid.js:94
+#: desktop/src/view/purchase/list/Grid.js:104
+#: desktop/src/view/sell/revert_list/Grid.js:102
+msgid "June"
+msgstr "Junio"
+
+#: desktop/src/view/movement/list/Grid.js:94
+#: desktop/src/view/purchase/list/Grid.js:104
+#: desktop/src/view/sell/revert_list/Grid.js:102
+msgid "Jun"
+msgstr "Jun"
+
+#: desktop/src/view/movement/list/Grid.js:95
+#: desktop/src/view/purchase/list/Grid.js:105
+#: desktop/src/view/sell/revert_list/Grid.js:103
+msgid "July"
+msgstr "Julio"
+
+#: desktop/src/view/movement/list/Grid.js:95
+#: desktop/src/view/purchase/list/Grid.js:105
+#: desktop/src/view/sell/revert_list/Grid.js:103
+msgid "Jul"
+msgstr "Jul"
+
+#: desktop/src/view/movement/list/Grid.js:96
+#: desktop/src/view/purchase/list/Grid.js:106
+#: desktop/src/view/sell/revert_list/Grid.js:104
+msgid "August"
+msgstr "Agosto"
+
+#: desktop/src/view/movement/list/Grid.js:96
+#: desktop/src/view/purchase/list/Grid.js:106
+#: desktop/src/view/sell/revert_list/Grid.js:104
+msgid "Aug"
+msgstr "Ago"
+
+#: desktop/src/view/movement/list/Grid.js:97
+#: desktop/src/view/purchase/list/Grid.js:107
+#: desktop/src/view/sell/revert_list/Grid.js:105
+msgid "September"
+msgstr "Septiembre"
+
+#: desktop/src/view/movement/list/Grid.js:97
+#: desktop/src/view/purchase/list/Grid.js:107
+#: desktop/src/view/sell/revert_list/Grid.js:105
+msgid "Sep"
+msgstr "Sep"
+
+#: desktop/src/view/movement/list/Grid.js:98
+#: desktop/src/view/purchase/list/Grid.js:108
+#: desktop/src/view/sell/revert_list/Grid.js:106
+msgid "October"
+msgstr "Octubre"
+
+#: desktop/src/view/movement/list/Grid.js:98
+#: desktop/src/view/purchase/list/Grid.js:108
+#: desktop/src/view/sell/revert_list/Grid.js:106
+msgid "Oct"
+msgstr "Oct"
+
+#: desktop/src/view/movement/list/Grid.js:99
+#: desktop/src/view/purchase/list/Grid.js:109
+#: desktop/src/view/sell/revert_list/Grid.js:107
+msgid "November"
+msgstr "Noviembre"
+
+#: desktop/src/view/movement/list/Grid.js:99
+#: desktop/src/view/purchase/list/Grid.js:109
+#: desktop/src/view/sell/revert_list/Grid.js:107
+msgid "Nov"
+msgstr "Nov"
+
+#: desktop/src/view/movement/list/Grid.js:100
+#: desktop/src/view/purchase/list/Grid.js:110
+#: desktop/src/view/sell/revert_list/Grid.js:108
+msgid "December"
+msgstr "Diciembre"
+
+#: desktop/src/view/movement/list/Grid.js:100
+#: desktop/src/view/purchase/list/Grid.js:110
+#: desktop/src/view/sell/revert_list/Grid.js:108
+msgid "Dec"
+msgstr "Dic"
+
+#: desktop/src/view/movement/list/Grid.js:109
+msgid "Invoice / Date"
+msgstr "Factura / Fecha"
+
+#: desktop/src/view/movement/list/Grid.js:118
+#: desktop/src/view/sell/revert_list/Grid.js:125
+msgid "Price total"
+msgstr "Precio total"
+
+#: desktop/src/view/movement/list/Grid.js:140
+#: desktop/src/view/movement/list/Grid.js:192
+msgid "Sent"
+msgstr "Enviado"
+
+#: desktop/src/view/movement/list/Grid.js:198
+msgid "Receive"
+msgstr "Recibido"
+
+#: desktop/src/view/movement/list/Grid.js:210
+msgid "Update"
+msgstr "Actualizar"
+
+#: desktop/src/view/myprofile/Myprofile.js:28
+msgid "My profile"
+msgstr "Mi perfil"
+
+#: desktop/src/view/myprofile/Myprofile.js:41
+msgid "Change Password"
+msgstr "Cambiar Contraseña"
+
+#: desktop/src/view/myprofile/Myprofile.js:80
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: desktop/src/view/myprofile/Myprofile.js:148
+msgid "Role"
+msgstr "Rol"
+
+#: desktop/src/view/myprofile/MyprofileCtrl.js:112
+msgid "Please fill in all required fields"
+msgstr "Por favor, rellene todos los campos obligatorios"
+
+#: desktop/src/view/myprofile/edit/ChangePassword.js:11
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: desktop/src/view/myprofile/edit/ChangePassword.js:22
+msgid "Old password"
+msgstr "Contraseña anterior"
+
+#: desktop/src/view/myprofile/edit/ChangePassword.js:46
+msgid "New password"
+msgstr "Nueva contraseña"
+
+#: desktop/src/view/myprofile/edit/ChangePassword.js:57
+msgid "Retype new password"
+msgstr "Repetir contraseña"
+
+#: desktop/src/view/myprofile/edit/ChangePassword.js:75
+msgid ""
+"The password must be at least 8 characters in the English alphabet, and also "
+"contain at least one lowercase character, one uppercase character, one "
+"number and one of the following characters ! @ # $ % ^ & * . _"
+msgstr ""
+"¡La contraseña debe tener al menos 8 caracteres del alfabeto inglés, y "
+"también contener al menos un carácter en minúscula, un carácter en "
+"mayúscula, un número y uno de los siguientes caracteres ! @ # $ % ^ & * . _"
+
+#: desktop/src/view/myprofile/edit/EditUser.js:11
+msgid "Edit my information"
+msgstr "Editar mi información"
+
+#: desktop/src/view/myprofile/edit/EditUser.js:20
+msgid "First name"
+msgstr "Nombre"
+
+#: desktop/src/view/payment/new_pos/Order.js:28
+msgid "Buy subscription for points of sale"
+msgstr "Comprar una suscripción para puntos de venta"
+
+#: desktop/src/view/payment/new_pos/Order.js:39
+msgid "Number of points"
+msgstr "Número de puntos"
+
+#: desktop/src/view/payment/new_pos/Order.js:55
+msgid "How many additional points of sale do you need?"
+msgstr "¿Cuántos puntos de venta adicionales necesita?"
+
+#: desktop/src/view/payment/new_pos/Order.js:74
+msgid ""
+"Remember that the total number of points of sale will be one more, with the "
+"main point."
+msgstr ""
+"Recuerde que el número total de puntos de venta será uno más, con el punto "
+"principal."
+
+#: desktop/src/view/payment/new_pos/Order.js:82
+#: desktop/src/view/subscription/SubsData.js:179
+msgid "Subscription price"
+msgstr "Precio de suscripción"
+
+#: desktop/src/view/payment/new_pos/Order.js:97
+msgid "Price per one point per month"
+msgstr "Precio por un punto al mes"
+
+#: desktop/src/view/payment/new_pos/Order.js:108
+msgid ""
+"You only pay for additional points of sale. The first main point of sale is "
+"always free."
+msgstr ""
+"Sólo se paga por los puntos de venta adicionales. El primer punto de venta "
+"principal es siempre gratuito."
+
+#: desktop/src/view/payment/new_pos/Order.js:116
+msgid "Subscription amount"
+msgstr "Importe de la suscripción"
+
+#: desktop/src/view/payment/new_pos/Order.js:131
+msgid "Amount per month"
+msgstr "Cantidad por mes"
+
+#: desktop/src/view/payment/new_pos/Order.js:154
+msgid "Billing email"
+msgstr "Email de facturación"
+
+#: desktop/src/view/payment/new_pos/Order.js:183
+msgid "Buy subscription"
+msgstr "Comprar suscripción"
+
+#: desktop/src/view/payment/new_pos/Order.js:206
+msgid "Subscription number"
+msgstr "Número de suscripción"
+
+#: desktop/src/view/payment/new_pos/Order.js:230
+msgid "Order date payment"
+msgstr "Pago de la fecha del pedido"
+
+#: desktop/src/view/payment/new_pos/OrderCtrl.js:42
+#: shared/src/common/MenuCompany.js:91
+msgid "Subscription"
+msgstr "Suscripción"
+
+#: desktop/src/view/place/Grid.js:20
+msgid "Add point"
+msgstr "Añadir punto"
+
+#: desktop/src/view/place/Grid.js:51
+msgid ""
+"When you add or remove a point of sale (POS), you agree to the change to the "
+"subscription terms and agree to change the quantity and total amount of your "
+"subscription."
+msgstr ""
+"Al añadir o eliminar un punto de venta (POS), usted acepta el cambio de las "
+"condiciones de suscripción y acepta cambiar la cantidad y el importe total "
+"de su suscripción."
+
+#: desktop/src/view/place/Grid.js:68
+msgid "Main"
+msgstr "Principal"
+
+#: desktop/src/view/place/edit/NewPoint.js:8
+msgid "New point of sale"
+msgstr "Nuevo punto de venta"
+
+#: desktop/src/view/place/edit/NewPoint.js:47
+msgid "Full address"
+msgstr "Dirección completa"
+
+#: desktop/src/view/place/edit/NewPoint.js:84
+#: desktop/src/view/point/Point.js:244
+#: desktop/src/view/sell/pos_list/Grid.js:101
+msgid "Checkout"
+msgstr "Pagar"
+
+#: desktop/src/view/point/Point.js:33
+msgid "Point card"
+msgstr "Tarjeta de puntos"
+
+#: desktop/src/view/point/Point.js:175
+msgid "Director"
+msgstr "Director"
+
+#: desktop/src/view/point/Point.js:193
+msgid "Is main"
+msgstr "Es principal"
+
+#: desktop/src/view/point/Point.js:220
+msgid "Checkouts"
+msgstr "Páginas de pago"
+
+#: desktop/src/view/point/edit/EditCheckout.js:8
+msgid "Checkout form"
+msgstr "Formulario de pago"
+
+#: desktop/src/view/point/edit/EditCheckout.js:17
+msgid "Checkout name"
+msgstr "Nombre de la caja"
+
+#: desktop/src/view/point/edit/EditPoint.js:8
+msgid "Edit point"
+msgstr "Editar punto"
+
+#: desktop/src/view/price_monitor/Grid.js:20
+msgid "Price monitor"
+msgstr "Monitor de precios"
+
+#: desktop/src/view/price_monitor/Grid.js:25
+msgid "Print stickers"
+msgstr "Imprimir pegatinas"
+
+#: desktop/src/view/price_monitor/Grid.js:68
+#: desktop/src/view/sell/pos/PosProduceGrid.js:14
+#: desktop/src/view/sell/pos_sell/PosProduceGrid.js:14
+msgid "Produce name"
+msgstr "Nombre del producto"
+
+#: desktop/src/view/price_monitor/Grid.js:97
+msgid "Unit type"
+msgstr "Tipo de unidad"
+
+#: desktop/src/view/price_monitor/Grid.js:104
+msgid "Date update"
+msgstr "Actualización de la fecha"
+
+#: desktop/src/view/produce/Card.js:37
+msgid "Product card"
+msgstr "Tarjeta de producto"
+
+#: desktop/src/view/produce/Card.js:44
+msgid "Go to catalog"
+msgstr "Ir al catálogo"
+
+#: desktop/src/view/produce/MainInfo.js:77
+#: desktop/src/view/produce/edit/Produce.js:94
+msgid "Tax VAT"
+msgstr "Impuesto IVA"
+
+#: desktop/src/view/produce/PlacesPrice.js:13
+msgid "Store name"
+msgstr "Nombre de la tienda"
+
+#: desktop/src/view/produce/PlacesPrice.js:55
+msgid "Change the price"
+msgstr "Cambiar el precio"
+
+#: desktop/src/view/produce/PriceContainer.js:84
+msgid "POS prices"
+msgstr "Precios de los puntos de venta"
+
+#: desktop/src/view/produce/PriceContainer.js:89
+msgid "Enable different prices for each POS"
+msgstr "Habilitar diferentes precios para cada POS"
+
+#: desktop/src/view/produce/PriceContainer.js:111
+msgid "Manage prices of each POS is inactive. You can turn it on."
+msgstr "La gestión de precios de cada POS está inactiva. Puede activarlo."
+
+#: desktop/src/view/produce/edit/MainPrice.js:4
+msgid "Edit base price"
+msgstr "Editar el precio base"
+
+#: desktop/src/view/produce/edit/MainPrice.js:91
+#: desktop/src/view/produce/edit/PriceEdit.js:101
+msgid "Discount %"
+msgstr "% de Descuento"
+
+#: desktop/src/view/produce/edit/PriceEdit.js:5
+msgid "Edit POS price"
+msgstr "Editar el precio del punto de venta"
+
+#: desktop/src/view/produce/edit/PriceEdit.js:32
+msgid "Price for POS"
+msgstr "Precio para el POS"
+
+#: desktop/src/view/produce/edit/PriceEdit.js:33
+msgid "Turn on"
+msgstr "Enciende"
+
+#: desktop/src/view/produce/edit/PriceEdit.js:59
+msgid "Base price"
+msgstr "Precio base"
+
+#: desktop/src/view/produce/edit/Produce.js:5
+msgid "Edit main information"
+msgstr "Editar la información principal"
+
+#: desktop/src/view/purchase/buy/BuyCtrl.js:242
+msgid "Back to the list"
+msgstr "Volver a la lista"
+
+#: desktop/src/view/purchase/buy/BuyCtrl.js:250
+#: desktop/src/view/purchase/buy/Invoice.js:14
+msgid "New purchase"
+msgstr "Nueva Compra"
+
+#: desktop/src/view/purchase/buy/Invoice.js:19
+msgid "Purchases list"
+msgstr "Lista de compras"
+
+#: desktop/src/view/purchase/buy/Invoice.js:27
+msgid "Clean"
+msgstr "Limpiar"
+
+#: desktop/src/view/purchase/buy/Invoice.js:85
+#: desktop/src/view/purchase/card/Invoice.js:110
+#: desktop/src/view/purchase/list/InvoiceInfo.js:97
+#: desktop/src/view/sell/pos_list/Grid.js:133
+msgid "Employee"
+msgstr "Empleado"
+
+#: desktop/src/view/purchase/buy/Invoice.js:99
+#: desktop/src/view/purchase/card/Invoice.js:140
+#: desktop/src/view/purchase/list/Grid.js:59
+#: desktop/src/view/purchase/list/Grid.js:173
+#: desktop/src/view/purchase/list/InvoiceInfo.js:127
+msgid "Supplier"
+msgstr "Proveedor"
+
+#: desktop/src/view/purchase/buy/Invoice.js:108
+msgid "Purchase №"
+msgstr "Añadir compra"
+
+#: desktop/src/view/purchase/buy/Invoice.js:152
+msgid "Is Paid"
+msgstr "No pagado"
+
+#: desktop/src/view/purchase/buy/Invoice.js:163
+msgid "Type of payment"
+msgstr "Tipo de pago"
+
+#: desktop/src/view/purchase/buy/Invoice.js:172
+#: desktop/src/view/purchase/card/CardModel.js:36
+#: desktop/src/view/purchase/card/edit/PaidForm.js:22
+#: desktop/src/view/purchase/list/ListModel.js:59
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:190
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:190
+#: desktop/src/view/sell/retail/edit/Receipt.js:143
+#: shared/overrides/util/Format.js:31 shared/src/util/Formats.js:12
+msgid "Cash"
+msgstr "Efectivo"
+
+#: desktop/src/view/purchase/buy/Invoice.js:173
+#: desktop/src/view/purchase/card/CardModel.js:38
+#: desktop/src/view/purchase/card/edit/PaidForm.js:23
+#: desktop/src/view/purchase/list/ListModel.js:61
+msgid "Bank"
+msgstr "Banco"
+
+#: desktop/src/view/purchase/buy/Invoice.js:183
+msgid "Document number"
+msgstr "Número de documento"
+
+#: desktop/src/view/purchase/buy/Invoice.js:196
+#: desktop/src/view/purchase/card/edit/PaidForm.js:39
+msgid "Date of payment"
+msgstr "Fecha de pago"
+
+#: desktop/src/view/purchase/buy/Invoice.js:274
+msgid "Delete from the list"
+msgstr "Eliminar de la lista"
+
+#: desktop/src/view/purchase/buy/Invoice.js:281
+msgid "Price buy"
+msgstr "Precio de compra"
+
+#: desktop/src/view/purchase/buy/ProduceGrid.js:27
+msgid "Choose products or"
+msgstr "Elija productos o"
+
+#: desktop/src/view/purchase/buy/ProduceGrid.js:46
+msgid "By name or barcode (at least 3 char.)"
+msgstr "Por nombre o código de barras (al menos 3 car.)"
+
+#: desktop/src/view/purchase/buy/ProduceGrid.js:68
+#: desktop/src/view/sell/pos/PosTreeCatalog.js:40
+#: desktop/src/view/sell/pos_sell/PosTreeCatalog.js:41
+#: desktop/src/view/sell/retail/ProduceGrid.js:50
+#: shared/src/common/CatalogField.js:10
+msgid "Categories"
+msgstr "Categorías"
+
+#: desktop/src/view/purchase/buy/ProduceGrid.js:69
+msgid "You can choose a category for products."
+msgstr "Puede elegir una categoría para los productos."
+
+#: desktop/src/view/purchase/buy/ProduceGrid.js:107
+msgid "Prices"
+msgstr "Precios"
+
+#: desktop/src/view/purchase/buy/ProduceGrid.js:111
+msgid "Sell"
+msgstr "Vender"
+
+#: desktop/src/view/purchase/buy/ProduceGrid.js:112
+msgid "Last buy"
+msgstr "Ultima compra"
+
+#: desktop/src/view/purchase/buy/edit/Amount.js:6
+msgid "Options of purchasing product"
+msgstr "Opciones de compra del producto"
+
+#: desktop/src/view/purchase/buy/edit/Amount.js:16
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:55
+msgid "Purchase price"
+msgstr "Precio de compra"
+
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:81
+msgid "Basic retail price"
+msgstr "Precio básico de venta al público"
+
+#: desktop/src/view/purchase/buy/edit/NewProduce.js:90
+msgid "The price of selling the products will be immediately available"
+msgstr "El precio de venta de los productos estará disponible inmediatamente"
+
+#: desktop/src/view/purchase/card/CardModel.js:40
+#: desktop/src/view/purchase/list/ListModel.js:63
+#: desktop/src/view/subscription/SubscriptionCtrl.js:107
+#: shared/src/model/SubsInvoice.js:26
+msgid "Unpaid"
+msgstr "No pagado"
+
+#: desktop/src/view/purchase/card/Grid.js:21
+#: desktop/src/view/purchase/list/ProdItems.js:20
+msgid "Per item"
+msgstr "Por artículo"
+
+#: desktop/src/view/purchase/card/Invoice.js:13
+msgid "Purchase card"
+msgstr "Tarjeta de compra"
+
+#: desktop/src/view/purchase/card/Invoice.js:26
+#: desktop/src/view/purchase/list/InvoiceInfo.js:23
+msgid "Change payment"
+msgstr "Cambiar método de pago"
+
+#: desktop/src/view/purchase/card/Invoice.js:81
+#: desktop/src/view/sell/pos_list/Grid.js:125
+msgid "From"
+msgstr "Desde"
+
+#: desktop/src/view/purchase/card/Invoice.js:95
+msgid "Created at"
+msgstr "Creado en"
+
+#: desktop/src/view/purchase/card/Invoice.js:174
+#: desktop/src/view/purchase/list/InvoiceInfo.js:162
+msgid "Payment status"
+msgstr "Estado del pago"
+
+#: desktop/src/view/purchase/card/Invoice.js:193
+#: desktop/src/view/purchase/card/edit/PaidForm.js:31
+#: desktop/src/view/purchase/list/InvoiceInfo.js:181
+#: desktop/src/view/sell/bills/Invoice.js:178
+#: desktop/src/view/sell/card/Invoice.js:154
+msgid "Payment number"
+msgstr "Número de pago"
+
+#: desktop/src/view/purchase/card/Invoice.js:212
+#: desktop/src/view/purchase/list/InvoiceInfo.js:200
+msgid "Payment date"
+msgstr "Fecha de pago"
+
+#: desktop/src/view/purchase/card/Invoice.js:236
+#: desktop/src/view/purchase/list/InvoiceInfo.js:224
+msgid "un."
+msgstr "un."
+
+#: desktop/src/view/purchase/card/Invoice.js:246
+#: desktop/src/view/purchase/list/InvoiceInfo.js:234
+msgid "Total taxes"
+msgstr "Total de impuestos"
+
+#: desktop/src/view/purchase/card/Invoice.js:261
+#: desktop/src/view/purchase/list/InvoiceInfo.js:249
+#: desktop/src/view/purchase/list/ProdItems.js:62
+#: desktop/src/view/sell/card/Invoice.js:239
+#: shared/src/util/receipt/PrintInvoice.js:73
+msgid "Total amount"
+msgstr "Precio total"
+
+#: desktop/src/view/purchase/card/edit/PaidForm.js:6
+msgid "Payment Information"
+msgstr "Información de Pago"
+
+#: desktop/src/view/purchase/card/edit/PaidForm.js:14
+msgid "Payment type"
+msgstr "Método de Pago"
+
+#: desktop/src/view/purchase/list/Grid.js:5 desktop/src/view/worker/Grid.js:5
+msgid "Data is not available!"
+msgstr "¡Los datos no están disponibles!"
+
+#: desktop/src/view/purchase/list/Grid.js:23
+msgid "Add purchase"
+msgstr "Añadir compra"
+
+#: desktop/src/view/purchase/list/Grid.js:118
+#: desktop/src/view/subscription/SubsData.js:378
+#: desktop/src/view/supplier/PurchaseList.js:13
+msgid "Number / Date"
+msgstr "Número / Fecha"
+
+#: desktop/src/view/purchase/list/Grid.js:128
+#: desktop/src/view/sell/bills/Grid.js:100
+#: desktop/src/view/sell/card/CardModel.js:45
+#: desktop/src/view/sell/pos/edit/PayCash.js:193
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:160
+#: shared/src/model/SubsInvoice.js:23
+msgid "Paid"
+msgstr "Pagado"
+
+#: desktop/src/view/purchase/list/Grid.js:130
+#: desktop/src/view/sell/bills/Grid.js:102
+msgid "Not paid"
+msgstr "No pagado"
+
+#: desktop/src/view/sell/bills/Grid.js:15
+#: desktop/src/view/sell/retail/edit/Receipt.js:16
+#: desktop/src/view/sell/revert_list/Grid.js:22
+msgid "Selling list"
+msgstr "Lista de ventas"
+
+#: desktop/src/view/sell/bills/Grid.js:20
+msgid "New selling"
+msgstr "Nueva venta"
+
+#: desktop/src/view/sell/bills/Grid.js:69
+msgid "Document / Date"
+msgstr "Documento / Fecha"
+
+#: desktop/src/view/sell/bills/Grid.js:90
+#: desktop/src/view/sell/bills/Invoice.js:133
+#: desktop/src/view/sell/card/Invoice.js:108
+#: desktop/src/view/sell/retail/edit/Receipt.js:80
+msgid "Seller"
+msgstr "Vendedor"
+
+#: desktop/src/view/sell/bills/Grid.js:105
+#: desktop/src/view/sell/card/CardModel.js:38
+#: desktop/src/view/sell/card/CardModel.js:48
+msgid "Returned"
+msgstr "Devuelto"
+
+#: desktop/src/view/sell/bills/Grid.js:118
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:164
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:164
+#: desktop/src/view/sell/retail/edit/Receipt.js:129
+msgid "Payment"
+msgstr "Pago"
+
+#: desktop/src/view/sell/bills/Grid.js:140
+#: desktop/src/view/sell/card/Invoice.js:24
+msgid "Return selling"
+msgstr "Venta de retorno"
+
+#: desktop/src/view/sell/bills/Invoice.js:163
+#: desktop/src/view/sell/card/Invoice.js:138
+msgid "Payment method"
+msgstr "Método de pago"
+
+#: desktop/src/view/sell/bills/Invoice.js:246
+msgid "Without tax"
+msgstr "Sin impuestos"
+
+#: desktop/src/view/sell/bills/edit/CancelSale.js:7
+#: desktop/src/view/sell/card/edit/ReturnSelling.js:7
+msgid "Do you want to return this selling?"
+msgstr "¿Quieres devolver esta venta?"
+
+#: desktop/src/view/sell/bills/edit/CancelSale.js:16
+#: desktop/src/view/sell/card/edit/ReturnSelling.js:15
+msgid "Enter the reason for returning"
+msgstr "Introduzca el motivo de la devolución"
+
+#: desktop/src/view/sell/bills/edit/CancelSale.js:33
+#: desktop/src/view/sell/card/edit/ReturnSelling.js:32
+msgid "No cancel"
+msgstr "Cancelar"
+
+#: desktop/src/view/sell/bills/edit/CancelSale.js:39
+#: desktop/src/view/sell/card/edit/ReturnSelling.js:43
+msgid "Start returning"
+msgstr "Comenzar a regresar"
+
+#: desktop/src/view/sell/card/CardModel.js:41
+msgid "On returning"
+msgstr "Al volver"
+
+#: desktop/src/view/sell/card/Invoice.js:13
+msgid "Sell card"
+msgstr "Vender la tarjeta"
+
+#: desktop/src/view/sell/card/Invoice.js:191
+msgid "Tax amount"
+msgstr "Impuestos en importe"
+
+#: desktop/src/view/sell/card/Invoice.js:223
+msgid "Total without tax"
+msgstr "Total sin impuestos"
+
+#: desktop/src/view/sell/pos/PosCtrl.js:386
+#: desktop/src/view/sell/retail/RetailCtrl.js:247
+msgid "Do you really want to delete all positions from the list?"
+msgstr "¿Realmente quiere eliminar todas las posiciones de la lista?"
+
+#: desktop/src/view/sell/pos/PosRetail.js:47
+msgid "Stop sellings"
+msgstr "Dejar de vender"
+
+#: desktop/src/view/sell/pos/PosRetail.js:71
+msgid "Expiration"
+msgstr "Vencimiento"
+
+#: desktop/src/view/sell/pos/PosRetail.js:149
+#: desktop/src/view/sell/pos_list/PosList.js:21
+msgid "Check the amount of cash"
+msgstr "Comprobar la cantidad de dinero en efectivo"
+
+#: desktop/src/view/sell/pos/PosRetail.js:151
+#: desktop/src/view/sell/pos_list/PosList.js:23
+msgid "Do you confirm the availability of the amount?"
+msgstr "¿Confirma la disponibilidad del importe?"
+
+#: desktop/src/view/sell/pos/PosTreeCatalog.js:32
+#: desktop/src/view/sell/pos_sell/PosTreeCatalog.js:33
+#: desktop/src/view/sell/pos_sell/PosTreeCatalog.js:51
+msgid "Deselect all"
+msgstr "Deseleccionar todo"
+
+#: desktop/src/view/sell/pos/edit/PayCard.js:9
+#: desktop/src/view/sell/pos_sell/edit/PayCard.js:9
+msgid "Payment by bank card"
+msgstr "Pago con tarjeta bancaria"
+
+#: desktop/src/view/sell/pos/edit/PayCard.js:32
+#: desktop/src/view/sell/pos/edit/PayCash.js:168
+#: desktop/src/view/sell/pos_sell/edit/PayCard.js:32
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:135
+msgid "Need to pay"
+msgstr "Necesidad de pagar"
+
+#: desktop/src/view/sell/pos/edit/PayCard.js:52
+#: desktop/src/view/sell/pos_sell/edit/PayCard.js:52
+msgid "First complete the payment process in the bank terminal!"
+msgstr "¡Primero complete el proceso de pago en el terminal del banco!"
+
+#: desktop/src/view/sell/pos/edit/PayCard.js:67
+#: desktop/src/view/sell/pos_sell/edit/PayCard.js:67
+msgid "Bank payment number"
+msgstr "Número de pago bancario"
+
+#: desktop/src/view/sell/pos/edit/PayCard.js:106
+#: desktop/src/view/sell/pos/edit/PayCash.js:258
+#: desktop/src/view/sell/pos_sell/edit/PayCard.js:106
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:225
+msgid "Save & Print"
+msgstr "Guardar e imprimir"
+
+#: desktop/src/view/sell/pos/edit/PayCash.js:13
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:13
+msgid "Cash payment"
+msgstr "Pago en efectivo"
+
+#: desktop/src/view/sell/pos/edit/PayCash.js:57
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:24
+msgid ""
+"To add payment select banknotes and coins or enter field Received amount!"
+msgstr ""
+"¡Para añadir el pago seleccione billetes y monedas o introduzca el campo "
+"Importe recibido!"
+
+#: desktop/src/view/sell/pos/edit/PayCash.js:69
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:36
+msgid "Coins"
+msgstr "Monedas"
+
+#: desktop/src/view/sell/pos/edit/PayCash.js:94
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:61
+msgid "Banknotes"
+msgstr "Billetes de banco"
+
+#: desktop/src/view/sell/pos/edit/PayCash.js:130
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:97
+msgid "Received amount"
+msgstr "Importe recibido"
+
+#: desktop/src/view/sell/pos/edit/PayCash.js:219
+#: desktop/src/view/sell/pos_sell/edit/PayCash.js:186
+msgid "Delivery"
+msgstr "Entrega"
+
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:26
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:26
+msgid "Previous sell"
+msgstr "Venta anterior"
+
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:49
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:49
+msgid "Next sell"
+msgstr "Próxima venta"
+
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:65
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:65
+msgid "Selling"
+msgstr "De Venta"
+
+#: desktop/src/view/sell/pos/edit/PosReceipt.js:176
+#: desktop/src/view/sell/pos_sell/edit/PosReceipt.js:176
+msgid "Bank card"
+msgstr "Tarjeta bancaria"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:6
+msgid "Selling configuration"
+msgstr "Configuración de venta"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:32
+msgid "Select store and cash register then begin to sell!"
+msgstr "¡Seleccione la tienda y la caja registradora y empiece a vender!"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:55
+msgid "Cash register"
+msgstr "Caja registradora"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:78
+msgid "Cash amount"
+msgstr "Importe en efectivo"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:92
+msgid "Duration of work"
+msgstr "Duración del trabajo"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:97
+msgid "1 hour"
+msgstr "1 hora"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:98
+msgid "2 hours"
+msgstr "2 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:99
+msgid "3 hours"
+msgstr "3 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:100
+msgid "4 hours"
+msgstr "4 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:101
+msgid "5 hours"
+msgstr "5 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:102
+msgid "6 hours"
+msgstr "6 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:103
+msgid "7 hours"
+msgstr "7 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:104
+msgid "8 hours"
+msgstr "8 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:105
+msgid "9 hours"
+msgstr "9 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:106
+msgid "10 hours"
+msgstr "10 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:107
+msgid "11 hours"
+msgstr "11 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:108
+msgid "12 hours"
+msgstr "12 horas"
+
+#: desktop/src/view/sell/pos/edit/SellConfig.js:140
+msgid "Start selling"
+msgstr "Empezar a vender"
+
+#: desktop/src/view/sell/pos/edit/TrashConfirm.js:6
+msgid "Do you really want to clear the goods and delete this receipt?"
+msgstr "¿Realmente quieres limpiar la mercancía y borrar este recibo?"
+
+#: desktop/src/view/sell/pos_list/Grid.js:60
+msgid "Only active"
+msgstr "Sólo activo"
+
+#: desktop/src/view/sell/pos_list/Grid.js:66
+#: desktop/src/view/sell/revert_list/Grid.js:58
+msgid "Off"
+msgstr "Apagado"
+
+#: desktop/src/view/sell/pos_list/Grid.js:89
+msgid "Close cash"
+msgstr "Cierre de caja"
+
+#: desktop/src/view/sell/pos_list/Grid.js:114
+msgid "Start"
+msgstr "Inicio"
+
+#: desktop/src/view/sell/pos_list/Grid.js:122
+msgid "Date time"
+msgstr "Fecha hora"
+
+#: desktop/src/view/sell/pos_list/Grid.js:126
+msgid "To"
+msgstr "Hasta"
+
+#: desktop/src/view/sell/pos_sell/PosSell.js:51
+#: desktop/src/view/sell/pos_sell/edit/SellConfig.js:6
+msgid "Change point of sale"
+msgstr "Cambiar el punto de venta"
+
+#: desktop/src/view/sell/pos_sell/edit/Amount.js:10
+msgid "Quantity for item"
+msgstr "Cantidad por artículo"
+
+#: desktop/src/view/sell/retail/ProduceGrid.js:19
+msgid "Only available"
+msgstr "Sólo disponible"
+
+#: desktop/src/view/sell/retail/ProduceGrid.js:51
+msgid "Filter by catalog. Select to refine the list of products."
+msgstr "Filtrar por catálogo. Seleccione para refinar la lista de productos."
+
+#: desktop/src/view/sell/retail/ProduceGrid.js:91
+msgid "Main."
+msgstr "Principal."
+
+#: desktop/src/view/sell/retail/Retail.js:75
+msgid "Point of sale: "
+msgstr "Punto de venta: "
+
+#: desktop/src/view/sell/retail/edit/PayCard.js:6
+msgid "Payment by credit card"
+msgstr "Pago con tarjeta de crédito"
+
+#: desktop/src/view/sell/retail/edit/PayCard.js:28
+msgid "Attention!"
+msgstr "¡Atención!"
+
+#: desktop/src/view/sell/retail/edit/PayCard.js:33
+msgid "First complete the payment process in the terminal!"
+msgstr "¡Primero complete el proceso de pago en el terminal!"
+
+#: desktop/src/view/sell/retail/edit/PayCard.js:50
+msgid "Other"
+msgstr "Otro"
+
+#: desktop/src/view/sell/retail/edit/PayCard.js:57
+msgid "Does the payment by terminal successful?"
+msgstr "¿Tiene éxito el pago por terminal?"
+
+#: desktop/src/view/sell/retail/edit/PayCard.js:93
+msgid "Please,write the check number from the payment terminal"
+msgstr "Por favor, escriba el número de cheque del terminal de pago"
+
+#: desktop/src/view/sell/retail/edit/PayCard.js:131
+#: desktop/src/view/sell/retail/edit/PayCash.js:192
+msgid "Save and print"
+msgstr "Guardar e imprimir"
+
+#: desktop/src/view/sell/retail/edit/PayCash.js:13
+msgid "Select the bills or specify the amount"
+msgstr "Seleccione los billetes o especifique el importe"
+
+#: desktop/src/view/sell/retail/edit/PayCash.js:39
+msgid "Amount received"
+msgstr "Cantidad recibida"
+
+#: desktop/src/view/sell/retail/edit/PayCash.js:108
+msgid "Give change"
+msgstr "Dar el cambio"
+
+#: desktop/src/view/sell/retail/edit/PayCash.js:132
+msgid "Coin"
+msgstr "Criptomoneda"
+
+#: desktop/src/view/sell/retail/edit/PayCash.js:153
+msgid "Bill"
+msgstr "Cuenta"
+
+#: desktop/src/view/sell/retail/edit/Receipt.js:11
+msgid "Retail sale"
+msgstr "Venta al por menor"
+
+#: desktop/src/view/sell/retail/edit/Receipt.js:134
+msgid "By card"
+msgstr "A la tarjeta"
+
+#: desktop/src/view/sell/revert_list/Grid.js:52
+msgid "Only in progress"
+msgstr "Sólo en curso"
+
+#: desktop/src/view/sell/revert_list/Grid.js:117
+msgid "Receipt / Date"
+msgstr "Recibo / Fecha"
+
+#: desktop/src/view/sell/revert_list/Grid.js:160
+msgid "Cancel request"
+msgstr "Cancelar solicitud"
+
+#: desktop/src/view/sell/revert_list/Grid.js:166
+msgid "Approve request"
+msgstr "Aprobar la solicitud"
+
+#: desktop/src/view/sell/revert_list/Grid.js:195
+msgid "Started by | Date | Comment"
+msgstr "Iniciado por | Fecha | Comentario"
+
+#: desktop/src/view/sell/revert_list/Grid.js:204
+msgid "Closed by | Date"
+msgstr "Cerrado por | Fecha"
+
+#: desktop/src/view/sell/revert_list/Revert.js:16
+msgid "Approving"
+msgstr "Aprobación de"
+
+#: desktop/src/view/sell/revert_list/Revert.js:17
+msgid "Do you want to approve this request of refund selling?"
+msgstr "¿Quiere aprobar esta solicitud de venta de reembolso?"
+
+#: desktop/src/view/sell/revert_list/Revert.js:25
+msgid "Reverting"
+msgstr "Revirtiendo"
+
+#: desktop/src/view/sell/revert_list/Revert.js:26
+msgid "Do you want to revert this request of refund selling?"
+msgstr "¿Quiere revertir esta solicitud de venta de reembolso?"
+
+#: desktop/src/view/subscription/Form0.js:17
+msgid "Subscription payment"
+msgstr "Pago de la suscripción"
+
+#: desktop/src/view/subscription/Form0.js:75
+msgid "Quantity of POS"
+msgstr "Cantidad de POS"
+
+#: desktop/src/view/subscription/Form0.js:119
+msgid "Start subscription"
+msgstr "Iniciar la suscripción"
+
+#: desktop/src/view/subscription/Form0.js:131
+msgid ""
+"The subscription will be paid every month until you stop it. When you change "
+"the number of POS, the subscription price also changes."
+msgstr ""
+"La suscripción se pagará cada mes hasta que la suspenda. Cuando cambias el "
+"número de POS, el precio de la suscripción también cambia."
+
+#: desktop/src/view/subscription/Form0.js:152
+msgid "Customer information"
+msgstr "Información al cliente"
+
+#: desktop/src/view/subscription/Form0.js:156
+msgid "Full name"
+msgstr "Nombre completo"
+
+#: desktop/src/view/subscription/Form0.js:174
+msgid "Select a Payment Method"
+msgstr "Seleccione una Forma de Pago"
+
+#: desktop/src/view/subscription/Form0.js:201
+msgid "Enter your card details"
+msgstr "Introduzca los datos de su tarjeta"
+
+#: desktop/src/view/subscription/Form0.js:210
+msgid "FULL NAME *"
+msgstr "NOMBRE COMPLETO *"
+
+#: desktop/src/view/subscription/Form0.js:221
+msgid "CARD *"
+msgstr "TARJETA *"
+
+#: desktop/src/view/subscription/Form0.js:247
+#: desktop/src/view/subscription/Form0.js:320
+msgid "Pay subscription"
+msgstr "Suscripción de pago"
+
+#: desktop/src/view/subscription/Form0.js:268
+msgid "Enter your bank account details"
+msgstr "Introduzca los datos de su cuenta bancaria"
+
+#: desktop/src/view/subscription/Form0.js:279
+msgid ""
+"By providing your payment information and confirming this payment, you "
+"authorise (A) Voita ERP and Stripe, our payment service provider and/or "
+"PPRO, its local service provider, to send instructions to your bank to debit "
+"your account and (B) your bank to debit your account in accordance with "
+"those instructions."
+msgstr ""
+"Al proporcionar su información de pago y confirmar este pago, usted autoriza "
+"(A) a Voita ERP y a Stripe, nuestro proveedor de servicios de pago y/o a "
+"PPRO, su proveedor de servicios local, a enviar instrucciones a su banco "
+"para que cargue el importe en su cuenta y (B) a su banco para que cargue el "
+"importe en su cuenta de acuerdo con dichas instrucciones."
+
+#: desktop/src/view/subscription/Form0.js:281
+msgid ""
+"As part of your rights, you are entitled to a refund from your bank under "
+"the terms and conditions of your agreement with your bank. A refund must be "
+"claimed within 8 weeks starting from the date on which your account was "
+"debited."
+msgstr ""
+"Como parte de sus derechos, tiene derecho a que su banco le devuelva el "
+"dinero según los términos y condiciones de su acuerdo con el banco. El "
+"reembolso debe reclamarse en un plazo de 8 semanas a partir de la fecha en "
+"la que se hizo el cargo en su cuenta."
+
+#: desktop/src/view/subscription/Form0.js:283
+msgid ""
+"Your rights are explained in a statement that you can obtain from your bank."
+msgstr ""
+"Sus derechos se explican en una declaración que puede obtener en su banco."
+
+#: desktop/src/view/subscription/Form0.js:284
+msgid ""
+"You agree to receive notifications for future debits up to 2 days before "
+"they occur."
+msgstr ""
+"Usted acepta recibir notificaciones de futuros adeudos hasta 2 días antes de "
+"que se produzcan."
+
+#: desktop/src/view/subscription/Form0.js:291
+msgid "IBAN *"
+msgstr "IBAN *"
+
+#: desktop/src/view/subscription/Processing.js:10
+msgid "We are awaiting payment information for your subscription."
+msgstr "Estamos a la espera de la información sobre el pago de su suscripción."
+
+#: desktop/src/view/subscription/Processing.js:11
+msgid "Please do not close this page."
+msgstr "Por favor, no cierre esta página."
+
+#: desktop/src/view/subscription/SubsData.js:34
+msgid "Your subscriptions information"
+msgstr "Sus datos de suscripción"
+
+#: desktop/src/view/subscription/SubsData.js:49
+msgid "Product name / plan"
+msgstr "Nombre del producto / plan"
+
+#: desktop/src/view/subscription/SubsData.js:70
+msgid "Price per POS"
+msgstr "Precio por punto de venta"
+
+#: desktop/src/view/subscription/SubsData.js:112
+msgid "Last paid"
+msgstr "Último pago"
+
+#: desktop/src/view/subscription/SubsData.js:133
+msgid "Subscription status"
+msgstr "Estado de suscripción"
+
+#: desktop/src/view/subscription/SubsData.js:158
+msgid "Cancellation date"
+msgstr "Fecha de anulación"
+
+#: desktop/src/view/subscription/SubsData.js:193
+msgid ""
+"When you will change the number of POS, the quantity and total amount in the "
+"subscription will be changed for next payment."
+msgstr ""
+"Cuando cambie el número de POS, la cantidad y el importe total de la "
+"suscripción se modificarán para el próximo pago."
+
+#: desktop/src/view/subscription/SubsData.js:209
+msgid "Cancel subscription"
+msgstr "Cancelar suscripción"
+
+#: desktop/src/view/subscription/SubsData.js:227
+msgid "Change payment method"
+msgstr "Cambiar la forma de pago"
+
+#: desktop/src/view/subscription/SubsData.js:240
+msgid ""
+"Attention! If you cancel your subscription, you will switch to the free mode "
+"with many disabled features."
+msgstr ""
+"¡Atención! Si cancelas tu suscripción, pasarás al modo gratuito con muchas "
+"funciones desactivadas."
+
+#: desktop/src/view/subscription/SubsData.js:241
+msgid ""
+"In the free mode, you will always have access to only the Company, Catalog, "
+"POS and Selling List functions."
+msgstr ""
+"En el modo libre, siempre tendrá acceso sólo a las funciones de Empresa, "
+"Catálogo, POS y Lista de Ventas."
+
+#: desktop/src/view/subscription/SubsData.js:370
+msgid "Invoices"
+msgstr "Facturas"
+
+#: desktop/src/view/subscription/SubsData.js:410
+msgid "Download"
+msgstr "Descargar"
+
+#: desktop/src/view/subscription/Subscription.js:33
+msgid "Manage Subscription"
+msgstr "Gestionar la suscripción"
+
+#: desktop/src/view/subscription/SubscriptionCtrl.js:87
+msgid "Cancellation started"
+msgstr "Se ha iniciado la cancelación"
+
+#: desktop/src/view/subscription/SubscriptionCtrl.js:94
+msgid "Incomplete"
+msgstr "Incompleto"
+
+#: desktop/src/view/subscription/SubscriptionCtrl.js:99
+msgid "Incomplete expired"
+msgstr "Incompleto expirado"
+
+#: desktop/src/view/subscription/SubscriptionCtrl.js:103
+msgid "Past due"
+msgstr "Vencidos"
+
+#: desktop/src/view/subscription/SuccessPay.js:14
+msgid "Excellent!"
+msgstr "¡Excelente!"
+
+#: desktop/src/view/subscription/SuccessPay.js:15
+msgid "Your subscription has been successfully activated."
+msgstr "Su suscripción ha sido activada con éxito."
+
+#: desktop/src/view/subscription/SuccessPay.js:16
+msgid "We will be happy to help you grow your business!"
+msgstr "¡Estaremos encantados de ayudarle a hacer crecer su negocio!"
+
+#: desktop/src/view/subscription/SuccessPay.js:17
+msgid "Thank you for choosing our service!"
+msgstr "¡Gracias por elegir nuestro servicio!"
+
+#: desktop/src/view/subscription/SuccessPay.js:19
+msgid "You will be returned to subscriptions page in 15 seconds!"
+msgstr "¡Volverá a la página de suscripciones en 15 segundos!"
+
+#: desktop/src/view/subscription/SuccessPay.js:32
+msgid "Go to subscriptions page"
+msgstr "Ir a la página de suscripciones"
+
+#: desktop/src/view/supplier/SupplierLeft.js:5
+msgid "Data is not found!"
+msgstr "¡No se han encontrado los datos!"
+
+#: desktop/src/view/supplier/SupplierLeft.js:37
+msgid "New Supplier"
+msgstr "Nuevo Proveedor"
+
+#: desktop/src/view/supplier/SupplierLeft.js:48
+msgid "Search by name(at least 3 characters)"
+msgstr "Búsqueda por nombre (al menos 3 caracteres)"
+
+#: desktop/src/view/supplier/SupplierLeft.js:69
+msgid "Contacts"
+msgstr "Contactos"
+
+#: desktop/src/view/supplier/SupplierRight.js:10
+msgid "To view items, select the supplier from the list"
+msgstr "Para ver los artículos, seleccione el proveedor de la lista"
+
+#: desktop/src/view/supplier/SupplierRight.js:41
+msgid "Supplier information"
+msgstr "Información para proveedores"
+
+#: desktop/src/view/supplier/SupplierRight.js:161
+msgid "Person"
+msgstr "Persona"
+
+#: desktop/src/view/supplier/SupplierRight.js:197
+msgid "New Purchase"
+msgstr "Nueva Compra"
+
+#: desktop/src/view/supplier/edit/EditSupplier.js:7
+msgid "Edit supplier"
+msgstr "Editar proveedor"
+
+#: desktop/src/view/supplier/edit/EditSupplier.js:40
+#: desktop/src/view/supplier/edit/NewSupplier.js:46
+msgid "Send an invitation"
+msgstr "Enviar una invitación"
+
+#: desktop/src/view/supplier/edit/NewSupplier.js:13
+msgid "New supplier"
+msgstr "Nuevo Proveedor"
+
+#: desktop/src/view/worker/Grid.js:15
+msgid "Personnel"
+msgstr "Personal"
+
+#: desktop/src/view/worker/Grid.js:20
+msgid "New User"
+msgstr "Nuevo Usuario"
+
+#: desktop/src/view/worker/edit/NewWorker.js:14
+msgid "New Employee"
+msgstr "Nuevo profesional"
+
+#: desktop/src/view/worker/edit/NewWorker.js:85
+msgid "Add Points"
+msgstr "Add seguidores"
+
+#: desktop/src/view/worker/edit/NewWorker.js:99
+msgid "Add Groups"
+msgstr "Añadir grupo"
+
+#: desktop/src/view/worker/edit/NewWorker.js:115
+msgid "Can work in  service"
+msgstr "Puede trabajar en el servicio"
+
+#: desktop/src/view/worker/edit/PlacesList.js:10
+msgid "Add User Points"
+msgstr "Añadir puntos de usuario"
+
+#: shared/overrides/util/Format.js:32 shared/src/util/Formats.js:13
+msgid "Visa"
+msgstr "Visa"
+
+#: shared/overrides/util/Format.js:33 shared/overrides/util/Format.js:35
+#: shared/src/util/Formats.js:15
+msgid "Card"
+msgstr "Tarjeta"
+
+#: shared/overrides/util/Format.js:34 shared/src/util/Formats.js:14
+msgid "Master Card"
+msgstr "Master Card"
+
+#: shared/overrides/util/Format.js:36 shared/src/util/Formats.js:16
+msgid "Pay Pal"
+msgstr "Pay Pal"
+
+#: shared/src/base/GridRowedit.js:11
+msgid "Ок"
+msgstr "Ок"
+
+#: shared/src/base/field/Phone.js:13
+msgid "Please enter valid phone number!"
+msgstr "¡Por favor, introduzca un número de teléfono válido!"
+
+#: shared/src/common/CatalogField.js:72
+msgid "Clean selected category"
+msgstr "Limpiar la categoría seleccionada"
+
+#: shared/src/common/CatalogField.js:95
+msgid "Select category"
+msgstr "Seleccionar categoría"
+
+#: shared/src/common/CatalogField.js:130
+msgid "Category name"
+msgstr "Nombre de categoría"
+
+#: shared/src/common/CatalogField.js:171
+msgid "This field is required."
+msgstr "Este campo es obligatorio."
+
+#: shared/src/common/DeleteConfirm.js:7
+msgid "Do you want to delete this position from the list?"
+msgstr "¿Desea eliminar esta posición de la lista?"
+
+#: shared/src/common/GroupField.js:13
+msgid "Users groups"
+msgstr "Grupos de usuarios"
+
+#: shared/src/common/GroupField.js:15
+msgid "Edit groups"
+msgstr "Editar grupos"
+
+#: shared/src/common/GroupField.js:81
+msgid "Groups titles"
+msgstr "Títulos de los grupos"
+
+#: shared/src/common/MenuCompany.js:68
+msgid "Company info"
+msgstr "Información de la empresa"
+
+#: shared/src/common/PlaceField.js:13 shared/src/common/PlaceField.js:14
+msgid "Points of retail sale"
+msgstr "Puntos de venta al por menor"
+
+#: shared/src/common/PlaceField.js:15
+msgid "Select point of retail sale"
+msgstr "Seleccione el punto de venta al por menor"
+
+#: shared/src/common/PlaceField.js:82
+msgid "Select places of retail sale"
+msgstr "Seleccione los lugares de venta al por menor"
+
+#: shared/src/common/PlaceInvent.js:41
+msgid "Balance"
+msgstr "Saldo"
+
+#: shared/src/common/PlaceInvent.js:54
+msgid "Edit quantity"
+msgstr "Editar cantidad"
+
+#: shared/src/common/PlaceInvent.js:63
+msgid "Store availability"
+msgstr "Disponibilidad de tienda"
+
+#: shared/src/common/ProduceSelect.js:22
+msgid "By name and barcode (at least 3 characters )"
+msgstr "Búsqueda por nombre y código de barras (al menos 3 caracteres)"
+
+#: shared/src/common/ProduceSelect.js:37
+msgid "Filter by catalog"
+msgstr "Filtrar por catálogo"
+
+#: shared/src/model/MoveList.js:70
+msgid "2"
+msgstr "2"
+
+#: shared/src/model/MoveList.js:72
+msgid "1"
+msgstr "1"
+
+#: shared/src/model/MoveList.js:74
+msgid "0"
+msgstr "0"
+
+#: shared/src/model/Revert.js:58
+msgid "from"
+msgstr "desde"
+
+#: shared/src/model/Revert.js:64
+msgid "Approved"
+msgstr "Aprobado"
+
+#: shared/src/model/Revert.js:66
+msgid "Rejected"
+msgstr "Rechazado"
+
+#: shared/src/model/Revert.js:68
+msgid "In progress"
+msgstr "En progreso"
+
+#: shared/src/model/Worker.js:17
+msgid "The e-mail should be like this: email@mail.com"
+msgstr "El correo electrónico debe ser así: email@mail.com"
+
+#: shared/src/store/Units.js:11
+msgid "Kilogram"
+msgstr "Kilogramo"
+
+#: shared/src/store/Units.js:11
+msgid "kg"
+msgstr "kg"
+
+#: shared/src/store/Units.js:12
+msgid "Gram"
+msgstr "Gram"
+
+#: shared/src/store/Units.js:12
+msgid "g"
+msgstr "g"
+
+#: shared/src/store/Units.js:13
+msgid "Milligram"
+msgstr "Miligramo"
+
+#: shared/src/store/Units.js:13
+msgid "mg"
+msgstr "mg"
+
+#: shared/src/store/Units.js:14
+msgid "Ton"
+msgstr "Ton"
+
+#: shared/src/store/Units.js:14
+msgid "tn"
+msgstr "tonelada Inglesa"
+
+#: shared/src/store/Units.js:15
+msgid "Litre"
+msgstr "Litro"
+
+#: shared/src/store/Units.js:15
+msgid "L"
+msgstr "L"
+
+#: shared/src/store/Units.js:16
+msgid "Millilitre"
+msgstr "Mililitros"
+
+#: shared/src/store/Units.js:16
+msgid "mL"
+msgstr "mL"
+
+#: shared/src/store/Units.js:17
+msgid "Metre"
+msgstr "Metros"
+
+#: shared/src/store/Units.js:17
+msgid "m"
+msgstr "m"
+
+#: shared/src/store/Units.js:18
+msgid "Centimetre"
+msgstr "Centímetro"
+
+#: shared/src/store/Units.js:18
+msgid "cm"
+msgstr "cm"
+
+#: shared/src/store/Units.js:19
+msgid "Square Metre"
+msgstr "Metro cuadrado"
+
+#: shared/src/store/Units.js:19
+msgid "m2"
+msgstr "m2"
+
+#: shared/src/store/Units.js:20
+msgid "Square Centimetre"
+msgstr "Centímetro cuadrado"
+
+#: shared/src/store/Units.js:20
+msgid "cm2"
+msgstr "cm2"
+
+#: shared/src/store/Units.js:21
+msgid "Ounce"
+msgstr "Onza"
+
+#: shared/src/store/Units.js:21
+msgid "oz"
+msgstr "oz"
+
+#: shared/src/store/Units.js:22
+msgid "Fluid Ounce"
+msgstr "Onza líquida"
+
+#: shared/src/store/Units.js:22
+msgid "fl oz"
+msgstr "fl oz"
+
+#: shared/src/util/Msg.js:6 shared/src/util/Notice.js:317
+msgid "The checkout was launched earlier, we cannot start it again."
+msgstr "La comprobación se lanzó antes, no podemos iniciarla de nuevo."
+
+#: shared/src/util/Msg.js:7
+msgid "An error occurred while saving."
+msgstr "Se ha producido un error al guardar."
+
+#: shared/src/util/Msg.js:8 shared/src/util/Notice.js:320
+msgid "The checkout was successfully launched, now you can sell."
+msgstr "La caja se ha lanzado con éxito, ahora puedes vender."
+
+#: shared/src/util/Notice.js:6
+msgid ""
+"Sorry, we have a technical problem at the moment, please try again later!"
+msgstr ""
+"¡Lo sentimos, tenemos un problema técnico en este momento, por favor "
+"inténtelo más tarde!"
+
+#: shared/src/util/Notice.js:88
+msgid "Sorry! You need to fill in all required fields."
+msgstr "¡Lo siento! Debe rellenar todos los campos obligatorios."
+
+#: shared/src/util/Notice.js:89
+msgid "Data was not found."
+msgstr "No se han encontrado los datos."
+
+#: shared/src/util/Notice.js:90
+msgid "Data is not available."
+msgstr "Los datos no están disponibles."
+
+#: shared/src/util/Notice.js:91
+msgid "The page is not available"
+msgstr "La página no está disponible"
+
+#: shared/src/util/Notice.js:92
+msgid "Sorry! We cannot found request data!"
+msgstr "¡Lo sentimos! ¡No podemos encontrar los datos solicitados!"
+
+#: shared/src/util/Notice.js:93
+msgid "Sorry! The request method is not valid!"
+msgstr "¡Lo siento! ¡El método de solicitud no es válido!"
+
+#: shared/src/util/Notice.js:94
+msgid "There is no organization ID."
+msgstr "No hay identificación de la organización."
+
+#: shared/src/util/Notice.js:95
+msgid "Do authorization, please!"
+msgstr "¡Autorización, por favor!"
+
+#: shared/src/util/Notice.js:96
+msgid "Sorry! The email not sent!"
+msgstr "¡Lo siento! ¡El correo electrónico no se ha enviado!"
+
+#: shared/src/util/Notice.js:97
+msgid "Sorry! Request data is not correct!"
+msgstr "¡Lo sentimos! ¡Los datos solicitados no son correctos!"
+
+#: shared/src/util/Notice.js:98
+msgid "Sorry! Not found subscription type!"
+msgstr "¡Lo siento! ¡No se ha encontrado el tipo de suscripción!"
+
+#: shared/src/util/Notice.js:99
+msgid "Sorry! You cannot request this operation!"
+msgstr "¡Lo siento! ¡No puede solicitar esta operación!"
+
+#: shared/src/util/Notice.js:100
+msgid "Sorry! You do not have access to this operation!"
+msgstr "¡Lo siento! ¡No tiene acceso a esta operación!"
+
+#: shared/src/util/Notice.js:101
+msgid "Sorry! Your was not started!"
+msgstr "¡Lo siento! ¡Su no se inició!"
+
+#: shared/src/util/Notice.js:102
+msgid "Sorry! The subscription type not found!"
+msgstr "¡Lo sentimos! ¡El tipo de suscripción no se encuentra!"
+
+#: shared/src/util/Notice.js:103
+msgid "The subscription was renewed successfully!"
+msgstr "¡La suscripción se ha renovado con éxito!"
+
+#: shared/src/util/Notice.js:104
+msgid "The subscription cancellation was started successfully!"
+msgstr "¡La cancelación de la suscripción se ha iniciado con éxito!"
+
+#: shared/src/util/Notice.js:108
+msgid "Please, enter the user login!"
+msgstr "¡Por favor, introduzca el nombre de usuario!"
+
+#: shared/src/util/Notice.js:109
+msgid "Please, enter the password!"
+msgstr "¡Por favor, introduce tu contraseña!"
+
+#: shared/src/util/Notice.js:110
+msgid "Please,confirm the password!"
+msgstr "¡Por favor, confirme la contraseña!"
+
+#: shared/src/util/Notice.js:111
+msgid "You entered two different passwords. Please try again!"
+msgstr ""
+"Has introducido dos contraseñas diferentes. ¡Por favor, inténtalo de nuevo!"
+
+#: shared/src/util/Notice.js:112
+msgid "Please, enter the country!"
+msgstr "¡Por favor, ¡entra en el país!"
+
+#: shared/src/util/Notice.js:113
+msgid "Please, enter the organization!"
+msgstr "¡Por favor, entra en la organización!"
+
+#: shared/src/util/Notice.js:114
+msgid "Please, enter the organization phone!"
+msgstr "¡Por favor, introduzca el teléfono de la organización!"
+
+#: shared/src/util/Notice.js:115
+msgid "Please, enter the currency!"
+msgstr "¡Por favor, introduzca la moneda!"
+
+#: shared/src/util/Notice.js:116
+msgid "Please, specify the main place of business!"
+msgstr "¡Por favor, especifique el lugar principal del negocio!"
+
+#: shared/src/util/Notice.js:117
+msgid "Registration with your accounts failed!"
+msgstr "¡El registro en sus cuentas ha fallado!"
+
+#: shared/src/util/Notice.js:118
+msgid "The creation of an organization account ended in an error!"
+msgstr "¡La creación de una cuenta de organización terminó en un error!"
+
+#: shared/src/util/Notice.js:119
+msgid "An error occurred in user activation!"
+msgstr "¡Se ha producido un error en la activación del usuario!"
+
+#: shared/src/util/Notice.js:120
+msgid "Administrative group was not found!"
+msgstr "¡No se ha encontrado el grupo administrativo!"
+
+#: shared/src/util/Notice.js:121
+msgid "No name for the main service catalog!"
+msgstr "¡No hay nombre para el catálogo de servicios principal!"
+
+#: shared/src/util/Notice.js:122
+msgid "No name for main products catalog!"
+msgstr "¡No hay nombre para el catálogo de productos principales!"
+
+#: shared/src/util/Notice.js:123
+msgid "Organization was successfully created!"
+msgstr "¡La organización se ha creado con éxito!"
+
+#: shared/src/util/Notice.js:126
+msgid "Please, enter the country."
+msgstr "Por favor, introduzca el país."
+
+#: shared/src/util/Notice.js:127
+msgid "Please, enter the organization."
+msgstr "Por favor, introduzca la organización."
+
+#: shared/src/util/Notice.js:128
+msgid "Please, enter the organization phone."
+msgstr "Por favor, introduzca el teléfono de la organización."
+
+#: shared/src/util/Notice.js:129
+msgid "Please, enter the organization e-mail."
+msgstr "Por favor, introduzca el correo electrónico de la organización."
+
+#: shared/src/util/Notice.js:130 shared/src/util/Notice.js:132
+msgid "Organization was not found."
+msgstr "No se ha encontrado la organización."
+
+#: shared/src/util/Notice.js:131
+msgid "Organization card was not obtained."
+msgstr "No se obtuvo la tarjeta de organización."
+
+#: shared/src/util/Notice.js:135
+msgid "The selected role was not found."
+msgstr "No se ha encontrado el papel seleccionado."
+
+#: shared/src/util/Notice.js:136
+msgid "Role was successfully deleted."
+msgstr "La función se ha eliminado con éxito."
+
+#: shared/src/util/Notice.js:139
+msgid "Please, specify the module name."
+msgstr "Por favor, especifique el nombre del módulo."
+
+#: shared/src/util/Notice.js:140
+msgid "Please, specify the function name."
+msgstr "Por favor, especifique el nombre de la función."
+
+#: shared/src/util/Notice.js:141
+msgid "A similar role already exists."
+msgstr "Ya existe un papel similar."
+
+#: shared/src/util/Notice.js:142
+msgid "The role data was not found."
+msgstr "No se han encontrado los datos del rol."
+
+#: shared/src/util/Notice.js:143
+msgid "Role was successfully saved."
+msgstr "La función se ha guardado con éxito."
+
+#: shared/src/util/Notice.js:146
+msgid "The selected group was not found."
+msgstr "No se ha encontrado el grupo seleccionado."
+
+#: shared/src/util/Notice.js:147
+msgid "Group was successfully deleted."
+msgstr "El grupo ha sido eliminado con éxito."
+
+#: shared/src/util/Notice.js:150
+msgid "Group was not found."
+msgstr "No se ha encontrado el grupo."
+
+#: shared/src/util/Notice.js:151
+msgid "Roles for the group were successfully updated."
+msgstr "Las funciones del grupo se han actualizado con éxito."
+
+#: shared/src/util/Notice.js:154
+msgid "Please, specify the group name."
+msgstr "Por favor, especifique el nombre del grupo."
+
+#: shared/src/util/Notice.js:155
+msgid "Group was successfully saved."
+msgstr "El grupo se ha guardado con éxito."
+
+#: shared/src/util/Notice.js:160
+msgid "Please,specify the name of catalogs section."
+msgstr "Por favor, especifique el nombre de la sección de catálogos."
+
+#: shared/src/util/Notice.js:161
+msgid "Please,specify the parenting section."
+msgstr "Por favor, especifique la sección de crianza."
+
+#: shared/src/util/Notice.js:162
+msgid "Something goes wrong in section saving."
+msgstr "Algo va mal en el guardado de la sección."
+
+#: shared/src/util/Notice.js:163
+msgid "Catalog section was successfully saved."
+msgstr "La sección del catálogo se ha guardado con éxito."
+
+#: shared/src/util/Notice.js:166 shared/src/util/Notice.js:167
+msgid "Your e-mail address or password is not correct or is not registered."
+msgstr ""
+"Su dirección de correo electrónico o su contraseña no son correctas o no "
+"están registradas."
+
+#: shared/src/util/Notice.js:168
+msgid "Client ID was noy found."
+msgstr "No se ha encontrado la identificación del cliente."
+
+#: shared/src/util/Notice.js:169
+msgid "Welcome to Voita ERP."
+msgstr "Bienvenido a Voita ERP."
+
+#: shared/src/util/Notice.js:172
+msgid "There is no name of product."
+msgstr "No hay nombre de producto."
+
+#: shared/src/util/Notice.js:173
+msgid "There is no catalog section."
+msgstr "No hay sección de catálogo."
+
+#: shared/src/util/Notice.js:174
+msgid "There is no price."
+msgstr "No hay precio."
+
+#: shared/src/util/Notice.js:175
+msgid "An error occurred while saving product."
+msgstr "Se ha producido un error al guardar el producto."
+
+#: shared/src/util/Notice.js:176
+msgid "There is an error in creating product price."
+msgstr "Hay un error en la creación del precio del producto."
+
+#: shared/src/util/Notice.js:177
+msgid "Product was successfully saved."
+msgstr "El producto se ha guardado con éxito."
+
+#: shared/src/util/Notice.js:180
+msgid "Please, specify the name of point of retail sale"
+msgstr "Por favor, especifique el nombre del punto de venta al por menor"
+
+#: shared/src/util/Notice.js:181
+msgid "There is an error in saving point of retail sale "
+msgstr "Hay un error al guardar el punto de venta al por menor "
+
+#: shared/src/util/Notice.js:182
+msgid "Point of retail sale was successfully saved"
+msgstr "El punto de venta minorista se ha guardado con éxito"
+
+#: shared/src/util/Notice.js:185
+msgid "Please,enter user login as e-mail"
+msgstr "Por favor, introduzca el nombre de usuario como correo electrónico"
+
+#: shared/src/util/Notice.js:186
+msgid ""
+"Please,enter a user password of not less than 8 and not more than 16 "
+"characters"
+msgstr ""
+"Por favor, introduzca una contraseña de usuario de no menos de 8 y no más de "
+"16 caracteres"
+
+#: shared/src/util/Notice.js:187
+msgid ""
+"Unable to create an account with specified email. Please, try another one."
+msgstr ""
+"No se ha podido crear una cuenta con el correo electrónico especificado. Por "
+"favor, intente con otra."
+
+#: shared/src/util/Notice.js:188
+msgid "Failed to execute query.Please, try again"
+msgstr "No se ha podido ejecutar la consulta. Por favor, inténtelo de nuevo"
+
+#: shared/src/util/Notice.js:189
+msgid "Employee data has been successfully saved"
+msgstr "Los datos de los empleados se han guardado con éxito"
+
+#: shared/src/util/Notice.js:190
+msgid "Employee was successfully created."
+msgstr "El empleado ha sido creado con éxito."
+
+#: shared/src/util/Notice.js:193
+msgid "Saving is not possible."
+msgstr "El ahorro no es posible."
+
+#: shared/src/util/Notice.js:194
+msgid "Specify the name of the organization."
+msgstr "Especifique el nombre de la organización."
+
+#: shared/src/util/Notice.js:195
+msgid "Composition not found."
+msgstr "Composición no encontrada."
+
+#: shared/src/util/Notice.js:196
+msgid "Company information was successfully saved"
+msgstr "La información de la empresa se ha guardado correctamente"
+
+#: shared/src/util/Notice.js:199
+msgid "Employee is not specified"
+msgstr "El empleado no está especificado"
+
+#: shared/src/util/Notice.js:200
+msgid "Points of sale of employee were successfully changed."
+msgstr "Los puntos de venta de los empleados se cambiaron con éxito."
+
+#: shared/src/util/Notice.js:203
+msgid "Please, select an employee."
+msgstr "Por favor, seleccione un empleado."
+
+#: shared/src/util/Notice.js:204
+msgid "Groups of employee were successfully changed."
+msgstr "Los grupos de empleados se cambiaron con éxito."
+
+#: shared/src/util/Notice.js:207
+msgid "Point of retail sale is not specified"
+msgstr "No se especifica el punto de venta al por menor"
+
+#: shared/src/util/Notice.js:210
+msgid "Please enter the name of the organization."
+msgstr "Introduzca el nombre de la organización."
+
+#: shared/src/util/Notice.js:211
+msgid "Please indicate the country of organization."
+msgstr "Por favor, indique el país de la organización."
+
+#: shared/src/util/Notice.js:212
+msgid "Supplier was saved successfully."
+msgstr "El proveedor se ha guardado con éxito."
+
+#: shared/src/util/Notice.js:213
+msgid "Supplier was added successfully."
+msgstr "El proveedor ha sido añadido con éxito."
+
+#: shared/src/util/Notice.js:216
+msgid "Password not changed. Old password not correct."
+msgstr "La contraseña no ha cambiado. La antigua contraseña no es correcta."
+
+#: shared/src/util/Notice.js:217
+msgid "Please check for form errors and retry"
+msgstr ""
+"Por favor, compruebe si hay errores en el formulario y vuelva a intentarlo"
+
+#: shared/src/util/Notice.js:218
+msgid "Password was changed successfully."
+msgstr "La contraseña ha sido cambiada con éxito."
+
+#: shared/src/util/Notice.js:221
+msgid "Information about user changed successfully."
+msgstr "La información sobre el usuario ha sido modificada con éxito."
+
+#: shared/src/util/Notice.js:226
+msgid "Period scheme was not found."
+msgstr "No se ha encontrado el esquema del período."
+
+#: shared/src/util/Notice.js:227
+msgid "Period storage was not found."
+msgstr "No se ha encontrado el almacenamiento del período."
+
+#: shared/src/util/Notice.js:228
+msgid "An error occurred while adding the period."
+msgstr "Se ha producido un error al añadir el periodo."
+
+#: shared/src/util/Notice.js:233 shared/src/util/Notice.js:287
+msgid "There is no number of document."
+msgstr "No hay número de documento."
+
+#: shared/src/util/Notice.js:234 shared/src/util/Notice.js:288
+msgid "Period is not specified."
+msgstr "No se especifica el periodo."
+
+#: shared/src/util/Notice.js:237
+msgid "This type of payment is not supported."
+msgstr "No se admite este tipo de pago."
+
+#: shared/src/util/Notice.js:238
+msgid "The document’s period was not selected."
+msgstr "No se ha seleccionado el periodo del documento."
+
+#: shared/src/util/Notice.js:239
+msgid "The period for document’s position was not selected."
+msgstr "No se ha seleccionado el periodo para la posición del documento."
+
+#: shared/src/util/Notice.js:240
+msgid "An error occurred while creating document ."
+msgstr "Se ha producido un error al crear el documento ."
+
+#: shared/src/util/Notice.js:241
+msgid "The period for inventory was not selected."
+msgstr "No se ha seleccionado el periodo de inventario."
+
+#: shared/src/util/Notice.js:242
+msgid "Point of retail sale was not specified."
+msgstr "No se especificó el punto de venta al por menor."
+
+#: shared/src/util/Notice.js:243
+msgid "To pay by credit card you need to specify the terminal check number."
+msgstr ""
+"Para pagar con tarjeta de crédito es necesario especificar el número de "
+"cheque del terminal."
+
+#: shared/src/util/Notice.js:244
+msgid "Document was successfully created."
+msgstr "El documento se ha creado con éxito."
+
+#: shared/src/util/Notice.js:247 shared/src/util/Notice.js:251
+#: shared/src/util/Notice.js:256
+msgid "Please, select the point of retail sale."
+msgstr "Por favor, seleccione el punto de venta al por menor."
+
+#: shared/src/util/Notice.js:248 shared/src/util/Notice.js:252
+msgid "Please, select the period of purchase."
+msgstr "Por favor, seleccione el periodo de compra."
+
+#: shared/src/util/Notice.js:259
+msgid "Point of retail sale or storage was not specified."
+msgstr "No se especificó el punto de venta al por menor o de almacenamiento."
+
+#: shared/src/util/Notice.js:260
+msgid "Date was not specified."
+msgstr "No se especificó la fecha."
+
+#: shared/src/util/Notice.js:261
+msgid "Unable to get table for purchase number."
+msgstr "No se puede obtener la tabla para el número de compra."
+
+#: shared/src/util/Notice.js:262
+msgid "Unable to get table for contents of purchase item."
+msgstr "No se puede obtener la tabla de contenidos del artículo de compra."
+
+#: shared/src/util/Notice.js:263
+msgid "Unable to get table for inventory."
+msgstr "No se puede obtener la tabla para el inventario."
+
+#: shared/src/util/Notice.js:264
+msgid "An error occurred while creating new purchase."
+msgstr "Se ha producido un error al crear una nueva compra."
+
+#: shared/src/util/Notice.js:265
+msgid "Unable to create product."
+msgstr "No se puede crear el producto."
+
+#: shared/src/util/Notice.js:266
+msgid "We cannot find the product."
+msgstr "No podemos encontrar el producto."
+
+#: shared/src/util/Notice.js:267
+msgid "New purchase was successfully created."
+msgstr "La nueva compra se ha creado con éxito."
+
+#: shared/src/util/Notice.js:270
+msgid "Payment information was successfully saved."
+msgstr "La información de pago se ha guardado correctamente."
+
+#: shared/src/util/Notice.js:271
+msgid "There is no number of purchase."
+msgstr "No hay número de compra."
+
+#: shared/src/util/Notice.js:272
+msgid "There is no period of document."
+msgstr "No hay periodo de documento."
+
+#: shared/src/util/Notice.js:273
+msgid "There is no type of payment."
+msgstr "No hay ningún tipo de pago."
+
+#: shared/src/util/Notice.js:274
+msgid "There is no payment document number."
+msgstr "No hay número de documento de pago."
+
+#: shared/src/util/Notice.js:275
+msgid "There is no date of the payment document."
+msgstr "No hay fecha del documento de pago."
+
+#: shared/src/util/Notice.js:276
+msgid "Purchase payment was not specified."
+msgstr "No se ha especificado el pago de la compra."
+
+#: shared/src/util/Notice.js:277
+msgid "There is no purchase number."
+msgstr "No hay número de compra."
+
+#: shared/src/util/Notice.js:280
+msgid "Please select period."
+msgstr "Por favor, seleccione el periodo."
+
+#: shared/src/util/Notice.js:283
+msgid "Please select point of sale."
+msgstr "Seleccione el punto de venta."
+
+#: shared/src/util/Notice.js:284
+msgid "Please choose period of the invoices."
+msgstr "Por favor, elija el período de las facturas."
+
+#: shared/src/util/Notice.js:289
+msgid "Documents successfully saved."
+msgstr "Documentos guardados con éxito."
+
+#: shared/src/util/Notice.js:292 shared/src/util/Notice.js:296
+msgid "Error."
+msgstr "Error."
+
+#: shared/src/util/Notice.js:293 shared/src/util/Notice.js:297
+msgid "Status changed successfully!"
+msgstr "¡El estado ha cambiado con éxito!"
+
+#: shared/src/util/Notice.js:300
+msgid "Sorry! Not found point of place."
+msgstr "¡Lo siento! No he encontrado el punto del lugar."
+
+#: shared/src/util/Notice.js:301 shared/src/util/Notice.js:330
+msgid "Sorry! Not found checkout session."
+msgstr "¡Lo siento! No se ha encontrado la sesión de pago."
+
+#: shared/src/util/Notice.js:302
+msgid "Sorry! Not found period."
+msgstr "¡Lo siento! No se ha encontrado el período."
+
+#: shared/src/util/Notice.js:305
+msgid "You need to send request number."
+msgstr "Es necesario enviar el número de solicitud."
+
+#: shared/src/util/Notice.js:306
+msgid "Opened request not found."
+msgstr "Solicitud abierta no encontrada."
+
+#: shared/src/util/Notice.js:307
+msgid "Invoice for returning not found."
+msgstr "Factura de devolución no encontrada."
+
+#: shared/src/util/Notice.js:308
+msgid "The return request has been completed."
+msgstr "La solicitud de devolución ha sido completada."
+
+#: shared/src/util/Notice.js:311
+msgid "You need to send invoice number."
+msgstr "Es necesario enviar el número de factura."
+
+#: shared/src/util/Notice.js:312
+msgid "Invoice for reverting not found."
+msgstr "No se ha encontrado la factura para revertir."
+
+#: shared/src/util/Notice.js:313
+msgid "Your invoice is still in reverting process."
+msgstr "Su factura está todavía en proceso de reversión."
+
+#: shared/src/util/Notice.js:314
+msgid "Invoice returning request was created."
+msgstr "Se ha creado la solicitud de devolución de la factura."
+
+#: shared/src/util/Notice.js:318
+msgid "Sorry! We got an error before start your checkout."
+msgstr ""
+"¡Lo sentimos! Se ha producido un error antes de iniciar el proceso de compra."
+
+#: shared/src/util/Notice.js:319
+msgid "We got an error while saving."
+msgstr "Tenemos un error al guardar."
+
+#: shared/src/util/Notice.js:323
+msgid "The POS session is not active."
+msgstr "La sesión del POS no está activa."
+
+#: shared/src/util/Notice.js:326
+msgid "Sorry! Not found the checkout session."
+msgstr "¡Lo siento! No se ha encontrado la sesión de pago."
+
+#: shared/src/util/Notice.js:327
+msgid "Checkout session was finished."
+msgstr "La sesión de pago ha terminado."
+
+#: shared/src/util/Notice.js:331
+msgid "The POS session is active."
+msgstr "La sesión de POS está activa."
+
+#: shared/src/util/Notice.js:336
+msgid "Price column name is not specified."
+msgstr "No se ha especificado el nombre de la columna de precios."
+
+#: shared/src/util/Notice.js:337 shared/src/util/Notice.js:343
+msgid "There is no margin percent for purchase."
+msgstr "No hay un porcentaje de margen para la compra."
+
+#: shared/src/util/Notice.js:338
+msgid "An error occurred while creating a price option."
+msgstr "Se ha producido un error al crear una opción de precio."
+
+#: shared/src/util/Notice.js:339
+msgid "Price option was successfully saved."
+msgstr "La opción de precio se ha guardado con éxito."
+
+#: shared/src/util/Notice.js:342
+msgid "There is no name for price column."
+msgstr "No hay nombre para la columna de precios."
+
+#: shared/src/util/Notice.js:344 shared/src/util/Notice.js:350
+msgid "Adding price is possible only for products and services."
+msgstr "Añadir el precio sólo es posible para los productos y servicios."
+
+#: shared/src/util/Notice.js:345 shared/src/util/Notice.js:351
+msgid "An error occurred while specifying the price period."
+msgstr "Se ha producido un error al especificar el periodo de precios."
+
+#: shared/src/util/Notice.js:346 shared/src/util/Notice.js:356
+#: shared/src/util/Notice.js:363
+msgid "Price was successfully saved."
+msgstr "El precio se ha guardado con éxito."
+
+#: shared/src/util/Notice.js:349
+msgid "Column priority should be higher than 0."
+msgstr "La prioridad de la columna debe ser superior a 0."
+
+#: shared/src/util/Notice.js:352 shared/src/util/Notice.js:353
+msgid "An error occurred while saving price."
+msgstr "Se ha producido un error al guardar el precio."
+
+#: shared/src/util/Notice.js:354
+msgid "Price has not changed."
+msgstr "El precio no ha cambiado."
+
+#: shared/src/util/Notice.js:355
+msgid "Price has not changed.To save, please,specify another price."
+msgstr ""
+"El precio no ha cambiado. Para ahorrar, por favor, especifique otro precio."
+
+#: shared/src/util/Notice.js:359
+msgid "Unable to save new product price."
+msgstr "No se puede guardar el precio del nuevo producto."
+
+#: shared/src/util/Notice.js:362
+msgid "There is no price.It should be higher than 0.00!"
+msgstr "No hay precio. ¡Debería ser superior a 0,00!"
+
+#: shared/src/util/Notice.js:366
+msgid "An error occurred while changing price setting."
+msgstr "Se ha producido un error al cambiar la configuración del precio."
+
+#: shared/src/util/Notice.js:367
+msgid "Different product price for stores was switched on."
+msgstr "Se activó el precio del producto diferente para las tiendas."
+
+#: shared/src/util/Notice.js:368
+msgid ""
+"Different product price for stores was switched off. Now only the basic "
+"price of the product is valid!"
+msgstr ""
+"El precio del producto diferente para las tiendas fue desactivado. ¡Ahora "
+"sólo es válido el precio básico del producto!"
+
+#: shared/src/util/Notice.js:373
+msgid "Sorry! Payment method is not valid!"
+msgstr "¡Lo sentimos! ¡El método de pago no es válido!"
+
+#: shared/src/util/receipt/PrintInvoice.js:10
+#: shared/src/util/receipt/PrintInvoice.js:56
+msgid "Moving invoice"
+msgstr "Factura de mudanza"
+
+#: shared/src/util/receipt/PrintInvoice.js:16
+#: shared/src/util/receipt/PrintInvoice.js:36
+#: shared/src/util/receipt/PrintInvoice.js:45
+msgid "COMPANY"
+msgstr "EMPRESA"
+
+#: shared/src/util/receipt/PrintInvoice.js:17
+#: shared/src/util/receipt/PrintInvoice.js:37
+#: shared/src/util/receipt/PrintInvoice.js:46
+msgid "ADDRESS"
+msgstr "DIRECCIÓN"
+
+#: shared/src/util/receipt/PrintInvoice.js:18
+#: shared/src/util/receipt/PrintInvoice.js:38
+#: shared/src/util/receipt/PrintInvoice.js:47
+msgid "CITY, STATE"
+msgstr "CIUDAD, ESTADO"
+
+#: shared/src/util/receipt/PrintInvoice.js:19
+#: shared/src/util/receipt/PrintInvoice.js:39
+#: shared/src/util/receipt/PrintInvoice.js:48
+msgid "ZIP"
+msgstr "Código Postal"
+
+#: shared/src/util/receipt/PrintInvoice.js:20
+#: shared/src/util/receipt/PrintInvoice.js:40
+#: shared/src/util/receipt/PrintInvoice.js:49
+msgid "PHONE"
+msgstr "TELÉFONO"
+
+#: shared/src/util/receipt/PrintInvoice.js:21
+msgid "TAX NUMBER"
+msgstr "NÚMERO DE IMPUESTO"
+
+#: shared/src/util/receipt/PrintInvoice.js:26
+#: shared/src/util/receipt/PrintInvoice.js:59
+msgid "DATE"
+msgstr "FECHA"
+
+#: shared/src/util/receipt/PrintInvoice.js:27
+#: shared/src/util/receipt/PrintInvoice.js:60
+msgid "INVOICE"
+msgstr "FACTURA"
+
+#: shared/src/util/receipt/PrintInvoice.js:28
+#: shared/src/util/receipt/PrintInvoice.js:61
+msgid "TOTAL INVOICE"
+msgstr "TOTAL FACTURA"
+
+#: shared/src/util/receipt/PrintInvoice.js:29
+#: shared/src/util/receipt/PrintInvoice.js:62
+msgid "TOTAL POSITIONS"
+msgstr "TOTAL DE POSICIONES"
+
+#: shared/src/util/receipt/PrintInvoice.js:30
+#: shared/src/util/receipt/PrintInvoice.js:63
+msgid "BOXES"
+msgstr "CAJAS"
+
+#: shared/src/util/receipt/PrintInvoice.js:35
+msgid "Source location"
+msgstr "Ubicación del origen"
+
+#: shared/src/util/receipt/PrintInvoice.js:41
+msgid "MANAGER"
+msgstr "ADMINISTRADOR"
+
+#: shared/src/util/receipt/PrintInvoice.js:44
+msgid "Destination location"
+msgstr "Lugar de destino"
+
+#: shared/src/util/receipt/PrintInvoice.js:52
+#: shared/src/util/receipt/PrintInvoice.js:65
+msgid "Invoice items"
+msgstr "Elementos de la factura"
+
+#: shared/src/util/receipt/PrintInvoice.js:68
+#: shared/src/util/receipt/PrintInvoice.js:77
+msgid "Sender"
+msgstr "Remitente"
+
+#: shared/src/util/receipt/PrintInvoice.js:69
+#: shared/src/util/receipt/PrintInvoice.js:78
+msgid "Recipient"
+msgstr "Destinatario"
+
+#: shared/src/util/receipt/PrintInvoice.js:113
+#: shared/src/util/receipt/PrintInvoice.js:126
+msgid "Count"
+msgstr "Contar"
+
+#: shared/src/view/pages/Error404.js:10
+msgid "Page was not found"
+msgstr "No se ha encontrado la página"
+
+#: shared/src/view/pages/Error404.js:11
+msgid "Try to go to"
+msgstr "Intenta ir"
+
+#: shared/src/view/pages/Error404.js:12
+msgid "the main panel"
+msgstr "el panel principal"
+
+#~ msgid "New"
+#~ msgstr "Nuevo"
+
+#~ msgid "Filter by catalog. Please,select to refine the list of products."
+#~ msgstr ""
+#~ "Filtrar por catálogo. Por favor, seleccione para refinar la lista de "
+#~ "productos."
+
+#~ msgid "Availability and price"
+#~ msgstr "Disponibilidad y precio"
+
+#~ msgid "Retail price"
+#~ msgstr "Precio de venta al público"
+
+#~ msgid "Past purchase"
+#~ msgstr "Compra anterior"
+
+#~ msgid ""
+#~ "Attention! If you cancel your subscription, you will switch to the free "
+#~ "mode with many disabled features. \n"
+#~ "                                    In the free mode, you will always "
+#~ "have access to only the Company, Catalog, POS and Selling List functions."
+#~ msgstr ""
+#~ "¡Atención! Si cancela su suscripción, pasará al modo gratuito con muchas "
+#~ "funciones desactivadas\n"
+#~ "                                    En el modo gratuito, siempre tendrá "
+#~ "acceso sólo a las funciones de Empresa, Catálogo, TPV y Lista de Ventas."
+
+#~ msgid "bolder size-15 red"
+#~ msgstr "bolder size-15 red"
+
+#~ msgid "bolder size-15 orange"
+#~ msgstr "bolder size-15 orange"
+
+#~ msgid "bolder size-15 green-dark"
+#~ msgstr "bolder talla 15 verde-oscuro"
+
+#~ msgid "<h3>Organization</h3>"
+#~ msgstr "<h3>Organización</h3>"
+
+#, fuzzy
+#~ msgid "<h3>Purchases for the period</h3>"
+#~ msgstr "<h3>Compras del periodo</h3>"
+
+#, fuzzy
+#~ msgid "<h3>Sales for the period</h3>"
+#~ msgstr "<h3>Ventas del periodo</h3>"
+
+#, fuzzy
+#~ msgid "<h3>Expenses for the period</h3>"
+#~ msgstr "<h3>Gastos del periodo</h3>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<span id=\"mandate-acceptance\">\n"
+#~ "    By providing your payment information and confirming this payment, "
+#~ "you\n"
+#~ "    authorise (A) Voita ERP and Stripe, our payment service provider\n"
+#~ "    and/or PPRO, its local service provider, to send instructions to "
+#~ "your\n"
+#~ "    bank to debit your account and (B) your bank to debit your account "
+#~ "in\n"
+#~ "    accordance with those instructions. As part of your rights, you are\n"
+#~ "    entitled to a refund from your bank under the terms and conditions "
+#~ "of\n"
+#~ "    your agreement with your bank. A refund must be claimed within 8 "
+#~ "weeks\n"
+#~ "    starting from the date on which your account was debited. Your "
+#~ "rights\n"
+#~ "    are explained in a statement that you can obtain from your bank. You\n"
+#~ "    agree to receive notifications for future debits up to 2 days before\n"
+#~ "    they occur.</span>"
+#~ msgstr ""
+#~ "<span id=\"mandate-acceptance\">\n"
+#~ "    Al proporcionar su información de pago y confirmar este pago, usted\n"
+#~ "    autoriza a (A) Voita ERP y Stripe, nuestro proveedor de servicios de "
+#~ "pago\n"
+#~ "    y/o PPRO, su proveedor de servicios local, a enviar instrucciones a "
+#~ "su\n"
+#~ "    banco para que cargue el importe en su cuenta y (B) a su banco para "
+#~ "que cargue el importe en su cuenta de\n"
+#~ "    de acuerdo con esas instrucciones. Como parte de sus derechos, usted "
+#~ "tiene\n"
+#~ "    derecho a un reembolso por parte de su banco según los términos y "
+#~ "condiciones de\n"
+#~ "    del acuerdo con su banco. El reembolso debe reclamarse en un plazo de "
+#~ "8 semanas\n"
+#~ "    a partir de la fecha en que se haya efectuado el cargo en su cuenta. "
+#~ "Sus derechos\n"
+#~ "    se explican en una declaración que puede obtener de su banco. Usted\n"
+#~ "    acepta recibir notificaciones de futuros cargos hasta 2 días antes de "
+#~ "que se produzcan\n"
+#~ "    de que se produzcan.</span>"

@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Erp Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/resources/fonts/material/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.erp-icon {
+  font-family: 'Erp Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+  &.edit-note:before {
+    font-size: 24px;
+    content: 'edit_note';
+  }
+  &.done:before {
+    font-size: 24px;
+    content: 'done';
+  }
+  &.verified:before {
+    font-size: 24px;
+    content: 'verified';
+  }
+  &.remove-done:before {
+    font-size: 24px;
+    content: 'remove_done';
+  }
+  &.insights:before {
+    font-size: 24px;
+    content: 'insights';
+  }
+}
