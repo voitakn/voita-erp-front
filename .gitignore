@@ -2,7 +2,7 @@
 /generatedFiles
 /cordova
 /ext
-bootstrap.*
+/bootstrap.*
 classic.json*
 modern.json*
 .sencha
