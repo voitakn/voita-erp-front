@@ -12,6 +12,7 @@ Ext.define('Erp.view.report.period.PeriodCtrl', {
     },
     afterViewShow() {
         const me = this;
+
     },
     onViewRender() {
         const me = this;
