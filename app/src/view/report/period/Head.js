@@ -29,6 +29,7 @@ Ext.define('Erp.view.report.period.Head', {
             ]
         },{
             xtype: 'container',
+            margin: '0 0 15 0',
             items: [
                 {
                     xtype: 'containerfield',

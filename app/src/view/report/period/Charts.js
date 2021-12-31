@@ -1,15 +1,16 @@
 Ext.define('Erp.view.report.period.Charts', {
     extend: 'Ext.Container',
     xtype: 'report_charts',
-    layout: 'fit',
     requires: [
         'Ext.chart.CartesianChart',
-        'Ext.chart.axis.Numeric3D',
-        'Ext.chart.series.Bar3D'
+        'Ext.chart.axis.Numeric',
+        'Ext.chart.series.Bar',
+        'Ext.chart.legend.Legend'
     ],
     items: [
         {
             xtype: 'cartesian',
+            height: 400,
             shadow: 'true',
             reference: 'report_charts_chart',
             insetPadding: '10',
@@ -24,10 +25,13 @@ Ext.define('Erp.view.report.period.Charts', {
                 title: i18n.gettext('Sales and purchases statistic')
             },
             legend: {
-                type: 'sprite'
+                type: 'sprite',
+                docked: 'bottom',
+                marker: {
+                    size: 8
+                }
             },
             axes: [{
-                //type: 'numeric3d',
                 type: 'numeric',
                 position: 'left',
                 fields: ['sales', 'purchases'],
@@ -37,19 +41,17 @@ Ext.define('Erp.view.report.period.Charts', {
                     return Ext.util.Format.erpMoney(label);
                 }
             }, {
-                //type: 'category3d',
                 type: 'category',
                 position: 'bottom',
                 fields: 'xdata'
             }],
             series: [{
-                //type: 'bar3d',
                 type: 'bar',
                 stacked: false,
                 title: [i18n.gettext('Sales'), i18n.gettext('Purchases')], //,
                 yField: ['sales','purchases'],
                 xField: 'xdata',
-                colors: ['#006B34', '#982500'],
+                colors: ['#02fd7e', '#ff5527'],
                 label: {
                     field: ['sales', 'purchases'],
                     display: 'over',
@@ -62,9 +64,9 @@ Ext.define('Erp.view.report.period.Charts', {
                     opacity: 0.6
                 },
                 renderer(sprite, config, data, index){
-                    let clr = '#982500';
+                    let clr = '#ff5527';
                     if(sprite.getField() === 'sales') {
-                        clr = '#006B34';
+                        clr = '#02fd7e';
                     }
                     return {
                         fillStyle: clr,

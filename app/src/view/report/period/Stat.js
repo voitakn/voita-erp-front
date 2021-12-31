@@ -1,7 +1,6 @@
 Ext.define('Erp.view.report.period.Stat', {
     extend: 'Ext.Container',
     xtype: 'report_stat',
-    padding: '10 0',
     layout: {
         type: 'hbox'
     },
