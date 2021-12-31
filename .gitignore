@@ -12,3 +12,4 @@ modern.json*
 docker-compose.yml
 Dockerfile-dev
 Dockerfile
+/nginx
