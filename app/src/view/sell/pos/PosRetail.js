@@ -3,6 +3,7 @@ Ext.define('Erp.view.sell.pos.PosRetail', {
     requires: [
         'Erp.base.Dialog',
         'Erp.util.Nominal',
+        'Erp.view.common.MenuRetail'
     ],
     xtype: 'sell_pos',
     controller: 'pos_ctrl',
@@ -11,11 +12,15 @@ Ext.define('Erp.view.sell.pos.PosRetail', {
     },
     autoSize: true,
     scrollable: true,
-    layout: 'fit',
+    layout: 'vbox',
     items: [
+        {
+            xtype: 'retail_menu',
+        },
         {
             xtype: 'container',
             reference: 'sell_pos',
+            margin: '5 0 0 0',
             listeners: {
                 element: 'element',
                 click: 'onViewClick'
@@ -24,10 +29,10 @@ Ext.define('Erp.view.sell.pos.PosRetail', {
             layout: {
                 type: 'hbox',
             },
+            flex: 1,
             items: [
                 {
                     xtype: 'container',
-                    // width: 650,
                     flex: 1,
                     margin: '0 20 0 0',
                     layout: 'fit',
@@ -39,7 +44,7 @@ Ext.define('Erp.view.sell.pos.PosRetail', {
                                     xtype: 'label',
                                     cls: 'title',
                                     bind: {
-                                        html: `<b>${i18n.gettext('POS')} | {pos_market_place} | {pos_cash_register}</b>`,
+                                        html: `<b>{pos_market_place} | {pos_cash_register}</b>`,
                                     }
                                 },{
                                     xtype: 'button',

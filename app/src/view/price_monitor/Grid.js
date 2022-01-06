@@ -13,54 +13,37 @@ Ext.define('Erp.view.price_monitor.Grid', {
     },
     items: [
         {
-            xtype: 'head1',
-            items: [{
-                xtype: 'label',
-                cls: 'title',
-                html: i18n.gettext('Price monitor')
-            },{
-                xtype: 'button',
-                margin: '0 0 0 20',
-                iconCls: 'x-fa fa-print',
-                text: i18n.gettext('Print stickers'),
-                disabled: true,
-                handler: 'printStickers',
-                bind: {
-                    disabled: '{!countPrices}'
-                }
-            },{
-                xtype: 'combobox',
-                margin: '0 0 0 20',
-                reference: 'place_combobox',
-                editable: false,
-                required: true,
-                queryMode: 'local',
-                width: 300,
-                label: i18n.gettext('Point of sale'),
-                labelAlign: 'left',
-                labelWidth: 120,
-                valueField: 'id',
-                displayField: 'title',
-                store: {},
-                bind: {
-                    value: '{filter.place_id}'
-                }
-            },{
-                xtype: 'datefield',
-                margin: '0 0 0 20',
-                reference: 'filter_by_date',
-                label: i18n.gettext('Date from'),
-                width: 250,
-                labelAlign: 'left',
-                labelWidth: 110,
-                dateFormat: 'Y-m-d',
-                maxDate: new Date(),
-                required: true,
-                value: new Date(),
-                listeners: {
-                    change: 'changeFilterDate'
+            xtype: 'head2',
+            items: [
+                {
+                    xtype: 'datefield',
+                    margin: '0 15 0 0',
+                    reference: 'filter_by_date',
+                    label: i18n.gettext('Date'),
+                    width: 180,
+                    dateFormat: 'Y-m-d',
+                    maxDate: new Date(),
+                    required: true,
+                    value: new Date(),
+                    listeners: {
+                        change: 'changeFilterDate'
+                    },
                 },
-            }]
+                {
+                    xtype: 'combobox',
+                    reference: 'place_combobox',
+                    editable: false,
+                    required: true,
+                    queryMode: 'local',
+                    width: 200,
+                    label: i18n.gettext('Point of sale'),
+                    valueField: 'id',
+                    displayField: 'title',
+                    store: {},
+                    bind: {
+                        value: '{filter.place_id}'
+                    }
+                },]
         }
     ],
     columns: [

@@ -1,5 +1,5 @@
 Ext.define('Erp.view.sell.bills.BillsCtrl', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.sell_bills_ctrl',
     bindings: {
         onFilterDate: '{filter_sell_date}',
@@ -9,7 +9,7 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
     onViewShow() {
         const me = this;
         const vm = me.getViewModel();
-        if(!me.is_rendered) {
+        if (!me.is_rendered) {
             me.is_rendered = true;
         } else {
             const store = vm.getStore('sell_invoices');
@@ -17,6 +17,7 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
                 store.load();
             }
         }
+        me.setActiveRetailMenu('sell_bills');
     },
     onViewRender() {
         const me = this;
@@ -110,9 +111,4 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
             });
         }
     },
-    goToPos() {
-        this.redirectTo('retail');
-        const vm = this.getViewModel();
-        vm.set('active_retail_menu', 'pos_sell');
-    }
 });

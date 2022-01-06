@@ -1,5 +1,5 @@
 Ext.define('Erp.view.price_monitor.PriceMonitorCtrl', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.price_monitor_ctrl',
     requires: [
         'Erp.util.receipt.PrintStickers'
@@ -17,8 +17,11 @@ Ext.define('Erp.view.price_monitor.PriceMonitorCtrl', {
         }
         vm.set('filter.by_date', field.getFormattedValue());
         vm.set('filter.place_id', User.defStoreId);
+
     },
     onViewShow() {
+        const me = this;
+        me.setActiveRetailMenu('price_monitor');
         this.reloadGrid();
     },
     onPlaceChange() {

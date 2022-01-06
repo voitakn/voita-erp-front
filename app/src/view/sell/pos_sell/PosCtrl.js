@@ -31,6 +31,7 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     onViewShow() {
         const me = this;
+        me.setActiveRetailMenu('pos');
         me.updatePosPlace();
         setTimeout(() => {
             me.focusBarcode();

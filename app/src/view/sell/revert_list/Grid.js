@@ -10,58 +10,9 @@ Ext.define('Erp.view.sell.revert_list.Grid', {
     },
     items: [
         {
-            xtype: 'head1',
-            items: [{
-                xtype: 'label',
-                cls: 'title',
-                html: i18n.gettext('Refunds')
-            },{
-                xtype: 'button',
-                margin: '0 0 0 20',
-                iconCls: 'x-fa fa-th-list blue',
-                text: i18n.gettext('Selling list'),
-                hidden: true,
-                bind: {
-                    hidden: '{no_inv_sell_list_date_user}'
-                },
-                handler: 'goToSellList'
-            },{
-                xtype: 'combobox',
-                margin: '0 0 0 20',
-                reference: 'revert_place_combobox',
-                autoSelect: true,
-                forceSelection: true,
-                editable: false,
-                queryMode: 'local',
-                width: 300,
-                label: i18n.gettext('Point of sale'),
-                labelAlign: 'left',
-                labelWidth: 120,
-                valueField: 'id',
-                displayField: 'title',
-                store: {},
-                bind: {
-                    value: '{filter.place_id}'
-                }
-            },{
-                xtype: 'togglefield',
-                margin: '0 0 0 20',
-                width: 250,
-                label: i18n.gettext('Only in progress'),
-                reference: 'revert_list_process_fld',
-                labelAlign: 'left',
-                labelWidth: 150,
-                bind: {
-                    value: '{filter.is_active}',
-                    boxLabel: `{!filter.is_active ? "${i18n.gettext('Off')}" : "${i18n.gettext('Yes')}"}`
-                }
-            }]
-        },
-        {
             xtype: 'containerfield',
             docked: 'top',
             label: i18n.gettext('Filter by year and period'),
-            cls: 'border-bottom',
             layout: {
                 type: 'hbox',
                 align: 'end'

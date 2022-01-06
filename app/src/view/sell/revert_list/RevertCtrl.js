@@ -1,5 +1,5 @@
 Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.revert_list_ctrl',
     bindings: {
         onPlaceChange: '{filter.place_id}',
@@ -19,7 +19,10 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
         }
     },
     onViewShow() {
-        if(!this.is_rendered) {
+        const me = this;
+        const vm = this.getViewModel();
+        me.setActiveRetailMenu('revert_list');
+        if (!this.is_rendered) {
             this.is_rendered = true;
         } else {
             this.reloadGrid();
@@ -94,12 +97,6 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
                 Notice.showToast(result);
             },
         });
-
     },
-    goToSellList() {
-        this.redirectTo('retail');
-        const vm = this.getViewModel();
-        vm.set('active_retail_menu', 'sell_bills');
-    }
 });
 

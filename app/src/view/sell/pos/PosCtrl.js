@@ -21,13 +21,16 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
     onViewRender() {
         const me = this;
         const vm = this.getViewModel();
-        if(!me.all_rendered) {
+        if (!me.all_rendered) {
             me.initSelling();
             me.all_rendered = true;
         }
+        me.setActiveRetailMenu('pos');
+
     },
     onViewShow() {
         const me = this;
+        me.setActiveRetailMenu('pos');
         if(!User.checkPosMode()) {
             me.redirectTo('pos_sell');
         }
@@ -667,9 +670,7 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         me.loadStore();
     },
     onPosSellExit(btn) {
-        this.redirectTo('retail');
-        const vm = this.getViewModel();
-        vm.set('active_retail_menu', 'sell_bills');
+        Ext.util.History.back();
     },
     openFinishDialog(btn) {
         const me = this;

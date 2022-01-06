@@ -1,6 +1,9 @@
 Ext.define('Erp.view.sell.pos_list.PosList', {
     extend: 'Erp.base.Module',
     xtype: 'pos_list',
+    requires: [
+        'Erp.view.common.MenuRetail'
+    ],
     controller: 'pos_list_ctrl',
     viewModel: {
         type: 'pos_list_vm'
@@ -10,9 +13,11 @@ Ext.define('Erp.view.sell.pos_list.PosList', {
     scrollable: 'x',
     items: [
         {
+            xtype: 'retail_menu',
+        },
+        {
             xtype: 'pos_grid',
             flex: 1,
-            minWidth: 800,
         },
         {
             xtype: 'base_dialog',
