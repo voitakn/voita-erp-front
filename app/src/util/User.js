@@ -310,6 +310,7 @@ Ext.define('Erp.util.User', {
         inventory: 'inv.invent_by_place',
         company: 'com.customer_save',
         store_order: 'com.catalog_tree',
+        retail: 'inv.sell_retail_create',
         sell_pos: 'inv.cashopen_start',
         pos_sell: 'inv.sell_retail_create',
         pos_list: 'inv.cashopen_list',

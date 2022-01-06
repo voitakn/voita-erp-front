@@ -27,7 +27,8 @@ Ext.define('Erp.view.sell.pos_sell.PosSell', {
             items: [
                 {
                     xtype: 'container',
-                    width: 650,
+                    // width: 650,
+                    flex: 1,
                     margin: '0 20 0 0',
                     layout: 'fit',
                     items: [

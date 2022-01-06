@@ -672,7 +672,11 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         me.loadStore();
     },
     onPosSellExit(btn) {
-        this.redirectTo('sell_bills');
+        this.redirectTo('retail');
+        const vm = this.getViewModel();
+        vm.set('active_retail_menu', 'sell_bills');
+        // Ext.util.History.back();
+
     },
     openFinishDialog(btn) {
         const me = this;

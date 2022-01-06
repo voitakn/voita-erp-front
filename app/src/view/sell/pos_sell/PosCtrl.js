@@ -31,9 +31,9 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     onViewShow() {
         const me = this;
-        if(User.checkPosMode()) {
-            me.redirectTo('sell_pos');
-        }
+        // if(User.checkPosMode()) {
+        //     me.redirectTo('sell_pos');
+        // }
         me.updatePosPlace();
         setTimeout(() => {
             me.focusBarcode();

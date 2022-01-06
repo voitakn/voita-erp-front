@@ -31,7 +31,10 @@ Ext.define('Erp.view.price_monitor.PriceMonitorCtrl', {
         if (store) {
             store.currentPage = 1;
             store.load((records, operation, success) => {
-                vm.set('countPrices', records.length);
+                vm.set('countPrices', 0);
+                if (store.data.length) {
+                    vm.set('countPrices', records.length);
+                }
             });
         }
     },
