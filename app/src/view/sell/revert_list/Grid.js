@@ -24,9 +24,7 @@ Ext.define('Erp.view.sell.revert_list.Grid', {
                 bind: {
                     hidden: '{no_inv_sell_list_date_user}'
                 },
-                handler(btn) {
-                    btn.up('revert_list').getController().redirectTo('sell_bills');
-                }
+                handler: 'goToSellList'
             },{
                 xtype: 'combobox',
                 margin: '0 0 0 20',

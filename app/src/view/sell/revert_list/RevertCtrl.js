@@ -60,7 +60,6 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const dialog = me.lookup('revert_list_dialog_cancel');
-       //console.('onCancelRequest', grid, row);
         const record = row.record;
         vm.set('invoice_id_revert', record.data.id);
         dialog.show();
@@ -69,7 +68,6 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const dialog = me.lookup('revert_list_dialog_cancel');
-       //console.('cancelRequest');
         vm.set('approved', false);
         me.sendRequest();
         dialog.hide();
@@ -97,6 +95,11 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
             },
         });
 
+    },
+    goToSellList() {
+        this.redirectTo('retail');
+        const vm = this.getViewModel();
+        vm.set('active_retail_menu', 'sell_bills');
     }
 });
 

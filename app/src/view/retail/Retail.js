@@ -33,11 +33,51 @@ Ext.define('Erp.view.retail.Retail', {
                         value: '{active_retail_menu}'
                     },
                     items: [
-                        {tooltip: i18n.gettext('Sales'), text: i18n.gettext('Sales'), value: 'sell_bills'},
-                        {tooltip: i18n.gettext('POS'), text: i18n.gettext('POS'), value: 'pos_sell'},
-                        {tooltip: i18n.gettext('Checkouts'), text: i18n.gettext('Checkouts'), value: 'pos_list'},
-                        {tooltip: i18n.gettext('Refunds'), text: i18n.gettext('Refunds'), value: 'revert_list'},
-                        {tooltip: i18n.gettext('Price Stickers'), text: i18n.gettext('Price Stickers'), value: 'price_monitor'},
+                        {
+                            tooltip: i18n.gettext('Sales'),
+                            text: i18n.gettext('Sales'),
+                            value: 'sell_bills',
+                            hidden: true,
+                            bind: {
+                                hidden: '{no_inv_sell_list_date_user}'
+                            }
+                        },
+                        {
+                            tooltip: i18n.gettext('POS'),
+                            text: i18n.gettext('POS'),
+                            value: 'pos_sell',
+                            hidden: true,
+                            bind: {
+                                hidden: '{no_inv_cashopen_start}' || '{no_inv_sell_retail_create}'
+                            }
+                        },
+                        {
+                            tooltip: i18n.gettext('Checkouts'),
+                            text: i18n.gettext('Checkouts'),
+                            value: 'pos_list',
+                            hidden: true,
+                            bind: {
+                                hidden: '{no_inv_cashopen_list}'
+                            }
+                        },
+                        {
+                            tooltip: i18n.gettext('Refunds'),
+                            text: i18n.gettext('Refunds'),
+                            value: 'revert_list',
+                            hidden: true,
+                            bind: {
+                                hidden: '{no_inv_sell_revert_list}'
+                            }
+                        },
+                        {
+                            tooltip: i18n.gettext('Price Stickers'),
+                            text: i18n.gettext('Price Stickers'),
+                            value: 'price_monitor',
+                            hidden: true,
+                            bind: {
+                                hidden: '{no_price_last_prices}'
+                            }
+                        },
                     ]
                 },
             ]

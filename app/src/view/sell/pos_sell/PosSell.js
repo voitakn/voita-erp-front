@@ -42,6 +42,12 @@ Ext.define('Erp.view.sell.pos_sell.PosSell', {
                                         html: `<b>${i18n.gettext('POS')}</b> |`,
                                     }
                                 },{
+                                    // if(!User.checkPosMode()) {
+                                    //     this.redirectTo('pos_sell');
+                                    // } else {
+                                    //     this.redirectTo('sell_pos');
+                                    // }
+
                                     xtype: 'label',
                                     bind: {
                                         html: `{pos_market_place}`,

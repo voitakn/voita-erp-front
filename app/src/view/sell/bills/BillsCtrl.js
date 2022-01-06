@@ -18,11 +18,9 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
             }
         }
     },
-    //afterViewShow
     onViewRender() {
         const me = this;
         const vm = me.getViewModel();
-       //console.('afterViewShow');
         const placeField = this.lookup('bills_place_combobox');
         if(placeField) {
             placeField.setStore(User.placesStore);
@@ -52,7 +50,6 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
     onFilterDate(filter) {
         const me = this;
         const vm = me.getViewModel();
-       //console.('onFilterDate', filter);
         if(filter) {
             me.loadIvoicesData();
         }
@@ -113,11 +110,9 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
             });
         }
     },
-    goToPos(btn) {
-        if(!User.checkPosMode()) {
-            this.redirectTo('pos_sell');
-        } else {
-            this.redirectTo('sell_pos');
-        }
+    goToPos() {
+        this.redirectTo('retail');
+        const vm = this.getViewModel();
+        vm.set('active_retail_menu', 'pos_sell');
     }
 });
