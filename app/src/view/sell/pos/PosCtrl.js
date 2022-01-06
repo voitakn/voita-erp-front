@@ -19,7 +19,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
     all_rendered: false,
     sell_stores: [],
     onViewRender() {
-       //console.('PosCtrl.onViewRender');
         const me = this;
         const vm = this.getViewModel();
         if(!me.all_rendered) {
@@ -28,7 +27,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         }
     },
     onViewShow() {
-       //console.('PosCtrl.onViewShow');
         const me = this;
         if(!User.checkPosMode()) {
             me.redirectTo('pos_sell');
@@ -91,12 +89,10 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
     },
     focusBarcode() {
         const barcode_field = this.lookup('find_barcode');
-       //console.('focusBarcode', barcode_field);
         barcode_field.clearValue();
         barcode_field.focus();
     },
     onViewClick() {
-       //console.('onViewClick');
         this.focusBarcode();
     },
     onStart() {
@@ -120,7 +116,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
                 cash_title = record.get('name');
             }
         }
-
         Ext.Ajax.request({
             url: Api.inv.cashopen_start,
             jsonData: {
