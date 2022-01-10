@@ -1,5 +1,5 @@
 Ext.define('Erp.view.sell.bills.BillsCtrl', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.sell_bills_ctrl',
     bindings: {
         onFilterDate: '{filter_sell_date}',
@@ -9,7 +9,7 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
     onViewShow() {
         const me = this;
         const vm = me.getViewModel();
-        if(!me.is_rendered) {
+        if (!me.is_rendered) {
             me.is_rendered = true;
         } else {
             const store = vm.getStore('sell_invoices');
@@ -17,12 +17,11 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
                 store.load();
             }
         }
+        me.setActiveRetailMenu('sell_bills');
     },
-    //afterViewShow
     onViewRender() {
         const me = this;
         const vm = me.getViewModel();
-       //console.('afterViewShow');
         const placeField = this.lookup('bills_place_combobox');
         if(placeField) {
             placeField.setStore(User.placesStore);
@@ -52,7 +51,6 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
     onFilterDate(filter) {
         const me = this;
         const vm = me.getViewModel();
-       //console.('onFilterDate', filter);
         if(filter) {
             me.loadIvoicesData();
         }
@@ -113,11 +111,4 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
             });
         }
     },
-    goToPos(btn) {
-        if(!User.checkPosMode()) {
-            this.redirectTo('pos_sell');
-        } else {
-            this.redirectTo('sell_pos');
-        }
-    }
 });

@@ -31,9 +31,7 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     onViewShow() {
         const me = this;
-        if(User.checkPosMode()) {
-            me.redirectTo('sell_pos');
-        }
+        me.setActiveRetailMenu('pos');
         me.updatePosPlace();
         setTimeout(() => {
             me.focusBarcode();
@@ -108,7 +106,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const record = row.record;
-        // Запросим цену и ID
         if (record && record.isModel) {
             const amount_data = Ext.clone(record.getData());
             amount_data.amount = 1;
@@ -139,7 +136,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const amount_data = vm.get('amount_data');
         const item_prod = items_store.getById(amount_data.id);
         if (item_prod && item_prod.isModel) {
-            // Нашли товар в списке добавлям только количество
             let amount = item_prod.get('amount') + amount_data.amount;
             item_prod.set('amount', amount);
         } else {
@@ -209,31 +205,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     cancelBill(btn) {
         const me = this;
-        /*const tooltip = Ext.create('Erp.base.ToolTip', {
-            target: btn,
-            title: i18n.gettext('Attention'),
-            align: 't50-b50',
-            buttonAlign: 'center',
-            buttons: {
-                cancel: {
-                    margin: '0 15 0 0',
-                    iconCls: 'x-fa fa-times red',
-                    text: i18n.gettext('Cancel'),
-                    handler: (btn) => btn.up('base_tooltip').destroy()
-                },
-                ok: {
-                    iconCls: 'x-fa fa-check green-dark',
-                    text: i18n.gettext('Yes!'),
-                    handler: (btn) => {
-                        me.clearBill();
-                        btn.up('base_tooltip').destroy();
-                    }
-                }
-            },
-            html: i18n.gettext('Do you want to clear all positions from the list?'),
-        });
-        tooltip.show();*/
-
         const confirm = Ext.create('Erp.common.DeleteConfirm', {
             target: btn,
             viewModel: {
@@ -335,8 +306,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
             printItems.push(rec.data);
         })
         sell_data.items = items;
-       //console.('saveSellInvoice', Api.inv.sell_retail_create);
-        // Сохраняем продажу
         Ext.Ajax.request({
             url: Api.inv.sell_retail_create,
             jsonData: sell_data,

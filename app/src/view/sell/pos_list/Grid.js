@@ -10,43 +10,14 @@ Ext.define('Erp.view.sell.pos_list.Grid', {
     },
     items: [
         {
-            xtype: 'head1',
-            layout: {
-                type: 'hbox',
-                align: 'center'
-            },
-            defaults: {
-                margin: '0 20 0 0',
-            },
+            xtype: 'head2',
             items: [
-                {
-                    xtype: 'label',
-                    html: `<b>${i18n.gettext('Cash registers')}</b>`
-                },
-                {
-                    xtype: 'combobox',
-                    reference: 'pos_place_combobox',
-                    clearable: true,
-                    editable: false,
-                    queryMode: 'local',
-                    width: 300,
-                    label: i18n.gettext('Point of sale'),
-                    labelAlign: 'left',
-                    labelWidth: 120,
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{filter.place_id}'
-                    }
-                },
                 {
                     xtype: 'datefield',
                     reference: 'filter_by_date',
+                    margin: '0 15 0 0',
                     label: `<b>${i18n.gettext('Date')}</b>`,
-                    width: 220,
-                    labelAlign: 'left',
-                    labelWidth: 110,
+                    width: 180,
                     dateFormat: 'Y-m-d',
                     maxDate: new Date(),
                     required: true,
@@ -56,11 +27,26 @@ Ext.define('Erp.view.sell.pos_list.Grid', {
                     },
                 },
                 {
+                    xtype: 'combobox',
+                    reference: 'pos_place_combobox',
+                    margin: '0 15 0 0',
+                    clearable: true,
+                    editable: false,
+                    queryMode: 'local',
+                    width: 200,
+                    label: i18n.gettext('Point of sale'),
+                    valueField: 'id',
+                    displayField: 'title',
+                    store: {},
+                    bind: {
+                        value: '{filter.place_id}'
+                    }
+                },
+                {
                     xtype: 'togglefield',
                     label: `<b>${i18n.gettext('Only active')}</b>`,
-                    width: 220,
+                    width: 180,
                     labelAlign: 'left',
-                    labelWidth: 110,
                     bind: {
                         value: '{filter.is_active}',
                         boxLabel: `{!filter.is_active ? "${i18n.gettext('Off')}" : "${i18n.gettext('Yes')}"}`

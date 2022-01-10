@@ -35,41 +35,16 @@ Ext.define('Erp.view.main.MainModel', {
             text: i18n.gettext('Catalog'),
             leaf: true
         }, {
-            iconCls: 'fas fa-receipt blue',
-            xtype: 'sell_pos',
-            text: i18n.gettext('POS'),
+            iconCls: 'fas fa-wallet blue',
+            xtype: 'retail',
+            text: i18n.gettext('Retail'),
             leaf: true
         }, {
-            iconCls: 'fas fa-receipt blue',
-            xtype: 'pos_sell',
-            text: i18n.gettext('POS'),
-            leaf: true
-        }, {
-            iconCls: 'x-fa fa-th-list blue',
-            text: i18n.gettext('Sellings'),
-            xtype: 'sell_bills',
-            leaf: true
-        }, {
-            iconCls: 'x-fas fa-cash-register blue',
-            xtype: 'pos_list',
-            text: i18n.gettext('Cash registers'),
-            leaf: true
-        }, {
-            iconCls: 'x-fas fa-undo blue',
-            xtype: 'revert_list',
-            text: i18n.gettext('Refunds'),
-            leaf: true
-        }, {
-            iconCls: 'x-fas fa-sort-amount-up blue',
-            xtype: 'price_monitor',
-            text: i18n.gettext('Price Monitor'),
-            leaf: true
-        },{
             iconCls: 'x-fas fa-shipping-fast blue',
             xtype: 'movement_list',
             text: i18n.gettext('Movements'),
             leaf: true
-        },{
+        }, {
             iconCls: 'menu-icon purchases blue',
             text: i18n.gettext('Purchases'),
             xtype: 'purchase_list',
@@ -123,12 +98,18 @@ Ext.define('Erp.view.main.MainModel', {
             movement_card: 'movement_list',
             places: 'company',
             workers: 'company',
-            subscription: 'company'
+            subscription: 'company',
+            sell_bills: 'retail',
+            sell_pos: 'retail',
+            pos_sell: 'retail',
+            price_monitor: 'retail',
+            pos_list: 'retail',
+            revert_list: 'retail',
+
         }
     },
     formulas: {
         user_fio(get) {
-           //console.('user_fio');
             if(User && User.data) {
                 return User.fullName();
             }

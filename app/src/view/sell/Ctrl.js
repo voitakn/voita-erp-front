@@ -1,5 +1,5 @@
 Ext.define('Erp.view.sell.Ctrl', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Erp.view.base.BaseCtrl',
     printReceipt(invoiceData) {
         const me = this;
         const country = User.data.country.country_en;

@@ -1,5 +1,5 @@
 Ext.define('Erp.view.sell.pos_list.PosListCtrl', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.pos_list_ctrl',
     bindings: {
         reloadGrid: {
@@ -18,6 +18,9 @@ Ext.define('Erp.view.sell.pos_list.PosListCtrl', {
         vm.set('filter.by_date', field.getFormattedValue());
     },
     onViewShow() {
+        const me = this;
+        const vm = this.getViewModel();
+        me.setActiveRetailMenu('pos_list');
         this.reloadGrid();
     },
     reloadGrid(data) {

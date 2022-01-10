@@ -8,24 +8,6 @@ Ext.define('Erp.view.sell.bills.Grid', {
     },
     items: [
         {
-            xtype: 'head1',
-            items: [{
-                xtype: 'label',
-                cls: 'title',
-                html: i18n.gettext('Selling list')
-            },{
-                xtype: 'button',
-                margin: '0 0 0 20',
-                iconCls: 'x-fa fa-shopping-basket',
-                text: i18n.gettext('New selling'),
-                handler: 'goToPos',
-                hidden: true,
-                bind: {
-                    hidden: '{no_inv_sell_retail_create}' && '{no_inv_create_pos_sell}'
-                }
-            }]
-        },
-        {
             xtype: 'head2',
             items: [
                 {
