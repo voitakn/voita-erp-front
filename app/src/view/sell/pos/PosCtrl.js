@@ -30,17 +30,27 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
     },
     onViewShow() {
         const me = this;
+        const vm = this.getViewModel();
+        let customerConfigs = User.data.customer.configs || {};
         me.setActiveRetailMenu('pos');
-        if(!User.checkPosMode()) {
+        if (!User.checkPosMode()) {
             me.redirectTo('pos_sell');
         }
-        if(me.all_rendered) {
+        if (me.all_rendered) {
             me.initSelling();
         }
         me.updatePosPlace();
-        setTimeout(()=>{
+        setTimeout(() => {
             me.focusBarcode();
         }, 200);
+        if (customerConfigs.receipt_cfg) {
+            vm.set({
+                'text_1': customerConfigs.receipt_cfg.texts.text_1,
+                'text_2': customerConfigs.receipt_cfg.texts.text_2,
+                'type_invoice': 'FR',
+            });
+        }
+
     },
     initSelling() {
         const me = this;
@@ -502,6 +512,8 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
                     vm.set('sell_data.pay_params', {});
                     const invoiceData = result.data[0];
                     invoiceData.items = printItems;
+                    invoiceData.configs = User.data.customer.configs;
+                    // console.log('invoiceData', invoiceData);
                     me.printReceipt(invoiceData);
                     return;
                 }

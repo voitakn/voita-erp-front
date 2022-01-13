@@ -2,7 +2,12 @@ Ext.define('Erp.view.company.CompanyModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.company_vm',
     data: {
-        edit_configs: {}
+        edit_configs: {},
+        widthCnt: 56,
+        text_1: '',
+        text_2: '',
+        edit_config: true,
+        invoice_type_edit: true,
     },
     formulas: {
         no_com_place_list_all(get) {
@@ -21,5 +26,5 @@ Ext.define('Erp.view.company.CompanyModel', {
             return User.data.country.params.tax_number.name || i18n.gettext('Tax number');
         }
     }
-    
+
 });
