@@ -212,7 +212,8 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
     },
     reloadProduceGrid() {
         const vm = this.getViewModel();
-        if (vm.get('filter.place_id')) {
+        const store = vm.getStore('select_produce_store');
+        if (vm.get('filter.place_id') && store) {
             vm.getStore('select_produce_store').loadPage(1);
         }
     },

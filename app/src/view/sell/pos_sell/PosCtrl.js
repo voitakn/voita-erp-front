@@ -33,7 +33,7 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const me = this;
         const vm = this.getViewModel();
         let customerConfigs = User.data.customer.configs || {};
-        console.log('customerConfigs', customerConfigs);
+        // console.log('customerConfigs', customerConfigs);
         me.setActiveRetailMenu('pos');
         me.updatePosPlace();
         setTimeout(() => {
@@ -68,7 +68,8 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     reloadProduceGrid() {
         const vm = this.getViewModel();
-        if (vm.get('filter.place_id')) {
+        const store = vm.getStore('select_produce_store');
+        if (vm.get('filter.place_id') && store) {
             vm.getStore('select_produce_store').loadPage(1);
         }
     },
