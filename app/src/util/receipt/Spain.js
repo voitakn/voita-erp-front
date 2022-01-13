@@ -2,73 +2,108 @@ Ext.define('Erp.util.receipt.Spain', {
     alternateClassName: ['ReceiptSpain'],
     singleton: true,
     htmlRender(data) {
-        const cntPrint = document.getElementById('erp-container-print');
+        // console.log('data', data);
+        let cntPrint = document.createElement('div');
+        if (!data.edit_config) {
+            cntPrint = document.getElementById('erp-container-print');
+        }
+        let cntWidthLine = '';
+        let cntBorder = 'class="border border-dark"';
+        if (!data.configs.receipt_cfg) {
+            data.configs.receipt_cfg = {
+                texts: {
+                    text_1: '',
+                    text_2: '',
+                },
+                width: 56,
+                type: {
+                    series: 'FR',
+                    text: 'Factura recibo'
+                }
+            };
+        }
+        if (!data.configs.receipt_cfg.texts) {
+            data.configs.receipt_cfg.texts = {
+                text_1: '',
+                text_2: '',
+            };
+        }
+        if (!data.configs.receipt_cfg.type) {
+            data.configs.receipt_cfg.type = {
+                series: 'FR',
+                text: 'Factura recibo'
+            };
+        }
+        const receipt_cfg = data.configs.receipt_cfg;
+        let cntWidth = receipt_cfg.width / 10 + 'cm';
         cntPrint.innerHTML = '';
         const receiptHead = this.htmlHead(data);
         const receiptProd = this.htmlProducts(data);
         cntPrint.innerHTML = '';
-        cntPrint.innerHTML = `<div id="erp-receipt-pt">
+        cntPrint.innerHTML = `${cntWidthLine}<div ${cntBorder} id="erp-receipt-pt" style='width: ${cntWidth}'>
                 <div class="receipt-main">
                     ${receiptHead}
                     ${receiptProd}
                 <br/>
-                <table style="width: 100%"><tr>
+                <table style="width: 100%">
+                <tr>
                 <td style="text-align: left">
-                    Operador: ${data.operator}<br />
-                    Caja: ${data.caixa}<br /><br />
-                    ¡Gracias por escogernos!
+                    ${i18n.gettext('Manager')}: ${data.operator}<br />
+                    ${i18n.gettext('Checkout')}: ${data.caixa}<br />
+                    ${receipt_cfg.texts.text_1}<br />
+                    ${receipt_cfg.texts.text_2}<br /><br />
                 </td>
-                <td style="text-align: right"><canvas class="barcode"/></td>
-                </tr></table>
-                <div style="margin: auto;"></div>
+                </tr>
+                </table>
+                <div class="text-center"><canvas class="barcode"/></div>
                 </div>
                 </div>`;
-        JsBarcode(".barcode", `FR${data.doc_number}`, {height: 40, width: 1.2});
-        setTimeout(() => {
-            window.print();
-        }, 500);
-        // setTimeout(() => {
-        //     cntPrint.innerHTML = '';
-        // }, 2000);
+        if (!data.edit_config) {
+            JsBarcode(".barcode", `${receipt_cfg.type.series}${data.doc_number}`, {height: 30, width: 0.9});
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        } else {
+            return cntPrint;
+        }
     },
     htmlHead(data) {
+        let tpl = '';
         const receiptLogo = this.htmlLogo(data);
-        const tpl = `<div class="receipt-header">
-        <table style="width: 100%"><tr>
+        tpl = `<div class="receipt-header">
+        <table style="width: 100%">
+        <tr style="text-align: center"><td>${receiptLogo}</td></tr>
+        <tr>
         <td style="text-align: left">
             <div>${data.company_name}</div>
             <div>${data.company_address_1}</div>
             <div>${data.company_address_2}</div>
             <div>${data.company_phone}</div>
             <div>${data.company_email}</div>
-            <div>CIF/NIF: ${data.tax_number}</div>
+            <div>${i18n.gettext('CIF/NIF')}: ${data.configs.tax_number}</div>
         </td>
-        <td style="text-align: right">${receiptLogo}</td>
         </tr></table>
         </div>
       <table class="receipt-type">
         <tr>
-          <td style="padding:4px 0px">Factura Recibo</td>
-          <!--<td style="text-align:right;">FT T01P2021/7</td>-->
-          <td style="text-align:right;">FR${data.doc_number}</td>
+          <td style="padding:4px 0px">${data.configs.receipt_cfg.type.text}</td>
+          <td style="text-align:right;">${data.configs.receipt_cfg.type.series}${data.doc_number}</td>
         </tr>
       </table>
       <table class="receipt-width">
         <tr>
           <td>${data.origin}</td>
-          <!--<td class="to-right">2021-06-03 19:51</td>-->
           <td class="to-right">${data.date_time}</td>
         </tr>
       </table>
       <br />
       <table class="receipt-width">
         <tr>
-          <td>NIF: </td>
-          <!--<td>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</td>-->
-          <td>${data.client_tax_number}</td>
+          <td>${i18n.gettext('NIF')}: </td>
+          <td>${data.configs.tax_number}</td>
         </tr>
         <tr>
-          <td style="width:35px">Nombre: </td>
+          <td style="width:35px">${i18n.gettext('Name')}: </td>
           <td>${data.client_name}</td>
         </tr>
       </table>`;
@@ -77,15 +112,14 @@ Ext.define('Erp.util.receipt.Spain', {
     htmlProducts(data) {
         let htmlProd = '';
         const taxes = {};
-
         Ext.Array.each(data.items, (row) => {
             if(data.tax_include) {
-                htmlProd = `${htmlProd}<tr><td colspan="6">${row.title}</td></tr>
-                <tr><td>&nbsp; ${row.amount} x ${row.item_price}</td>
+                htmlProd = `${htmlProd}<tr class="text-start"><td colspan="6">${row.title}</td></tr>
+                <tr class="text-start"><td>&nbsp; ${row.amount} x ${row.item_price}</td>
                   <td class="to-right">${row.tax_value}%</td>
                   <td class="to-right">${Ext.util.Format.toFloat(row.price_total)}</td>
                 </tr>`;
-                if(!taxes[`${row.tax_value}%`]) {
+                if (!taxes[`${row.tax_value}%`]) {
                     taxes[`${row.tax_value}%`] = {
                         base: 0.00,
                         tax: 0.00,
@@ -96,38 +130,34 @@ Ext.define('Erp.util.receipt.Spain', {
                 taxes[`${row.tax_value}%`].tax += row.tax_total;
                 taxes[`${row.tax_value}%`].total += row.price_total;
             } else {
-                htmlProd = `${htmlProd}<tr><td colspan="6">${row.title}</td></tr>
-                <tr><td>&nbsp; ${row.amount} x ${row.item_price}</td>
+                htmlProd = `${htmlProd}<tr class="text-start"><td colspan="6">${row.title}</td></tr>
+                <tr class="text-start"><td>&nbsp; ${row.amount} x ${row.item_price}</td>
                   <td class="to-right">${Ext.util.Format.toFloat(row.price_total)}</td>
                 </tr>`;
             }
-
         });
-
-        let pay_type_text = 'Efectivo';
+        let pay_type_text = i18n.gettext('Cash');
         switch (data.pay_type){
             case 'card':
             case 'card_visa':
             case 'card_master':
             case 'card_other':
-                pay_type_text = 'Tarjeta bancaria';
+                pay_type_text = i18n.gettext('Credit card');
                 break;
             default:
-                pay_type_text = 'Efectivo';
+                pay_type_text = i18n.gettext('Cash');
                 break;
         }
-
         const htmlTotal = `<table class="receipt-totals receipt-width">
             <tr>
-              <td class="first main">Total</td>
-              <td class="main" style="white-space:nowrap">Eur ${Ext.util.Format.toFloat(data.price_total)}</td>
+              <td class="first main">${i18n.gettext('Total')}</td>
+              <td class="main" style="white-space:nowrap">${i18n.gettext('Eur')} ${Ext.util.Format.toFloat(data.price_total)}</td>
             </tr>
             <tr>
               <td class="first">${pay_type_text}</td>
-              <td>Eur ${data.price_total}</td>
+              <td>${i18n.gettext('Eur')} ${data.price_total}</td>
             </tr>
           </table>`;
-
         let htmlTaxes = '';
         if(data.tax_include) {
             let taxesRow = '';
@@ -142,29 +172,29 @@ Ext.define('Erp.util.receipt.Spain', {
             htmlTaxes = `<table class="receipt-taxes receipt-width receipt-border-bottom">
             <tr class="receipt-border-bottom">
               <td>%IVA</td>
-              <td class="to-right">Base</td>
-              <td class="to-right">IVA</td>
-              <td class="to-right">Total</td>
+              <td class="to-right">${i18n.gettext('Base')}</td>
+              <td class="to-right">${i18n.gettext('Iva')}</td>
+              <td class="to-right">${i18n.gettext('Total')}</td>
             </tr>${taxesRow}</table>`;
             return `<table class="receipt-products receipt-width receipt-border-bottom">
                 <tr class="receipt-border-bottom">
-                  <td colspan="6">Referencia Producto</td>
+                  <td colspan="6">${i18n.gettext('Product Reference')}</td>
                 </tr>
                 <tr class="receipt-border-bottom">
-                  <td>&nbsp; Cant. x Precio</td>
-                  <td class="to-right">IVA</td>
-                  <td class="to-right">Total</td>
+                  <td>&nbsp; ${i18n.gettext('Count. x Price')}</td>
+                  <td class="to-right">${i18n.gettext('Iva')}</td>
+                  <td class="to-right">${i18n.gettext('Total')}</td>
                 </tr>${htmlProd}</table>
                     ${htmlTotal}
                     ${htmlTaxes}`;
         } else {
             return `<table class="receipt-products receipt-width receipt-border-bottom">
                 <tr class="receipt-border-bottom">
-                  <td colspan="6">Referencia Producto</td>
+                  <td colspan="6">${i18n.gettext('Product Reference')}</td>
                 </tr>
                 <tr class="receipt-border-bottom">
-                  <td>&nbsp; Cant. X Precio</td>
-                  <td class="to-right">Total</td>
+                  <td>&nbsp; ${i18n.gettext('Count. x Price')}</td>
+                  <td class="to-right">${i18n.gettext('Total')}</td>
                 </tr>${htmlProd}</table>
                     ${htmlTotal}`;
         }

@@ -34,9 +34,9 @@ Ext.define('Erp.view.sell.Ctrl', {
                 ReceiptPortugal.htmlRender(invoiceData);
                 break;
             case 'Spain':
-                invoiceData.client_name = 'Consumidor Final';
-                invoiceData.origin = 'Original';
-                invoiceData.caixa = `Caja 1`;
+                invoiceData.client_name = i18n.gettext('Final customer');
+                invoiceData.origin = i18n.gettext('Original');
+                invoiceData.caixa = i18n.gettext('Checkout 1');
                 ReceiptSpain.htmlRender(invoiceData);
                 break;
             default:

@@ -31,11 +31,21 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     onViewShow() {
         const me = this;
+        const vm = this.getViewModel();
+        let customerConfigs = User.data.customer.configs || {};
+        // console.log('customerConfigs', customerConfigs);
         me.setActiveRetailMenu('pos');
         me.updatePosPlace();
         setTimeout(() => {
             me.focusBarcode();
         }, 200);
+        if (customerConfigs.receipt_cfg) {
+            vm.set({
+                'text_1': customerConfigs.receipt_cfg.texts.text_1,
+                'text_2': customerConfigs.receipt_cfg.texts.text_2,
+                'type_invoice': 'FR',
+            });
+        }
     },
     focusBarcode() {
         const barcode_field = this.lookup('find_barcode');
@@ -58,7 +68,8 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     reloadProduceGrid() {
         const vm = this.getViewModel();
-        if (vm.get('filter.place_id')) {
+        const store = vm.getStore('select_produce_store');
+        if (vm.get('filter.place_id') && store) {
             vm.getStore('select_produce_store').loadPage(1);
         }
     },
@@ -321,6 +332,8 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
                     vm.set('sell_data.pay_params', {});
                     const invoiceData = result.data[0];
                     invoiceData.items = printItems;
+                    invoiceData.configs = User.data.customer.configs;
+                    // console.log('invoiceData', invoiceData);
                     me.printReceipt(invoiceData);
                     return;
                 }
