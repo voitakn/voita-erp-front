@@ -43,7 +43,7 @@ Ext.define('Erp.view.company.edit.TemplateSettingsEdit', {
                                             disabled: true,
                                             bind: {
                                                 value: '{type_series}',
-                                                disabled: '{!invoice_type_edit}'
+                                                disabled: '{invoice_type_edit}'
                                             }
                                         },
                                         {
@@ -59,7 +59,7 @@ Ext.define('Erp.view.company.edit.TemplateSettingsEdit', {
                                             disabled: true,
                                             bind: {
                                                 value: '{type_text}',
-                                                disabled: '{!invoice_type_edit}'
+                                                disabled: '{invoice_type_edit}'
                                             }
                                         },
                                         {
