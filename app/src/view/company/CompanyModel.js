@@ -3,11 +3,7 @@ Ext.define('Erp.view.company.CompanyModel', {
     alias: 'viewmodel.company_vm',
     data: {
         edit_configs: {},
-        widthCnt: 56,
-        text_1: '',
-        text_2: '',
         edit_config: true,
-        invoice_type_edit: true,
     },
     formulas: {
         no_com_place_list_all(get) {

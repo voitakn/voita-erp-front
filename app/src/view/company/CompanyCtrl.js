@@ -21,6 +21,9 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const vm = me.getViewModel();
         const userData = User.data;
         let customerConfigs = userData.customer.configs || {};
+        let receipt_cfg = customerConfigs.receipt_cfg || {};
+        let texts = receipt_cfg.texts || {};
+        let type = receipt_cfg.type || {};
         let countryD = userData.country || {};
         const phonefiled = me.lookup('company_phone');
         phonefiled.setInputMask(userData.country.params.phone_mask);
@@ -44,15 +47,26 @@ Ext.define('Erp.view.company.CompanyCtrl', {
             configs: customerConfigs
         });
         vm.set('theCard', userModel);
-        if (customerConfigs.receipt_cfg) {
-            vm.set({
-                'widthCnt': customerConfigs.receipt_cfg.width,
-                'text_1': customerConfigs.receipt_cfg.texts.text_1,
-                'text_2': customerConfigs.receipt_cfg.texts.text_2,
-                'type_series': customerConfigs.receipt_cfg.type.series,
-                'type_text': customerConfigs.receipt_cfg.type.text,
-            });
-        }
+        vm.set({
+            'widthCnt': receipt_cfg.width || 56,
+            'invoice_type_edit': receipt_cfg.invoice_type_edit,
+            'text_1': texts.text_1 || '',
+            'text_2': texts.text_2 || '',
+            'type_series': type.series || i18n.gettext('FR'),
+            'type_text': type.text || i18n.gettext('Facturo recibo'),
+        });
+        vm.set('old_configs_template', {
+            width: receipt_cfg.width || 56,
+            invoice_type_edit: receipt_cfg.invoice_type_edit,
+            texts: {
+                text_1: texts.text_1 || '',
+                text_2: texts.text_2 || ''
+            },
+            type: {
+                series: type.series || i18n.gettext('FR'),
+                text: type.text || i18n.gettext('Facturo recibo')
+            }
+        });
         vm.set('all_configs', customerConfigs);
         me.setActiveMenu('company');
         me.logoImgLoad();
@@ -451,10 +465,11 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const template_settings_edit = me.lookup('template_settings_edit');
+        // const receipt_cfg = User.data.customer.configs.receipt_cfg;
         template_settings_edit.setTarget(btn);
         template_settings_edit.show();
-        vm.set('old_configs_template', Ext.clone(User.data.customer.configs));
-        vm.set('invoice_type_edit', User.data.customer.configs.receipt_cfg.invoice_type_edit);
+        // vm.set('old_configs_template', Ext.clone(receipt_cfg));
+        // vm.set('invoice_type_edit', receipt_cfg.invoice_type_edit);
         console.log('invoice_type_edit', vm.get('invoice_type_edit'));
     },
     onCancelTemplateEdit(btn) {
@@ -462,15 +477,17 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const vm = me.getViewModel();
         const template_settings_edit = me.lookup('template_settings_edit');
         const old_configs_template = vm.get('old_configs_template');
+
         if (old_configs_template.receipt_cfg) {
-            vm.set({
-                'widthCnt': old_configs_template.receipt_cfg.width,
-                'text_1': old_configs_template.receipt_cfg.texts.text_1,
-                'text_2': old_configs_template.receipt_cfg.texts.text_2,
-                'type_series': old_configs_template.receipt_cfg.type.series,
-                'type_text': old_configs_template.receipt_cfg.type.text,
-            });
         }
+        vm.set({
+            'widthCnt': old_configs_template.width,
+            'text_1': old_configs_template.texts.text_1,
+            'text_2': old_configs_template.texts.text_2,
+            'type_series': old_configs_template.type.series,
+            'type_text': old_configs_template.type.text,
+        });
+
         template_settings_edit.hide();
     },
     onSaveTemplate() {
@@ -488,21 +505,24 @@ Ext.define('Erp.view.company.CompanyCtrl', {
             text: type_text
         };
         const old_configs_template = vm.get('old_configs_template');
-        console.log('old_configs_template', User.data.customer.configs);
+        console.log('old_configs_template', old_configs_template);
         texts.text_1 = vm.get('text_1');
         texts.text_2 = vm.get('text_2');
         receipt_cfg.width = vm.get('widthCnt');
         receipt_cfg.texts = texts;
         receipt_cfg.type = type;
-        if (old_configs_template.receipt_cfg.type.series !== type.series) {
+        if (old_configs_template.type.series !== type.series) {
             console.log('type.series !==', type.series);
             receipt_cfg.type.series = type.series;
-            receipt_cfg.invoice_type_edit = false;
+            receipt_cfg.invoice_type_edit = true;
         }
-        if (old_configs_template.receipt_cfg.type.text !== type.text) {
+        if (old_configs_template.type.text !== type.text) {
             console.log('type.text !==', type.text);
             receipt_cfg.type.text = type.text;
-            receipt_cfg.invoice_type_edit = false;
+            receipt_cfg.invoice_type_edit = true;
+        }
+        if (old_configs_template.invoice_type_edit === true) {
+            receipt_cfg.invoice_type_edit = true;
         }
         configs.receipt_cfg = receipt_cfg;
         me.onConfigVmChange(configs);
