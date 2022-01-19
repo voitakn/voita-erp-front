@@ -58,8 +58,6 @@ Ext.define('Erp.util.receipt.Receipt', {
         let cntWidth = receipt_cfg.width / 10 + 'cm';
         cntPrint.innerHTML = '';
         const receiptHead = this.htmlHead(data);
-        console.log('data', data);
-
         const receiptProd = this.htmlProducts(data);
         cntPrint.innerHTML = '';
         cntPrint.innerHTML = `${cntWidthLine}<div ${cntBorder} id="erp-receipt-pt" style='width: ${cntWidth}'>
