@@ -23,7 +23,6 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         let customerConfigs = userData.customer.configs || {};
         let receipt_cfg = customerConfigs.receipt_cfg || {};
         let texts = receipt_cfg.texts || {};
-        let type = receipt_cfg.type || {};
         let countryD = userData.country || {};
         const phonefiled = me.lookup('company_phone');
         phonefiled.setInputMask(userData.country.params.phone_mask);
@@ -49,22 +48,22 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         vm.set('theCard', userModel);
         vm.set({
             'widthCnt': receipt_cfg.width || 56,
-            'invoice_type_edit': receipt_cfg.invoice_type_edit,
+            'invoice_type_edit': receipt_cfg.invoice_type_edit ? receipt_cfg.invoice_type_edit : false,
             'text_1': texts.text_1 || '',
             'text_2': texts.text_2 || '',
-            'type_series': type.series || i18n.gettext('FR'),
-            'type_text': type.text || i18n.gettext('Facturo recibo'),
+            'type_series': receipt_cfg.type.series || 'IN',
+            'type_text': receipt_cfg.type.text || 'Invoice',
         });
         vm.set('old_configs_template', {
             width: receipt_cfg.width || 56,
-            invoice_type_edit: receipt_cfg.invoice_type_edit,
+            invoice_type_edit: receipt_cfg.invoice_type_edit ? receipt_cfg.invoice_type_edit : false,
             texts: {
                 text_1: texts.text_1 || '',
                 text_2: texts.text_2 || ''
             },
             type: {
-                series: type.series || i18n.gettext('FR'),
-                text: type.text || i18n.gettext('Facturo recibo')
+                series: receipt_cfg.type.series || 'IN',
+                text: receipt_cfg.type.text || 'Invoice'
             }
         });
         vm.set('all_configs', customerConfigs);
@@ -185,9 +184,9 @@ Ext.define('Erp.view.company.CompanyCtrl', {
             "operator": User.fullName(),
             "date_time": Ext.Date.format(new Date(), "Y-m-d H:i"),
             "client_tax_number": "---------",
-            "client_name": i18n.gettext('Final customer'),
-            "origin": i18n.gettext('Original'),
-            "caixa": i18n.gettext('Checkout 1'),
+            "client_name": 'Final customer',
+            "origin": 'Original',
+            "caixa": ' 1',
             "text_1": vm.get('text_1'),
             "text_2": vm.get('text_2'),
 
@@ -196,12 +195,15 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         invoiceData.type_invoice = vm.get('type_invoice');
         invoiceData.logo = user_data.customer.configs.logo;
         invoiceData.edit_config = true;
+        invoiceData.configs.receipt_cfg = {};
+        invoiceData.configs.receipt_cfg.texts = {};
+        invoiceData.configs.receipt_cfg.type = {};
         invoiceData.configs.receipt_cfg.width = widthCnt;
         invoiceData.configs.receipt_cfg.texts.text_1 = vm.get('text_1');
         invoiceData.configs.receipt_cfg.texts.text_2 = vm.get('text_2');
         invoiceData.configs.receipt_cfg.type.series = vm.get('type_series');
         invoiceData.configs.receipt_cfg.type.text = vm.get('type_text');
-        const cnt = ReceiptSpain.htmlRender(invoiceData);
+        const cnt = Receipt.htmlRender(invoiceData);
         print_content.setHtml(cnt);
         JsBarcode(".barcode", `${invoiceData.configs.receipt_cfg.type.series}${invoiceData.doc_number}`, {height: 30, width: 0.9});
     },
@@ -465,12 +467,8 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const template_settings_edit = me.lookup('template_settings_edit');
-        // const receipt_cfg = User.data.customer.configs.receipt_cfg;
         template_settings_edit.setTarget(btn);
         template_settings_edit.show();
-        // vm.set('old_configs_template', Ext.clone(receipt_cfg));
-        // vm.set('invoice_type_edit', receipt_cfg.invoice_type_edit);
-        console.log('invoice_type_edit', vm.get('invoice_type_edit'));
     },
     onCancelTemplateEdit(btn) {
         const me = this;
@@ -505,19 +503,16 @@ Ext.define('Erp.view.company.CompanyCtrl', {
             text: type_text
         };
         const old_configs_template = vm.get('old_configs_template');
-        console.log('old_configs_template', old_configs_template);
         texts.text_1 = vm.get('text_1');
         texts.text_2 = vm.get('text_2');
         receipt_cfg.width = vm.get('widthCnt');
         receipt_cfg.texts = texts;
         receipt_cfg.type = type;
         if (old_configs_template.type.series !== type.series) {
-            console.log('type.series !==', type.series);
             receipt_cfg.type.series = type.series;
             receipt_cfg.invoice_type_edit = true;
         }
         if (old_configs_template.type.text !== type.text) {
-            console.log('type.text !==', type.text);
             receipt_cfg.type.text = type.text;
             receipt_cfg.invoice_type_edit = true;
         }

@@ -33,7 +33,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const me = this;
         const vm = this.getViewModel();
         let customerConfigs = User.data.customer.configs || {};
-        // console.log('customerConfigs', customerConfigs);
         me.setActiveRetailMenu('pos');
         me.updatePosPlace();
         setTimeout(() => {
@@ -159,7 +158,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const record = row.record;
-        // Запросим цену и ID
         if (record && record.isModel) {
             const amount_data = Ext.clone(record.getData());
             amount_data.amount = vm.get('quantity');
@@ -174,7 +172,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const amount_data = vm.get('amount_data');
         const item_prod = items_store.getById(amount_data.id);
         if (item_prod && item_prod.isModel) {
-            // Нашли товар в списке добавлям только количество
             let amount = Number(item_prod.get('amount')) + Number(amount_data.amount);
             item_prod.set('amount', amount);
         } else {
@@ -322,7 +319,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
             jsonData: sell_data,
             method: "POST",
             success(resp, opt) {
-               //console.('Api.inv.sell_retail_create->success', resp, opt);
                 const result = Ext.JSON.decode(resp.responseText);
                 Notice.showToast(result);
                 if (result.success) {
@@ -333,9 +329,11 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
                     const invoiceData = result.data[0];
                     invoiceData.items = printItems;
                     invoiceData.configs = User.data.customer.configs;
-                    // console.log('invoiceData', invoiceData);
+                    invoiceData.client_name = '';
+                    invoiceData.origin = '';
+                    invoiceData.caixa = ' 1';
                     me.printReceipt(invoiceData);
-                    return;
+
                 }
             },
             failure(resp, opt) {
@@ -373,7 +371,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         this.focusBarcode();
     },
     catalogSell(catalog) {
-       //console.('catalogSell', catalog);
         if (catalog && catalog.isModel) {
             this.getViewModel().set('filter.catalog_id', catalog.get('id'));
         } else {
