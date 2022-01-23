@@ -26,26 +26,6 @@ Ext.define('Erp.view.sell.Ctrl', {
         invoiceData.client_tax_number = '---------';
         me.clearBill();
         me.removeItemsStores();
-        switch (country) {
-            case 'Portugal':
-                invoiceData.client_name = 'Consumidor Final';
-                invoiceData.origin = 'Original';
-                invoiceData.caixa = `Caixa 1`;
-                ReceiptPortugal.htmlRender(invoiceData);
-                break;
-            case 'Spain':
-                invoiceData.client_name = i18n.gettext('Final customer');
-                invoiceData.origin = i18n.gettext('Original');
-                invoiceData.caixa = i18n.gettext('Checkout 1');
-                ReceiptSpain.htmlRender(invoiceData);
-                break;
-            default:
-                invoiceData.client_name = 'Final customer';
-                invoiceData.origin = 'Original';
-                invoiceData.caixa = `Checkout 1`;
-                ReceiptEnglish.htmlRender(invoiceData);
-                me.clearBill();
-                break;
-        }
+        Receipt.htmlRender(invoiceData);
     },
 });

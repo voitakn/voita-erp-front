@@ -195,10 +195,8 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const vm = this.getViewModel();
         const cashField = this.lookup('pos_cash_combobox');
         const placeRecord = User.placesStore.getById(place_id);
-       //console.('onPlaceChange', place_id);
         if(placeRecord) {
             const checkouts = placeRecord.get('params').checkouts;
-           //console.('checkouts', checkouts);
             if (cashField && checkouts && checkouts.length > 0) {
                 cashField.setStore(checkouts);
                 vm.set('filter.cash_register', checkouts[0].id);
@@ -223,7 +221,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         }
     },
     reloadBarcodeGrid() {
-       //console.('reloadBarcodeGrid()');
         const vm = this.getViewModel();
         if (vm.get('filter.place_id')) {
             vm.getStore('select_by_barcode_produce_store').load();
@@ -262,7 +259,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const record = row.record;
-        // Запросим цену и ID
         if (record && record.isModel) {
             const amount_data = Ext.clone(record.getData());
             amount_data.amount = 1;
@@ -293,7 +289,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const amount_data = vm.get('amount_data');
         const item_prod = items_store.getById(amount_data.id);
         if (item_prod && item_prod.isModel) {
-            // Нашли товар в списке добавлям только количество
             let amount = item_prod.get('amount') + amount_data.amount;
             item_prod.set('amount', amount);
         } else {
@@ -306,7 +301,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const record = row.record;
-        // Запросим цену и ID
         if (record && record.isModel) {
             const amount_data = Ext.clone(record.getData());
             amount_data.amount = vm.get('quantity');
@@ -321,7 +315,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const amount_data = vm.get('amount_data');
         const item_prod = items_store.getById(amount_data.id);
         if (item_prod && item_prod.isModel) {
-            // Нашли товар в списке добавлям только количество
             let amount = Number(item_prod.get('amount')) + Number(amount_data.amount);
             item_prod.set('amount', amount);
         } else {
@@ -431,7 +424,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         confirm.show();
     },
     payByCard(btn) {
-       //console.('payByCard');
         const me = this;
         const modal = me.lookup('sell_pos_paycard');
         modal.show();
@@ -468,7 +460,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const sell_data = vm.get('sell_data');
         const posKey = localStorage.getItem('posKey');
         const posExp = localStorage.getItem('posExp');
-
         if(!posKey ||
             posKey === '' ||
             (Math.floor((new Date()).getTime() / 1000) > Number(posExp))) {
@@ -476,7 +467,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
             me.onStart();
             return;
         }
-
         let items = [];
         if (cash) {
             modal = me.lookup('sell_pos_paycash');
@@ -493,8 +483,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
             printItems.push(rec.data);
         })
         sell_data.items = items;
-       //console.('saveSellInvoice', Api.inv.create_pos_sell);
-        // Сохраняем продажу
         Ext.Ajax.request({
             url: Api.inv.create_pos_sell,
             jsonData: sell_data,
@@ -503,7 +491,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
                 "PosAuthorization": `Bearer ${posKey}`
             },
             success(resp, opt) {
-               //console.('Api.inv.create_pos_sell->success', resp, opt);
                 const result = Ext.JSON.decode(resp.responseText);
                 Notice.showToast(result);
                 if (result.success) {
@@ -514,7 +501,9 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
                     const invoiceData = result.data[0];
                     invoiceData.items = printItems;
                     invoiceData.configs = User.data.customer.configs;
-                    // console.log('invoiceData', invoiceData);
+                    invoiceData.client_name = '';
+                    invoiceData.origin = '';
+                    invoiceData.caixa = '2';
                     me.printReceipt(invoiceData);
                     return;
                 }
@@ -530,7 +519,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         });
     },
     payByCash(btn) {
-       //console.('payByCash');
         const me = this;
         const modal = me.lookup('sell_pos_paycash');
         modal.show();
@@ -547,7 +535,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         me.focusBarcode();
     },
     onClosePaycash(btn) {
-       //console.('onClosePaycash');
         const me = this;
         const vm = me.getViewModel();
         const modal = me.lookup('sell_pos_paycash');
@@ -558,7 +545,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         me.focusBarcode();
     },
     onChangeRetailType() {
-       //console.('onChangeRetailType');
         this.focusBarcode();
     },
     catalogSell(catalog){
@@ -570,7 +556,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         }
     },
     reloadProduce(filter_catalog_id){
-       //console.('reloadProduce', filter_catalog_id);
         if(this.all_rendered) {
             this.getViewModel().getStore('select_produce_store').load();
         } else {
@@ -578,7 +563,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         }
     },
     prevSell() {
-       //console.('prevSell');
         const me = this;
         const vm = me.getViewModel();
         let bill_sell_current = vm.get('bill_sell_current');
@@ -594,7 +578,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         me.checkDisableButton();
     },
     nextSell() {
-       //console.('nextSell');
         const me = this;
         const vm = me.getViewModel();
         let bill_sell_current = vm.get('bill_sell_current');
@@ -612,7 +595,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         me.checkDisableButton();
     },
     addItemsStores() {
-       //console.('addItemsStores');
         const me = this;
         const vm = me.getViewModel();
         let bill_sell_current = vm.get('bill_sell_current');
@@ -626,20 +608,17 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         me.checkDisableButton();
     },
     saveCurrentStore(bill_sell_current) {
-       //console.('saveCurrentStore');
         const me = this;
         const vm = me.getViewModel();
         const items_store = vm.getStore('sell_items_store');
         me.sell_stores[bill_sell_current - 1] = items_store.getRange();
     },
     loadStore() {
-       //console.('loadCurrentStore');
         const me = this;
         const vm = me.getViewModel();
         let store = vm.getStore('sell_items_store');
         let bill_sell_current = vm.get('bill_sell_current') - 1;
         let sell_store_current = me.sell_stores[bill_sell_current];
-       //console.('bill_sell_current', bill_sell_current);
         if(sell_store_current && sell_store_current.length > 0) {
             store.loadData(sell_store_current);
         } else {
@@ -652,19 +631,16 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const vm = me.getViewModel();
         if (vm.get('bill_sell_current') > 1) {
             vm.set('prev_button', false);
-           //console.('prev_button', false);
         } else {
             vm.set('prev_button', true);
         }
         if (vm.get('bill_sell_current') < vm.get('bill_sell_total')) {
             vm.set('next_button', false);
-           //console.('next_button', false);
         } else {
             vm.set('next_button', true);
         }
     },
     removeItemsStores() {
-       //console.('removeItemsStores');
         const me = this;
         const vm = me.getViewModel();
         let bill_sell_current = vm.get('bill_sell_current');
@@ -691,7 +667,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const posKey = localStorage.getItem('posKey');
         const posExp = localStorage.getItem('posExp');
         const dialog = me.lookup('pos_dialog_finish');
-
         if(!posKey ||
             posKey === '' ||
             (Math.floor((new Date()).getTime() / 1000) > Number(posExp))) {
@@ -699,7 +674,6 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
             me.onStart();
             return;
         }
-
         Ext.Ajax.request({
             url: Api.inv.cashopen_status,
             headers: {
