@@ -65,6 +65,11 @@ Ext.define('Erp.view.main.MainModel', {
             text: i18n.gettext('Report'),
             leaf: true
         }, {
+            iconCls: 'x-fa fa-money-check blue',
+            xtype: 'expense',
+            text: i18n.gettext('Expenses'),
+            leaf: true
+        }, {
             iconCls: 'x-fa fa-cog blue',
             text: i18n.gettext('Settings'),
             leaf: false,
@@ -105,6 +110,7 @@ Ext.define('Erp.view.main.MainModel', {
             price_monitor: 'retail',
             pos_list: 'retail',
             revert_list: 'retail',
+            expense: 'expense',
 
         }
     },
