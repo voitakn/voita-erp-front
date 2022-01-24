@@ -20,52 +20,57 @@ Ext.define('Erp.view.main.MainModel', {
 
         menu: [{
             text: i18n.gettext('Dashboard'),
-            iconCls: 'menu-icon dashboard blue',
+            iconCls: 'erp-icon dashboard blue-dark',
             xtype: 'dashboard',
             leaf: true,
             hidden: true
         }, {
-            iconCls: 'x-fa fa-cog blue',
+            iconCls: 'x-fa fa-cog blue-dark',
             xtype: 'company',
-            text: i18n.gettext('Company'),
+            text: i18n.gettext('Settings'),
             leaf: true
         }, {
-            iconCls: 'x-fa fa-sitemap blue',
+            iconCls: 'x-fa fa-sitemap blue-dark',
             xtype: 'catalog',
             text: i18n.gettext('Catalog'),
             leaf: true
         }, {
-            iconCls: 'fas fa-wallet blue',
+            iconCls: 'erp-icon shopping-cart blue-dark',
             xtype: 'retail',
             text: i18n.gettext('Retail'),
             leaf: true
         }, {
-            iconCls: 'x-fas fa-shipping-fast blue',
+            iconCls: 'erp-icon movements blue-dark',
             xtype: 'movement_list',
             text: i18n.gettext('Movements'),
             leaf: true
         }, {
-            iconCls: 'menu-icon purchases blue',
+            iconCls: 'erp-icon purchases blue-dark',
             text: i18n.gettext('Purchases'),
             xtype: 'purchase_list',
             leaf: true
         }, {
-            iconCls: 'x-fa fa-truck blue',
+            iconCls: 'x-fa fa-truck blue-dark',
             xtype: 'supplier',
             text: i18n.gettext('Suppliers'),
             leaf: true
         }, {
-            iconCls: 'menu-icon fact-check blue',
+            iconCls: 'erp-icon fact-check blue-dark',
             xtype: 'inventory',
             text: i18n.gettext('Stock'),
             leaf: true
         }, {
-            iconCls: 'erp-icon insights blue',
+            iconCls: 'erp-icon insights blue-dark',
             xtype: 'report_period',
             text: i18n.gettext('Report'),
             leaf: true
         }, {
-            iconCls: 'x-fa fa-cog blue',
+            iconCls: 'erp-icon expenses blue-dark',
+            xtype: 'expenses',
+            text: i18n.gettext('Expenses'),
+            leaf: true
+        }, {
+            iconCls: 'x-fa fa-cog blue-dark',
             text: i18n.gettext('Settings'),
             leaf: false,
             expanded: true,
@@ -105,7 +110,6 @@ Ext.define('Erp.view.main.MainModel', {
             price_monitor: 'retail',
             pos_list: 'retail',
             revert_list: 'retail',
-
         }
     },
     formulas: {

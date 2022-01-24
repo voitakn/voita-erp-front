@@ -56,19 +56,19 @@
 /* Шрифты */
 
 //@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-$font-family: dynamic('Montserrat', sans-serif);
+$font-family: dynamic('Noto Sans', 'Open Sans', Arial, sans-serif);
 $enable-big:  dynamic(false);
 $enable-font-awesome: dynamic(true);
 //$base-color-name: dynamic('blue-grey');
 $tool-font-size: dynamic(24px);
 $toolbar-font-size: dynamic(14px);
-$toolbar-line-height: dynamic(14px);
+$toolbar-line-height: dynamic(16px);
 
 //$base-color: dynamic(#495759);
 $font-size: dynamic(14px);
-$panel-body-font-size: dynamic(13px);
+$panel-body-font-size: dynamic(14px);
 
 //$panel-navigation-background-color: dynamic(#32404e);
 $panel-navigation-item-line-height: dynamic(64px);
@@ -120,7 +120,7 @@ $toast-shadow: dynamic($material-shadow-3);
 
 $erp-green-dark: dynamic(#006B34);
 $erp-green: dynamic(#00A451);
-$erp-blue: dynamic(#005E95);
+$erp-blue: dynamic(#17A6BB);//#005E95//17A6BB
 $erp-red: dynamic(#982500);
 $erp-orange: dynamic(#EA3800);
 $erp-gold: dynamic(#EA8100);
@@ -129,10 +129,11 @@ $erp-gray: dynamic(#303030);
 $erp-light-gray: dynamic(#c7c7c7);
 $erp-light-blue: dynamic(#ebf4fa);
 
+$erp-blue-dark: dynamic(#1493A6);//#0E6C7A
 
 
 $tooltip-header-title-padding: dynamic(0 10px 0 15px);
-$field-label-font-size: dynamic(15px);
+$field-label-font-size: dynamic(14px);
 
 $button-border-width: dynamic(1px);
 $button-border-style: dynamic(solid);
@@ -147,7 +148,7 @@ $gridcolumn-padding: dynamic(12px 8px);
 $gridcolumn-padding-big:  dynamic(12px 10px);
 $gridcolumn-font-weight: dynamic(bold);
 
-$tooltip-header-font-size: dynamic(16px);
+$tooltip-header-font-size: dynamic(20px);
 
 $textfield-placeholder-color: dynamic($toast-border-color);
 $textfield-disabled-placeholder-color: dynamic($toast-color);
@@ -160,7 +161,9 @@ $menucheckitem-active-background-color: dynamic(#eeeeee);
 $menucheckitem-checked-background-color: dynamic(#e1e1e1);
 $dialog-body-color: dynamic($toast-color);
 
-$field-label-color: #000000;
-$field-label-font-size: 13px;
-$field-label-font-weight: bold;
-$menu-icon-column-width: 34px;
+$field-label-color: dynamic(#000000);
+$field-label-font-size: dynamic(14px);
+$field-label-font-weight: dynamic(bold);
+$menu-icon-column-width: dynamic(34px);
+
+$listitem-font-size: dynamic(14px);

@@ -24,7 +24,7 @@ Ext.define('Erp.view.main.MainLeft', {
         },{
             xtype: 'container',
             docked: 'bottom',
-            cls: 'blue-bg',
+            cls: 'blue-dark-bg',
             height: 80,
             items: [{
                 xtype: 'container',

@@ -35,6 +35,12 @@ body.x-ios.x-webview.x-portrait {
     color: $erp-blue !important;
   }
 }
+.blue-dark {
+  color: $erp-blue-dark !important;
+  .x-icon-el {
+    color: $erp-blue-dark !important;
+  }
+}
 .orange {
   color: $erp-orange !important;
   .x-icon-el {
@@ -58,6 +64,9 @@ body.x-ios.x-webview.x-portrait {
 }
 .blue-bg {
   background-color: $erp-blue !important;
+}
+.blue-dark-bg {
+  background-color: $erp-blue-dark !important;
 }
 .orange-bg {
   background-color: $erp-orange !important;

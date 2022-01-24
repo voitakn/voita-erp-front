@@ -1,31 +1,30 @@
+/* Fonts */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/resources/fonts/montserrat/Montserrat-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Noto Sans';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/resources/fonts/Noto_Sans/NotoSans-Regular.ttf') format('ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: normal;
+    font-style: italic;
+    src: url('/resources/fonts/Noto_Sans/NotoSans-Italic.ttf') format('ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-style: normal;
+    src: url('/resources/fonts/Noto_Sans/NotoSans-Bold.ttf') format('ttf');
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/resources/fonts/montserrat/Montserrat-ExtraBold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/resources/fonts/montserrat/Montserrat-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/resources/fonts/montserrat/Montserrat-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-style: italic;
+    src: url('/resources/fonts/Noto_Sans/NotoSans-BoldItalic.ttf') format('ttf');
+    font-display: swap;
 }

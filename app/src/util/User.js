@@ -321,5 +321,6 @@ Ext.define('Erp.util.User', {
         revert_list: 'inv.sell_revert_list',
         subscription: 'billing.tariff_list',
         report_period: 'report.main_stat',
+        expenses: 'com.catalog_tree',
     },
 });
