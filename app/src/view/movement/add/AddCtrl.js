@@ -324,7 +324,7 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
                         vm.set('result_data', result.data);
                         invoiceData.doc_number = result.data.doc_number;
                         me.lookup('print_dialog').show();
-                        return;
+
                     }
                 },
                 failure(resp, opt) {
@@ -375,6 +375,22 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
         vm.set('edit.comment', vm.get('comment'));
         vm.set('edit.boxes', vm.get('boxes'));
         move_products_from.show();
+    },
+    onCancelPlaceFrom() {
+        const me = this;
+        const vm = this.getViewModel();
+        const move_products_from = me.lookup('move_products_from');
+        vm.set('config.from_place_id', null);
+        move_products_from.hide();
+
+    },
+    onCancelPlaceTo() {
+        const me = this;
+        const vm = this.getViewModel();
+        const move_products_to = me.lookup('move_products_to');
+        vm.set('config.to_place_id', null);
+        move_products_to.hide();
+
     },
     onSelectPlaceFrom(btn) {
         const me = this;
