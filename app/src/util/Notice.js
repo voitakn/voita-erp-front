@@ -251,7 +251,7 @@ Ext.define('Erp.util.Notice', {
             error_1: i18n.gettext('Please, select the point of retail sale.'),
             error_2: i18n.gettext('Please, select the period of purchase.'),
         },
-    
+
         sell_list_date_user: {
             error_1: i18n.gettext('Please, select the point of retail sale.'),
         },
@@ -329,6 +329,10 @@ Ext.define('Erp.util.Notice', {
         cashopen_check_: {
             error_1: i18n.gettext('Sorry! Not found checkout session.'),
             info: i18n.gettext('The POS session is active.'),
+        },
+        expense_edit: {
+            error_1: i18n.gettext('Unable to create product.'),
+            info: i18n.gettext('New expense was successfully created.')
         },
     },
     price: {

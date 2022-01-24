@@ -306,7 +306,7 @@ Ext.define('Erp.util.User', {
         workers: 'com.worker_list',
         supplier: 'com.supplier_list',
         myprofile: 'com.login_params_save',
-        expense: 'com.expense_list',
+        expense: 'inv.expense_list',
         inventory: 'inv.invent_by_place',
         company: 'com.customer_save',
         store_order: 'com.catalog_tree',

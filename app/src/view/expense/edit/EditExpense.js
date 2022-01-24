@@ -1,9 +1,12 @@
-Ext.define('Erp.view.expense.edit.NewExpense', {
+Ext.define('Erp.view.expense.edit.EditExpense', {
     extend: 'Erp.base.ToolTip',
-    xtype: 'expense_new',
-    reference: 'expense_new',
-    align: 't50-b50',
-    title: i18n.gettext('New expense'),
+    xtype: 'expense_edit',
+    reference: 'expense_edit',
+    align: 'l50-b50',
+    title: i18n.gettext('Edit expense'),
+    listeners: {
+        onCancel: 'onCancelEdit'
+    },
     items: [
         {
             xtype: 'formpanel',
@@ -11,7 +14,7 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
             items: [
                 {
                     xtype: 'combobox',
-                    reference: 'expense_place_combobox',
+                    reference: 'place_combobox',
                     clearable: true,
                     label: i18n.gettext('Point of sale'),
                     queryMode: 'local',
@@ -19,29 +22,23 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
                     displayField: 'title',
                     store: {},
                     bind: {
-                        value: '{newExpense.place_id}'
+                        value: '{theCardEdit.place_id}'
                     },
                 },
                 {
-                    xtype: 'textfield',
+                    xtype: 'displayfield',
                     required: true,
                     label: i18n.gettext('Document'),
                     bind: {
-                        value: '{newExpense.doc_number}',
+                        value: '{theCardEdit.doc_number}',
                     },
                 },
                 {
-                    xtype: 'datefield',
+                    xtype: 'displayfield',
                     width: 150,
-                    margin: '0 10 0 0',
                     label: i18n.gettext('Date'),
-                    dateFormat: 'Y-m-d',
-                    maxDate: new Date(),
-                    required: true,
-                    editable: false,
-                    clearable: true,
                     bind: {
-                        value: '{newExpense.doc_date}',
+                        value: '{theCardEdit.doc_date}',
                     }
                 },
                 {
@@ -56,7 +53,7 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
                             required: true,
                             minValue: 0.01,
                             bind: {
-                                value: '{newExpense.price_total}',
+                                value: '{theCardEdit.price_total}',
                             },
                         },
                         {
@@ -64,7 +61,7 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
                             width: 140,
                             label: i18n.gettext('Tax total'),
                             bind: {
-                                value: '{newExpense.tax_total}',
+                                value: '{theCardEdit.tax_total}',
                             },
                         },
                     ]
@@ -73,7 +70,7 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
                     xtype: 'textfield',
                     label: i18n.gettext('Comment'),
                     bind: {
-                        value: '{newExpense.comment}',
+                        value: '{theCardEdit.comment}',
                     },
                 },
                 {
@@ -84,7 +81,7 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
                     label: i18n.gettext('Enable VAT taxes'),
                     // boxLabel: i18n.gettext('Used when printing invoices and calculate taxes'),
                     bind: {
-                        value: '{newExpense.tax_refund}'
+                        value: '{theCardEdit.tax_refund}'
                     }
                 },
                 {
@@ -95,9 +92,10 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
                     label: i18n.gettext('Enable Paid'),
                     // boxLabel: i18n.gettext('Used when printing invoices and calculate taxes'),
                     bind: {
-                        value: '{newExpense.paid}'
+                        value: '{theCardEdit.paid}'
                     }
                 },
+
             ]
         }
     ],
@@ -107,7 +105,7 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
             xtype: 'button',
             text: i18n.gettext('Cancel'),
             iconCls: 'x-fa fa-times red',
-            handler: 'onCancelNew'
+            handler: 'onCancel'
         },
         {
             xtype: 'button',
@@ -117,7 +115,7 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
             bind: {
                 hidden: '{no_inv_expense_edit}'
             },
-            handler: 'onSaveNew'
+            handler: 'onSaveEdit'
         }
     ]
 });
