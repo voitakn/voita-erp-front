@@ -2,66 +2,52 @@ Ext.define('Erp.view.expense.ExpenseModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.expense_vm',
     data: {
-        micro: false,
-        cardId: null,
-        newExpense: {},
+        filter: {
+            place_id: null,
+            year: Ext.Date.format(new Date(), 'Y'),
+            month: Ext.Date.format(new Date(), 'm'),
+            period: null
+        },
     },
     stores: {
-        expense_store: {
+        expense_list_store: {
             extend: 'Erp.data.Store',
-            fields: [
-                {name: 'id', type: 'string'},
-                {name: 'title',  type: 'string'},
-                {name: 'params',  type: 'auto'},
-                {name: 'date_create',  type: 'string'},
-                {name: 'amount',  type: 'number'}
-            ],
-            data: [
-                {id: 'adfaddsdasd', title: 'My title expense 1', params: {}, date_create: '2021-02-19', amount: 23.10},
-                {id: 'adfaddsdasd1', title: 'My title expense 2', params: {}, date_create: '2021-02-19', amount: 124.75},
-                {id: 'adfaddsdasd2', title: 'My title expense 3', params: {}, date_create: '2021-02-19', amount: 432.50},
-                {id: 'adfaddsdasd3', title: 'My title expense 4', params: {}, date_create: '2021-02-19', amount: 512.65},
-                {id: 'adfaddsdasd4', title: 'My title expense 5', params: {}, date_create: '2021-02-19', amount: 278.20},
-            ],
+            model: 'Erp.model.Expenses',
+            autoLoad: false,
+            autoSync: false,
+            pageSize: 25,
             proxy: {
-                type: 'memory',
+                type: 'erp_api',
+                api: {
+                    read: Api.inv.expense_list,
+                },
+                extraParams: {
+                    place_id: '{filter.place_id}',
+                    y_m: `{filter.period}` || '{filter.year}' + '-' + '{filter.month}',
+                }
             }
         },
     },
     formulas: {
-        expense_sels: {
-            bind: {
-                bindTo: '{micro}',
-                deep: true
-            },
-            get(val) {
-                if(val === true) {
-                    return {
-                        columns: false,
-                        cells: false,
-                        checkbox: false,
-                        headerCheckbox: false,
-                        extensible: true,
-                        mode: 'single',
-                    }
-                } else {
-                    return {
-                        columns: false,
-                        cells: false,
-                        checkbox: true,
-                        headerCheckbox: false,
-                        extensible: true,
-                        mode: 'single',
-                    }
+        years_data(get) {
+            const startY = 2021;
+            const lastY = Number(Ext.Date.format(new Date(), 'Y'));
+            const years = [];
+            if (lastY > startY) {
+                for (let i = startY; i <= lastY; i++) {
+                    years.push({id: i});
                 }
+            } else {
+                years.push({id: startY});
             }
+            return years;
         },
-        no_com_place_list_all(get) {
-            return !User.checkAccess('com.place_list_all');
+        no_inv_expense_edit(get) {
+            return !User.checkAccess('inv.expense_edit');
         },
-        no_com_worker_list(get) {
-            return !User.checkAccess('com.worker_list');
-        }
-    
+        // date_create_short(get) {
+        //     return Ext.Date.format(data.date_create, "Y-m-d H:i");
+        // }
     }
+
 });
