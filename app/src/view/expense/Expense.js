@@ -1,14 +1,14 @@
-Ext.define('Erp.view.expense.Expense', {
+Ext.define('Erp.view.expense.Expenses', {
     extend: 'Erp.base.Module',
-    xtype: 'expense',
-    reference: 'expense',
+    xtype: 'expenses',
+    reference: 'expenses',
     autoSize: true,
     session: true,
     scrollable: 'y',
     viewModel: {
-        type: 'expense_vm'
+        type: 'expenses_vm'
     },
-    controller: 'expense_ctrl',
+    controller: 'expenses_ctrl',
     items: [
         {
             xtype: 'expenses_grid',

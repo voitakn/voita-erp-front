@@ -1,6 +1,6 @@
-Ext.define('Erp.view.expense.ExpenseModel', {
+Ext.define('Erp.view.expense.ExpensesModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.expense_vm',
+    alias: 'viewmodel.expenses_vm',
     data: {
         filter: {
             place_id: null,
@@ -45,9 +45,6 @@ Ext.define('Erp.view.expense.ExpenseModel', {
         no_inv_expense_edit(get) {
             return !User.checkAccess('inv.expense_edit');
         },
-        // date_create_short(get) {
-        //     return Ext.Date.format(data.date_create, "Y-m-d H:i");
-        // }
     }
 
 });

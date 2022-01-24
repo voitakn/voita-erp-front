@@ -306,7 +306,7 @@ Ext.define('Erp.util.User', {
         workers: 'com.worker_list',
         supplier: 'com.supplier_list',
         myprofile: 'com.login_params_save',
-        expense: 'inv.expense_list',
+        expenses: 'inv.expense_list',
         inventory: 'inv.invent_by_place',
         company: 'com.customer_save',
         store_order: 'com.catalog_tree',
@@ -321,6 +321,5 @@ Ext.define('Erp.util.User', {
         revert_list: 'inv.sell_revert_list',
         subscription: 'billing.tariff_list',
         report_period: 'report.main_stat',
-        expenses: 'com.catalog_tree',
     },
 });

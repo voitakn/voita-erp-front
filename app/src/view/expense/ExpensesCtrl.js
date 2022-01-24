@@ -1,6 +1,6 @@
-Ext.define('Erp.view.expense.ExpenseCtrl', {
+Ext.define('Erp.view.expense.ExpensesCtrl', {
     extend: 'Erp.view.base.BaseCtrl',
-    alias: 'controller.expense_ctrl',
+    alias: 'controller.expenses_ctrl',
     // routes: {
     //     'expense': { action: 'onCardId' },
     // },
@@ -16,7 +16,7 @@ Ext.define('Erp.view.expense.ExpenseCtrl', {
     is_rendered: false,
     afterViewShow() {
         const me = this;
-        me.setActiveMenu('expense');
+        me.setActiveMenu('expenses');
     },
     onViewRender() {
         const me = this;
@@ -84,7 +84,7 @@ Ext.define('Erp.view.expense.ExpenseCtrl', {
         const vm = me.getViewModel();
         const cardId = vm.get('cardId');
         if(cardId && cardId.length > 0) {
-            this.redirectTo('expense');
+            this.redirectTo('expenses');
         } else {
             vm.set('cardId', null);
             let list = me.lookup('expense_card_grid');
