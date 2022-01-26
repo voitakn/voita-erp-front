@@ -13,7 +13,16 @@ Ext.define('Erp.view.price_monitor.Grid', {
     },
     items: [
         {
-            xtype: 'head2',
+            xtype: 'container',
+            cls: 'head-2',
+            docked: 'top',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'center'
+            },
+            padding: '0 0 10 0',
+
             items: [
                 {
                     xtype: 'datefield',
@@ -43,7 +52,19 @@ Ext.define('Erp.view.price_monitor.Grid', {
                     bind: {
                         value: '{filter.place_id}'
                     }
-                },]
+                },
+                {
+                    xtype: 'button',
+                    margin: '0 0 0 20',
+                    iconCls: 'x-fa fa-print',
+                    text: i18n.gettext('Print stickers'),
+                    disabled: true,
+                    handler: 'printStickers',
+                    bind: {
+                        disabled: '{!countPrices}'
+                    }
+                },
+            ]
         }
     ],
     columns: [
