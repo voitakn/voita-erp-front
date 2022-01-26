@@ -1,16 +1,13 @@
 Ext.define('Erp.view.expense.ExpensesCtrl', {
     extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.expenses_ctrl',
-    // routes: {
-    //     'expense': { action: 'onCardId' },
-    // },
     bindings: {
-        // onCardId: '{cardId}',
         onPlaceChange: '{filter.place_id}',
         reloadGrid: {
             month: '{filter.month}',
             year: '{filter.year}',
-        }
+        },
+        onShowExpense: '{theExpenseRow}'
 
     },
     is_rendered: false,
@@ -47,48 +44,6 @@ Ext.define('Erp.view.expense.ExpensesCtrl', {
         const store = vm.getStore('expense_list_store');
         if (store) {
             store.load();
-        }
-    },
-
-    onCardId(cardId) {
-        const me = this;
-        const vm = me.getViewModel();
-        const micro = vm.get('micro');
-        const expense_card = me.lookup('expense_card');
-        if (cardId && cardId.length > 0) {
-            const store = vm.getStore('expense_store');
-            const record = store.getById(cardId);
-            if(record) {
-                if(micro === true) {
-                    expense_card.setActiveItem(0);
-                    let grid = me.lookup('expense_card_grid');
-                    grid.getSelectable().select(record);
-                } else {
-                    let grid = me.lookup('expense_hbox_grid');
-                    grid.getSelectable().select(record);
-                }
-            }
-        } else {
-            if(micro === true) {
-                expense_card.setActiveItem(1);
-                let grid = me.lookup('expense_card_grid');
-                grid.getSelectable().deselectAll();
-            } else {
-                let grid = me.lookup('expense_hbox_grid');
-                grid.getSelectable().deselectAll();
-            }
-        }
-    },
-    toList(btn) {
-        const me = this;
-        const vm = me.getViewModel();
-        const cardId = vm.get('cardId');
-        if(cardId && cardId.length > 0) {
-            this.redirectTo('expenses');
-        } else {
-            vm.set('cardId', null);
-            let list = me.lookup('expense_card_grid');
-            list.getSelectable().deselectAll();
         }
     },
     addNewExpense(btn) {
@@ -185,4 +140,19 @@ Ext.define('Erp.view.expense.ExpensesCtrl', {
             }
         }
     },
+    onShowExpense(row) {
+        console.log('onShowExpense', row);
+        const me = this;
+        const vm = me.getViewModel();
+        const expense_view = me.getView().lookup('expense_view');
+        vm.set('theCardView', row.data);
+
+        expense_view.show();
+    },
+    onShowExpense1() {
+        console.log('onShowExpense1', arguments);
+    },
+    onCancelView(btn) {
+        btn.up('dialog').hide();
+    }
 });

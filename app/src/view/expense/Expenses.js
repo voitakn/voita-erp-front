@@ -20,6 +20,9 @@ Ext.define('Erp.view.expense.Expenses', {
         },
         {
             xtype: 'expense_edit',
+        },
+        {
+            xtype: 'expense_view',
         }
     ]
 

@@ -136,10 +136,10 @@ Ext.define('Erp.view.expense.Grid', {
         {
             menu: false,
             text: i18n.gettext('Document'),
-            tpl: `<a href="/#expense/{id}"><b>{doc_number}</b></a>`,
+            tpl: `<a href="/#expense_card/{id}"><b>{doc_number}</b></a>`,
             width: 150,
             cell: {
-                encodeHtml: false
+                encodeHtml: false,
             }
         },
         {
