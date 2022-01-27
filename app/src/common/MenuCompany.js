@@ -42,7 +42,7 @@ Ext.define('Erp.view.common.MenuCompany', {
             items: [{
                 xtype: 'label',
                 cls: 'title',
-                html: i18n.gettext('Company')
+                html: i18n.gettext('Settings')
             }]
         },
         {
@@ -85,7 +85,16 @@ Ext.define('Erp.view.common.MenuCompany', {
                         hidden: '{no_com_worker_list}'
                     }
                 },{
-                    iconCls: 'menu-icon account-balance-wallet blue',
+                    iconCls: 'erp-icon prices-rules blue',
+                    value: 'prices_rules',
+                    group: 'active',
+                    text: i18n.gettext('Prices rules'),
+                    hidden: true,
+                    bind: {
+                        hidden: '{no_com_worker_list}'
+                    }
+                },{
+                    iconCls: 'erp-icon account-balance blue',
                     value: 'subscription',
                     group: 'active',
                     text: i18n.gettext('Subscription'),
