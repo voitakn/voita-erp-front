@@ -25,6 +25,14 @@
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga';
+/*   &.x-icon-el {
+    width: 18px;
+    height: 18px;
+  }
+  &.x-icon-el:before {
+    font-size: 18px !important;
+    line-height: 35px;
+  } */
   &.dashboard:before {
     content: 'dashboard';
   }
@@ -69,5 +77,8 @@
   }
   &.expenses:before {
     content: 'trending_down';
+  }
+  &.prices-rules:before {
+    content: 'attach_money';
   }
 }
