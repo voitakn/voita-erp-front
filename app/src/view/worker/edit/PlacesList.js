@@ -7,7 +7,6 @@ Ext.define('Erp.view.worker.edit.PlacesList', {
     session: true,
     width: 300,
     align: 't-b',
-    title: i18n.gettext('Add User Points'),
     items: [
         {
             xtype: 'list',
@@ -16,7 +15,6 @@ Ext.define('Erp.view.worker.edit.PlacesList', {
             itemTpl: '{title}',
             flex: 1,
             grouped: false,
-
             onItemDisclosure: 'onSelectPoint'
         }
     ]

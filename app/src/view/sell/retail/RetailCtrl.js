@@ -1,5 +1,5 @@
 Ext.define('Erp.view.sell.retail.RetailCtrl', {
-    extend: 'Erp.view.sell.Ctrl',
+    extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.sellretail',
     requires: [
         'Erp.common.DeleteConfirm',

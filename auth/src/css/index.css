@@ -31,6 +31,39 @@
   src: url('/auth/fonts/OpenSans-ExtraBold.woff2') format('woff2'), url('/auth/fonts/OpenSans-ExtraBold.woff') format('woff');
   font-display: swap;
 }
+
+/* Fonts */
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-Regular.ttf') format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  font-style: italic;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-Italic.ttf') format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-Bold.ttf') format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  font-style: italic;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-BoldItalic.ttf') format('ttf');
+  font-display: swap;
+}
+
+
 html, body {
   height: 100%;
 }
@@ -38,8 +71,9 @@ body {
   position: relative;
   z-index: 1;
   font-weight: 400;
-  background-color: #5ba1ca;
-  --bs-font-sans-serif: 'Open Sans';
+  background-color: #17A6BB;
+  --bs-font-sans-serif: "Noto Sans", "Open Sans", Arial, sans-serif;
+  font-family: "Noto Sans", "Open Sans", Arial, sans-serif;
 }
 
 a, a:active, a:visited {

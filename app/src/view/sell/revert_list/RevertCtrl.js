@@ -1,5 +1,5 @@
 Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.revert_list_ctrl',
     bindings: {
         onPlaceChange: '{filter.place_id}',
@@ -19,7 +19,10 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
         }
     },
     onViewShow() {
-        if(!this.is_rendered) {
+        const me = this;
+        const vm = this.getViewModel();
+        me.setActiveRetailMenu('revert_list');
+        if (!this.is_rendered) {
             this.is_rendered = true;
         } else {
             this.reloadGrid();
@@ -60,7 +63,6 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const dialog = me.lookup('revert_list_dialog_cancel');
-       //console.('onCancelRequest', grid, row);
         const record = row.record;
         vm.set('invoice_id_revert', record.data.id);
         dialog.show();
@@ -69,7 +71,6 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const dialog = me.lookup('revert_list_dialog_cancel');
-       //console.('cancelRequest');
         vm.set('approved', false);
         me.sendRequest();
         dialog.hide();
@@ -96,7 +97,6 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
                 Notice.showToast(result);
             },
         });
-
-    }
+    },
 });
 

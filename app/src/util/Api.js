@@ -88,6 +88,8 @@ Ext.define('Erp.util.Api', () => {
         },
         inv: {
             create_pos_sell: `${inv}create-pos-sell`,
+            expense_list: `${inv}expense_list`,
+            expense_edit: `${inv}expense_edit`,
             sell_retail_create: `${inv}sell_retail_create`,
             sell_list_date_user: `${inv}sell_list_date_user`,
             sell_invoice_items: `${inv}sell_invoice_items`,

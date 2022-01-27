@@ -43,37 +43,6 @@ $treelist-nav-ui: dynamic((
 ));
 */
 
-.menu-icon {
-  font-size: 18px;
-  line-height: 44px;
-  &.dashboard:before {
-    font-family: 'Material Icons';
-    content: 'dashboard';
-  }
-  &.purchases:before {
-    font-family: 'Material Icons';
-    content: 'add_to_photos';
-  }
-  &.account-balance:before {
-    font-family: 'Material Icons';
-    content: 'account_balance';
-  }
-  &.account-balance-wallet:before {
-    font-family: 'Material Icons';
-    content: 'account_balance_wallet';
-  }
-  &.format-list-numbered:before {
-    font-family: 'Material Icons';
-    font-size: 24px;
-    content: 'format_list_numbered';
-  }
-  &.fact-check:before {
-    font-family: 'Erp Material Icons';
-    font-size: 24px;
-    content: 'fact_check';
-  }
-}
-
 .x-treelist-nav .x-treelist-item-tool {
   width: 70px !important;
 }

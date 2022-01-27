@@ -4,6 +4,10 @@ Ext.define('Erp.view.movement.add.edit.SelectPlaceTo', {
     reference: 'move_products_to',
     width: 350,
     title: i18n.gettext('Select a destination POS'),
+    listeners: {
+        onCancel: 'onCancelPlaceTo'
+    },
+
     items: [
         {
             xtype: 'formpanel',
@@ -42,9 +46,6 @@ Ext.define('Erp.view.movement.add.edit.SelectPlaceTo', {
                                     bind: {
                                         value: '{config.to_place_id}'
                                     },
-                                    listeners: {
-                                        select: 'onSelectedTo'
-                                    }
                                 },
                                 {
                                     xtype: 'textfield',
@@ -96,9 +97,7 @@ Ext.define('Erp.view.movement.add.edit.SelectPlaceTo', {
             xtype: 'button',
             text: i18n.gettext('Cancel'),
             iconCls: 'x-fa fa-arrow-left',
-            handler: function (btn) {
-                btn.up('move_products_to').hide();
-            }
+            handler: 'onCancelPlaceTo'
         },
         {
             xtype: 'button',

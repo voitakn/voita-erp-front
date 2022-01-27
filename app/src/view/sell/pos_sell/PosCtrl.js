@@ -31,13 +31,20 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     onViewShow() {
         const me = this;
-        if(User.checkPosMode()) {
-            me.redirectTo('sell_pos');
-        }
+        const vm = this.getViewModel();
+        let customerConfigs = User.data.customer.configs || {};
+        me.setActiveRetailMenu('pos');
         me.updatePosPlace();
         setTimeout(() => {
             me.focusBarcode();
         }, 200);
+        if (customerConfigs.receipt_cfg) {
+            vm.set({
+                'text_1': customerConfigs.receipt_cfg.texts.text_1,
+                'text_2': customerConfigs.receipt_cfg.texts.text_2,
+                'type_invoice': 'FR',
+            });
+        }
     },
     focusBarcode() {
         const barcode_field = this.lookup('find_barcode');
@@ -60,7 +67,8 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     reloadProduceGrid() {
         const vm = this.getViewModel();
-        if (vm.get('filter.place_id')) {
+        const store = vm.getStore('select_produce_store');
+        if (vm.get('filter.place_id') && store) {
             vm.getStore('select_produce_store').loadPage(1);
         }
     },
@@ -108,7 +116,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const record = row.record;
-        // Запросим цену и ID
         if (record && record.isModel) {
             const amount_data = Ext.clone(record.getData());
             amount_data.amount = 1;
@@ -139,7 +146,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const amount_data = vm.get('amount_data');
         const item_prod = items_store.getById(amount_data.id);
         if (item_prod && item_prod.isModel) {
-            // Нашли товар в списке добавлям только количество
             let amount = item_prod.get('amount') + amount_data.amount;
             item_prod.set('amount', amount);
         } else {
@@ -152,7 +158,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const record = row.record;
-        // Запросим цену и ID
         if (record && record.isModel) {
             const amount_data = Ext.clone(record.getData());
             amount_data.amount = vm.get('quantity');
@@ -167,7 +172,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const amount_data = vm.get('amount_data');
         const item_prod = items_store.getById(amount_data.id);
         if (item_prod && item_prod.isModel) {
-            // Нашли товар в списке добавлям только количество
             let amount = Number(item_prod.get('amount')) + Number(amount_data.amount);
             item_prod.set('amount', amount);
         } else {
@@ -209,31 +213,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
     },
     cancelBill(btn) {
         const me = this;
-        /*const tooltip = Ext.create('Erp.base.ToolTip', {
-            target: btn,
-            title: i18n.gettext('Attention'),
-            align: 't50-b50',
-            buttonAlign: 'center',
-            buttons: {
-                cancel: {
-                    margin: '0 15 0 0',
-                    iconCls: 'x-fa fa-times red',
-                    text: i18n.gettext('Cancel'),
-                    handler: (btn) => btn.up('base_tooltip').destroy()
-                },
-                ok: {
-                    iconCls: 'x-fa fa-check green-dark',
-                    text: i18n.gettext('Yes!'),
-                    handler: (btn) => {
-                        me.clearBill();
-                        btn.up('base_tooltip').destroy();
-                    }
-                }
-            },
-            html: i18n.gettext('Do you want to clear all positions from the list?'),
-        });
-        tooltip.show();*/
-
         const confirm = Ext.create('Erp.common.DeleteConfirm', {
             target: btn,
             viewModel: {
@@ -335,14 +314,11 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
             printItems.push(rec.data);
         })
         sell_data.items = items;
-       //console.('saveSellInvoice', Api.inv.sell_retail_create);
-        // Сохраняем продажу
         Ext.Ajax.request({
             url: Api.inv.sell_retail_create,
             jsonData: sell_data,
             method: "POST",
             success(resp, opt) {
-               //console.('Api.inv.sell_retail_create->success', resp, opt);
                 const result = Ext.JSON.decode(resp.responseText);
                 Notice.showToast(result);
                 if (result.success) {
@@ -352,8 +328,12 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
                     vm.set('sell_data.pay_params', {});
                     const invoiceData = result.data[0];
                     invoiceData.items = printItems;
+                    invoiceData.configs = User.data.customer.configs;
+                    invoiceData.client_name = '';
+                    invoiceData.origin = '';
+                    invoiceData.caixa = ' 1';
                     me.printReceipt(invoiceData);
-                    return;
+
                 }
             },
             failure(resp, opt) {
@@ -391,7 +371,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         this.focusBarcode();
     },
     catalogSell(catalog) {
-       //console.('catalogSell', catalog);
         if (catalog && catalog.isModel) {
             this.getViewModel().set('filter.catalog_id', catalog.get('id'));
         } else {

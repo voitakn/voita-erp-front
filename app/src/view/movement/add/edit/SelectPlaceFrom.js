@@ -4,6 +4,9 @@ Ext.define('Erp.view.movement.add.edit.SelectPlaceFrom', {
     reference: 'move_products_from',
     width: 350,
     title: i18n.gettext('Select a source POS'),
+    listeners: {
+        onCancel: 'onCancelPlaceFrom'
+    },
     items: [
         {
             xtype: 'formpanel',
@@ -42,9 +45,6 @@ Ext.define('Erp.view.movement.add.edit.SelectPlaceFrom', {
                                     bind: {
                                         value: '{config.from_place_id}'
                                     },
-                                    listeners: {
-                                        select: 'onSelectedFrom'
-                                    }
                                 },
                                 {
                                     xtype: 'textfield',
@@ -115,9 +115,7 @@ Ext.define('Erp.view.movement.add.edit.SelectPlaceFrom', {
             xtype: 'button',
             text: i18n.gettext('Cancel'),
             iconCls: 'x-fa fa-arrow-left',
-            handler: function (btn) {
-                btn.up('move_products_from').hide();
-            }
+            handler: 'onCancelPlaceFrom'
         },
         {
             xtype: 'button',

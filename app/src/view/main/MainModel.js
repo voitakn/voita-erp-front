@@ -20,77 +20,57 @@ Ext.define('Erp.view.main.MainModel', {
 
         menu: [{
             text: i18n.gettext('Dashboard'),
-            iconCls: 'menu-icon dashboard blue',
+            iconCls: 'erp-icon dashboard blue-dark',
             xtype: 'dashboard',
             leaf: true,
             hidden: true
         }, {
-            iconCls: 'x-fa fa-cog blue',
+            iconCls: 'x-fa fa-cog blue-dark',
             xtype: 'company',
-            text: i18n.gettext('Company'),
+            text: i18n.gettext('Settings'),
             leaf: true
         }, {
-            iconCls: 'x-fa fa-sitemap blue',
+            iconCls: 'x-fa fa-sitemap blue-dark',
             xtype: 'catalog',
             text: i18n.gettext('Catalog'),
             leaf: true
         }, {
-            iconCls: 'fas fa-receipt blue',
-            xtype: 'sell_pos',
-            text: i18n.gettext('POS'),
+            iconCls: 'erp-icon shopping-cart blue-dark',
+            xtype: 'retail',
+            text: i18n.gettext('Retail'),
             leaf: true
         }, {
-            iconCls: 'fas fa-receipt blue',
-            xtype: 'pos_sell',
-            text: i18n.gettext('POS'),
-            leaf: true
-        }, {
-            iconCls: 'x-fa fa-th-list blue',
-            text: i18n.gettext('Sellings'),
-            xtype: 'sell_bills',
-            leaf: true
-        }, {
-            iconCls: 'x-fas fa-cash-register blue',
-            xtype: 'pos_list',
-            text: i18n.gettext('Cash registers'),
-            leaf: true
-        }, {
-            iconCls: 'x-fas fa-undo blue',
-            xtype: 'revert_list',
-            text: i18n.gettext('Refunds'),
-            leaf: true
-        }, {
-            iconCls: 'x-fas fa-sort-amount-up blue',
-            xtype: 'price_monitor',
-            text: i18n.gettext('Price Monitor'),
-            leaf: true
-        },{
-            iconCls: 'x-fas fa-shipping-fast blue',
+            iconCls: 'erp-icon movements blue-dark',
             xtype: 'movement_list',
             text: i18n.gettext('Movements'),
             leaf: true
-        },{
-            iconCls: 'menu-icon purchases blue',
+        }, {
+            iconCls: 'erp-icon purchases blue-dark',
             text: i18n.gettext('Purchases'),
             xtype: 'purchase_list',
             leaf: true
         }, {
-            iconCls: 'x-fa fa-truck blue',
+            iconCls: 'x-fa fa-truck blue-dark',
             xtype: 'supplier',
             text: i18n.gettext('Suppliers'),
             leaf: true
         }, {
-            iconCls: 'menu-icon fact-check blue',
+            iconCls: 'erp-icon fact-check blue-dark',
             xtype: 'inventory',
             text: i18n.gettext('Stock'),
             leaf: true
         }, {
-            iconCls: 'erp-icon insights blue',
+            iconCls: 'erp-icon insights blue-dark',
             xtype: 'report_period',
             text: i18n.gettext('Report'),
             leaf: true
         }, {
-            iconCls: 'x-fa fa-cog blue',
+            iconCls: 'erp-icon expenses blue-dark',
+            xtype: 'expenses',
+            text: i18n.gettext('Expenses'),
+            leaf: true
+        }, {
+            iconCls: 'x-fa fa-cog blue-dark',
             text: i18n.gettext('Settings'),
             leaf: false,
             expanded: true,
@@ -123,12 +103,17 @@ Ext.define('Erp.view.main.MainModel', {
             movement_card: 'movement_list',
             places: 'company',
             workers: 'company',
-            subscription: 'company'
+            subscription: 'company',
+            sell_bills: 'retail',
+            sell_pos: 'retail',
+            pos_sell: 'retail',
+            price_monitor: 'retail',
+            pos_list: 'retail',
+            revert_list: 'retail',
         }
     },
     formulas: {
         user_fio(get) {
-           //console.('user_fio');
             if(User && User.data) {
                 return User.fullName();
             }

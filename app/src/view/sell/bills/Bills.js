@@ -7,6 +7,7 @@ Ext.define('Erp.view.sell.bills.Bills', {
         'Erp.view.sell.bills.BillsModel',
         'Erp.view.sell.bills.Grid',
         'Erp.view.sell.bills.Invoice',
+        'Erp.view.common.MenuRetail'
     ],
     controller: 'sell_bills_ctrl',
     viewModel: {
@@ -15,10 +16,14 @@ Ext.define('Erp.view.sell.bills.Bills', {
     storeUrl: null,
     autoSize: true,
     scrollable: 'y',
-    layout: 'fit',
+    layout: 'vbox',
     items: [
         {
+            xtype: 'retail_menu',
+        },
+        {
             xtype: 'bills_grid',
+            flex: 1
         },
         {
             xtype: 'bills_cancel_sale',

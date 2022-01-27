@@ -2,11 +2,11 @@ Ext.define('Erp.base.Module', {
     extend: 'Ext.Container',
     layout: 'fit',
     autoSize: true,
-    padding: '10 10 10 20',
-    onRender(){
+    padding: '5 10 5 20',
+    onRender() {
         this.callParent();
         const ctrl = this.getController();
-        if(ctrl.onViewRender) {
+        if (ctrl.onViewRender) {
             ctrl.onViewRender(this);
         }
     },

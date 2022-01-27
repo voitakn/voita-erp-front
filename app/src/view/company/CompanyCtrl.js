@@ -7,6 +7,13 @@ Ext.define('Erp.view.company.CompanyCtrl', {
             pos_mode: '{edit_configs.pos_mode}',
             tax_include: '{edit_configs.tax_include}',
         },
+        renderPrintConfig: {
+            widthCnt: '{widthCnt}',
+            text_1: '{text_1}',
+            text_2: '{text_2}',
+            type_series: '{type_series}',
+            type_text: '{type_text}',
+        },
     },
     dropListen: false,
     onViewShow() {
@@ -14,6 +21,8 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const vm = me.getViewModel();
         const userData = User.data;
         let customerConfigs = userData.customer.configs || {};
+        let receipt_cfg = customerConfigs.receipt_cfg || {};
+        let texts = receipt_cfg.texts || {};
         let countryD = userData.country || {};
         const phonefiled = me.lookup('company_phone');
         phonefiled.setInputMask(userData.country.params.phone_mask);
@@ -37,11 +46,32 @@ Ext.define('Erp.view.company.CompanyCtrl', {
             configs: customerConfigs
         });
         vm.set('theCard', userModel);
+        vm.set({
+            'widthCnt': receipt_cfg.width || 56,
+            'invoice_type_edit': receipt_cfg.invoice_type_edit ? receipt_cfg.invoice_type_edit : false,
+            'text_1': texts.text_1 || '',
+            'text_2': texts.text_2 || '',
+            'type_series': receipt_cfg.type.series || 'IN',
+            'type_text': receipt_cfg.type.text || 'Invoice',
+        });
+        vm.set('old_configs_template', {
+            width: receipt_cfg.width || 56,
+            invoice_type_edit: receipt_cfg.invoice_type_edit ? receipt_cfg.invoice_type_edit : false,
+            texts: {
+                text_1: texts.text_1 || '',
+                text_2: texts.text_2 || ''
+            },
+            type: {
+                series: receipt_cfg.type.series || 'IN',
+                text: receipt_cfg.type.text || 'Invoice'
+            }
+        });
         vm.set('all_configs', customerConfigs);
         me.setActiveMenu('company');
         me.logoImgLoad();
         me.renderEditCfg(customerConfigs);
         me.renderOldCfg(customerConfigs);
+        me.renderPrintConfig();
     },
     renderEditCfg(customerConfigs) {
         const me = this;
@@ -55,6 +85,128 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         vm.set('old_configs.pos_mode', customerConfigs.pos_mode || false);
         vm.set('old_configs.tax_include', customerConfigs.tax_include);
     },
+    renderPrintConfig() {
+        const me = this;
+        const vm = me.getViewModel();
+        const print_content = me.lookup('print_content');
+        const user_data = User.data;
+        const widthCnt = vm.get('widthCnt');
+        vm.set('series_template', vm.get('type_series') + new Date().getFullYear());
+        const invoiceData = {
+            "id": "519bfecf-7c35-424b-a79f-294f3fb0c2b4",
+            "period": "2022-01",
+            "y_m": "2022-01",
+            "doc_index": 9,
+            "doc_number": "2022/9",
+            "doc_date": "2022-01-11",
+            "pay_type": "card",
+            "tax_total": 0.45,
+            "price_total": 2.5,
+            "amount_total": 5,
+            "sale_total": 0,
+            "paid": true,
+            "revert": false,
+            "budget": false,
+            "title": null,
+            "date_create": "2022-01-11T10:02:38.549255",
+            "customer_id": "44d6c440-291e-44bf-a7bc-787f01158674",
+            "customer_id_net": null,
+            "user_id": "8fc7e12c-0dee-4963-9f00-b2b9e96212c3",
+            "place_id": "97c4d527-c4e5-4a55-a803-7b242153f87e",
+            "cashopen_id": null,
+            "pay_params": {
+                "pay_type": "card"
+            },
+            "items": [
+                {
+                    "id": "497cec32-5c4c-4b14-b613-fe34d5620558",
+                    "title": "Milk Porto",
+                    "barcode": "4056489199816",
+                    "params": {},
+                    "tax_rate": 1.21,
+                    "serv": false,
+                    "unit_type": "item",
+                    "price": {
+                        "id": "f705c917-8017-4c27-9035-e97a55b751ba",
+                        "sale": 0,
+                        "price": 0.5,
+                        "place_id": null,
+                        "price_base": 0.5,
+                        "date_update": "2022-01-06T13:57:08.246585",
+                        "sale_percent": 0
+                    },
+                    "amount": 2,
+                    "tax_value": 21,
+                    "item_price": 0.5,
+                    "price_total": 1,
+                    "tax_price": 0.08677685950413222,
+                    "tax_total": 0.17355371900826444,
+                    "sale_total": 0
+                },
+                {
+                    "id": "917b268b-def9-472e-9f44-cfc1880ec745",
+                    "title": "Milk pack",
+                    "barcode": "5601002114099",
+                    "params": {
+                        "description": "",
+                        "places_prices": false
+                    },
+                    "tax_rate": 1.21,
+                    "serv": false,
+                    "unit_type": null,
+                    "price": {
+                        "id": "e22d2f87-4de3-45b3-a1b2-2b10fafb7cbe",
+                        "sale": 0,
+                        "price": 0.5,
+                        "place_id": null,
+                        "price_base": 0.5,
+                        "date_update": "2022-01-05T13:10:16.979523",
+                        "sale_percent": 0
+                    },
+                    "amount": 3,
+                    "tax_value": 21,
+                    "item_price": 0.5,
+                    "price_total": 1.5,
+                    "tax_price": 0.08677685950413222,
+                    "tax_total": 0.26033057851239666,
+                    "sale_total": 0
+                }
+            ],
+            "company_name": user_data.customer.title,
+            "company_email": user_data.customer.email,
+            "company_phone": user_data.customer.phone,
+            "company_address_1": user_data.customer.configs.address,
+            "company_address_2": " ",
+            "tax_number": user_data.customer.configs.tax_number,
+            "capital": "1.00",
+            "tax_include": false,
+            "logo": false,
+            "operator": User.fullName(),
+            "date_time": Ext.Date.format(new Date(), "Y-m-d H:i"),
+            "client_tax_number": "---------",
+            "client_name": 'Final customer',
+            "origin": 'Original',
+            "caixa": ' 1',
+            "text_1": vm.get('text_1'),
+            "text_2": vm.get('text_2'),
+
+        }
+        invoiceData.configs = user_data.customer.configs;
+        invoiceData.type_invoice = vm.get('type_invoice');
+        invoiceData.logo = user_data.customer.configs.logo;
+        invoiceData.edit_config = true;
+        invoiceData.configs.receipt_cfg = {};
+        invoiceData.configs.receipt_cfg.texts = {};
+        invoiceData.configs.receipt_cfg.type = {};
+        invoiceData.configs.receipt_cfg.width = widthCnt;
+        invoiceData.configs.receipt_cfg.texts.text_1 = vm.get('text_1');
+        invoiceData.configs.receipt_cfg.texts.text_2 = vm.get('text_2');
+        invoiceData.configs.receipt_cfg.type.series = vm.get('type_series');
+        invoiceData.configs.receipt_cfg.type.text = vm.get('type_text');
+        const cnt = Receipt.htmlRender(invoiceData);
+        print_content.setHtml(cnt);
+        JsBarcode(".barcode", `${invoiceData.configs.receipt_cfg.type.series}${invoiceData.doc_number}`, {height: 30, width: 0.9});
+    },
     toBack(btn) {
         Ext.util.History.back();
     },
@@ -62,8 +214,6 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const editCard = me.lookup('company_edit');
-        let theCard = vm.get('theCard');
-        theCard.beginEdit();
         editCard.setTarget(btn);
         editCard.show();
     },
@@ -71,8 +221,6 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const editCard = me.lookup('company_edit');
-        let theCard = vm.get('theCard');
-        theCard.cancelEdit();
         editCard.hide();
     },
     onSaveEdit(btn) {
@@ -82,7 +230,6 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const form = btn.up('formpanel');
         const theCard = vm.get('theCard');
         const configs = theCard.get('configs');
-       //console.('onSaveEdit', theCard);
         configs.postcode = theCard.get('postcode');
         configs.city = theCard.get('city');
         configs.address = theCard.get('address');
@@ -140,7 +287,6 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const preview = me.lookup('canvas_preview');
-        const editLogo = me.lookup('logo_edit');
         const theCard = vm.get('theCard');
         const canv = preview.el.dom.querySelector('canvas');
         const base64img = canv.toDataURL('image/webp', 0.9);
@@ -177,7 +323,6 @@ Ext.define('Erp.view.company.CompanyCtrl', {
                 }
             });
         }
-
     },
     saveLogoLink(logoId) {
         const me = this;
@@ -195,35 +340,21 @@ Ext.define('Erp.view.company.CompanyCtrl', {
                         me.onViewShow();
                         me.onCancelLogo();
                     });
-
                 }
             }
         });
-    },
-    onBrowseImage(image) {
-        const me = this;
-        const vm = me.getViewModel();
-       //console.('onBrowseImage me', me);
-       //console.('onBrowseImage', image);
     },
     onEditLogo(btn) {
         const me = this;
         const vm = me.getViewModel();
         const oldLogo = vm.get('all_configs.logo');
-
         const editLogo = me.lookup('logo_edit');
-       //console.('logoEdit');
         const addFile = me.lookup('addFile');
-
         let preview = me.lookup('canvas_preview');
-       //console.('logoEdit preview.getSurface', preview.getSurface());
-        //  This download logo
         if(oldLogo && oldLogo.length > 0) {
             const origLogo = me.lookup('company_logo_view');
             const origImg = origLogo.el.dom.querySelector('img');
             const ts = new Date().getTime();
-           //console.('origLogo', origImg, origImg.height);
-           //console.('oldLogo', oldLogo);
             preview.getSurface().removeAll();
             preview.setHeight(origImg.height);
             preview.setWidth(origImg.width);
@@ -243,13 +374,10 @@ Ext.define('Erp.view.company.CompanyCtrl', {
             addFile.el.dom.addEventListener('drop', (e)=>{me.logoFileDrop(e)}, false);
             me.dropListen = true;
         }
-
-       //console.('onEditLogo reader', vm.get('reader'));
         editLogo.setTarget(btn);
         editLogo.show();
     },
     logoFileDrop(e){
-       //console.('onDropImage', e);
         const me = this;
         const form = me.lookup('company_logo_form');
         form.reset();
@@ -308,7 +436,6 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         const ts = new Date().getTime();
         if(logoSrc && logoSrc.length > 0) {
             origLogo.setHtml(`<img src="${logoSrc}?${ts}"/>`);
-           //console.('logoImgLoad', 'setted');
         }
     },
     onConfigVmChange(configs) {
@@ -320,32 +447,80 @@ Ext.define('Erp.view.company.CompanyCtrl', {
         let modified = false;
         Ext.Object.each(configs, (key, val)=>{
             if(old_configs[key] !== val) {
-               //console.('cardConfigs', key, val);
                 cardConfigs[key] = val;
                 modified = true;
             }
         });
-       //console.('onConfigVmChange', configs);
-        if (modified){
-           //console.('theCard.modified', theCard);
+        if (modified) {
             theCard.save({
                 callback(record, operation, success) {
                     if (success) {
-                        User.updateUserSession(()=>{me.onViewShow()});
+                        User.updateUserSession(() => {
+                            me.onViewShow()
+                        });
                     }
                 }
             });
         }
     },
-    onConfigChange(fld, val) {
+    onEditTemplate(btn) {
         const me = this;
         const vm = me.getViewModel();
-        //const edit_configs = vm.get('edit_configs') || {};
-       //console.('onConfigChange', fld, val);
-        //edit_configs[fld.prm] = val;
-        if(fld.prm) {
-           //console.('fld.prm', fld.prm);
-            vm.set(`edit_configs.${fld.prm}`, val);
+        const template_settings_edit = me.lookup('template_settings_edit');
+        template_settings_edit.setTarget(btn);
+        template_settings_edit.show();
+    },
+    onCancelTemplateEdit(btn) {
+        const me = this;
+        const vm = me.getViewModel();
+        const template_settings_edit = me.lookup('template_settings_edit');
+        const old_configs_template = vm.get('old_configs_template');
+
+        if (old_configs_template.receipt_cfg) {
         }
+        vm.set({
+            'widthCnt': old_configs_template.width,
+            'text_1': old_configs_template.texts.text_1,
+            'text_2': old_configs_template.texts.text_2,
+            'type_series': old_configs_template.type.series,
+            'type_text': old_configs_template.type.text,
+        });
+
+        template_settings_edit.hide();
+    },
+    onSaveTemplate() {
+        const me = this;
+        const vm = me.getViewModel();
+        const theCard = vm.get('theCard');
+        const configs = theCard.data.configs;
+        const template_settings_edit = me.lookup('template_settings_edit');
+        let receipt_cfg = {};
+        let texts = {};
+        let type_series = vm.get('type_series') || '';
+        let type_text = vm.get('type_text') || '';
+        let type = {
+            series: type_series,
+            text: type_text
+        };
+        const old_configs_template = vm.get('old_configs_template');
+        texts.text_1 = vm.get('text_1');
+        texts.text_2 = vm.get('text_2');
+        receipt_cfg.width = vm.get('widthCnt');
+        receipt_cfg.texts = texts;
+        receipt_cfg.type = type;
+        if (old_configs_template.type.series !== type.series) {
+            receipt_cfg.type.series = type.series;
+            receipt_cfg.invoice_type_edit = true;
+        }
+        if (old_configs_template.type.text !== type.text) {
+            receipt_cfg.type.text = type.text;
+            receipt_cfg.invoice_type_edit = true;
+        }
+        if (old_configs_template.invoice_type_edit === true) {
+            receipt_cfg.invoice_type_edit = true;
+        }
+        configs.receipt_cfg = receipt_cfg;
+        me.onConfigVmChange(configs);
+        template_settings_edit.hide();
     }
 });

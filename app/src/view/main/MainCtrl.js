@@ -159,7 +159,6 @@ Ext.define('Erp.view.main.MainCtrl', {
             };
         }
         me.lastRout = xtype;
-        console.log('item', item);
         content.setActiveItem(item);
         const cardItem = content.child(`component[routeId=${xtype}]`);
         cardItem.getViewModel().set('cardId', cardId);

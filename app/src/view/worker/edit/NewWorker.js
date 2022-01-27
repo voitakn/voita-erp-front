@@ -4,9 +4,10 @@ Ext.define('Erp.view.worker.edit.NewWorker', {
     binding: {
         store: '{workers_store}',
     },
-    autoSize: true,
     session: true,
+    scrollable: 'y',
     width: 400,
+    height: 550,
     align: 'l-r',
     defaults: {
         scrollable: true,
@@ -63,6 +64,7 @@ Ext.define('Erp.view.worker.edit.NewWorker', {
                 },
                 {
                     label: i18n.gettext('Phone'),
+                    margin: '0 0 10 0',
                     name: 'worker_phone',
                     required: false,
                     bind: {
@@ -72,36 +74,75 @@ Ext.define('Erp.view.worker.edit.NewWorker', {
                 {
                     xtype: 'container',
                     layout: 'vbox',
+                    cls: 'border-bottom',
+                    margin: '0 0 10 0',
                     items: [
                         {
-                            xtype: 'chipview',
-                            reference: 'chipview_places_list',
-                            displayField: 'title',
-                            closeHandler: 'removePoints'
+                            xtype: 'container',
+                            margin: '0 0 10 0',
+                            layout: {
+                                type: 'vbox',
+                                pack: 'center',
+                            },
+                            items: [
+                                {
+                                    xtype: 'head2',
+                                    cls: 'title bolder text-center',
+                                    html: 'Points of Sale'
+                                },
+                                {
+                                    xtype: 'chipview',
+                                    reference: 'chipview_places_list',
+                                    displayField: 'title',
+                                    closeHandler: 'removePoints'
+                                },
+                                {
+                                    xtype: 'button',
+                                    margin: '10 10 10 0',
+                                    text: i18n.gettext('Add Points'),
+                                    iconCls: 'x-fa fa-map-marker',
+                                    tooltip: 'Add user points',
+                                    handler: 'onAddPoints'
+                                },
+                            ]
                         },
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    layout: 'vbox',
+                    margin: '0 0 10 0',
+                    cls: 'border-bottom',
+                    items: [
                         {
-                            xtype: 'button',
-                            margin: '10 10 10 0',
-                            text: i18n.gettext('Add Points'),
-                            iconCls: 'x-fa fa-map-marker',
-                            tooltip: 'Add user points',
-                            handler: 'onAddPoints'
+                            xtype: 'container',
+                            margin: '0 0 10 0',
+                            layout: {
+                                type: 'vbox',
+                                pack: 'center',
+                            },
+                            items: [
+                                {
+                                    xtype: 'head2',
+                                    cls: 'title bolder text-center',
+                                    html: 'User Groups'
+                                },
+                                {
+                                    xtype: 'chipview',
+                                    reference: 'chipview_groups_list',
+                                    displayField: 'title',
+                                    closeHandler: 'removeGroups'
+                                },
+                                {
+                                    xtype: 'button',
+                                    margin: '10 10 10 0',
+                                    text: i18n.gettext('Add Groups'),
+                                    iconCls: 'x-fa fa-map-marker',
+                                    tooltip: 'Add user roles',
+                                    handler: 'onAddRoles'
+                                },
+                            ]
                         },
-                        {
-                            xtype: 'chipview',
-                            reference: 'chipview_groups_list',
-                            displayField: 'title',
-                            closeHandler: 'removeGroups'
-                        },
-                        {
-                            xtype: 'button',
-                            margin: '10 10 10 0',
-                            text: i18n.gettext('Add Groups'),
-                            iconCls: 'x-fa fa-map-marker',
-                            tooltip: 'Add user roles',
-                            handler: 'onAddRoles'
-                        },
-
                     ]
                 },
                 {

@@ -1,15 +1,23 @@
 Ext.define('Erp.view.sell.revert_list.Revert', {
     extend: 'Erp.base.Module',
     xtype: 'revert_list',
+    requires: [
+        'Erp.view.common.MenuRetail'
+    ],
     controller: 'revert_list_ctrl',
     viewModel: {
         type: 'revert_list_vm'
     },
     autoSize: true,
+    layout: 'vbox',
     items: [
         {
+            xtype: 'retail_menu',
+        },
+        {
             xtype: 'revert_grid',
-        },{
+            flex: 1
+        }, {
             xtype: 'base_dialog',
             reference: 'revert_list_dialog_confirm',
             width: 500,

@@ -9,43 +9,76 @@
   font-family: 'Erp Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
+  font-size: 24px !important;
+  //display: inline-block;
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
-
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
-
   /* Support for IE. */
   font-feature-settings: 'liga';
+/*   &.x-icon-el {
+    width: 18px;
+    height: 18px;
+  }
+  &.x-icon-el:before {
+    font-size: 18px !important;
+    line-height: 35px;
+  } */
+  &.dashboard:before {
+    content: 'dashboard';
+  }
+  &.purchases:before {
+    content: 'add_to_photos';
+  }
+  &.account-balance:before {
+    content: 'account_balance';
+  }
+  &.account-balance-wallet:before {
+    content: 'account_balance_wallet';
+  }
+  &.format-list-numbered:before {
+    content: 'format_list_numbered';
+  }
+  &.fact-check:before {
+    content: 'fact_check';
+  }
+  &.movements:before {
+    content: 'multiple_stop';
+  }
+  &.shopping-cart:before {
+    content: 'shopping_cart';
+  }
   &.edit-note:before {
-    font-size: 24px;
     content: 'edit_note';
   }
   &.done:before {
-    font-size: 24px;
     content: 'done';
   }
   &.verified:before {
-    font-size: 24px;
     content: 'verified';
   }
   &.remove-done:before {
-    font-size: 24px;
     content: 'remove_done';
   }
   &.insights:before {
-    font-size: 24px;
     content: 'insights';
+  }
+  &.movements:before {
+    content: 'multiple_stop';
+  }
+  &.expenses:before {
+    content: 'trending_down';
+  }
+  &.prices-rules:before {
+    content: 'attach_money';
   }
 }

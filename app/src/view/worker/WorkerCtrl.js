@@ -3,6 +3,9 @@ Ext.define('Erp.view.worker.WorkerCtrl', {
     alias: 'controller.workers_ctrl',
     bindings: {
         onShowCard: '{theCard}',
+        onSelectPoint: '{point_selected}',
+        onSelectGroup: '{group_selected}',
+
     },
     /**
      * Загрузим дерево каталога после рендера
@@ -144,7 +147,9 @@ Ext.define('Erp.view.worker.WorkerCtrl', {
         const vm = me.getViewModel();
         const places_list = me.lookup('places_list');
         const places_store = vm.getStore('places_store');
+        const list_places_store = me.lookup('list_places_store');
         places_store.add(record);
+        list_places_store.setStore([]);
         places_list.hide();
 
     },
@@ -153,7 +158,9 @@ Ext.define('Erp.view.worker.WorkerCtrl', {
         const vm = me.getViewModel();
         const places_list = me.lookup('places_list');
         const worker_groups_store = vm.getStore('worker_groups_store');
+        const list_places_store = me.lookup('list_places_store');
         worker_groups_store.add(record);
+        list_places_store.setStore([]);
         places_list.hide();
 
     },
@@ -164,6 +171,7 @@ Ext.define('Erp.view.worker.WorkerCtrl', {
         const places_list = me.lookup('places_list');
         const list_places_store = me.lookup('list_places_store');
         list_places_store.setOnItemDisclosure('onSelectPoint');
+        list_places_store.setBind({selection: '{point_selected}'});
         places_list.setTarget(btn);
         places_list.show();
         add_places_store.load();
@@ -177,6 +185,7 @@ Ext.define('Erp.view.worker.WorkerCtrl', {
         const places_list = me.lookup('places_list');
         const list_places_store = me.lookup('list_places_store');
         list_places_store.setOnItemDisclosure('onSelectGroup');
+        list_places_store.setBind({selection: '{group_selected}'});
         places_list.setTarget(btn);
         places_list.show();
         add_places_store.load();
