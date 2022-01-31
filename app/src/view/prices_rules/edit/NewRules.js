@@ -61,17 +61,17 @@ Ext.define('Erp.view.price_rules.edit.NewRules', {
                         store: '{prices_defs_rules_store}'
                     }
                 },
-                // {
-                //     xtype: 'togglefield',
-                //     labelAlign: 'right',
-                //     width: 200,
-                //     labelWidth: 150,
-                //     label: i18n.gettext('Enable to active'),
-                //     value: true,
-                //     bind: {
-                //         value: '{newRules.active}'
-                //     }
-                // },
+                {
+                    xtype: 'togglefield',
+                    labelAlign: 'right',
+                    width: 200,
+                    labelWidth: 150,
+                    label: i18n.gettext('Enable to active'),
+                    value: true,
+                    bind: {
+                        value: '{newRules.active}'
+                    }
+                },
             ],
         }
     ],

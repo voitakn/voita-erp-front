@@ -54,7 +54,7 @@ Ext.define('Erp.view.prices_rules.RulesCtrl', {
                     percent: newRules.percent,
                     type_change: newRules.type_change,
                     parent_id: newRules.parent_id,
-                    active: true,
+                    active: newRules.active,
                 },
                 method: "POST",
                 success: function (resp) {
