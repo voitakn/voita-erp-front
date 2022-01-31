@@ -7,6 +7,7 @@ Ext.define('Erp.util.User', {
         this.data = data;
         this.placesObj = {};
         this.workersObj = {};
+        let rulesObj = {};
         this.units = Ext.create('Erp.store.Units');
         this.taxesStore = Ext.create('Erp.data.Store', {
             model: 'Erp.model.Iva',
@@ -27,9 +28,9 @@ Ext.define('Erp.util.User', {
                 }
             })
         }
-        if(data.workers && data.workers.length > 0) {
+        if (data.workers && data.workers.length > 0) {
             Ext.each(data.workers, recUs => {
-                if(!this.workersObj[recUs.id]) {
+                if (!this.workersObj[recUs.id]) {
                     this.workersObj[recUs.id] = recUs;
                 }
             })
@@ -37,6 +38,35 @@ Ext.define('Erp.util.User', {
 
         const mainIndex = this.placesStore.find('main', true);
         this.defStoreId = mainIndex > -1 ? this.placesStore.getAt(mainIndex).getId() : this.placesStore.getAt(0).getId();
+
+        Ext.Ajax.request({
+            url: Api.price.cols_list,
+            jsonData: {},
+            method: "POST",
+            success(resp, opt) {
+                const result = Ext.JSON.decode(resp.responseText);
+                if (result.success) {
+                    if (result.data) {
+                        let resultData = result.data;
+                        // console.log('updateUserSession.data', resultData);
+                        if (resultData && resultData.length > 0) {
+                            Ext.each(resultData, recPl => {
+                                if (!rulesObj[recPl.id]) {
+                                    rulesObj[recPl.id] = recPl;
+                                }
+                            })
+                        }
+                    }
+                } else {
+                    Notice.showToast(result);
+                }
+            },
+            failure(resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+            }
+        });
+        this.rulesObj = rulesObj;
     },
     cleanData() {
         this.cleanAuth();
@@ -290,6 +320,36 @@ Ext.define('Erp.util.User', {
                 Notice.showToast(result);
             }
         });
+        Ext.Ajax.request({
+            url: Api.price.cols_list,
+            jsonData: {},
+            method: "POST",
+            success(resp, opt) {
+                const result = Ext.JSON.decode(resp.responseText);
+                if (result.success) {
+                    if (result.data) {
+                        console.log('updateUserSession.data', result.data);
+                        if (result.data && result.data.length > 0) {
+                            Ext.each(result.data, recPl => {
+                                if (!this.rulesObj[recPl.id]) {
+                                    this.rulesObj[recPl.id] = recPl;
+                                }
+                            })
+                        }
+                        if (callback && typeof callback === 'function') {
+                            callback();
+                        }
+                    }
+                } else {
+                    Notice.showToast(result);
+                }
+            },
+            failure(resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+            }
+        });
+
     },
     modules: {
         dashboard: 'inv.sell_retail_create',
@@ -318,6 +378,7 @@ Ext.define('Erp.util.User', {
         movement_list: 'inv.move_list_month',
         movement_card: 'inv.move_list_month',
         price_monitor: 'price.last_prices',
+        prices_rules: 'price.cols_list',
         revert_list: 'inv.sell_revert_list',
         subscription: 'billing.tariff_list',
         report_period: 'report.main_stat',

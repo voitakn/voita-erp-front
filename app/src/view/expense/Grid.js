@@ -156,31 +156,44 @@ Ext.define('Erp.view.expense.Grid', {
         {
             menu: false,
             text: i18n.gettext('Tax'),
-            width: 90,
+            // width: 90,
             tpl: `<b>{tax_total:erpMoney}</b>`,
-            align: 'right',
+            align: 'center',
             cell: {
                 encodeHtml: false,
-                align: 'right'
-            }
-        },
-        {
-            width: 35,
-            hidden: true,
-            bind: {
-                hidden: '{no_inv_expense_edit}'
-            },
-            menu: false,
-            cell: {
-                align: 'center',
+                align: 'right',
                 tools: {
                     edit: {
+                        margin: '0 0 0 15',
+                        hidden: true,
+                        bind: {
+                            hidden: '{no_inv_expense_edit}'
+                        },
                         cls: 'blue',
+                        zone: 'end',
                         handler: 'onEditExpensePen'
                     }
                 }
+
             }
         },
+        // {
+        //     width: 35,
+        //     hidden: true,
+        //     bind: {
+        //         hidden: '{no_inv_expense_edit}'
+        //     },
+        //     menu: false,
+        //     cell: {
+        //         align: 'center',
+        //         tools: {
+        //             edit: {
+        //                 cls: 'blue',
+        //                 handler: 'onEditExpensePen'
+        //             }
+        //         }
+        //     }
+        // },
         {
             menu: false,
             text: i18n.gettext('Created'),

@@ -3,27 +3,7 @@ Ext.define('Erp.view.expense.card.CardModel', {
     alias: 'viewmodel.expense_card_vm',
     data: {
         show_expense: {},
-        // paid_params: {
-        //     paid: true
-        // },
-        // supplier: {}
     },
-    // stores: {
-    //     invoice_items_store: {
-    //         extend: 'Erp.data.Store',
-    //         model: 'Erp.model.InvoiceItemBuy',
-    //         autoLoad: false,
-    //         autoSync: false,
-    //         proxy: {
-    //             type: 'erp_api',
-    //             url: Api.inv.buy_invoice_items,
-    //             extraParams: {
-    //                 invoice_id: '{show_expense.id}',
-    //                 period: '{show_expense.period}'
-    //             }
-    //         }
-    //     }
-    // },
     formulas: {
         expense_paid: {
             bind: {
@@ -51,8 +31,5 @@ Ext.define('Erp.view.expense.card.CardModel', {
 
             }
         },
-        // no_inv_buy_paid_save(get) {
-        //     return !User.checkAccess('inv.buy_paid_save');
-        // },
     }
 });

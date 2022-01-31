@@ -103,6 +103,7 @@ Ext.define('Erp.view.main.MainModel', {
             movement_card: 'movement_list',
             places: 'company',
             workers: 'company',
+            prices_rules: 'company',
             subscription: 'company',
             sell_bills: 'retail',
             sell_pos: 'retail',

@@ -18,6 +18,9 @@ Ext.define('Erp.view.common.MenuCompany', {
             no_com_worker_list(get) {
                 return !User.checkAccess('com.worker_list');
             },
+            no_price_cols_list(get) {
+                return !User.checkAccess('price.cols_list');
+            },
             no_inv_sell_card_by_id(get) {
                 return !User.checkAccess('inv.sell_card_by_id');
             },
@@ -91,7 +94,7 @@ Ext.define('Erp.view.common.MenuCompany', {
                     text: i18n.gettext('Prices rules'),
                     hidden: true,
                     bind: {
-                        hidden: '{no_com_worker_list}'
+                        hidden: '{no_price_cols_list}'
                     }
                 },{
                     iconCls: 'erp-icon account-balance blue',
