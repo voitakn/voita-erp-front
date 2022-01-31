@@ -67,6 +67,7 @@ Ext.define('Erp.view.price_rules.edit.NewRules', {
                     width: 200,
                     labelWidth: 150,
                     label: i18n.gettext('Enable to active'),
+                    value: true,
                     bind: {
                         value: '{newRules.active}'
                     }
