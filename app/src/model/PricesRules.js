@@ -31,7 +31,7 @@ Ext.define('Erp.model.PricesRules', {
         {
             name: 'affect_price',
             calculate(data) {
-                return data.parent_id ? User.rulesObj[data.parent_id].title : 'Not';
+                return data.parent_id && User.rulesObj[data.parent_id] ? User.rulesObj[data.parent_id].title : 'Not';
             }
         },
     ],
