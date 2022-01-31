@@ -130,6 +130,16 @@ Ext.define('Erp.view.prices_rules.Grid', {
         },
         {
             menu: false,
+            text: i18n.gettext('Active'),
+            align: 'center',
+            tpl: `{active:checkIcon}`,
+            cell: {
+                encodeHtml: false,
+                align: 'center'
+            }
+        },
+        {
+            menu: false,
             text: i18n.gettext('Updated'),
             flex: 1,
             tpl: `<div>{date_update_short}</div>
