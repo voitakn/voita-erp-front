@@ -57,6 +57,20 @@
 
 //@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+$erp-green-dark: dynamic(#006B34);
+$erp-green: dynamic(#00A451);
+$erp-blue: dynamic(#17A6BB);//#005E95//17A6BB
+$erp-red: dynamic(#982500);
+$erp-orange: dynamic(#F36B27);
+$erp-gold: dynamic(#F8B45A);
+$erp-link: dynamic(#1493A6);
+$erp-gray: dynamic(#303030); //#425E62
+$erp-gray-dark: dynamic(#425E62);
+$erp-black: dynamic(#092D33);
+$erp-light-gray: dynamic(#c7c7c7); //#F3FAFC
+$erp-light-blue: dynamic(#F3FAFC);
+
+$erp-blue-dark: dynamic(#1493A6);//#0E6C7A
 
 $font-family: dynamic('Noto Sans', 'Open Sans', Arial, sans-serif);
 $enable-big:  dynamic(false);
@@ -66,7 +80,10 @@ $tool-font-size: dynamic(24px);
 $toolbar-font-size: dynamic(14px);
 $toolbar-line-height: dynamic(16px);
 
-//$base-color: dynamic(#495759);
+$base-color: dynamic($erp-blue-dark);
+$base-highlight-color: dynamic($erp-blue);
+$base-light-color: dynamic($erp-light-blue);
+$base-dark-color: dynamic($erp-blue-dark);
 $font-size: dynamic(14px);
 $panel-body-font-size: dynamic(14px);
 
@@ -118,19 +135,6 @@ $toast-background-color: dynamic(#ffffff);
 $toast-border-color: dynamic(#303030);
 $toast-shadow: dynamic($material-shadow-3);
 
-$erp-green-dark: dynamic(#006B34);
-$erp-green: dynamic(#00A451);
-$erp-blue: dynamic(#17A6BB);//#005E95//17A6BB
-$erp-red: dynamic(#982500);
-$erp-orange: dynamic(#EA3800);
-$erp-gold: dynamic(#EA8100);
-$erp-link: dynamic(#3392CA);
-$erp-gray: dynamic(#303030);
-$erp-light-gray: dynamic(#c7c7c7);
-$erp-light-blue: dynamic(#ebf4fa);
-
-$erp-blue-dark: dynamic(#1493A6);//#0E6C7A
-
 
 $tooltip-header-title-padding: dynamic(0 10px 0 15px);
 $field-label-font-size: dynamic(14px);
@@ -170,3 +174,12 @@ $listitem-font-size: dynamic(14px);
 
 $menuitem-height: dynamic(34px);
 $menuitem-icon-size: dynamic(18px);
+
+$tabbar-background-color: dynamic(transparent);
+$tab-color: dynamic($base-color);
+$tab-background-color: dynamic(transparent);
+$tab-active-color: dynamic($erp-gray-dark);
+$tab-active-background-color: dynamic(#fff);
+$tab-border-radius: dynamic(10px);
+$tab-active-indicator-background-color: dynamic($erp-orange);
+

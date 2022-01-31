@@ -6,14 +6,14 @@ Ext.define('Erp.base.Module', {
     onRender() {
         this.callParent();
         const ctrl = this.getController();
-        if (ctrl.onViewRender) {
+        if (ctrl && ctrl.onViewRender) {
             ctrl.onViewRender(this);
         }
     },
     listeners: {
         show(view, eOpts) {
             const ctrl = view.getController();
-            if(ctrl.onViewShow) {
+            if(ctrl && ctrl.onViewShow) {
                 ctrl.onViewShow(view);
             }
         },
@@ -27,7 +27,7 @@ Ext.define('Erp.base.Module', {
             if(dialogs.length > 0) {
                 Ext.each(dialogs, dialog => dialog.hide());
             }
-            if(ctrl.onViewHide) {
+            if(ctrl && ctrl.onViewHide) {
                 ctrl.onViewHide(this);
             }
         }
