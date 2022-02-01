@@ -13,6 +13,8 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
     onViewShow() {
         const me = this;
         const vm = me.getViewModel();
+        const produce_tabs = me.lookup('produce_tabs');
+        produce_tabs.setActiveItem(0);
         vm.set('extra', {
             tax_name: '',
             unit_name: ''
@@ -81,7 +83,7 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
                         const cardData = result.data;
                         if (cardData.price) {
                             vm.set('purchasePrice', cardData);
-                            me.loadPriceRules();
+                            // me.loadPriceRules();
                         } else {
                             vm.set('purchasePrice', {});
                             vm.getStore('rules_price_store').loadData([]);

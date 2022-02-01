@@ -2,6 +2,9 @@ Ext.define('Erp.view.produce.WholeSaleCnt', {
     extend: 'Ext.Container',
     xtype: 'wholesale_price_container',
     reference: 'wholesale_price_container',
+    listeners: {
+        show: 'loadPriceRules'
+    },
     items: [
         {
             xtype: 'container',

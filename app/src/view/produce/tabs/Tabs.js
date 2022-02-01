@@ -7,6 +7,7 @@ Ext.define('Erp.view.produce.tabs.Tabs', {
             items: [
                 {
                     xtype: 'tabpanel',
+                    reference: 'produce_tabs',
                     height: 400,
                     items: [
                         {
