@@ -1,6 +1,7 @@
 Ext.define('Erp.view.produce.PriceContainer', {
     extend: 'Ext.Container',
     xtype: 'produce_price_container',
+    reference: 'produce_price_container',
     items: [
         {
             xtype: 'container',
@@ -71,7 +72,8 @@ Ext.define('Erp.view.produce.PriceContainer', {
                     ]
                 }
             ]
-        },{
+        },
+        {
             xtype: 'container',
             cls: 'border-bottom',
             items: [
@@ -111,7 +113,8 @@ Ext.define('Erp.view.produce.PriceContainer', {
                             html: i18n.gettext('Manage prices of each POS is inactive. You can turn it on.')
                         }
                     ]
-                }, {
+                },
+                {
                     xtype: 'produce_places_price',
                     margin: '0 0 10 0',
                     hidden: true,
@@ -121,7 +124,8 @@ Ext.define('Erp.view.produce.PriceContainer', {
                     }
                 }
             ]
-        },{
+        },
+        {
             xtype: 'produce_edit_mainprice',
             reference: 'produce_edit_mainprice',
         }

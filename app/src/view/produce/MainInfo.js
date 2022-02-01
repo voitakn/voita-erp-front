@@ -2,7 +2,7 @@ Ext.define('Erp.view.produce.MainInfo', {
     extend: 'Ext.Container',
     xtype: 'produce_main_info',
     reference: 'produce_main_info',
-    cls: 'border-bottom',
+    // cls: 'border-bottom',
     items: [
         {
             xtype: 'container',
@@ -114,7 +114,8 @@ Ext.define('Erp.view.produce.MainInfo', {
                             ]
                         }
                     ]
-                },{
+                },
+                {
                     xtype: 'container',
                     margin: '5 0',
                     layout: {
@@ -150,7 +151,7 @@ Ext.define('Erp.view.produce.MainInfo', {
                             width: 130,
                             cls: 'bolder',
                             html: `${i18n.gettext('Description')}:`
-                        },{
+                        }, {
                             xtype: 'label',
                             flex: 1,
                             bind: {
@@ -160,7 +161,8 @@ Ext.define('Erp.view.produce.MainInfo', {
                     ]
                 }
             ]
-        },{
+        },
+        {
             xtype: 'produce_edit_produce',
         }
     ]

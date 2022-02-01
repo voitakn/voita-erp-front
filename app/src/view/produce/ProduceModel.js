@@ -30,10 +30,24 @@ Ext.define('Erp.view.produce.ProduceModel', {
                     produce_id: '{cardId}'
                 }
             }
-        }
+        },
+        rules_price_store: {
+            extend: 'Erp.data.Store',
+            autoLoad: false,
+            autoSync: false,
+            proxy: {
+                type: 'erp_api',
+                api: {
+                    read: Api.price.produce_cols
+                },
+                extraParams: {
+                    produce_id: '{cardId}'
+                }
+            }
+        },
     },
     formulas: {
-        no_price_cols_save(get){
+        no_price_cols_save(get) {
             return !User.checkAccess('price.cols_save');
         },
         no_price_retail_save(get) {
@@ -42,12 +56,15 @@ Ext.define('Erp.view.produce.ProduceModel', {
         no_com_produce_save(get) {
             return !User.checkAccess('com.produce_save');
         },
+        no_com_purchase_save(get) {
+            return !User.checkAccess('com.purchase_save');
+        },
         price_places: {
             bind: {
                 price_plc: '{theCardOrigin.params.places_prices}'
             },
             get(data) {
-               //console.('price_places', data.price_plc);
+                //console.('price_places', data.price_plc);
                 return !!data.price_plc;
             }
         }

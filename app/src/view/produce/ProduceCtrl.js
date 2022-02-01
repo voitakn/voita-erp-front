@@ -19,16 +19,16 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
         });
     },
     onCardId(cardId) {
-        //console.log('onCardId', cardId);
+        // console.log('onCardId', cardId.length);
         const me = this;
         const vm = me.getViewModel();
         vm.getStore('produce_places_price_store').removeAll();
-        if(cardId && cardId.length == 36) {
+        if (cardId && cardId.length === 36) {
             me.loadProdCard(cardId, false);
         }
     },
     loadProdCard(cardId, doEdit) {
-        //console.log('loadProdCard', cardId, doEdit);
+        // console.log('loadProdCard', cardId, doEdit);
         const me = this;
         const vm = me.getViewModel();
         Ext.Ajax.request({
@@ -41,7 +41,7 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
                 if(result.success) {
                     if(result.data && result.data.length > 0) {
                         const cardData = result.data[0];
-                        if(!cardData.catalog_id) {
+                        if (!cardData.catalog_id) {
                             cardData.catalog_id = null;
                         }
                         vm.set('theCardOrigin', cardData);
@@ -50,33 +50,68 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
                         vm.set('theCardEdit', doEdit);
                         vm.set('theCard_catalog_id', cardData.catalog_id);
                         vm.set('catalogFilter', cardData.serv ? 'serv' : 'prod');
-                        me.LoadPlacesPrice();
+                        me.loadPlacesPrice();
+                        if (!cardData.serv) {
+                            me.loadPurchasePrice(cardId);
+                        }
                         me.createBarcodeImg();
                         me.renderTaxUnit();
                     }
                 }
             },
-            failure:  function(resp, opt) {
+            failure: function (resp, opt) {
                 let result = Ext.JSON.decode(resp.responseText);
                 Notice.showToast(result);
             },
         });
     },
-    LoadPlacesPrice() {
+    loadPurchasePrice(cardId) {
+        // console.log('loadPurchasePrice', cardId);
+        const me = this;
+        const vm = me.getViewModel();
+        Ext.Ajax.request({
+            url: Api.price.produce_purchase,
+            jsonData: {"produce_id": cardId},
+            method: "POST",
+            success: function (resp, opt) {
+                const result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+                if (result.success) {
+                    if (result.data) {
+                        const cardData = result.data;
+                        if (cardData.price) {
+                            vm.set('purchasePrice', cardData);
+                            me.loadPriceRules();
+                        } else {
+                            vm.set('purchasePrice', {});
+                            vm.getStore('rules_price_store').loadData([]);
+                        }
+                    }
+                }
+            },
+            failure: function (resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+            },
+        });
+    },
+    loadPlacesPrice() {
         const vm = this.getViewModel();
         const plc_price_store = vm.getStore('produce_places_price_store');
-       //console.('LoadPlacesPrice', vm.get('price_places'));
-        if (vm.get('price_places')) {
-            plc_price_store.load();
-        } else {
-            plc_price_store.loadData([]);
-        }
+        plc_price_store.load();
+
+    },
+    loadPriceRules() {
+        const vm = this.getViewModel();
+        const rules_price_store = vm.getStore('rules_price_store');
+        //console.('loadPlacesPrice', vm.get('price_places'));
+        rules_price_store.load();
     },
     createBarcodeImg() {
         const me = this;
         const vm = this.getViewModel();
         const barcode = vm.get('theCard.barcode');
-        if (barcode != null) {
+        if (barcode) {
             JsBarcode(".produce-barcode-img", barcode);
         }
     },
@@ -231,7 +266,7 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
                             vm.set('theCard', theCard);
                             vm.set('editMainPrice', false);
                             priceTooltip.hide();
-                            me.LoadPlacesPrice();
+                            me.loadPlacesPrice();
                         }
                     }
                 },
