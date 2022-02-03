@@ -9,8 +9,17 @@ Ext.define('Erp.view.produce.RulesPrices', {
         {
             menu: false,
             text: i18n.gettext('Price name'),
-            flex: 1,
-            tpl: `{title}`,
+            align: 'right',
+            renderer(value, record, dataIndex, cell) {
+                let row = cell.up();
+                let vl = record.get('title');
+                if (!record.get('cols_active')) {
+                    row.addCls('row-disabled');
+                } else {
+                    row.removeCls('row-disabled');
+                }
+                return vl;
+            },
             cell: {
                 encodeHtml: false,
                 cls: 'bolder',
@@ -39,7 +48,6 @@ Ext.define('Erp.view.produce.RulesPrices', {
             menu: false,
             text: i18n.gettext('Type of change'),
             width: 150,
-            align: 'center',
             renderer(value, record, dataIndex, cell) {
                 let vl = i18n.gettext('markup');
                 if (record.get('type_change') < 1) {
@@ -52,13 +60,11 @@ Ext.define('Erp.view.produce.RulesPrices', {
             },
             cell: {
                 encodeHtml: false,
-                align: 'center',
             }
         },
         {
             menu: false,
-            text: i18n.gettext('Total price'),
-            width: 150,
+            text: i18n.gettext('Price'),
             tpl: '{price:erpMoney}',
             cell: {
                 encodeHtml: false,
@@ -67,12 +73,62 @@ Ext.define('Erp.view.produce.RulesPrices', {
         },
         {
             menu: false,
-            text: i18n.gettext('Active'),
+            width: 30,
             align: 'center',
-            tpl: `{price_active:checkIcon}`,
             cell: {
                 encodeHtml: false,
-                align: 'center'
+                cls: 'bolder blue',
+                renderer(value, record, dataIndex, cell) {
+                    let vl = record.get('price:erpMoney');
+                    let tools = cell.getTools();
+                    if (!record.get('cols_active') || record.get('purchase') || record.get('retail')) {
+                        tools[0].setHidden(true);
+                    } else {
+                        tools[0].setHidden(false);
+                    }
+                    return vl;
+                },
+                tools: {
+                    edit: {
+                        cls: 'blue',
+                        zone: 'end',
+                        handler: 'onEdit',
+                    },
+                }
+            }
+        },
+        {
+            menu: false,
+            text: i18n.gettext('Calculated'),
+            align: 'center',
+            renderer(value, record, dataIndex, cell) {
+                if (record.get('purchase') || record.get('retail') && record.get('price_active')) {
+                    return Ext.util.Format.checkIcon(record.get('price_active'));
+                }
+                return Ext.util.Format.checkIcon(!record.get('price_active'));
+            },
+            cell: {
+                encodeHtml: false,
+                align: 'center',
+            }
+        },
+        {
+            menu: false,
+            flex: 1,
+            text: i18n.gettext('Rules'),
+            renderer(value, record, dataIndex, cell) {
+                let parent_id = record.get('parent_id') ? record.get('parent_id') : 'Not';
+                let parent_title = parent_id && User.rulesObj[parent_id] ? User.rulesObj[parent_id].title : 'Not';
+                if (record.get('purchase') || record.get('retail')) {
+                    return;
+                }
+                if (record.get('price_active')) {
+                    return `<div>${i18n.gettext('Setted for this  item')}</div>`;
+                }
+                return `<div>${i18n.gettext('Calculated from')} ${parent_title}</div>`;
+            },
+            cell: {
+                encodeHtml: false,
             }
         },
     ],

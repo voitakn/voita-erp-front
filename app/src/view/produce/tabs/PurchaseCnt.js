@@ -45,8 +45,27 @@ Ext.define('Erp.view.produce.PurchaseContainer', {
                             }
                         }
                     ]
-                },
+                }, {
+                    flex: 0,
+                    items: [
+                        {
+                            xtype: 'button',
+                            text: i18n.gettext('Edit'),
+                            iconCls: 'fi-pencil',
+                            hidden: true,
+                            handler: 'editPurchasePrice',
+                            bind: {
+                                hidden: '{no_price_purchase_save}'
+                            }
+                        }
+                    ]
+                }
             ]
         },
+        {
+            xtype: 'produce_edit_purchaseprice',
+            reference: 'produce_edit_purchaseprice',
+        }
+
     ]
 });

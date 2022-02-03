@@ -66,7 +66,7 @@ Ext.define('Erp.view.produce.PriceContainer', {
                             hidden: true,
                             handler: 'editMainPrice',
                             bind: {
-                                hidden: '{no_com_produce_save}'
+                                hidden: '{no_price_retail_save}'
                             }
                         }
                     ]

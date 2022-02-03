@@ -13,7 +13,6 @@ Ext.define('Erp.view.produce.ProduceModel', {
     },
     stores: {
         taxes_store() {
-           //console.('taxes_store', User.taxesStore);
             return User.taxesStore;
         },
         produce_places_price_store: {
@@ -56,9 +55,13 @@ Ext.define('Erp.view.produce.ProduceModel', {
         no_com_produce_save(get) {
             return !User.checkAccess('com.produce_save');
         },
-        no_com_purchase_save(get) {
-            return !User.checkAccess('com.purchase_save');
+        no_price_purchase_save(get) {
+            return !User.checkAccess('price.purchase_save');
         },
+        no_price_cols_list(get) {
+            return !User.checkAccess('price.cols_list');
+        },
+
         price_places: {
             bind: {
                 price_plc: '{theCardOrigin.params.places_prices}'
@@ -67,6 +70,6 @@ Ext.define('Erp.view.produce.ProduceModel', {
                 //console.('price_places', data.price_plc);
                 return !!data.price_plc;
             }
-        }
+        },
     },
 });

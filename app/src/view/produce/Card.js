@@ -22,7 +22,7 @@ Ext.define('Erp.view.produce.Card', {
     items: [
         {
             xtype: 'container',
-            width: 650,
+            width: 800,
             minHeight: 620,
             layout: 'vbox',
             scrollable: 'y',

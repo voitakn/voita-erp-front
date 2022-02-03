@@ -88,6 +88,10 @@ body.x-ios.x-webview.x-portrait {
   background-color: $erp-light-gray !important;
 }
 
+.row-disabled .x-gridcell-body-el {
+  color: gray !important;
+}
+
 .yellow-bg {
   background-color: $color-soft-orange !important;
 }
