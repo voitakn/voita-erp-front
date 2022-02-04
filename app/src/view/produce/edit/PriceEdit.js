@@ -7,7 +7,7 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
     items: [
         {
             xtype: 'formpanel',
-            width: 440,
+            width: 300,
             buttonAlign: 'center',
             buttons: [
                 {
@@ -15,7 +15,7 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                     iconCls: 'x-fa fa-times red',
                     text: i18n.gettext('Cancel'),
                     handler: 'cancelPosPriceEdit'
-                },{
+                }, {
                     xtype: 'button',
                     margin: '0 0 0 15',
                     iconCls: 'fi-save green-dark',
@@ -41,7 +41,7 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                     layout: {
                         type: 'hbox',
                         pack: 'end',
-                        align: 'center'
+                        align: 'end'
                     },
                     items: [
                         {
@@ -50,9 +50,8 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                             items: [
                                 {
                                     xtype: 'numberfield',
-                                    width: 220,
-                                    labelAlign: 'left',
-                                    labelWidth: 110,
+                                    width: 160,
+                                    // labelWidth: 110,
                                     required: true,
                                     disabled: true,
                                     name: 'priceEdit_price',
@@ -66,18 +65,30 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                                     }
                                 }
                             ]
-                        },{
-                            xtype: 'label',
-                            margin: '0 15',
-                            cls: 'size-16 blue',
-                            html: `${i18n.gettext('Total price')}:`,
-                        },{
-                            xtype: 'label',
-                            cls: 'size-16 blue bolder',
-                            bind: {
-                                html: '{priceEdit.price:erpMoney}'
+                        },
+                        {
+                            xtype: 'container',
+                            layout: {
+                                type: 'vbox',
+                                pack: 'end',
+                                align: 'center'
                             },
-                        }
+                            items: [
+                                {
+                                    xtype: 'displayfield',
+                                    margin: '0 15',
+                                    cls: 'size-16 blue',
+                                    html: `${i18n.gettext('Total price')}:`,
+                                },
+                                {
+                                    xtype: 'displayfield',
+                                    cls: 'size-16 blue bolder',
+                                    bind: {
+                                        html: '{priceEdit.price:erpMoney}'
+                                    },
+                                },
+                            ]
+                        },
                     ]
                 },{
                     xtype: 'container',
@@ -85,7 +96,7 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                     layout: {
                         type: 'hbox',
                         pack: 'end',
-                        align: 'center'
+                        align: 'end'
                     },
                     items: [
                         {
@@ -94,9 +105,9 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                             items: [
                                 {
                                     xtype: 'numberfield',
-                                    width: 220,
-                                    labelAlign: 'left',
-                                    labelWidth: 110,
+                                    width: 160,
+                                    // labelAlign: 'left',
+                                    // labelWidth: 110,
                                     margin: '0 20 0 0',
                                     label: i18n.gettext('Discount %'),
                                     name: 'priceEdit_sale_percent',
@@ -110,18 +121,31 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                                     }
                                 }
                             ]
-                        }, {
-                            xtype: 'label',
-                            margin: '0 15',
-                            cls: 'size-16 green-dark',
-                            html: `${i18n.gettext('Discount')}:`,
-                        },{
-                            xtype: 'label',
-                            cls: 'size-16 green-dark bolder',
-                            bind: {
-                                html: '{priceEdit.sale:erpMoney}'
+                        },
+                        {
+                            xtype: 'container',
+                            layout: {
+                                type: 'vbox',
+                                pack: 'end',
+                                align: 'center'
                             },
-                        }
+                            items: [
+                                {
+                                    xtype: 'displayfield',
+                                    margin: '0 15',
+                                    cls: 'size-16 green-dark',
+                                    html: `${i18n.gettext('Discount')}:`,
+                                },
+                                {
+                                    xtype: 'displayfield',
+                                    cls: 'size-16 green-dark bolder',
+                                    bind: {
+                                        html: '{priceEdit.sale:erpMoney}'
+                                    },
+                                }
+                            ]
+
+                        },
                     ]
                 }
             ]

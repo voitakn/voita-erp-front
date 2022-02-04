@@ -5,9 +5,12 @@ Ext.define('Erp.view.produce.Produce', {
         type: 'produce_vm'
     },
     controller: 'produce_ctrl',
+    // autoSize: true,
+    // scrollable: 'y',
     items: [
         {
             xtype: 'produce_card',
-        }
+        },
+
     ]
 });

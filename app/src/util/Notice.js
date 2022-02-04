@@ -336,6 +336,14 @@ Ext.define('Erp.util.Notice', {
         },
     },
     price: {
+        produce_cols_save: {
+            error_3: i18n.gettext('There is no price.It should be higher than 0.00!'),
+            info: i18n.gettext('Price was successfully saved.')
+        },
+        // produce_history: {
+        //     error_3: i18n.gettext('There is no price.It should be higher than 0.00!'),
+        //     info: i18n.gettext('Price was successfully saved.')
+        // },
         cols_save: {
             error_1: i18n.gettext('Price column name is not specified.'),
             error_2: i18n.gettext('There is no margin percent for purchase.'),
@@ -361,6 +369,10 @@ Ext.define('Erp.util.Notice', {
         },
         produce_price_save: {
             error: i18n.gettext('Unable to save new product price.')
+        },
+        purchase_save: {
+            error_3: i18n.gettext('There is no price.It should be higher than 0.00!'),
+            info: i18n.gettext('Purchase was successfully saved.')
         },
         retail_save: {
             error_3: i18n.gettext('There is no price.It should be higher than 0.00!'),
