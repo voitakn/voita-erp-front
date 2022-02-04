@@ -8,20 +8,19 @@ Ext.define('Erp.view.produce.tabs.Tabs', {
                 {
                     xtype: 'tabpanel',
                     reference: 'produce_tabs',
-                    height: 400,
+                    height: 600,
                     items: [
                         {
-                            title: 'Retail',
+                            title: 'Prices',
                             xtype: 'produce_price_container',
-
-                        },
-                        {
-                            title: 'Purchase',
-                            xtype: 'purchase_price_container',
                         },
                         {
                             title: 'Wholesale',
                             xtype: 'wholesale_price_container'
+                        },
+                        {
+                            title: 'History',
+                            xtype: 'purchase_price_container',
                         },
                         {
                             title: 'Marketplace',

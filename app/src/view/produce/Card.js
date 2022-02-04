@@ -2,32 +2,11 @@ Ext.define('Erp.view.produce.Card', {
     extend: 'Ext.Container',
     xtype: 'produce_card',
     mixins: ['Ext.mixin.Responsive'],
-    requires: [
-        'Erp.view.produce.edit.Produce'
-    ],
     scrollable: 'y',
-    autoSize: true,
-    responsiveConfig: {
-        'width < 1380': {
-            layout: {
-                type: 'vbox'
-            }
-        },
-        'width >= 1380': {
-            layout: {
-                type: 'hbox'
-            }
-        }
-    },
     items: [
         {
             xtype: 'container',
             width: 800,
-            minHeight: 620,
-            layout: 'vbox',
-            scrollable: 'y',
-            autoSize: false,
-            margin: '0 20 0 0',
             items: [
                 {
                     xtype: 'head1',
@@ -65,10 +44,5 @@ Ext.define('Erp.view.produce.Card', {
                 }
             ]
         },
-        {
-            xtype: 'produce_right',
-            flex: 1,
-            minHeight: 620,
-        }
     ]
 });

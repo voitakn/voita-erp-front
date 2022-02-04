@@ -1,4 +1,4 @@
-Ext.define('Erp.view.produce.RulesPrices', {
+Ext.define('Erp.view.produce.tabs.RulesPrices', {
     extend: 'Ext.grid.Grid',
     xtype: 'rules_price',
     reference: 'rules_price',

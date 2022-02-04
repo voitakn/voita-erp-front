@@ -9,7 +9,8 @@ Ext.define('Erp.view.produce.ProduceModel', {
         extra: {
             tax_name: '',
             unit_name: ''
-        }
+        },
+        history_mode: 'retail',
     },
     stores: {
         taxes_store() {
@@ -18,8 +19,9 @@ Ext.define('Erp.view.produce.ProduceModel', {
         produce_places_price_store: {
             extend: 'Erp.data.Store',
             model: 'Erp.model.RetailByPlaces',
-            autoLoad: false,
+            autoLoad: true,
             autoSync: false,
+            pageSize: 25,
             proxy: {
                 type: 'erp_api',
                 api: {
@@ -41,6 +43,24 @@ Ext.define('Erp.view.produce.ProduceModel', {
                 },
                 extraParams: {
                     produce_id: '{cardId}'
+                }
+            }
+        },
+        history_store: {
+            extend: 'Erp.data.Store',
+            model: 'Erp.model.History',
+            autoLoad: false,
+            autoSync: false,
+            pageSize: 25,
+            proxy: {
+                type: 'erp_api',
+                api: {
+                    read: Api.price.produce_history
+                },
+                extraParams: {
+                    produce_id: '{cardId}',
+                    cols_base: '{history_mode}'
+                    // cols_base: 'purchase'
                 }
             }
         },

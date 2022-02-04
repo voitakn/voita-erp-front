@@ -5,9 +5,11 @@ Ext.define('Erp.view.produce.PlacesPrice', {
     bind: {
         store: '{produce_places_price_store}'
     },
-    listeners: {
-        show: 'LoadPlacesPrice'
+    reserveScrollbar: true,
+    plugins: {
+        gridpagingtoolbar: true
     },
+    autoSize: true,
     columns: [
         {
             text: i18n.gettext('Store name'),

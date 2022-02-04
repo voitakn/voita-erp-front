@@ -2,7 +2,8 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.produce_ctrl',
     bindings: {
-        onCardId: '{cardId}'
+        onCardId: '{cardId}',
+        loadHistory: '{history_mode}'
     },
     onViewRender() {
         const taxField = this.lookup('select_tax_rate');
@@ -53,6 +54,7 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
                         vm.set('theCard_catalog_id', cardData.catalog_id);
                         vm.set('catalogFilter', cardData.serv ? 'serv' : 'prod');
                         me.loadPlacesPrice();
+                        // me.loadHistoryRetail();
                         if (!cardData.serv) {
                             me.loadPurchasePrice(cardId);
                         }
@@ -107,7 +109,14 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
         const vm = this.getViewModel();
         const rules_price_store = vm.getStore('rules_price_store');
         //console.('loadPlacesPrice', vm.get('price_places'));
-        rules_price_store.load();
+        rules_price_store.loadPage(1);
+    },
+    onShowHistory() {
+        this.getViewModel().set('history_mode', 'retail');
+    },
+    loadHistory() {
+        const vm = this.getViewModel();
+        vm.getStore('history_store').loadPage(1);
     },
     createBarcodeImg() {
         const me = this;

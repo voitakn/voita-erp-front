@@ -74,6 +74,7 @@ Ext.define('Erp.util.Api', () => {
             produce_purchase: `${price}produce_purchase`,
             produce_cols: `${price}produce_cols`,
             produce_cols_save: `${price}produce_cols_save`,
+            produce_history: `${price}produce_history`,
             last_prices: `${price}last_prices`,
             plist_produce: `${price}plist_produce`,
             plist_create: `${price}plist_create`,

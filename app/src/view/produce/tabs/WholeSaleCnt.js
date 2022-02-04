@@ -1,4 +1,4 @@
-Ext.define('Erp.view.produce.WholeSaleCnt', {
+Ext.define('Erp.view.produce.tabs.WholeSaleCnt', {
     extend: 'Ext.Container',
     xtype: 'wholesale_price_container',
     reference: 'wholesale_price_container',
