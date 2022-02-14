@@ -1,0 +1,65 @@
+Ext.define('Erp.view.common.MenuB2b', {
+    extend: 'Ext.Container',
+    xtype: 'b2b_menu',
+    requires: [
+        'Erp.view.base.BaseCtrl'
+    ],
+    viewModel: {
+        formulas: {
+            // no_inv_sell_list_date_user(get) {
+            //     return !User.checkAccess('inv.sell_list_date_user');
+            // },
+        }
+    },
+    items: [
+        {
+            xtype: 'container',
+            docked: 'top',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'stretch'
+            },
+            padding: '0 0 5 0',
+            cls: 'head-1 border-bottom',
+            items: [
+                {
+                    xtype: 'label',
+                    cls: 'title',
+                    html: i18n.gettext('B2B')
+                },
+                {
+                    xtype: 'segmentedbutton',
+                    reference: 'b2b_menu',
+                    defaults: {
+                        ui: 'default',
+                        handler: 'onB2bMenuClick',
+                    },
+                    bind: {
+                        value: '{active_b2b_menu}'
+                    },
+                    items: [
+                        {
+                            tooltip: i18n.gettext('Partners'),
+                            text: i18n.gettext('Partners'),
+                            value: 'partners',
+                            // hidden: true,
+                            // bind: {
+                            //     hidden: '{no_inv_sell_list_date_user}'
+                            // }
+                        },
+                        {
+                            tooltip: i18n.gettext('Catalog'),
+                            text: i18n.gettext('Catalog'),
+                            value: 'partners_catalog',
+                            // hidden: true,
+                            // bind: {
+                            //     hidden: '{no_inv_cashopen_start}' || '{no_inv_sell_b2b_create}'
+                            // }
+                        },
+                    ]
+                },
+            ]
+        },
+    ]
+})

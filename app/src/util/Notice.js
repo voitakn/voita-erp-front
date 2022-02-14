@@ -388,5 +388,10 @@ Ext.define('Erp.util.Notice', {
         subs_pos_method: {
             error_1: i18n.gettext('Sorry! Payment method is not valid!')
         }
+    },
+    b2b: {
+        partner_create: {
+            info: i18n.gettext('Request was successfully saved.')
+        }
     }
 });

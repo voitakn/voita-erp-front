@@ -25,4 +25,14 @@ Ext.define('Erp.view.base.BaseCtrl', {
         const vm = me.getViewModel();
         vm.set('active_retail_menu', item);
     },
+    onB2bMenuClick(btn) {
+        const me = this;
+        let menu = btn.getValue();
+        this.redirectTo(menu);
+    },
+    setActiveB2bMenu(item) {
+        const me = this;
+        const vm = me.getViewModel();
+        vm.set('active_b2b_menu', item);
+    },
 });

@@ -70,6 +70,11 @@ Ext.define('Erp.view.main.MainModel', {
             text: i18n.gettext('Expenses'),
             leaf: true
         }, {
+            iconCls: 'erp-icon expenses blue-dark',
+            xtype: 'b2b',
+            text: i18n.gettext('B2B'),
+            leaf: true
+        }, {
             iconCls: 'x-fa fa-cog blue-dark',
             text: i18n.gettext('Settings'),
             leaf: false,
@@ -111,6 +116,9 @@ Ext.define('Erp.view.main.MainModel', {
             price_monitor: 'retail',
             pos_list: 'retail',
             revert_list: 'retail',
+            b2b: 'b2b',
+            partners: 'b2b',
+            partners_catalog: 'b2b',
         }
     },
     formulas: {
