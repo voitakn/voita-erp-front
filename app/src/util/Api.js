@@ -6,6 +6,7 @@ Ext.define('Erp.util.Api', () => {
     const price = `${api}price/`;
     const report = `${api}report/`;
     const billing = `${api}billing/`;
+    const b2b = `${api}b2b/`;
     return {
         alternateClassName: ['Api'],
         singleton: true,
@@ -40,6 +41,7 @@ Ext.define('Erp.util.Api', () => {
         },
         com: {
             country_list: `${com}country_list`,
+            countries: `${com}countries`,
             customer_install: `${com}customer_install`,
             customer_install_save: `${com}customer_install_save`,
             customer_save: `${com}customer_save`,
@@ -124,6 +126,12 @@ Ext.define('Erp.util.Api', () => {
         report: {
             main_stat: `${report}main_stat`,
             charts_stat: `${report}charts_stat`,
+        },
+        b2b: {
+            partners_list: `${b2b}partners_list`,
+            partners_incoming: `${b2b}partners_incoming`,
+            partners_outgoing: `${b2b}partners_outgoing`,
+            partner_create: `${b2b}partner_create`,
         }
     };
 });
