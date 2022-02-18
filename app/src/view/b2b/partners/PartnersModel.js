@@ -7,6 +7,9 @@ Ext.define('Erp.view.partners.PartnersModel', {
         filter_search: '',
         isUserEmail: false,
         newCard: {},
+        createCard: {},
+        search_name: '',
+        search_email: ''
     },
     stores: {
         partners_store: {
@@ -25,9 +28,6 @@ Ext.define('Erp.view.partners.PartnersModel', {
                     partner_type: '{partner_type}',
                 }
             },
-            // listeners: {
-            //     load: 'onLoadFirst'
-            // }
         },
         partners_incoming_store: {
             extend: 'Erp.data.Store',
@@ -40,13 +40,7 @@ Ext.define('Erp.view.partners.PartnersModel', {
                 api: {
                     read: Api.b2b.partners_incoming
                 },
-                // extraParams: {
-                //     search: '{filter_incoming_search}'
-                // }
             },
-            // listeners: {
-            //     load: 'onLoadFirst'
-            // }
         },
         partners_outgoing_store: {
             extend: 'Erp.data.Store',
@@ -59,13 +53,7 @@ Ext.define('Erp.view.partners.PartnersModel', {
                 api: {
                     read: Api.b2b.partners_outgoing
                 },
-                // extraParams: {
-                //     search: '{filter_outgoing_search}'
-                // }
             },
-            // listeners: {
-            //     load: 'onLoadFirst'
-            // }
         },
         country_store: {
             extend: 'Erp.data.Store',
@@ -78,7 +66,7 @@ Ext.define('Erp.view.partners.PartnersModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.countries
+                    read: Api.com.country_list
                 },
             },
         },
@@ -91,12 +79,39 @@ Ext.define('Erp.view.partners.PartnersModel', {
                 api: {
                     read: Api.price.produce_cols
                 },
-                // extraParams: {
-                //     produce_id: '{cardId}'
-                // }
             }
         },
-
+        partners_search_name_store: {
+            extend: 'Erp.data.Store',
+            autoLoad: false,
+            proxy: {
+                type: 'erp_api',
+                api: {
+                    read: Api.b2b.partners_search
+                },
+                extraParams: {
+                    title: '{search_name}',
+                    email: ''
+                }
+            },
+        },
+        partners_search_email_store: {
+            extend: 'Erp.data.Store',
+            autoLoad: false,
+            proxy: {
+                type: 'erp_api',
+                api: {
+                    read: Api.b2b.partners_search
+                },
+                extraParams: {
+                    title: '',
+                    email: '{search_email}'
+                }
+            },
+            listeners: {
+                load: 'onChangeStore'
+            }
+        },
     },
     formulas: {
         no_b2b_partner_create(get) {

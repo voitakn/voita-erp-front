@@ -392,6 +392,10 @@ Ext.define('Erp.util.Notice', {
     b2b: {
         partner_create: {
             info: i18n.gettext('Request was successfully saved.')
-        }
+        },
+        partner_invite: {
+            error_2: i18n.gettext('You have already sent an invitation to this partner'),
+            info: i18n.gettext('Request was successfully saved.')
+        },
     }
 });

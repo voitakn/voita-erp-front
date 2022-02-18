@@ -12,15 +12,6 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
     plugins: {
         gridpagingtoolbar: true
     },
-    selectable: {
-        columns: false,
-        rows: true,
-        cells: false,
-        checkbox: false,
-        headerCheckbox: false,
-        extensible: true,
-        mode: 'single',
-    },
     items: [
         {
             xtype: 'head1',
@@ -29,14 +20,7 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
                 pack: 'start',
                 align: 'center'
             },
-
             items: [
-                // {
-                //     xtype: 'label',
-                //     cls: 'title',
-                //     margin: '0 20 0 10',
-                //     html: i18n.gettext('Partners')
-                // },
                 {
                     xtype: 'button',
                     margin: '0 20 0 0',
@@ -46,7 +30,7 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
                     bind: {
                         hidden: '{no_b2b_partner_create}'
                     },
-                    handler: 'onAddNewPartner',
+                    handler: 'onCreateNewPartner',
                 },
                 {
                     xtype: 'container',
@@ -117,22 +101,5 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
             tpl: `<div>{applied_short}</div>`,
             cell: {encodeHtml: false, height: 48},
         },
-        // {
-        //     width: 35,
-        //     hidden: true,
-        //     bind: {
-        //         hidden: '{no_com_partners_save}'
-        //     },
-        //     menu: false,
-        //     cell: {
-        //         align: 'center',
-        //         tools: {
-        //             edit: {
-        //                 cls: 'blue',
-        //                 handler: 'onEdit'
-        //             }
-        //         }
-        //     }
-        // },
     ],
 })
