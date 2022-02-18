@@ -6,8 +6,6 @@ Ext.define('Erp.view.partners_catalog.PartnersCatalogCtrl', {
     },
     onViewShow() {
         const me = this;
-
         me.setActiveB2bMenu('partners_catalog');
-
     },
 });

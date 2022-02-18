@@ -12,27 +12,6 @@ Ext.define('Erp.view.partners.tabs.PartnersOutgoingGrid', {
     plugins: {
         gridpagingtoolbar: true
     },
-    selectable: {
-        columns: false,
-        rows: true,
-        cells: false,
-        checkbox: false,
-        headerCheckbox: false,
-        extensible: true,
-        mode: 'single',
-    },
-    items: [
-        {
-            xtype: 'head1',
-            items: [{
-                xtype: 'label',
-                cls: 'title',
-                margin: '0 0 0 10',
-                html: i18n.gettext('Receive Requests')
-            },
-            ]
-        },
-    ],
     columns: [
         {
             text: i18n.gettext('Partner name'),

@@ -17,6 +17,5 @@ Ext.define('Erp.view.partners_catalog.PartnersCatalog', {
             xtype: 'catalog',
             flex: 1,
         },
-
     ]
 });

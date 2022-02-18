@@ -12,34 +12,23 @@ Ext.define('Erp.view.partners.tabs.PartnersIncomingGrid', {
     plugins: {
         gridpagingtoolbar: true
     },
-    selectable: {
-        columns: false,
-        rows: true,
-        cells: false,
-        checkbox: false,
-        headerCheckbox: false,
-        extensible: true,
-        mode: 'single',
-    },
-    items: [
-        {
-            xtype: 'head1',
-            items: [{
-                xtype: 'label',
-                cls: 'title',
-                margin: '0 0 0 10',
-                html: i18n.gettext('Sent Requests')
-            },
-            ]
-        },
-    ],
     columns: [
         {
             text: i18n.gettext('Partner name'),
             flex: 1,
             dataIndex: 'title',
             tpl: `<div><a href="/#partners/{id}"><b>{title}</b></a></div>`,
-            cell: {encodeHtml: false, height: 48}
+            cell: {
+                encodeHtml: false,
+                height: 48,
+                tools: {
+                    plus: {
+                        iconCls: 'erp-icon verified green-dark',
+                        zone: 'end',
+                        handler: 'onAcceptInvite',
+                    }
+                },
+            },
         },
         {
             text: i18n.gettext('E-mail'),
