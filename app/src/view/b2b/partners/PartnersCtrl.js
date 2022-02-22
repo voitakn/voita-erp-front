@@ -301,4 +301,57 @@ Ext.define('Erp.view.partners.PartnersCtrl', {
         const vm = me.getViewModel();
         vm.set('confirmCard', {});
     },
+    onEditItem(grid, row) {
+        // console.log(grid, row);
+        const me = this;
+        const vm = me.getViewModel();
+        const tooltip = this.lookup('edit_partner');
+        const edit_data = Ext.clone(row.record.data);
+        const edit_price_row_combobox = me.lookup('edit_price_row_combobox');
+        const country_list = vm.getStore('country_store').load();
+        const rules_price_store = vm.getStore('rules_price_store').load();
+        edit_price_row_combobox.setStore(rules_price_store);
+        vm.set('editCard', edit_data);
+        country_list.getRange().forEach(rec => {
+            if (rec.data.id === edit_data.country_id) {
+                vm.set('editCard.country_en', rec.data.country_en);
+            }
+        });
+        tooltip.setTarget(row.event.target);
+        tooltip.show();
+    },
+    onEditCancel() {
+        const me = this;
+        const vm = me.getViewModel();
+        const tooltip = this.lookup('edit_partner');
+        tooltip.hide();
+    },
+    onEditHide() {
+        const me = this;
+        const vm = me.getViewModel();
+        vm.set('editCard', {});
+    },
+    savePartner(btn) {
+        const me = this;
+        const vm = me.getViewModel();
+        const jsonData = {
+            invite_id: vm.get('editCard.id'),
+            params: vm.get('editCard.params'),
+        }
+        Ext.Ajax.request({
+            url: Api.b2b.partner_save,
+            jsonData,
+            method: "POST",
+            success: function (resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+                btn.up('tooltip').hide();
+            },
+            failure: function (resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+            },
+        });
+    },
+
 });

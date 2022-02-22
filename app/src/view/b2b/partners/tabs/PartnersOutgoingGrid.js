@@ -17,8 +17,22 @@ Ext.define('Erp.view.partners.tabs.PartnersOutgoingGrid', {
             text: i18n.gettext('Partner name'),
             flex: 1,
             dataIndex: 'title',
-            tpl: `<div><a href="/#partners/{id}"><b>{title}</b></a></div>`,
-            cell: {encodeHtml: false, height: 48}
+            tpl: `<div><a href="/#partners_catalog/{id}"><b>{title}</b></a></div>`,
+            cell: {
+                encodeHtml: false,
+                height: 48,
+                tools: {
+                    edit: {
+                        cls: 'blue',
+                        hidden: true,
+                        handler: 'onEditItem',
+                        bind: {
+                            hidden: '{no_b2b_partner_create}'
+                        },
+                        zone: 'end'
+                    }
+                }
+            }
         },
         {
             text: i18n.gettext('E-mail'),

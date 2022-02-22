@@ -12,6 +12,8 @@ Ext.define('Erp.view.partners_catalog.PartnersCatalog', {
     items: [
         {
             xtype: 'b2b_menu',
+            docked: 'top',
+            margin: '5 0 0 20',
         },
         {
             xtype: 'catalog',
