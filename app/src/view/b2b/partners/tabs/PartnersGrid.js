@@ -50,9 +50,9 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
                             value: null,
                             autoSelect: true,
                             store: [
-                                {display: `${i18n.gettext('All')}`, value: null},
-                                {display: `${i18n.gettext('Client')}`, value: true},
-                                {display: `${i18n.gettext('Supplier')}`, value: false},
+                                {display: `${i18n.gettext('All')}`, value: ''},
+                                {display: `${i18n.gettext('Client')}`, value: 'client'},
+                                {display: `${i18n.gettext('Supplier')}`, value: 'supplier'},
                             ],
                             bind: {
                                 value: '{partner_type}',
@@ -77,8 +77,22 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
             text: i18n.gettext('Partner name'),
             flex: 1,
             dataIndex: 'title',
-            tpl: `<div><a href="/#partners/{id}"><b>{title}</b></a></div>`,
-            cell: {encodeHtml: false, height: 48}
+            tpl: `<div><a href="/#partners_catalog/{id}"><b>{title}</b></a></div>`,
+            cell: {
+                encodeHtml: false,
+                height: 48,
+                tools: {
+                    edit: {
+                        cls: 'blue',
+                        hidden: true,
+                        handler: 'onEditItem',
+                        bind: {
+                            hidden: '{no_b2b_partner_create}'
+                        },
+                        zone: 'end'
+                    }
+                }
+            }
         },
         {
             text: i18n.gettext('E-mail'),

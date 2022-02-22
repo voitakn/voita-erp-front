@@ -390,6 +390,9 @@ Ext.define('Erp.util.Notice', {
         }
     },
     b2b: {
+        partner_save: {
+            info: i18n.gettext('Request was successfully saved.')
+        },
         partner_create: {
             info: i18n.gettext('Request was successfully saved.')
         },

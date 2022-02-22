@@ -17,7 +17,7 @@ Ext.define('Erp.view.partners.tabs.PartnersIncomingGrid', {
             text: i18n.gettext('Partner name'),
             flex: 1,
             dataIndex: 'title',
-            tpl: `<div><a href="/#partners/{id}"><b>{title}</b></a></div>`,
+            tpl: `<div><a href="/#partners_catalog/{id}"><b>{title}</b></a></div>`,
             cell: {
                 encodeHtml: false,
                 height: 48,

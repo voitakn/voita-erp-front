@@ -25,6 +25,9 @@ Ext.define('Erp.view.partners.Partners', {
         },
         {
             xtype: 'accept_invite'
+        },
+        {
+            xtype: 'edit_partner'
         }
     ]
 });

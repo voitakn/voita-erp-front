@@ -134,6 +134,7 @@ Ext.define('Erp.util.Api', () => {
             partner_create: `${b2b}partner_create`,
             partner_invite: `${b2b}partner_invite`,
             partner_accept: `${b2b}partner_accept`,
+            partner_save: `${b2b}partner_save`,
             partners_search: `${b2b}partners_search`,
         }
     };
