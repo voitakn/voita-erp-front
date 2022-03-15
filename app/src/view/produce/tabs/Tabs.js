@@ -24,7 +24,7 @@ Ext.define('Erp.view.produce.tabs.Tabs', {
                         },
                         {
                             title: 'Marketplace',
-                            disabled: true
+                            xtype: 'produce_marketplace_container',
                         }
                     ]
                 }

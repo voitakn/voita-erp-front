@@ -110,6 +110,9 @@ Ext.define('Erp.view.main.MainModel', {
             workers: 'company',
             prices_rules: 'company',
             subscription: 'company',
+            company_config: 'company',
+            receipt_template: 'company',
+            banks: 'company',
             sell_bills: 'retail',
             sell_pos: 'retail',
             pos_sell: 'retail',
@@ -118,7 +121,7 @@ Ext.define('Erp.view.main.MainModel', {
             revert_list: 'retail',
             b2b: 'b2b',
             partners: 'b2b',
-            partners_catalog: 'b2b',
+            b2b_catalog: 'b2b',
         }
     },
     formulas: {

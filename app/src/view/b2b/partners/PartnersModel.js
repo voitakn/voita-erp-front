@@ -1,9 +1,9 @@
-Ext.define('Erp.view.partners.PartnersModel', {
+Ext.define('Erp.view.b2b.partners.PartnersModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.partners_vm',
     data: {
         cardId: null,
-        partner_type: null,
+        partner_type: '',
         filter_search: '',
         isUserEmail: false,
         newCard: {},

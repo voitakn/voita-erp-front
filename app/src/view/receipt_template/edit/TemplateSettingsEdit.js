@@ -1,4 +1,4 @@
-Ext.define('Erp.view.company.edit.TemplateSettingsEdit', {
+Ext.define('Erp.view.receipt_template.edit.TemplateSettingsEdit', {
     extend: 'Erp.base.ToolTip',
     xtype: 'template_settings_edit',
     reference: 'template_settings_edit',
@@ -9,7 +9,6 @@ Ext.define('Erp.view.company.edit.TemplateSettingsEdit', {
     listeners: {
         onCancel: 'onCancelTemplateEdit'
     },
-    align: 'b50-t50',
     items: [
         {
             xtype: 'formpanel',

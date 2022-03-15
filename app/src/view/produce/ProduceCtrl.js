@@ -161,6 +161,7 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
         editTooltip.hide();
     },
     onSaveProd(btn) {
+        // console.log('onSaveProd');
         const me = this;
         const vm = me.getViewModel();
         const theCard = vm.get('theCard');
@@ -184,7 +185,53 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
                 }
             });
         } else {
-            Notice.showToast({success:false,code_err:"all.not_required"});
+            Notice.showToast({success: false, code_err: "all.not_required"});
+        }
+    },
+    onEditHtml(btn) {
+        const me = this;
+        const vm = this.getViewModel();
+        const editTooltip = me.lookup('market_edit_html');
+        // const form = editTooltip.down('formpanel');
+        vm.set('theCardEdit', true);
+        editTooltip.setTarget(btn);
+        editTooltip.show();
+        // form.validate();
+    },
+    onCancelEditHtml(btn) {
+        const me = this;
+        const vm = this.getViewModel();
+        const origin = vm.get('theCardOrigin');
+        const editTooltip = me.lookup('market_edit_html');
+        vm.set('theCard', Ext.clone(origin));
+        vm.set('theCard_catalog_id', origin.catalog_id);
+        vm.set('theCardEdit', false);
+        editTooltip.hide();
+    },
+    onSaveHtmlProd(btn) {
+        // console.log('onSaveHtmlProd');
+        const me = this;
+        const vm = me.getViewModel();
+        const theCard = vm.get('theCard');
+        const cardId = vm.get('cardId');
+        const editTooltip = me.lookup('market_edit_html');
+        const form = editTooltip.down('formpanel');
+        if (form.validate()) {
+            const saveCard = Ext.create('Erp.model.ProduceCard', theCard);
+            saveCard.save({
+                callback(record, operation, success) {
+                    if (success) {
+                        vm.set('theCardOrigin', Ext.clone(theCard));
+                        vm.set('theCard', Ext.clone(theCard));
+                        vm.set('mainPrice', Ext.clone(theCard.main_price));
+                        vm.set('theCardEdit', false);
+                        // me.loadProdCard(cardId);
+                        editTooltip.hide();
+                    }
+                }
+            });
+        } else {
+            Notice.showToast({success: false, code_err: "all.not_required"});
         }
     },
     editPlacePrice(grid, row) {
@@ -470,5 +517,11 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
     },
     toRules(btn) {
         this.redirectTo('prices_rules');
-    }
+    },
+    onHideMarketplace(btn) {
+        // console.log('onHideMarketplace');
+        const me = this;
+        const vm = me.getViewModel();
+        me.lookup('market_edit_html').hide();
+    },
 });

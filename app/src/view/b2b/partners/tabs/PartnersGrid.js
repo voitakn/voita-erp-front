@@ -1,4 +1,4 @@
-Ext.define('Erp.view.partners.tabs.PartnersGrid', {
+Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
     extend: 'Ext.grid.Grid',
     xtype: 'partners_grid',
     reference: 'partners_grid',
@@ -77,10 +77,25 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
             text: i18n.gettext('Partner name'),
             flex: 1,
             dataIndex: 'title',
-            tpl: `<div><a href="/#partners_catalog/{id}"><b>{title}</b></a></div>`,
+            tpl: `<div><a href="/#partners_card/{id}"><b>{title}</b></a></div>`,
             cell: {
                 encodeHtml: false,
                 height: 48,
+            }
+        },
+        {
+            width: 230,
+            menu: false,
+            align: 'center',
+            cell: {
+                encodeHtml: false,
+                height: 48,
+                renderer(value, record) {
+                    if (!record.get('has_catalog')) {
+                        return;
+                    }
+                    return `<a href="/#b2b_catalog/${record.get('id')}"><div class="x-component x-button x-has-text x-layout-box-item"><div class="x-inner-el"><div class="x-body-el"><div class="x-text-el"><b>${i18n.gettext('Go to catalog')}</b></div></div><div class="x-arrow-el x-font-icon"></div></div><div class="x-badge-el"></div><button class="x-button-el" type="button"></button></div></a>`;
+                },
                 tools: {
                     edit: {
                         cls: 'blue',
@@ -90,8 +105,57 @@ Ext.define('Erp.view.partners.tabs.PartnersGrid', {
                             hidden: '{no_b2b_partner_create}'
                         },
                         zone: 'end'
-                    }
+                    },
                 }
+
+            },
+        },
+        // {
+        //     width: 50,
+        //     menu: false,
+        //     cell: {
+        //         encodeHtml: false,
+        //         height: 48,
+        //         tools: {
+        //             edit: {
+        //                 cls: 'blue',
+        //                 hidden: true,
+        //                 handler: 'onEditItem',
+        //                 bind: {
+        //                     hidden: '{no_b2b_partner_create}'
+        //                 },
+        //             },
+        //         }
+        //     }
+        // },
+        {
+            menu: false,
+            text: i18n.gettext('Client'),
+            align: 'center',
+            renderer(value, record) {
+                if (record.get('params')) {
+                    return Ext.util.Format.checkIcon(record.get('params').client);
+                }
+                return Ext.util.Format.checkIcon(!record.get('params').client);
+            },
+            cell: {
+                encodeHtml: false,
+                align: 'center',
+            }
+        },
+        {
+            menu: false,
+            text: i18n.gettext('Supplier'),
+            align: 'center',
+            renderer(value, record) {
+                if (record.get('params')) {
+                    return Ext.util.Format.checkIcon(record.get('params').supplier);
+                }
+                return Ext.util.Format.checkIcon(!record.get('params').supplier);
+            },
+            cell: {
+                encodeHtml: false,
+                align: 'center',
             }
         },
         {

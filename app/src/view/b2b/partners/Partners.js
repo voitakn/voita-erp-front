@@ -1,4 +1,4 @@
-Ext.define('Erp.view.partners.Partners', {
+Ext.define('Erp.view.b2b.partners.Partners', {
     extend: 'Erp.base.Module',
     xtype: 'partners',
     controller: 'partners_ctrl',

@@ -1,4 +1,4 @@
-Ext.define('Erp.view.partners.edit.EditPartner', {
+Ext.define('Erp.view.b2b.partners.edit.EditPartner', {
     extend: 'Erp.base.ToolTip',
     xtype: 'edit_partner',
     reference: 'edit_partner',

@@ -12,7 +12,8 @@ Ext.define('Erp.view.company.Company', {
     items: [
         {
             xtype: 'company_menu',
-        },{
+        },
+        {
             xtype: 'container',
             scrollable: 'y',
 
@@ -36,7 +37,8 @@ Ext.define('Erp.view.company.Company', {
                             }
                         }
                     ]
-                },{
+                },
+                {
                     xtype: 'container',
                     layout: {
                         type: 'hbox'
@@ -61,14 +63,10 @@ Ext.define('Erp.view.company.Company', {
                             ]
                         }
                     ]
-                }, {
-                    xtype: 'company_config'
-                }
+                },
             ]
         }, {
             xtype: 'company_edit',
-        }, {
-            xtype: 'template_settings_edit',
         }
     ]
 });

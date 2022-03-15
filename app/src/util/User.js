@@ -320,36 +320,6 @@ Ext.define('Erp.util.User', {
                 Notice.showToast(result);
             }
         });
-        Ext.Ajax.request({
-            url: Api.price.cols_list,
-            jsonData: {},
-            method: "POST",
-            success(resp, opt) {
-                const result = Ext.JSON.decode(resp.responseText);
-                if (result.success) {
-                    if (result.data) {
-                        console.log('updateUserSession.data', result.data);
-                        if (result.data && result.data.length > 0) {
-                            Ext.each(result.data, recPl => {
-                                if (!this.rulesObj[recPl.id]) {
-                                    this.rulesObj[recPl.id] = recPl;
-                                }
-                            })
-                        }
-                        if (callback && typeof callback === 'function') {
-                            callback();
-                        }
-                    }
-                } else {
-                    Notice.showToast(result);
-                }
-            },
-            failure(resp, opt) {
-                let result = Ext.JSON.decode(resp.responseText);
-                Notice.showToast(result);
-            }
-        });
-
     },
     modules: {
         dashboard: 'inv.sell_retail_create',
@@ -376,7 +346,7 @@ Ext.define('Erp.util.User', {
         pos_sell: 'inv.sell_retail_create',
         pos_list: 'inv.cashopen_list',
         partners: 'com.catalog_tree',
-        partners_catalog: 'com.catalog_tree',
+        b2b_catalog: 'com.catalog_tree',
         movement_add: 'inv.move_list_month',
         movement_list: 'inv.move_list_month',
         movement_card: 'inv.move_list_month',

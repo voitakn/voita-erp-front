@@ -69,7 +69,22 @@ Ext.define('Erp.view.common.MenuCompany', {
                     value: 'company',
                     group: 'active',
                     text: i18n.gettext('Company info')
-                },{
+                }, {
+                    iconCls: 'x-fa fa-cog blue',
+                    value: 'company_config',
+                    group: 'active',
+                    text: i18n.gettext('Settings')
+                }, {
+                    iconCls: 'x-fa fa-cog blue',
+                    value: 'receipt_template',
+                    group: 'active',
+                    text: i18n.gettext('Receipt template')
+                }, {
+                    iconCls: 'x-fa fa-cog blue',
+                    value: 'banks',
+                    group: 'active',
+                    text: i18n.gettext('Banks')
+                }, {
                     iconCls: 'x-fa fa-map-marker blue',
                     value: 'places',
                     group: 'active',
@@ -78,7 +93,7 @@ Ext.define('Erp.view.common.MenuCompany', {
                     bind: {
                         hidden: '{no_com_place_list_all}'
                     }
-                },{
+                }, {
                     iconCls: 'x-fa fa-users blue',
                     value: 'workers',
                     group: 'active',
