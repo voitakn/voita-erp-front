@@ -1,4 +1,4 @@
-Ext.define('Erp.view.partners.edit.CreatePartner', {
+Ext.define('Erp.view.b2b.partners.edit.CreatePartner', {
     extend: 'Erp.base.Dialog',
     xtype: 'create_partner',
     reference: 'create_partner',

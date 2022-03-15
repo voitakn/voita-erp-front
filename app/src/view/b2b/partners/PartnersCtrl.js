@@ -1,4 +1,4 @@
-Ext.define('Erp.view.partners.PartnersCtrl', {
+Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
     extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.partners_ctrl',
     bindings: {
@@ -353,5 +353,9 @@ Ext.define('Erp.view.partners.PartnersCtrl', {
             },
         });
     },
-
+    goToCatalog(grid, row) {
+        const id = Ext.clone(row.record.data.id);
+        console.log('redirect to ', `b2b_catalog/${id}`);
+        this.redirectTo(`b2b_catalog/${id}`)
+    }
 });

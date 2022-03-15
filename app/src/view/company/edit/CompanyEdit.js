@@ -31,6 +31,14 @@ Ext.define('Erp.view.company.edit.CompanyEdit', {
 							}
 						},
 						{
+							xtype: 'textfield',
+							cls: 'bolder',
+							label: `${i18n.gettext('Company full name')}:`,
+							bind: {
+								value: '{theCard.full_title}',
+							}
+						},
+						{
 							xtype: 'container',
 							flex: 1,
 							defaults: {

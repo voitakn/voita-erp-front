@@ -1,4 +1,4 @@
-Ext.define('Erp.view.partners.tabs.Tabs', {
+Ext.define('Erp.view.b2b.partners.tabs.Tabs', {
     extend: 'Ext.tab.Panel',
     xtype: 'partners_tabs',
     reference: 'partners_tabs',

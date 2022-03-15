@@ -1,4 +1,4 @@
-Ext.define('Erp.view.partners.tabs.PartnersIncomingGrid', {
+Ext.define('Erp.view.b2b.partners.tabs.PartnersIncomingGrid', {
     extend: 'Ext.grid.Grid',
     xtype: 'partners_incoming_grid',
     reference: 'partners_incoming_grid',
@@ -17,7 +17,7 @@ Ext.define('Erp.view.partners.tabs.PartnersIncomingGrid', {
             text: i18n.gettext('Partner name'),
             flex: 1,
             dataIndex: 'title',
-            tpl: `<div><a href="/#partners_catalog/{id}"><b>{title}</b></a></div>`,
+            tpl: `<div><b>{title}</b></a></div>`,
             cell: {
                 encodeHtml: false,
                 height: 48,

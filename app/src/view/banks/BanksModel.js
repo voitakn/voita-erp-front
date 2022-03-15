@@ -1,16 +1,21 @@
-Ext.define('Erp.view.company.CompanyModel', {
+Ext.define('Erp.view.banks.BanksModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.company_vm',
+    alias: 'viewmodel.banks_vm',
     data: {
         edit_configs: {},
         edit_config: true,
+    },
+    requires: [
+        'Erp.store.Banks',
+    ],
+    stores: {
+        banks_store: {
+            type: 'banksStore',
+        }
     },
     formulas: {
         no_com_customer_save(get) {
             return !User.checkAccess('com.customer_save');
         },
-        tax_number_name(get) {
-            return User.data.country.params.tax_number.name || i18n.gettext('Tax number');
-        }
     }
 });
