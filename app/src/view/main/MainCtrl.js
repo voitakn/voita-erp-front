@@ -14,8 +14,7 @@ Ext.define('Erp.view.main.MainCtrl', {
     },
     lastRout: null,
     noAuth: {
-        login: 'auth/login.html',
-        register: 'auth/register.html'
+        login: Ext.mainCfg.authUrl,
     },
     onMainRender() {
         const me = this;
@@ -51,35 +50,19 @@ Ext.define('Erp.view.main.MainCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const view = me.getView();
-        const authKey = localStorage.getItem('authKey');
-        const authExp = localStorage.getItem('authExp');
 
         if (view) {
-            if (me.noAuth[xtype]) {
-                view.removeAll(true, true);
-                document.location.href = me.noAuth[xtype];
-                return;
-            }
-            if(!authKey ||
-                authKey === '' ||
-                (Math.floor((new Date()).getTime() / 1000) > Number(authExp))) {
-                User.cleanAuth();
-                document.location.href = me.noAuth.login;
-                return;
-            }
-
-            if (User.data.token) {
+            if (User.data.user_id) {
                 me.preloadModule(xtype, cardId);
             } else {
                 Ext.Ajax.request({
-                    url: Api.urls.check,
+                    url: Api.user.data,
                     method: 'GET',
                     success(resp, opt) {
                         const result = Ext.decode(resp.responseText);
-                        console.log('Api.urls.check', result);
+                        console.log('Api.user.data', result);
                         if (!result.success) {
-                            User.cleanAuth();
-                            document.location.href = me.noAuth.login;
+                            document.location.href = Ext.mainCfg.logoutUrl;
                             return;
                         }
                         User.initData(result.data);
@@ -88,7 +71,7 @@ Ext.define('Erp.view.main.MainCtrl', {
                     failure(resp, opt) {
                         Ext.Msg.alert(i18n.gettext('Error!'), i18n.gettext('Data was not received!'),
                             () => {
-                                document.location.href = me.noAuth.login;
+                                document.location.href = Ext.mainCfg.logoutUrl;
                             });
                     }
                 });
@@ -105,7 +88,7 @@ Ext.define('Erp.view.main.MainCtrl', {
             User.catalogStore = Ext.create('Ext.data.TreeStore', {
                 proxy: {
                     type: 'ajax',
-                    url: Api.com.catalog_tree,
+                    url: Api.items.catalog_tree,
                     reader: {
                         type: 'json',
                         typeProperty:  'mtype',
@@ -253,21 +236,7 @@ Ext.define('Erp.view.main.MainCtrl', {
         }
     },
     onClickExit(btn) {
-        const me = this;
-        User.cleanData();
-        Ext.Ajax.request({
-            url: Api.urls.logout,
-            jsonData: {},
-            method: 'POST',
-            success(resp, opt) {
-                me.redirectTo('login');
-            },
-            failure(resp, opt) {
-                Notice.showToast(resp);
-                me.redirectTo('login');
-            }
-        });
-
+        document.location.href = Ext.mainCfg.logoutUrl;
     },
     openMyProfile(btn) {
         this.redirectTo('myprofile');

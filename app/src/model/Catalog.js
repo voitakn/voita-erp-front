@@ -15,8 +15,8 @@ Ext.define('Erp.model.Catalog', {
 	proxy: {
 		type: 'erp_api',
 		api: {
-			create: Api.com.catalog_tree_save,
-			update: Api.com.catalog_tree_save
+			create: Api.items.catalog_tree_save,
+			update: Api.items.catalog_tree_save
 		}
 	}
 });

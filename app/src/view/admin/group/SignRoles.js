@@ -30,10 +30,10 @@ Ext.define('Erp.view.admin.group.SignRoles', {
             items: [
                 {
                     xtype: 'container',
-                    html: Ext.String.format('<b>{0}</b>', i18n.gettext('Functions assigned to the group'))
+                    html: Ext.String.format('<b>{0}</b>', i18n.gettext('Roles assigned to the group'))
                 },{
                     xtype: 'button',
-                    text: i18n.gettext('Add functions'),
+                    text: i18n.gettext('Add role'),
                     cls: 'green-dark',
                     iconCls: 'x-fa fa-plus',
                     handler: 'addRolesToGroup',
@@ -61,7 +61,7 @@ Ext.define('Erp.view.admin.group.SignRoles', {
     ],
     columns: [
         {
-            text: i18n.gettext('Function name'),
+            text: i18n.gettext('Roles name'),
             dataIndex: 'urole',
             flex: 1,
             minWidth: 200

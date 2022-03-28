@@ -65,7 +65,7 @@ Ext.define('Erp.view.catalog.Tree', {
                     zone: 'end',
                     handler: 'editItemCatalog',
                     bind: {
-                        hidden: '{no_com_catalog_tree_save}'
+                        hidden: '{no_items_catalog_tree_save}'
                     }
                 },
                 plus: {
@@ -75,7 +75,7 @@ Ext.define('Erp.view.catalog.Tree', {
                     hidden: true,
                     zone: 'end',
                     bind: {
-                        hidden: '{no_com_catalog_tree_save}'
+                        hidden: '{no_items_catalog_tree_save}'
                     }
                 }
             }

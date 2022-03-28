@@ -74,7 +74,7 @@ Ext.define('Erp.view.admin.group.Group', {
                             tbar: [
                                 {
                                     xtype: 'container',
-                                    html: Ext.String.format('<b>{0}</b>', i18n.gettext('To see the functions list select the group'))
+                                    html: Ext.String.format('<b>{0}</b>', i18n.gettext('To see the roles list select the group'))
                                 }
                             ]
                         }

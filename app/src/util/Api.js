@@ -1,6 +1,7 @@
 Ext.define('Erp.util.Api', () => {
     const api = '/api/';
     const com = `${api}com/`;
+    const items = `${api}items/`;
     const adm = `${api}adm/`;
     const inv = `${api}inv/`;
     const price = `${api}price/`;
@@ -10,6 +11,11 @@ Ext.define('Erp.util.Api', () => {
     return {
         alternateClassName: ['Api'],
         singleton: true,
+        user: {
+            data: `${api}user/data`,
+            reload: `${api}user/reload`,
+            logout: `/user/logout`,
+        },
         adm: {
             groles_list: `${adm}groles_list`,
             groles_save: `${adm}groles_save`,
@@ -20,7 +26,7 @@ Ext.define('Erp.util.Api', () => {
             group_roles_save: `${adm}group_roles_save`,
             group_roles_list: `${adm}group_roles_list`,
             groles_delete: `${adm}groles_delete`,
-            country_list: `${adm}country_list`,
+            countries: `${adm}countries`,
             country_save: `${adm}country_save`,
             customer_list: `${adm}customer_list`,
             customer_create: `${adm}customer_create`,
@@ -45,12 +51,6 @@ Ext.define('Erp.util.Api', () => {
             customer_install: `${com}customer_install`,
             customer_install_save: `${com}customer_install_save`,
             customer_save: `${com}customer_save`,
-            catalog_tree: `${com}catalog_tree`,
-            catalog_tree_save: `${com}catalog_tree_save`,
-            produce_list: `${com}produce_list`,
-            retail_produce_barcode: `${com}retail_produce_barcode`,
-            produce_card: `${com}produce_card`,
-            produce_save: `${com}produce_save`,
             place_create: `${com}place_create`,
             place_save: `${com}place_save`,
             place_list_all: `${com}place_list_all`,
@@ -60,14 +60,20 @@ Ext.define('Erp.util.Api', () => {
             worker_place_save: `${com}worker_place_save`,
             worker_group_list: `${com}worker_group_list`,
             worker_group_save: `${com}worker_group_save`,
-            retail_produce_list: `${com}retail_produce_list`,
-            purchase_produce_list: `${com}purchase_produce_list`,
             supplier_list: `${com}supplier_list`,
             supplier_save: `${com}supplier_save`,
             login_change_passwd: `${com}login_change_passwd`,
             login_params_save: `${com}login_params_save`,
-            desk_main_stat: `${com}desk_main_stat`,
-            desk_places_stat: `${com}desk_places_stat`,
+        },
+        items: {
+            catalog_tree: `${items}catalog_tree`,
+            catalog_tree_save: `${items}catalog_tree_save`,
+            produce_card: `${items}produce_card`,
+            produce_list: `${items}produce_list`,
+            produce_save: `${items}produce_save`,
+            purchase_produce_list: `${items}purchase_produce_list`,
+            retail_produce_barcode: `${items}retail_produce_barcode`,
+            retail_produce_list: `${items}retail_produce_list`,
         },
         price: {
             cols_list: `${price}cols_list`,
@@ -86,13 +92,6 @@ Ext.define('Erp.util.Api', () => {
             retail_save: `${price}retail_save`,
             retail_by_places: `${price}retail_by_places`,
             retail_places_onoff: `${price}retail_places_onoff`,
-        },
-        urls: {
-            login: `${api}customer/login`,
-            check: `${api}customer/check`,
-            update_check: `${api}customer/update-check`,
-            logout: `${api}customer/logout`,
-            clear_proc: `${api}clear/proc`,
         },
         inv: {
             create_pos_sell: `${inv}create-pos-sell`,
@@ -126,6 +125,8 @@ Ext.define('Erp.util.Api', () => {
         report: {
             main_stat: `${report}main_stat`,
             charts_stat: `${report}charts_stat`,
+            desk_main_stat: `${report}desk_main_stat`,
+            desk_places_stat: `${report}desk_places_stat`,
         },
         b2b: {
             partners_list: `${b2b}partners_list`,

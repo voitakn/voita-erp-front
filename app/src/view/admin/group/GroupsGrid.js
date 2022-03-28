@@ -61,7 +61,7 @@ Ext.define('Erp.view.admin.group.GroupsGrid', {
                             hidden: '{no_adm_group_save}'
                         }
                     },
-                    trash: {
+                    /*trash: {
                         cls: 'red',
                         handler: 'deleteItem',
                         weight: 1,
@@ -69,7 +69,7 @@ Ext.define('Erp.view.admin.group.GroupsGrid', {
                         bind: {
                             hidden: '{no_adm_group_delete}'
                         }
-                    }
+                    }*/
                 }
             }
         }

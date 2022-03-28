@@ -65,7 +65,7 @@ Ext.define('Erp.view.movement.add.AddModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.produce_list
+                    read: Api.items.produce_list
                 },
                 extraParams: {
                     catalog_id: '{filter.catalog_id}',
@@ -83,7 +83,7 @@ Ext.define('Erp.view.movement.add.AddModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.produce_list
+                    read: Api.items.produce_list
                 },
                 extraParams: {
                     search: '{filter.barcode}',

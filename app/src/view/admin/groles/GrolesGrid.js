@@ -65,13 +65,6 @@ Ext.define('Erp.view.admin.groles.GrolesGrid', {
                 bind: {
                     hidden: '{no_adm_groles_save}'
                 }
-            },{
-                xtype: 'button',
-                text: i18n.gettext('Update on server'),
-                margin: '0 0 0 15',
-                ui: 'menu',
-                iconCls: 'x-fa fa-sync green-dark',
-                handler: 'updateRolesSession'
             }]
         },
     ],
@@ -85,7 +78,7 @@ Ext.define('Erp.view.admin.groles.GrolesGrid', {
                 required: true,
             }
         },{
-            text: i18n.gettext('Function name'),
+            text: i18n.gettext('Roles name'),
             dataIndex: 'proc',
             flex: 1,
             editor: {

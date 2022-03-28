@@ -16,7 +16,7 @@ Ext.define('Erp.store.Catalogs', {
     proxy: {
         type: 'erp_api',
         api: {
-            read: Api.com.catalog_tree+'---'
+            read: Api.items.catalog_tree+'---'
         },
         reader: {
             type: 'json',

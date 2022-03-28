@@ -156,25 +156,11 @@ Ext.define('Erp.util.Notice', {
         }
     },
     com: {
-        catalog_tree_save: {
-            error_1: i18n.gettext('Please,specify the name of catalogs section.'),
-            error_2: i18n.gettext('Please,specify the parenting section.'),
-            error_3: i18n.gettext('Something goes wrong in section saving.'),
-            info: i18n.gettext('Catalog section was successfully saved.')
-        },
         login: {
             error_1: i18n.gettext('Your e-mail address or password is not correct or is not registered.'),
             error_2: i18n.gettext('Your e-mail address or password is not correct or is not registered.'),
             error_3: i18n.gettext('Client ID was noy found.'),
             info: i18n.gettext('Welcome to Voita ERP.')
-        },
-        produce_save: {
-            error_1: i18n.gettext('There is no name of product.'),
-            error_2: i18n.gettext('There is no catalog section.'),
-            error_3: i18n.gettext('There is no price.'),
-            error_4: i18n.gettext('An error occurred while saving product.'),
-            error_5: i18n.gettext('There is an error in creating product price.'),
-            info: i18n.gettext('Product was successfully saved.')
         },
         place_save: {
             error_1: i18n.gettext('Please, specify the name of point of retail sale'),
@@ -203,9 +189,6 @@ Ext.define('Erp.util.Notice', {
             error_1: i18n.gettext('Please, select an employee.'),
             info: i18n.gettext('Groups of employee were successfully changed.'),
         },
-        retail_produce_list: {
-            error_1: i18n.gettext('Point of retail sale is not specified'),
-        },
         supplier_save: {
             error_1: i18n.gettext('Please enter the name of the organization.'),
             error_2: i18n.gettext('Please indicate the country of organization.'),
@@ -220,6 +203,25 @@ Ext.define('Erp.util.Notice', {
         login_params_save: {
             info_1: i18n.gettext('Information about user changed successfully.'),
         }
+    },
+    items: {
+        catalog_tree_save: {
+            error_1: i18n.gettext('Please,specify the name of catalogs section.'),
+            error_2: i18n.gettext('Please,specify the parenting section.'),
+            error_3: i18n.gettext('Something goes wrong in section saving.'),
+            info: i18n.gettext('Catalog section was successfully saved.')
+        },
+        produce_save: {
+            error_1: i18n.gettext('There is no name of product.'),
+            error_2: i18n.gettext('There is no catalog section.'),
+            error_3: i18n.gettext('There is no price.'),
+            error_4: i18n.gettext('An error occurred while saving product.'),
+            error_5: i18n.gettext('There is an error in creating product price.'),
+            info: i18n.gettext('Product was successfully saved.')
+        },
+        retail_produce_list: {
+            error_1: i18n.gettext('Point of retail sale is not specified'),
+        },
     },
     common: {
         add_period: {

@@ -15,7 +15,7 @@ Ext.define('Erp.view.admin.country.CountryModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.adm.country_list
+                    read: Api.adm.countries
                 },
             },
         }

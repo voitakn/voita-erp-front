@@ -15,9 +15,9 @@ Ext.define('Erp.model.ProduceCard', {
 	proxy: {
 		type: 'erp_api',
 		api: {
-			read: Api.com.produce_card,
-			create: Api.com.produce_save,
-			update: Api.com.produce_save,
+			read: Api.items.produce_card,
+			create: Api.items.produce_save,
+			update: Api.items.produce_save,
 		}
 	},
 	validators: {

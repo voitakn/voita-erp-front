@@ -35,9 +35,11 @@ Ext.define('Erp.util.User', {
                 }
             })
         }
-
-        const mainIndex = this.placesStore.find('main', true);
-        this.defStoreId = mainIndex > -1 ? this.placesStore.getAt(mainIndex).getId() : this.placesStore.getAt(0).getId();
+        this.defStoreId = null;
+        if(this.placesStore.length > 0) {
+            const mainIndex = this.placesStore.find('main', true);
+            this.defStoreId = mainIndex > -1 ? this.placesStore.getAt(mainIndex).getId() : this.placesStore.getAt(0).getId() || null;
+        }
 
         Ext.Ajax.request({
             url: Api.price.cols_list,
@@ -98,18 +100,19 @@ Ext.define('Erp.util.User', {
         }
         return false;
     },
-    clusterApi(url) {
-        const cluster_id = localStorage.getItem('cluster_id');
-        console.log('clusterApi', cluster_id);
+    clusterApi(url, cluster) {
         if(url.startsWith('/logos/')) {
             return url;
         }
-        if(url.startsWith('/api/customer/login')) {
-            return url;
-        }
         if(url.startsWith('/api/customer/logout')) {
+            document.location.href = '/user/logout';
+            return false;
+        }
+
+        if(url.startsWith('/api/user/data')) {
             return url;
         }
+
         if(url.startsWith('/api/billing/tariff_list')) {
             return url;
         }
@@ -125,12 +128,7 @@ Ext.define('Erp.util.User', {
         if(url.startsWith('/api/billing/subs_pos_method')) {
             return url;
         }
-        if(url.startsWith('/api/customer/check')) {
-            return `/${cluster_id}${url}`;
-        }
-        if(url.startsWith('/api/customer/update-check')) {
-            return `/${cluster_id}${url}`;
-        }
+
         if(User.data && User.data.roles) {
             let urlPar, urlSplit = url;
             if (url.indexOf('?') !== -1) {
@@ -144,9 +142,10 @@ Ext.define('Erp.util.User', {
             } else {
                 urlRole = `${urlArr[2]}.${urlArr[3]}`;
             }
+
             if(User.data.roles[urlRole]) {
-                if(User.data.roles[urlRole].cluster === true) {
-                    return `/${cluster_id}${url}`;
+                if(User.data.roles[urlRole].cl === true) {
+                    return `${Ext.mainCfg.clsApi.protocol}://${cluster}.${Ext.mainCfg.clsApi.domain}${Ext.mainCfg.clsApi.port}${url}`;
                 } else {
                     return url;
                 }
@@ -298,9 +297,8 @@ Ext.define('Erp.util.User', {
     updateUserSession(callback) {
         const me = this;
         Ext.Ajax.request({
-            url: Api.urls.update_check,
-            jsonData: {},
-            method: "POST",
+            url: Api.user.data,
+            method: "GET",
             success(resp, opt) {
                 const result = Ext.JSON.decode(resp.responseText);
                 if(result.success) {
@@ -324,15 +322,14 @@ Ext.define('Erp.util.User', {
     modules: {
         dashboard: 'inv.sell_retail_create',
         home: 'inv.sell_retail_create',
-        admin_country: 'adm.country_list',
+        admin_country: 'adm.countries',
         admin_customer: 'adm.customer_list',
         admin_groles: 'adm.groles_list',
         admin_group: 'adm.group_list',
-        b2b: 'com.catalog_tree',
-        catalog: 'com.catalog_tree',
+        catalog: 'items.catalog_tree',
         sell_retail: 'inv.sell_retail_create',
         sell_bills: 'inv.sell_list_date_user',
-        purchase_list: 'com.purchase_produce_list',
+        purchase_list: 'items.purchase_produce_list',
         places: 'com.place_list_all',
         workers: 'com.worker_list',
         supplier: 'com.supplier_list',
@@ -340,13 +337,13 @@ Ext.define('Erp.util.User', {
         expenses: 'inv.expense_list',
         inventory: 'inv.invent_by_place',
         company: 'com.customer_save',
-        store_order: 'com.catalog_tree',
+        store_order: 'items.catalog_tree',
         retail: 'inv.sell_retail_create',
         sell_pos: 'inv.cashopen_start',
         pos_sell: 'inv.sell_retail_create',
         pos_list: 'inv.cashopen_list',
-        partners: 'com.catalog_tree',
-        b2b_catalog: 'com.catalog_tree',
+        partners: 'com.deprecated',
+        b2b: 'b2b.partners_list',
         movement_add: 'inv.move_list_month',
         movement_list: 'inv.move_list_month',
         movement_card: 'inv.move_list_month',

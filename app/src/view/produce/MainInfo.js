@@ -26,7 +26,7 @@ Ext.define('Erp.view.produce.MainInfo', {
                             disabled: false,
                             handler: 'onEditProd',
                             bind: {
-                                disabled: '{no_com_produce_save}',
+                                disabled: '{no_items_produce_save}',
                             }
                         }
                     ]

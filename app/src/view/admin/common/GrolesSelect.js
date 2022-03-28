@@ -1,7 +1,7 @@
 Ext.define('Erp.view.admin.common.GrolesSelect', {
     extend: 'Erp.base.Dialog',
     xtype: 'grolesselect',
-    title: i18n.gettext('Select function from the list'),
+    title: i18n.gettext('Select role from the list'),
     width: 1000,
     height: 650,
     layout: 'fit',
@@ -76,7 +76,7 @@ Ext.define('Erp.view.admin.common.GrolesSelect', {
             },
             columns: [
                 {
-                    text: i18n.gettext('Function name (ID)'),
+                    text: i18n.gettext('Roles name (ID)'),
                     dataIndex: 'urole',
                     flex: 1
                 },{

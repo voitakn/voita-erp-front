@@ -8,7 +8,7 @@ Ext.define('Erp.store.Produces', {
     proxy: {
         type: 'erp_api',
         api: {
-            read: Api.com.produce_list
+            read: Api.items.produce_list
         }
     }
 });

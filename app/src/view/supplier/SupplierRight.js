@@ -198,7 +198,7 @@ Ext.define('Erp.view.supplier.SupplierRight', {
 									iconCls: 'x-fa fa-plus green-dark',
 									hidden: true,
 									bind: {
-										hidden: '{no_com_purchase_produce_list}'
+										hidden: '{no_items_purchase_produce_list}'
 									},
 									handler: 'addNewPurchase',
 								}

@@ -118,16 +118,5 @@ Ext.define('Erp.view.admin.groles.GrolesCtrl', {
     editorCancel(btn){
         btn.up('roweditor').cancel();
         this.lookup('groles_grid').getStore().rejectChanges();
-    },
-
-    updateRolesSession(btn) {
-        Ext.Ajax.request({
-            url: Api.urls.clear_proc,
-            jsonData: {},
-            method: "POST",
-            callback: function(resp, opt) {
-               //console.(resp);
-            }
-        });
     }
 });

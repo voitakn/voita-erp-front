@@ -19,8 +19,8 @@ Ext.define('Erp.view.dashboard.DashboardCtrl', {
             city: customerConfigs.city,
             address: customerConfigs.address,
             country_en: userData.country.country_en,
-            pos_number: userData.place_ids.length || 0,
-            user_number: userData.worker_ids.length || 0,
+            pos_number: userData.place_ids ? userData.place_ids.length : 0,
+            user_number: userData.worker_ids ? userData.worker_ids.length : 0,
             tax_number: customerConfigs.tax_number || ''
         });
     },

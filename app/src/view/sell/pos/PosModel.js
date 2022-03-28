@@ -70,7 +70,7 @@ Ext.define('Erp.view.sell.pos.PosModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.retail_produce_list
+                    read: Api.items.retail_produce_list
                 },
                 extraParams: {
                     catalog_id: '{filter.catalog_id}',
@@ -89,7 +89,7 @@ Ext.define('Erp.view.sell.pos.PosModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.retail_produce_barcode
+                    read: Api.items.retail_produce_barcode
                 },
                 extraParams: {
                     place_id: '{filter.place_id}',

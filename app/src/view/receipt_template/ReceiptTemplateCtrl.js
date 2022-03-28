@@ -14,8 +14,10 @@ Ext.define('Erp.view.receipt_template.ReceiptTemplateCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const userData = User.data;
-        let receipt_cfg = userData.customer.configs.receipt_cfg || [];
         let customerConfigs = userData.customer.configs || {};
+        let receipt_cfg = userData.customer.configs.receipt_cfg || {
+            type: {}
+        };
         let texts = receipt_cfg.texts || {};
         console.log('receipt_cfg 1', receipt_cfg);
         vm.set({

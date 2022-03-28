@@ -37,7 +37,7 @@ Ext.define('Erp.view.expense.card.CardCtrl', {
                         let expData = result.data[0];
                         expData.user_title = User.workersObj[expData.user_id] || "";
                         expData.user_data = User.workersObj[expData.user_id].params || {};
-                        expData.place_title = User.placesObj[expData.place_id]?.title || "";
+                        expData.place_title = User.placesObj[expData.place_id].title || "";
                         vm.set('show_expense', expData);
                     }
                 }

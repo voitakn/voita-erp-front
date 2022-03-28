@@ -31,7 +31,7 @@ Ext.define('Erp.view.produce.tabs.MarketPlaceCnt', {
                                     disabled: false,
                                     handler: 'onEditHtml',
                                     bind: {
-                                        disabled: '{no_com_produce_save}',
+                                        disabled: '{no_items_produce_save}',
                                     }
                                 }
                             ]

@@ -35,7 +35,7 @@ Ext.define('Erp.view.produce.ProduceCtrl', {
         const me = this;
         const vm = me.getViewModel();
         Ext.Ajax.request({
-            url: Api.com.produce_card,
+            url: Api.items.produce_card,
             jsonData: {"id": cardId},
             method: "POST",
             success: function(resp, opt) {

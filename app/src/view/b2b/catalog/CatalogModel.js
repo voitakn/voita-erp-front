@@ -17,7 +17,7 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.retail_produce_list
+                    read: Api.items.retail_produce_list
                 },
                 // extraParams: {
                 //     catalog_id: '{filter.catalog_id}',

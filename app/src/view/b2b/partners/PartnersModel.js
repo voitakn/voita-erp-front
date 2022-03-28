@@ -66,7 +66,7 @@ Ext.define('Erp.view.b2b.partners.PartnersModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.country_list
+                    read: Api.com.countries
                 },
             },
         },

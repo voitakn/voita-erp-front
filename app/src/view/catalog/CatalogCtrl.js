@@ -200,7 +200,7 @@ Ext.define('Erp.view.catalog.CatalogCtrl', {
                 newRec = vm.get('newProd');
             }
             Ext.Ajax.request({
-                url: Api.com.produce_save,
+                url: Api.items.produce_save,
                 method: "POST",
                 jsonData: newRec,
                 success(resp, opt) {
@@ -211,7 +211,7 @@ Ext.define('Erp.view.catalog.CatalogCtrl', {
                             xtype: 'base_dialog',
                             width: 300,
                             title: i18n.gettext('Successfully'),
-                            html: `<b>${Notice.com.produce_save.info}</b>`,
+                            html: `<b>${Notice.items.produce_save.info}</b>`,
                             buttons: [{
                                 xtype: 'button',
                                 text: i18n.gettext('To list'),

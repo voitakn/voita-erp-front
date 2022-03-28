@@ -45,8 +45,8 @@ Ext.define('Erp.view.supplier.SupplierModel', {
 		no_com_supplier_list(get) {
 			return !User.checkAccess('com.supplier_list');
 		},
-		no_com_purchase_produce_list(get) {
-			return !User.checkAccess('com.purchase_produce_list');
+		no_items_purchase_produce_list(get) {
+			return !User.checkAccess('items.purchase_produce_list');
 		},
 	}
 });

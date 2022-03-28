@@ -26,7 +26,7 @@ Ext.define('Erp.view.catalog.CatalogModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.produce_list
+                    read: Api.items.produce_list
                 },
                 extraParams: {
                     catalog_id: '{filter_catalog_id}',
@@ -44,13 +44,13 @@ Ext.define('Erp.view.catalog.CatalogModel', {
         }
     },
     formulas: {
-        no_com_produce_save(get) {
-            return !(User.checkAccess('com.produce_save'));
+        no_items_produce_save(get) {
+            return !(User.checkAccess('items.produce_save'));
         },
-        no_com_catalog_tree_save: function(get){
-            return !User.checkAccess('com.catalog_tree_save');
+        no_items_catalog_tree_save(get) {
+            return !User.checkAccess('items.catalog_tree_save');
         },
-        theCardCatalog: function(get){
+        theCardCatalog(get) {
             return !!get('theCard.serv') ? 'serv' : 'prod';
         },
         currencySymbol() {

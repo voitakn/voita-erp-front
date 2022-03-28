@@ -24,7 +24,7 @@ Ext.define('Erp.view.catalog.ProdGrid', {
                     handler: 'addNewProduce',
                     hidden: true,
                     bind: {
-                        hidden: '{no_com_produce_save}'
+                        hidden: '{no_items_produce_save}'
                     }
                 },{
                     text: i18n.gettext('Service'),
@@ -32,7 +32,7 @@ Ext.define('Erp.view.catalog.ProdGrid', {
                     handler: 'addNewService',
                     hidden: true,
                     bind: {
-                        hidden: '{no_com_produce_save}'
+                        hidden: '{no_items_produce_save}'
                     }
                 },{
                     xtype: 'searchfield',

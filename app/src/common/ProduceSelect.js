@@ -103,7 +103,7 @@ Ext.define('Erp.common.ProduceSelect', {
                 proxy: {
                     type: 'erp_api',
                     api: {
-                        read: Api.com.produce_list
+                        read: Api.items.produce_list
                     },
                     extraParams: {
                         catalog_id: '{filter.catalog_id}',

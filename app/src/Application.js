@@ -17,7 +17,7 @@ Ext.define('Erp.Application', {
 	mainView: 'Erp.view.main.Main',
 	launch() {
 		Ext.Date.firstDayOfWeek = 1;
-		this.iniApp();
+		this.initApp();
 		this.removeSplash();
 	},
 	removeSplash() {
@@ -25,32 +25,26 @@ Ext.define('Erp.Application', {
 		const elem = document.getElementById('splash');
 		elem.parentNode.removeChild(elem);
 	},
-	iniApp() {
+	initApp() {
 		Ext.Ajax.on('beforerequest', (conn, options, eOpts) => {
+			//console.log('beforerequest', conn);
+			const token = Ext.util.Cookies.get("GP_SSID");
+			const cluster = Ext.util.Cookies.get("VT_ID");
 			// For login from phone
-			if(options.url === '/api/customer/login') {
+			/*if(options.url === '/api/customer/login') {
 				return true;
-			}
+			}*/
 
-			options.url = User.clusterApi(options.url);
-			const authKey = localStorage.getItem('authKey');
-			const authExp = localStorage.getItem('authExp');
-			if(!authKey ||
-				authKey === '' ||
-				(Math.floor((new Date()).getTime() / 1000) > Number(authExp))) {
-				User.cleanAuth();
-
-				if (Ext.platformTags.desktop) {
-					document.location.href = 'auth/login.html';
-				} else {
-					document.location.href = '#login';
-				}
+			options.url = User.clusterApi(options.url, cluster);
+			if(!token ||
+				token === '' ) {
+				document.location.href = Ext.mainCfg.authUrl;
 				return false;
 			}
 			if(!options.headers) {
 				options.headers = {};
 			}
-			options.headers['Authorization'] = `Bearer ${authKey}`;
+			options.headers['Authorization'] = `Bearer ${token}`;
 			if(!options.url) {
 				return false;
 			}

@@ -72,8 +72,8 @@ Ext.define('Erp.view.produce.ProduceModel', {
         no_price_retail_save(get) {
             return !User.checkAccess('price.retail_save');
         },
-        no_com_produce_save(get) {
-            return !User.checkAccess('com.produce_save');
+        no_items_produce_save(get) {
+            return !User.checkAccess('items.produce_save');
         },
         no_price_purchase_save(get) {
             return !User.checkAccess('price.purchase_save');

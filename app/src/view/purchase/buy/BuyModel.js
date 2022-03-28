@@ -54,7 +54,7 @@ Ext.define('Erp.view.purchase.buy.BuyModel', {
             proxy: {
                 type: 'erp_api',
                 api: {
-                    read: Api.com.purchase_produce_list
+                    read: Api.items.purchase_produce_list
                 },
                 extraParams: {
                     catalog_id: '{filter.catalog_id}',
