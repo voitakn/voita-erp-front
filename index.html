@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
     <title>Voita APP - cloud ERP service</title>
-    <link rel="icon" type="image/webp+xml" href="resources/shared/images/voita-logo.webp">
-    <link type="text/css" rel="stylesheet" href="/auth/bootstrap/css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="/auth/src/css/spiner.css" />
-    <link type="text/css" rel="stylesheet" href="/auth/src/css/receipt.css" />
-    <link type="text/css" rel="stylesheet" href="/auth/src/css/no-print.css" />
-    <link type="text/css" rel="stylesheet" media="print" href="/auth/src/css/print.css" />
-    <script src="/auth/src/js/JedParser.js"></script>
-    <script src="/auth/src/js/Jed.js"></script>
+    <link rel="icon" type="image/webp+xml" href="/resources/shared/images/voita-logo.webp">
+    <link type="text/css" rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/resources/css/spiner.css" />
+    <link type="text/css" rel="stylesheet" href="/resources/css/receipt.css" />
+    <link type="text/css" rel="stylesheet" href="/resources/css/no-print.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="/resources/css/print.css" />
+    <script src="/resources/data/config.js"></script>
+    <script src="/resources/js/JedParser.js"></script>
+    <script src="/resources/js/Jed.js"></script>
     <!--<script src="https://js.stripe.com/v3/"></script>-->
     <style>
         html, body {
@@ -31,6 +32,8 @@
     </style>
 
     <script type="text/javascript">
+        document.cookie = "GP_SSID=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbHVzdGVyX2lkIjoidnQxIiwiY3VzdG9tZXJfaWQiOiI5NWExOGY5Yy1hYTk4LTQ0MjQtOTkzMy04N2FlMjhlOTk5ZTQiLCJleHAiOjE2NDk0ODUzMzgsInVzZXJfaWQiOiJiN2MxYjZiMy03OWNiLTRlZmQtYjFjMi02ZmQ3YTFlMTYyY2MifQ.Bb1QL0VEt6e-GgpUprAAYPfwNAi9GlnhoPYYNqUnGHg";
+        document.cookie = "VT_ID=vt1";
         const authCookie = document.cookie.split('; ').find(row => row.startsWith('GP_SSID='));
         const clusterCookie = document.cookie.split('; ').find(row => row.startsWith('VT_ID='));
         let authKey, clusterKey;
@@ -59,71 +62,55 @@
             return locale;
         };
 
-        fetch('/resources/data/config.json')
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                Ext.mainCfg = data;
-                Ext.beforeLoad = (tags) => {
-                    if (!authKey || authKey === '') {
-                        document.location.href = Ext.mainCfg.authUrl;
-                    }
-                    Ext.mainCfg.cluster = clusterKey;
-                    Ext.mainCfg.token = authKey;
-                    const loadMoLng = async (url) => {
-                        const response = await fetch(url);
-                        const respBlob = await response.blob();
-                        const respBuf = await respBlob.arrayBuffer();
-                        var locale_data = jedGettextParser.mo.parse(respBuf);
-                        i18n = new Jed({
-                            "domain" : "messages",
-                            "locale_data" : locale_data
-                        });
-                        Ext.manifest ='bootstrap';
-                    };
-                    const loadDefLng = () => {
-                        i18n = new Jed({
-                            "domain" : "messages",
-                            "locale_data" : {
-                                "messages" : {
-                                    "" : {
-                                        "domain"        : "messages",
-                                        "lang"          : "en",
-                                        "plural-forms"  : "nplurals=2; plural=(n != 1);"
-                                    },
-                                    "test" : ["test_translation_output"]
-                                }
-                            }
-                        });
-                    };
-                    let locale =  Ext.getNavLocale();
-                    if(locale && locale !== 'en') {
-                        if(Ext.erpLng.indexOf(locale) > -1) {
-                            loadMoLng(`resources/lng/${locale}.mo`);
-                            return;
+        Ext.beforeLoad = (tags) => {
+            Ext.mainCfg = CfgData;
+            if (!authKey || authKey === '') {
+                //document.location.href = Ext.mainCfg.authUrl;
+            }
+            Ext.mainCfg.cluster = clusterKey;
+            Ext.mainCfg.token = authKey;
+            const loadMoLng = async (url) => {
+                const response = await fetch(url);
+                const respBlob = await response.blob();
+                const respBuf = await respBlob.arrayBuffer();
+                var locale_data = jedGettextParser.mo.parse(respBuf);
+                i18n = new Jed({
+                    "domain" : "messages",
+                    "locale_data" : locale_data
+                });
+                Ext.manifest ='bootstrap';
+            };
+            const loadDefLng = () => {
+                i18n = new Jed({
+                    "domain" : "messages",
+                    "locale_data" : {
+                        "messages" : {
+                            "" : {
+                                "domain"        : "messages",
+                                "lang"          : "en",
+                                "plural-forms"  : "nplurals=2; plural=(n != 1);"
+                            },
+                            "test" : ["test_translation_output"]
                         }
                     }
-                    loadDefLng();
-                    Ext.manifest ='bootstrap';
-                };
-                let jsbt = document.createElement('script');
-                jsbt.id = 'microloader';
-                jsbt.type = 'text/javascript';
-                jsbt.src = 'bootstrap.js';
-                jsbt.setAttribute('data-app', '20a7a5b6-8a27-4a54-8eaf-aab90e4124a9');
-                document.head.appendChild(jsbt);
-
-            })
-            .catch((err) => {
-                console.log('error: ' + err);
-            });
+                });
+            };
+            let locale =  Ext.getNavLocale();
+            if(locale && locale !== 'en') {
+                if(Ext.erpLng.indexOf(locale) > -1) {
+                    loadMoLng(`resources/lng/${locale}.mo`);
+                    return;
+                }
+            }
+            loadDefLng();
+            Ext.manifest ='bootstrap';
+        };
 
         //var stripe = Stripe('pk_test_51JRuvxCvPhmwoDSLTA9vN6gZIqjQ6HmazKfFKbQFrTsrj09zMheICPgtSftq669hxnmSKMxrZkV6L0MoJDmiCfgH001INV5oFi');
     </script>
 
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <!--<script id="microloader" data-app="20a7a5b6-8a27-4a54-8eaf-aab90e4124a9" type="text/javascript" src="bootstrap.js"></script>-->
+    <script id="microloader" data-app="20a7a5b6-8a27-4a54-8eaf-aab90e4124a9" type="text/javascript" src="bootstrap.js"></script>
 </head>
 <body class="launching h-100">
 <div id="splash" class="d-flex h-100">
@@ -148,6 +135,6 @@
 
 <div id="erp-container-print"></div>
 
-<script src="/auth/bootstrap/js/bootstrap.min.js"></script>
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

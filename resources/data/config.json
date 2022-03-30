@@ -1,9 +1,0 @@
-{
-  "authUrl": "http://auth.local:8989/auth/signin",
-  "logoutUrl": "/user/logout",
-  "clsApi": {
-    "domain": "client.prdx",
-    "protocol": "http",
-    "port": ":8986"
-  }
-}

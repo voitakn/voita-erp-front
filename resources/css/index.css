@@ -1,0 +1,146 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/auth/fonts/OpenSans-Regular.woff2') format('woff2'), url('/auth/fonts/OpenSans-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/auth/fonts/OpenSans-SemiBold.woff2') format('woff2'), url('/auth/fonts/OpenSans-SemiBold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/auth/fonts/OpenSans-Bold.woff2') format('woff2'), url('/auth/fonts/OpenSans-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-style: normal;
+  src: url('/auth/fonts/OpenSans-ExtraBold.woff2') format('woff2'), url('/auth/fonts/OpenSans-ExtraBold.woff') format('woff');
+  font-display: swap;
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-Regular.ttf') format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  font-style: italic;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-Italic.ttf') format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-Bold.ttf') format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  font-style: italic;
+  src: url('/resources/fonts/Noto_Sans/NotoSans-BoldItalic.ttf') format('ttf');
+  font-display: swap;
+}
+
+
+html, body {
+  height: 100%;
+}
+body {
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+  background-color: #17A6BB;
+  --bs-font-sans-serif: "Noto Sans", "Open Sans", Arial, sans-serif;
+  font-family: "Noto Sans", "Open Sans", Arial, sans-serif;
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  text-underline: none;
+  color: #005E95;
+}
+
+p {
+  text-align: justify !important;
+}
+
+.erp-blue-text {
+  color: #005E95;
+}
+.erp-blue-bg {
+  color: #005E95;
+}
+
+.erp-green-text {
+  color: #006B34;
+}
+
+.logo {
+  width: 150px;
+  margin: 3px 0 2px;
+}
+
+.erp-font-16 {
+  font-size: 16px;
+}
+.erp-text-blue {
+  color: #005E95 !important;
+}
+.erp-text-red {
+  color: #982500 !important;
+}
+.erp-text-green {
+  color: #006B34 !important;
+}
+
+.erp-green-check {
+  color: #0A7C00;
+  font-size: 20px;
+}
+.erp-center-bg {
+  background-color: #F7FCFF;
+}
+
+
+.erp-point > span {
+  line-height: 34px;
+  padding-bottom: 6px;
+  color: #666666;
+}
+.line-gray {
+  border-bottom: #9DAFB4 4px dotted;
+}
+
+.line-green {
+  border-bottom: #0A7C00 4px dotted;
+}
+
+.line-blue {
+  border-bottom: #1D67D7 4px dotted;
+}
+
+.line-orange {
+  border-bottom: #BC4901 4px dotted;
+}

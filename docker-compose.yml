@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+  voita-nginx:
+    image: nginx:alpine
+    container_name: voita-nginx
+    restart: unless-stopped
+    command: [ "nginx", "-g", "daemon off;" ]
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+      - "8080:80"
+      - "8004:8004"
+  voita-sencha:
+    image: docker.voita.eu/voita-sencha:latest
+    container_name: voita-sencha
+    restart: unless-stopped
+    volumes:
+      - ./auth:/app/auth
+      - ./packages:/app/packages
+      - ./app:/app/app
+      - ./resources:/app/resources
+      - ./app.js:/app/app.js
+      - ./app.json:/app/app.json
+      - ./index.html:/app/index.html
+      - ./lib:/app/lib
+      - ./build.xml:/app/build.xml
+      - ./workspace.json:/app/workspace.json
+    ports:
+      - "1841:1841"
