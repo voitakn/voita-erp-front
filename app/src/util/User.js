@@ -13,21 +13,21 @@ Ext.define('Erp.util.User', {
             model: 'Erp.model.Iva',
             data: data.country.params.iva
         });
-        this.placesStore = Ext.create('Erp.data.Store', {
-            model: 'Erp.model.PlaceMain',
-            data: data.places
-        });
+        // this.placesStore = Ext.create('Erp.data.Store', {
+        //     model: 'Erp.model.PlaceMain',
+        //     data: data.places
+        // });
         this.workersStore = Ext.create('Erp.data.Store', {
             model: 'Erp.model.WorkerMain',
             data: data.workers
         });
-        if(data.places && data.places.length > 0) {
-            Ext.each(data.places, recPl => {
-                if(!this.placesObj[recPl.id]) {
-                    this.placesObj[recPl.id] = recPl;
-                }
-            })
-        }
+        // if(data.places && data.places.length > 0) {
+        //     Ext.each(data.places, recPl => {
+        //         if(!this.placesObj[recPl.id]) {
+        //             this.placesObj[recPl.id] = recPl;
+        //         }
+        //     })
+        // }
         if (data.workers && data.workers.length > 0) {
             Ext.each(data.workers, recUs => {
                 if (!this.workersObj[recUs.id]) {
@@ -35,11 +35,11 @@ Ext.define('Erp.util.User', {
                 }
             })
         }
-        this.defStoreId = null;
-        if(this.placesStore.length > 0) {
-            const mainIndex = this.placesStore.find('main', true);
-            this.defStoreId = mainIndex > -1 ? this.placesStore.getAt(mainIndex).getId() : this.placesStore.getAt(0).getId() || null;
-        }
+        // this.defStoreId = null;
+        // if(this.placesStore.length > 0) {
+        //     const mainIndex = this.placesStore.find('main', true);
+        //     this.defStoreId = mainIndex > -1 ? this.placesStore.getAt(mainIndex).getId() : this.placesStore.getAt(0).getId() || null;
+        // }
 
         Ext.Ajax.request({
             url: Api.price.cols_list,
@@ -126,6 +126,9 @@ Ext.define('Erp.util.User', {
             return url;
         }
         if(url.startsWith('/api/billing/subs_pos_method')) {
+            return url;
+        }
+        if(url.startsWith('/api/user/reload')) {
             return url;
         }
 
@@ -297,13 +300,13 @@ Ext.define('Erp.util.User', {
     updateUserSession(callback) {
         const me = this;
         Ext.Ajax.request({
-            url: Api.user.data,
+            url: Api.user.reload,
             method: "GET",
             success(resp, opt) {
                 const result = Ext.JSON.decode(resp.responseText);
                 if(result.success) {
                     if(result.data && result.data["user_id"]) {
-                       //console.('updateUserSession.data', result.data);
+                       // console.log('updateUserSession.data', result.data);
                         me.initData(result.data);
                         if(callback  && typeof callback === 'function') {
                             callback();

@@ -4,7 +4,7 @@ Ext.define('Erp.view.sell.bills.Grid', {
     reference: 'bills_grid',
     emptyText: i18n.gettext('Data was not found!'),
     bind: {
-        store: '{sell_invoices}'
+        store: '{sell_invoices}',
     },
     items: [
         {
@@ -25,21 +25,29 @@ Ext.define('Erp.view.sell.bills.Grid', {
                     bind: {
                         value: '{date_today}'
                     }
-                },{
-                    xtype: 'combobox',
+                },
+                // {
+                //     xtype: 'combobox',
+                //     reference: 'bills_place_combobox',
+                //     autoSelect: true,
+                //     forceSelection: true,
+                //     required: true,
+                //     editable: false,
+                //     queryMode: 'local',
+                //     width: 200,
+                //     label: i18n.gettext('Point of sale'),
+                //     valueField: 'id',
+                //     displayField: 'title',
+                //     store: {},
+                //     bind: {
+                //         value: '{filter_place_id}'
+                //     }
+                // },
+                {
+                    xtype: 'placebox',
                     reference: 'bills_place_combobox',
-                    autoSelect: true,
-                    forceSelection: true,
-                    required: true,
-                    editable: false,
-                    queryMode: 'local',
-                    width: 200,
-                    label: i18n.gettext('Point of sale'),
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{filter_place_id}'
+                    listeners: {
+                        onLoaded: 'onLoadPlaceStore'
                     }
                 }
             ]

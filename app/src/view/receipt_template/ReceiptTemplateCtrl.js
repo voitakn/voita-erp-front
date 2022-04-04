@@ -19,7 +19,7 @@ Ext.define('Erp.view.receipt_template.ReceiptTemplateCtrl', {
             type: {}
         };
         let texts = receipt_cfg.texts || {};
-        console.log('receipt_cfg 1', receipt_cfg);
+        // console.log('receipt_cfg 1', receipt_cfg);
         vm.set({
             'widthCnt': receipt_cfg.width || 56,
             'invoice_type_edit': receipt_cfg.invoice_type_edit ? receipt_cfg.invoice_type_edit : false,

@@ -33,7 +33,8 @@ Ext.define('Erp.view.subscription.SubscriptionModel', {
     },
     formulas: {
         tariff_count_pos(get) {
-            return User.data.place_ids.length || 1;
+            return User.data.place_ids ? User.data.place_ids.length : 1;
+            // return User.data.place_ids.length || 1;
         },
         tariff_total_price: {
             bind: {

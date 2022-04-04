@@ -21,10 +21,13 @@ Ext.define('Erp.view.place.PlaceCtrl', {
     },
     addNewPlace(btn) {
        //console.('addNewPlace');
+        const me = this;
+        const vm = this.getViewModel();
         const tooltip = this.lookup('point_create');
+        const form = tooltip.down('formpanel');
+        vm.set('newPlace', {});
         tooltip.setTarget(btn);
         tooltip.show();
-        const form = tooltip.down('formpanel');
         form.validate();
     },
     onSaveNew(btn) {

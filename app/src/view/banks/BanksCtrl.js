@@ -6,6 +6,7 @@ Ext.define('Erp.view.banks.BanksCtrl', {
         const vm = me.getViewModel();
         const banks_store = vm.getStore('banks_store');
         let banks = User.data.customer.configs.banks || [];
+        console.log('banks', banks);
         banks_store.loadData(banks);
         me.setActiveMenu('banks');
     },
@@ -59,7 +60,7 @@ Ext.define('Erp.view.banks.BanksCtrl', {
                         let result = Ext.JSON.decode(resp.responseText);
                         Notice.showToast(result);
                         User.updateUserSession(() => {
-                            me.onViewShow()
+                            me.onViewShow();
                         });
                         new_bank.hide();
                     },
