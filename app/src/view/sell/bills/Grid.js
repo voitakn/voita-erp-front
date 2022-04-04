@@ -46,8 +46,15 @@ Ext.define('Erp.view.sell.bills.Grid', {
                 {
                     xtype: 'placebox',
                     reference: 'bills_place_combobox',
-                    listeners: {
-                        onLoaded: 'onLoadPlaceStore'
+                    viewModel: {
+                        data: {
+                            parent_field: 'filter_place_id',
+                            autoSelect: true,
+                            required: true
+                        },
+                        links: {
+                            place_id: '{filter_place_id}'
+                        }
                     }
                 }
             ]

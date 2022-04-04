@@ -6,13 +6,13 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
         onFilterPlace: '{filter_place_id}'
     },
     is_rendered: false,
-    onLoadPlaceStore(comp ,store, place_id) {
+    onLoadPlaceStore(yes, place_id) {
         console.log('onLoadPlaceStore');
-        console.log('onLoadPlaceStore id-0', store.getAt(0).getId());
-        console.log('onLoadPlaceStore place_id', place_id);
+        //console.log('onLoadPlaceStore id-0', store.getAt(0).getId());
+        //console.log('onLoadPlaceStore place_id', place_id);
         const me = this;
         const vm = me.getViewModel();
-        vm.set('filter_place_id', place_id);
+        //vm.set('filter_place_id', place_id);
         if (!me.is_rendered) {
             me.is_rendered = true;
         } else {
@@ -77,11 +77,11 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
             me.loadIvoicesData();
         }
     },
-    onFilterPlace(filter) {
-        console.log('onFilterPlace', filter);
+    onFilterPlace(place_id) {
+        console.log('onFilterPlace', 'place_id', place_id);
         const me = this;
         const vm = me.getViewModel();
-        if(filter) {
+        if(place_id) {
             me.loadIvoicesData();
         }
     },
