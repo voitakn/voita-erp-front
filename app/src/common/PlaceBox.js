@@ -25,12 +25,13 @@ Ext.define('Erp.common.PlaceBox', {
             forceSelection: true,
             editable: false,
             width: 240,
+            queryMode: 'local',
             label: i18n.gettext('Point of sale'),
             valueField: 'id',
             displayField: 'title',
             bind: {
                 store: '{places_store}',
-                value: '{local_place_id}',
+                value: '{place_id}',
                 required: '{required}',
                 clearable: '{clearable}',
             }
@@ -39,15 +40,17 @@ Ext.define('Erp.common.PlaceBox', {
     controller: {
         alias: 'controller.place_box',
         bindings: {
-            onFilterPlace: '{local_place_id}'
+            onSelectPlace: '{place_id}'
         },
-        onFilterPlace(local_place_id) {
+        onSelectPlace(place_id) {
             const me = this;
             const vm = me.getViewModel();
             const parent = vm.getParent();
-            parent.set(vm.get('parent_field'), local_place_id);
+            if(!!vm.get('parent_field')) {
+                parent.set(vm.get('parent_field'), place_id);
+            }
         },
-        onStoreLoad(store, data) {
+        onStoreLoad(store) {
             const me = this;
             const vm = me.getViewModel();
             if(!!vm.get('autoSelect')) {
