@@ -25,6 +25,8 @@ Ext.define('Erp.view.sell.card.CardCtrl', {
 		//console.log('loadInvoice', onSellCardId);
 		const me = this;
 		const vm = this.getViewModel();
+		const workers_store = Ext.data.StoreManager.lookup('workersStore');
+		const places_store = Ext.data.StoreManager.lookup('placesStore');
 		Ext.Ajax.request({
 			url: Api.inv.sell_card_by_id,
 			jsonData: {"id": onSellCardId},
@@ -35,10 +37,18 @@ Ext.define('Erp.view.sell.card.CardCtrl', {
 				if (result.success) {
 					if (result.data && result.data.length > 0) {
 						const invData = result.data[0];
-						invData.user_login = User.workersObj[invData.user_id].login || "";
-						invData.user_data = User.workersObj[invData.user_id].params || {};
-						invData.place_title = User.placesObj[invData.place_id].title || "";
+						const worker = workers_store.getById(invData.user_id) || {
+							params: User.data.params,
+							login: User.data.login
+						};
+						const place = places_store.getById(invData.place_id);
+						// console.log('worker', worker);
+						// console.log('place', place);
+						invData.user_login = worker.login || "";
+						invData.user_data = worker.params || {};
+						invData.place_title = place.data.title || "";
 						vm.set('show_invoice', invData);
+						// console.log('show_invoice', invData);
 					}
 				}
 			},

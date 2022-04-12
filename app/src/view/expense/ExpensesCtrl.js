@@ -18,10 +18,10 @@ Ext.define('Erp.view.expense.ExpensesCtrl', {
     onViewRender() {
         const me = this;
         const vm = me.getViewModel();
-        const placeField = this.lookup('expenses_place_combobox');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-        }
+        // const placeField = this.lookup('expenses_place_combobox');
+        // if (placeField) {
+        //     placeField.setStore(User.placesStore);
+        // }
     },
     onViewShow() {
         const me = this;
@@ -52,10 +52,10 @@ Ext.define('Erp.view.expense.ExpensesCtrl', {
         const tooltip = me.lookup('expense_new');
         const field = tooltip.down('textfield');
         const form = tooltip.down('formpanel');
-        const placeField = tooltip.down('combobox');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-        }
+        // const placeField = tooltip.down('combobox');
+        // if (placeField) {
+        //     placeField.setStore(User.placesStore);
+        // }
         tooltip.setTarget(btn);
         tooltip.show();
         if (field) {
@@ -98,11 +98,11 @@ Ext.define('Erp.view.expense.ExpensesCtrl', {
         const editExpense = me.lookup('expense_edit');
         const record = row.record;
         editExpense.setTarget(row.event.target);
-        const placeField = editExpense.down('combobox');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-            vm.set('theCardEdit.place_id', record.data.place_id);
-        }
+        // const placeField = editExpense.down('combobox');
+        // if (placeField) {
+        //     placeField.setStore(User.placesStore);
+        //     vm.set('theCardEdit.place_id', record.data.place_id);
+        // }
 
         editExpense.show();
         vm.set('theCardEdit', record);

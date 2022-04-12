@@ -2,12 +2,11 @@ Ext.define('Erp.view.sell.Ctrl', {
     extend: 'Erp.view.base.BaseCtrl',
     printReceipt(invoiceData) {
         const me = this;
-        const country = User.data.country.country_en;
         invoiceData.company_name = User.data.customer.title;
-        const invPlace = User.placesObj[invoiceData.place_id];
-        const invCity = invPlace.params.city || User.data.customer.configs.city || '';
-        const invPost = invPlace.params.postcode || User.data.customer.configs.postcode || '';
-        const invPhone = invPlace.params.phone || User.data.customer.configs.phone || '';
+        const invPlace = Ext.data.StoreManager.lookup('placesStore').getById(invoiceData.place_id);
+        const invCity = invPlace.data.params.city || User.data.customer.configs.city || '';
+        const invPost = invPlace.data.params.postcode || User.data.customer.configs.postcode || '';
+        const invPhone = invPlace.data.params.phone || User.data.customer.configs.phone || '';
         const custConf = User.data.customer.configs;
         let custLogo = false;
         if(custConf.logo_id && custConf.logo_id.length === 36) {
@@ -15,7 +14,7 @@ Ext.define('Erp.view.sell.Ctrl', {
         }
         invoiceData.company_email = User.data.customer.email;
         invoiceData.company_phone = invPhone;
-        invoiceData.company_address_1 = invPlace.params.address || User.data.customer.configs.address;
+        invoiceData.company_address_1 = invPlace.data.params.address || User.data.customer.configs.address;
         invoiceData.company_address_2 = `${invPost} ${invCity}`;
         invoiceData.tax_number = custConf.tax_number || '---------';
         invoiceData.capital = custConf.capital || '1.00';

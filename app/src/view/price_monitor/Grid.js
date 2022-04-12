@@ -39,18 +39,18 @@ Ext.define('Erp.view.price_monitor.Grid', {
                     },
                 },
                 {
-                    xtype: 'combobox',
-                    reference: 'place_combobox',
-                    editable: false,
-                    required: true,
-                    queryMode: 'local',
-                    width: 200,
-                    label: i18n.gettext('Point of sale'),
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{filter.place_id}'
+                    xtype: 'placebox',
+                    width: 250,
+                    reference: 'pm_place_combobox',
+                    viewModel: {
+                        data: {
+                            parent_field: 'filter.place_id',
+                            autoSelect: true,
+                            required: true
+                        },
+                        links: {
+                            place_id: '{filter.place_id}'
+                        }
                     }
                 },
                 {

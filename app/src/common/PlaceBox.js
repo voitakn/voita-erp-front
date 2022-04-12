@@ -8,7 +8,9 @@ Ext.define('Erp.common.PlaceBox', {
         data: {
             autoSelect: false,
             required: false,
-            clearable: false
+            clearable: false,
+            placeholder: false,
+            label: i18n.gettext('Point of sale')
         },
         stores: {
             places_store: {
@@ -24,9 +26,8 @@ Ext.define('Erp.common.PlaceBox', {
             xtype: 'combobox',
             forceSelection: true,
             editable: false,
-            width: 240,
+            flex: 1,
             queryMode: 'local',
-            label: i18n.gettext('Point of sale'),
             valueField: 'id',
             displayField: 'title',
             bind: {
@@ -34,6 +35,8 @@ Ext.define('Erp.common.PlaceBox', {
                 value: '{place_id}',
                 required: '{required}',
                 clearable: '{clearable}',
+                placeholder: '{placeholder}',
+                label: '{label}',
             }
         },
     ],

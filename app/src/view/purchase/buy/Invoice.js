@@ -66,21 +66,22 @@ Ext.define('Erp.view.purchase.buy.Invoice', {
                             flex: 1.2,
                             items: [
                                 {
-                                    xtype: 'combobox',
+                                    xtype: 'placebox',
+                                    width: 250,
                                     reference: 'purchase_buy_place_combobox',
-                                    autoSelect: true,
-                                    forceSelection: true,
-                                    editable: false,
-                                    clearable: false,
-                                    queryMode: 'local',
-                                    label: i18n.gettext('Point of sale'),
-                                    valueField: 'id',
-                                    displayField: 'title',
-                                    store: {},
-                                    bind: {
-                                        value: '{buy_data.place_id}'
+                                    viewModel: {
+                                        data: {
+                                            parent_field: 'buy_data.place_id',
+                                            autoSelect: true,
+                                            required: true,
+                                            editable: false,
+                                        },
+                                        links: {
+                                            place_id: '{buy_data.place_id}'
+                                        }
                                     }
-                                }, {
+                                },
+                                {
                                     xtype: 'displayfield',
                                     label: i18n.gettext('Employee'),
                                     bind: {

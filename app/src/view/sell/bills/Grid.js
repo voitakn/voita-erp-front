@@ -26,25 +26,9 @@ Ext.define('Erp.view.sell.bills.Grid', {
                         value: '{date_today}'
                     }
                 },
-                // {
-                //     xtype: 'combobox',
-                //     reference: 'bills_place_combobox',
-                //     autoSelect: true,
-                //     forceSelection: true,
-                //     required: true,
-                //     editable: false,
-                //     queryMode: 'local',
-                //     width: 200,
-                //     label: i18n.gettext('Point of sale'),
-                //     valueField: 'id',
-                //     displayField: 'title',
-                //     store: {},
-                //     bind: {
-                //         value: '{filter_place_id}'
-                //     }
-                // },
                 {
                     xtype: 'placebox',
+                    width: 250,
                     reference: 'bills_place_combobox',
                     viewModel: {
                         data: {

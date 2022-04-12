@@ -30,22 +30,20 @@ Ext.define('Erp.view.movement.add.edit.SelectPlaceTo', {
                             },
                             items: [
                                 {
-                                    xtype: 'combobox',
+                                    xtype: 'placebox',
                                     reference: 'move_products_place_to_combobox',
-                                    // placeholder: 'Not selected',
-                                    selectOnTab: true,
-                                    autoSelect: true,
-                                    forceSelection: true,
-                                    clearable: true,
-                                    // editable: false,
-                                    label: i18n.gettext('Point of sale'),
-                                    queryMode: 'local',
-                                    valueField: 'id',
-                                    displayField: 'title',
-                                    store: {},
-                                    bind: {
-                                        value: '{config.to_place_id}'
-                                    },
+                                    viewModel: {
+                                        data: {
+                                            parent_field: 'config.to_place_id',
+                                            required: true,
+                                            selectOnTab: true,
+                                            clearable: true,
+                                            placeholder: i18n.gettext('Select point of sale'),
+                                        },
+                                        links: {
+                                            place_id: '{config.to_place_id}'
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'textfield',

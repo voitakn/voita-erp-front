@@ -26,6 +26,9 @@ Ext.define('Erp.view.sell.pos_list.PosListModel', {
                     is_active: '{filter.is_active}'
                 }
             }
+        },
+        workers_store: {
+            type: 'workersStore',
         }
     }
 });

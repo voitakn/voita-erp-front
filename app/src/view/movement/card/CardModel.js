@@ -19,6 +19,12 @@ Ext.define('Erp.view.movement.card.CardModel', {
                     period_year: '{year}'
                 }
             }
+        },
+        workers_store: {
+            type: 'workersStore',
+        },
+        places_store: {
+            type: 'workersStore',
         }
     },
     formulas: {

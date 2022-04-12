@@ -35,7 +35,11 @@ Ext.define('Erp.view.sell.bills.BillsModel', {
 					period: '{show_invoice.period}'
 				}
 			}
+		},
+		workers_store: {
+			type: 'workersStore',
 		}
+
 	},
 	formulas: {
         extra_sell_date(get) {

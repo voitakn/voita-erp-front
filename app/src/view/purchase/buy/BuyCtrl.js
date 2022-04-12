@@ -27,10 +27,10 @@ Ext.define('Erp.view.purchase.buy.BuyCtrl', {
     },
     onViewRender() {
         const vm = this.getViewModel();
-        const placeField = this.lookup('purchase_buy_place_combobox');
-        if(placeField) {
-            placeField.setStore(User.placesStore);
-        }
+        // const placeField = this.lookup('purchase_buy_place_combobox');
+        // if(placeField) {
+        //     placeField.setStore(User.placesStore);
+        // }
         //console.log('BuyCtrl.onViewRender');
         // const supplierId = vm.get('supplierId');
         // this.onSupplierId(supplierId);
@@ -54,7 +54,7 @@ Ext.define('Erp.view.purchase.buy.BuyCtrl', {
             }
         }
         vm.set('buy_data.place_id', listPlaceId);
-        
+
     },
     initViewModel() {
         const vm = this.getViewModel();

@@ -5,8 +5,11 @@ Ext.define('Erp.model.PosList', {
         {
             name: 'place_title', type: 'string', calculate(data) {
                 if (data.place_id) {
-                    const record = User.placesStore.getById(data.place_id);
-                    return record.get('title');
+                    const store = Ext.data.StoreManager.lookup('placesStore');
+                    if(store) {
+                        const record = store.getById(data.place_id);
+                        return record.get('title');
+                    }
                 }
             }
         },
@@ -15,11 +18,18 @@ Ext.define('Erp.model.PosList', {
             name: 'user_title', type: 'string',
             calculate(data) {
                 if (data.user_id) {
-                    const record = User.workersStore.getById(data.user_id).data.params;
-                    return Ext.String.format('{0} {1}',
-                        record.name,
-                        record.surname
-                    );
+                    const store = Ext.data.StoreManager.lookup('workersStore');
+                    if(store && store.getById(data.user_id)) {
+                        const record = store.getById(data.user_id).data.params;
+                        if(record) {
+                            return Ext.String.format('{0} {1}',
+                                record.name,
+                                record.surname
+                            );
+                        }
+                    } else {
+                        return `${User.data.params.name} ${User.data.params.surname}`;
+                    }
                 }
             }
         },

@@ -13,17 +13,18 @@ Ext.define('Erp.view.expense.edit.EditExpense', {
             width: 300,
             items: [
                 {
-                    xtype: 'combobox',
-                    reference: 'place_combobox',
-                    clearable: true,
-                    label: i18n.gettext('Point of sale'),
-                    queryMode: 'local',
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{theCardEdit.place_id}'
-                    },
+                    xtype: 'placebox',
+                    reference: 'expenses_edit_place_combobox',
+                    viewModel: {
+                        data: {
+                            parent_field: 'theCardEdit.place_id',
+                            forceSelection: true,
+                            clearable: true,
+                        },
+                        links: {
+                            place_id: '{theCardEdit.place_id}'
+                        }
+                    }
                 },
                 {
                     xtype: 'displayfield',

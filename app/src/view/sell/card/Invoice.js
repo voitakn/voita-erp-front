@@ -26,7 +26,7 @@ Ext.define('Erp.view.sell.card.Invoice', {
 					handler: 'onReturnInvoice',
 					hidden: true,
 					bind: {
-						hidden: '{show_invoice.revert}'
+						hidden: '{!show_invoice.paid}'
 					}
 				},{
 					xtype: 'label',

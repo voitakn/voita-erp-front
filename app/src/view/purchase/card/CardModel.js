@@ -21,8 +21,15 @@ Ext.define('Erp.view.purchase.card.CardModel', {
                     invoice_id: '{show_invoice.id}',
                     period: '{show_invoice.period}'
                 }
-            }
+            },
+        },
+        workers_store: {
+            type: 'workersStore',
+        },
+        places_store: {
+            type: 'placesStore',
         }
+
     },
     formulas: {
         invoice_pay: {

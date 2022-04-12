@@ -18,6 +18,8 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
         },
         onChangeRetailType: '{retail_type}',
         catalogSell: '{catalog_selection}',
+        updateConfigFrom: '{config.from_place_id}',
+        updateConfigTo: '{config.to_place_id}',
     },
     all_rendered: false,
     sell_stores: [],
@@ -45,13 +47,15 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
     onViewClick() {
         this.focusBarcode();
     },
-    reloadProduceGrid(filter) {
+    reloadProduceGrid() {
+        const me = this;
         const vm = this.getViewModel();
         const store = vm.getStore('select_produce_store');
         if(store) {
             store.currentPage = 1;
             store.load();
         }
+        me.updatePosPlace();
     },
     doSearch(search) {
         if (!search || search.length === 0 || search.length > 2) {
@@ -300,8 +304,6 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
         invoiceData.boxes = boxes;
         invoiceData.logo = User.data.customer.configs.logo;
         vm.set('invoiceData', invoiceData);
-        // me.lookup('print_dialog').show();
-
         if (from_place.from_place_id && to_place.to_place_id && from_place.from_place_id !== to_place.to_place_id) {
             Ext.Ajax.request({
                 url: Api.inv.move_create,
@@ -363,11 +365,6 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const move_products_from = me.lookup('move_products_from');
-        const placeField = me.lookup('move_products_place_from_combobox');
-        if (placeField && vm.get('edit.pos_market_place_from') === null) {
-            placeField.setStore(User.placesStore);
-            placeField.setValueNotFoundText('Not selected');
-        }
         vm.set('edit.pos_market_place_from_address', vm.get('pos_market_place_from_address'));
         vm.set('edit.pos_market_place_from_phone', vm.get('pos_market_place_from_phone'));
         vm.set('edit.pos_market_place_from_postcode', vm.get('pos_market_place_from_postcode'));
@@ -375,22 +372,6 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
         vm.set('edit.comment', vm.get('comment'));
         vm.set('edit.boxes', vm.get('boxes'));
         move_products_from.show();
-    },
-    onCancelPlaceFrom() {
-        const me = this;
-        const vm = this.getViewModel();
-        const move_products_from = me.lookup('move_products_from');
-        vm.set('config.from_place_id', null);
-        move_products_from.hide();
-
-    },
-    onCancelPlaceTo() {
-        const me = this;
-        const vm = this.getViewModel();
-        const move_products_to = me.lookup('move_products_to');
-        vm.set('config.to_place_id', null);
-        move_products_to.hide();
-
     },
     onSelectPlaceFrom(btn) {
         const me = this;
@@ -404,21 +385,48 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
         vm.set('comment', vm.get('edit.comment'));
         vm.set('boxes', vm.get('edit.boxes'));
         vm.set('filter.from_place_id', from_place_id);
-        vm.set('edit_from', false);
         me.updatePosPlace();
         // me.clearBill();
         move_products_from.hide();
         me.focusBarcode();
     },
+    onCancelPlaceFrom() {
+        const me = this;
+        const vm = this.getViewModel();
+        const move_products_from = me.lookup('move_products_from');
+        vm.set('config.from_place_id', null);
+        move_products_from.hide();
+    },
+    updateConfigFrom(from_place_id) {
+        const me = this;
+        const vm = this.getViewModel();
+        const places_store = Ext.StoreManager.lookup('placesStore');
+        const record_from = places_store.getById(from_place_id);
+        if (record_from) {
+            let record_from_params = record_from.data.params;
+            vm.set('edit.pos_market_place_from_address', record_from_params.address || '');
+            vm.set('edit.pos_market_place_from_phone', record_from_params.phone || '');
+            vm.set('edit.pos_market_place_from_postcode', record_from_params.postcode || '');
+            vm.set('edit.pos_market_place_from_city', record_from_params.city || '');
+        } else {
+            vm.set('edit.pos_market_place_from_address', '');
+            vm.set('edit.pos_market_place_from_phone', '');
+            vm.set('edit.pos_market_place_from_postcode', '');
+            vm.set('edit.pos_market_place_from_city', '');
+        }
+    },
+    onCancelPlaceTo() {
+        const me = this;
+        const vm = this.getViewModel();
+        const move_products_to = me.lookup('move_products_to');
+        vm.set('config.to_place_id', null);
+        move_products_to.hide();
+
+    },
     onSelectStoreTo() {
         const me = this;
         const vm = me.getViewModel();
         const move_products_to = me.lookup('move_products_to');
-        const placeField = me.lookup('move_products_place_to_combobox');
-        if (placeField && vm.get('edit.pos_market_place_to') === null) {
-            placeField.setStore(User.placesStore);
-            placeField.setValueNotFoundText('Not selected');
-        }
         vm.set('edit.pos_market_place_to_address', vm.get('pos_market_place_to_address'));
         vm.set('edit.pos_market_place_to_phone', vm.get('pos_market_place_to_phone'));
         vm.set('edit.pos_market_place_to_postcode', vm.get('pos_market_place_to_postcode'));
@@ -435,56 +443,50 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
         vm.set('pos_market_place_to_postcode', vm.get('edit.pos_market_place_to_postcode'));
         vm.set('pos_market_place_to_city', vm.get('edit.pos_market_place_to_city'));
         vm.set('filter.to_place_id', to_place_id);
-        vm.set('edit_to', false);
         me.updatePosPlace();
         move_products_to.hide();
         me.focusBarcode();
     },
-    updatePosPlace() {
+    updateConfigTo(to_place_id) {
+        const me = this;
         const vm = this.getViewModel();
-        const from_place_id = vm.get('filter.from_place_id');
-        const to_place_id = vm.get('filter.to_place_id');
-        const record_from = User.placesStore.getById(from_place_id);
-        const record_to = User.placesStore.getById(to_place_id);
-        if (record_from) {
-            let record_from_params = record_from.data.params;
-            vm.set('pos_market_place_from', record_from.get('title'));
-            vm.set('pos_market_place_from_address', record_from_params.address || '');
-            vm.set('pos_market_place_from_phone', record_from_params.phone || '');
-            vm.set('pos_market_place_from_postcode', record_from_params.postcode || '');
-            vm.set('pos_market_place_from_city', record_from_params.city || '');
-        }
-        if (record_from && vm.get('edit_from')) {
-            let record_from_params = record_from.data.params;
-            vm.set('edit.pos_market_place_from_address', record_from_params.address || '');
-            vm.set('edit.pos_market_place_from_phone', record_from_params.phone || '');
-            vm.set('edit.pos_market_place_from_postcode', record_from_params.postcode || '');
-            vm.set('edit.pos_market_place_from_city', record_from_params.city || '');
-        } else {
-            vm.set('pos_market_place_from_address', vm.get('edit.pos_market_place_from_address'));
-            vm.set('pos_market_place_from_phone', vm.get('edit.pos_market_place_from_phone'));
-            vm.set('pos_market_place_from_postcode', vm.get('edit.pos_market_place_from_postcode'));
-            vm.set('pos_market_place_from_city', vm.get('edit.pos_market_place_from_city'));
-        }
+        const places_store = Ext.StoreManager.lookup('placesStore');
+        const record_to = places_store.getById(to_place_id);
         if (record_to) {
-            let record_to_params = record_to.data.params;
-            vm.set('pos_market_place_to', record_to.get('title'));
-            vm.set('pos_market_place_to_address', record_to_params.address || '');
-            vm.set('pos_market_place_to_phone', record_to_params.phone || '');
-            vm.set('pos_market_place_to_postcode', record_to_params.postcode || '');
-            vm.set('pos_market_place_to_city', record_to_params.city || '');
-        }
-        if (record_to && vm.get('edit_to')) {
             let record_to_params = record_to.data.params;
             vm.set('edit.pos_market_place_to_address', record_to_params.address || '');
             vm.set('edit.pos_market_place_to_phone', record_to_params.phone || '');
             vm.set('edit.pos_market_place_to_postcode', record_to_params.postcode || '');
             vm.set('edit.pos_market_place_to_city', record_to_params.city || '');
         } else {
-            vm.set('pos_market_place_to_address', vm.get('edit.pos_market_place_to_address'));
-            vm.set('pos_market_place_to_phone', vm.get('edit.pos_market_place_to_phone'));
-            vm.set('pos_market_place_to_postcode', vm.get('edit.pos_market_place_to_postcode'));
-            vm.set('pos_market_place_to_city', vm.get('edit.pos_market_place_to_city'));
+            vm.set('edit.pos_market_place_to_address', '');
+            vm.set('edit.pos_market_place_to_phone', '');
+            vm.set('edit.pos_market_place_to_postcode', '');
+            vm.set('edit.pos_market_place_to_city', '');
+        }
+    },
+    updatePosPlace() {
+        const vm = this.getViewModel();
+        const from_place_id = vm.get('filter.from_place_id');
+        const to_place_id = vm.get('filter.to_place_id');
+        const places_store = Ext.StoreManager.lookup('placesStore');
+        const record_from = places_store.getById(from_place_id);
+        const record_to = places_store.getById(to_place_id);
+        if (record_from && vm.get('filter.from_place_id')) {
+            let record_from_params = record_from.data.params;
+            vm.set('pos_market_place_from', record_from.get('title'));
+            vm.set('edit.pos_market_place_from_address', record_from_params.address || '');
+            vm.set('edit.pos_market_place_from_phone', record_from_params.phone || '');
+            vm.set('edit.pos_market_place_from_postcode', record_from_params.postcode || '');
+            vm.set('edit.pos_market_place_from_city', record_from_params.city || '');
+        }
+        if (record_to && vm.get('filter.to_place_id')) {
+            let record_to_params = record_to.data.params;
+            vm.set('pos_market_place_to', record_to.get('title'));
+            vm.set('edit.pos_market_place_to_address', record_to_params.address || '');
+            vm.set('edit.pos_market_place_to_phone', record_to_params.phone || '');
+            vm.set('edit.pos_market_place_to_postcode', record_to_params.postcode || '');
+            vm.set('edit.pos_market_place_to_city', record_to_params.city || '');
         }
         if (!from_place_id) {
             vm.set('pos_market_place_from', 'Not selected');
@@ -501,22 +503,6 @@ Ext.define('Erp.view.movement.add.AddCtrl', {
             vm.set('pos_market_place_to_postcode', '');
             vm.set('pos_market_place_to_city', '');
         }
-    },
-    onSelectedFrom() {
-        const me = this;
-        const vm = this.getViewModel();
-        const from_place_id = vm.get('config.from_place_id');
-        vm.set('edit_from', true);
-        vm.set('filter.from_place_id', from_place_id);
-        me.updatePosPlace();
-    },
-    onSelectedTo() {
-        const me = this;
-        const vm = this.getViewModel();
-        const to_place_id = vm.get('config.to_place_id');
-        vm.set('edit_to', true);
-        vm.set('filter.to_place_id', to_place_id);
-        me.updatePosPlace();
     },
     resetPlaces(btn) {
         const me = this;

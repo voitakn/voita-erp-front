@@ -31,10 +31,25 @@ Ext.define('Erp.model.Revert', {
             name: 'user_title', type: 'string',
             calculate(data) {
                 if (data.user_id) {
-                    const record = User.workersStore.getById(data.user_id).data.params;
+                    const store = Ext.data.StoreManager.lookup('workersStore');
+                    let user_id = data.user_id;
+                    if(store && store.getById(user_id)) {
+                        const record = store.getById(user_id);
+                        let params = record.data.params;
+                        return Ext.String.format('{0} {1}',
+                            params.name,
+                            params.surname
+                        );
+                    } else {
+                        return Ext.String.format('{0} {1}',
+                            User.data.params.name,
+                            User.data.params.surname
+                        );
+                    }
+                } else {
                     return Ext.String.format('{0} {1}',
-                        record.name,
-                        record.surname
+                        User.data.params.name,
+                        User.data.params.surname
                     );
                 }
             }
@@ -43,11 +58,30 @@ Ext.define('Erp.model.Revert', {
             name: 'admin_title', type: 'string',
             calculate(data) {
                 if (data.admin_id) {
-                    const record = User.workersStore.getById(data.admin_id).data.params;
-                    return Ext.String.format('{0} {1}',
-                        record.name,
-                        record.surname
-                    );
+                    const store = Ext.data.StoreManager.lookup('workersStore');
+                    // console.log('store', store);
+                    if (store && store.getById(data.admin_id)) {
+                        if (store && store.getById(data.admin_id)) {
+                            const record = store.getById(data.admin_id);
+                            if (record) {
+                                let params = record.data.params;
+                                return Ext.String.format('{0} {1}',
+                                    params.name,
+                                    params.surname
+                                );
+                            }
+                        } else {
+                            return Ext.String.format('{0} {1}',
+                                User.data.params.name,
+                                User.data.params.surname
+                            );
+                        }
+                    } else {
+                        return Ext.String.format('{0} {1}',
+                            User.data.params.name,
+                            User.data.params.surname
+                        );
+                    }
                 }
             }
         },

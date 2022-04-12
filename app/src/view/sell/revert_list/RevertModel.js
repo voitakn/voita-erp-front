@@ -30,6 +30,9 @@ Ext.define('Erp.view.sell.revert_list.RevertModel', {
                     opened: '{filter.is_active}'
                 }
             }
+        },
+        workers_store: {
+            type: 'workersStore',
         }
     },
     formulas: {

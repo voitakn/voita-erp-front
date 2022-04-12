@@ -24,13 +24,36 @@ Ext.define('Erp.model.Invoice', {
         {name: 'place_id', type: 'string'},
         {
             name: 'user_data',
-            calculate(data){
-                return User.workersObj[data.user_id] || {params:{}}
+            calculate(data) {
+                if (data.user_id) {
+                    const store = Ext.data.StoreManager.lookup('workersStore');
+                    // console.log('store', store);
+                    if(store && store.getById(data.user_id)) {
+                        const record = store.getById(data.user_id);
+                        if(record) {
+                            return {
+                                params: record.data.params,
+                                login: record.data.login
+                            };
+                        }
+                    } else {
+                        return {
+                            params: User.data.params,
+                            login: User.data.login
+                        };
+                    }
+                }
             }
         },{
             name: 'place_title',
             calculate(data){
-                return User.placesObj[data.place_id] ? User.placesObj[data.place_id].title : '';
+                if (data.place_id) {
+                    const store = Ext.data.StoreManager.lookup('placesStore');
+                    if(store) {
+                        const record = store.getById(data.place_id);
+                        return record.get('title');
+                    }
+                }
             }
         }
     ]

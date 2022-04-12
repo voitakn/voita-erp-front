@@ -11,11 +11,11 @@ Ext.define('Erp.view.inventory.InventoryCtrl', {
 	all_rendered: false,
 	onViewRender() {
 		const vm = this.getViewModel();
-		const placeField = this.lookup('inventory_place_combobox');
-		if(placeField) {
-			placeField.setStore(User.placesStore);
-			vm.set('filter_place_id', User.defStoreId);
-		}
+		// const placeField = this.lookup('inventory_place_combobox');
+		// if(placeField) {
+		// 	placeField.setStore(User.placesStore);
+		// 	vm.set('filter_place_id', User.defStoreId);
+		// }
 	},
 	onViewHide() {
 		User.catalogStore.clearFilter();
@@ -173,6 +173,6 @@ Ext.define('Erp.view.inventory.InventoryCtrl', {
 			row.set('past_invent', result.data.past_invent);
 			row.commit();
 		}
-		
+
 	}
 });

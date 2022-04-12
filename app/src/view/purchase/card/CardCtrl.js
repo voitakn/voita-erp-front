@@ -25,6 +25,8 @@ Ext.define('Erp.view.purchase.card.CardCtrl', {
 		//console.log('loadInvoice', onCardId);
 		const me = this;
 		const vm = me.getViewModel();
+		const workers_store = Ext.data.StoreManager.lookup('workersStore');
+		const places_store = Ext.data.StoreManager.lookup('placesStore');
 		Ext.Ajax.request({
 			url: Api.inv.buy_list_month,
 			jsonData: {"id": onCardId},
@@ -35,9 +37,15 @@ Ext.define('Erp.view.purchase.card.CardCtrl', {
 				if (result.success) {
 					if (result.data && result.data.length > 0) {
 						let invData = result.data[0];
-						invData.user_login = User.workersObj[invData.user_id].login || "";
-						invData.user_data = User.workersObj[invData.user_id].params || {};
-						invData.place_title = User.placesObj[invData.place_id].title || "";
+						const record = workers_store.getById(invData.user_id);
+						if (record) {
+							invData.user_login = record.login || "";
+							invData.user_data = record.params || {};
+						} else {
+							invData.user_login = User.data.login;
+							invData.user_data = User.data.params || {};
+						}
+						invData.place_title =  places_store.getById(invData.place_id).data.title || "";
 						vm.set('show_invoice', invData);
 					}
 				}

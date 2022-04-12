@@ -28,14 +28,13 @@ Ext.define('Erp.view.expense.Grid', {
             docked: 'top',
             items: [
                 {
-                    xtype: 'container',
-                    cls: 'head-1',
+                    xtype: 'head1',
                     layout: {
                         type: 'hbox',
                         pack: 'start',
                         align: 'center'
                     },
-                    padding: '0 0 5 0',
+                    // padding: '0 0 5 0',
                     items: [
                         {
                             xtype: 'label',
@@ -54,17 +53,18 @@ Ext.define('Erp.view.expense.Grid', {
                             handler: 'addNewExpense'
                         },
                         {
-                            xtype: 'combobox',
+                            xtype: 'placebox',
+                            width: 250,
                             reference: 'expenses_place_combobox',
-                            clearable: true,
-                            queryMode: 'local',
-                            width: 300,
-                            label: i18n.gettext('Point of sale'),
-                            valueField: 'id',
-                            displayField: 'title',
-                            store: {},
-                            bind: {
-                                value: '{filter.place_id}'
+                            viewModel: {
+                                data: {
+                                    parent_field: 'filter.place_id',
+                                    clearable: true,
+                                    placeholder: i18n.gettext('All points of sale'),
+                                },
+                                links: {
+                                    place_id: '{filter.place_id}'
+                                }
                             }
                         },
                     ]

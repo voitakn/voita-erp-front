@@ -26,6 +26,7 @@ Ext.define('Erp.view.movement.card.CardCtrl', {
     loadInvoice(onSellCardId) {
         const me = this;
         const vm = this.getViewModel();
+        const workers_store = Ext.data.StoreManager.lookup('workersStore');
         Ext.Ajax.request({
             url: Api.inv.move_list_month,
             jsonData: {"id": onSellCardId},
@@ -37,18 +38,20 @@ Ext.define('Erp.view.movement.card.CardCtrl', {
                     if (result.data && result.data.length > 0) {
                         const invData = result.data[0];
                         if (invData.from_user_id) {
-                            const record = User.workersStore.getById(invData.from_user_id).data.params;
-                            invData.user_from = Ext.String.format('{0} {1}', record.name, record.surname);
+                            const from_user = workers_store.getById(invData.from_user_id) || {
+                                name: User.data.params.name,
+                                surname: User.data.params.surname,
+                            };
+                            invData.user_from = Ext.String.format('{0} {1}', from_user.name, from_user.surname);
                         }
                         if (invData.params.from_place.from_place_id) {
                             const record = invData.params.from_place;
-                            invData.from_place = Ext.String.format('{0} {1} {2}', record.postcode, record.city, record.address);
+                            invData.from_place = Ext.String.format('{0} {1} {2} {3}', record.title, record.postcode, record.city, record.address);
                         }
                         if (invData.params.to_place.to_place_id) {
                             const record = invData.params.to_place;
-                            invData.to_place = Ext.String.format('{0} {1} {2}', record.postcode, record.city, record.address);
+                            invData.to_place = Ext.String.format('{0} {1} {2} {3}', record.title, record.postcode, record.city, record.address);
                         }
-                        ////console.('show_invoice', invData);
                         vm.set('show_invoice', invData);
                     }
                 }

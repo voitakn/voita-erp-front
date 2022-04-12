@@ -2,7 +2,7 @@ Ext.define('Erp.view.sell.pos.edit.SellConfig', {
     extend: 'Erp.base.Dialog',
     xtype: 'sell_pos_config',
     reference: 'sell_pos_config',
-    width: 500,
+    width: 400,
     title: i18n.gettext('Selling configuration'),
     items: [
         {
@@ -27,24 +27,22 @@ Ext.define('Erp.view.sell.pos.edit.SellConfig', {
                             items: [
                                 {
                                     xtype: 'label',
-                                    //cls: 'size-12',
                                     cls: 'size-14 bolder text-center',
                                     html: `${i18n.gettext('Select store and cash register then begin to sell!')}`,
                                 },
                                 {
-                                    xtype: 'combobox',
+                                    xtype: 'placebox',
                                     reference: 'pos_place_combobox',
-                                    autoSelect: true,
-                                    forceSelection: true,
-                                    editable: false,
-                                    label: i18n.gettext('Point of sale'),
-                                    queryMode: 'local',
-                                    valueField: 'id',
-                                    displayField: 'title',
-                                    store: {},
-                                    bind: {
-                                        value: '{config_place_id}'
-                                    },
+                                    viewModel: {
+                                        data: {
+                                            parent_field: 'config_place_id',
+                                            autoSelect: true,
+                                            required: true
+                                        },
+                                        links: {
+                                            place_id: '{config_place_id}'
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'combobox',

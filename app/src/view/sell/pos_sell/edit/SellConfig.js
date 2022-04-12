@@ -26,19 +26,18 @@ Ext.define('Erp.view.sell.pos_sell.edit.SellConfig', {
                             },
                             items: [
                                 {
-                                    xtype: 'combobox',
+                                    xtype: 'placebox',
                                     reference: 'pos_sell_place_combobox',
-                                    autoSelect: true,
-                                    forceSelection: true,
-                                    editable: false,
-                                    label: i18n.gettext('Point of sale'),
-                                    queryMode: 'local',
-                                    valueField: 'id',
-                                    displayField: 'title',
-                                    store: {},
-                                    bind: {
-                                        value: '{config.place_id}'
-                                    },
+                                    viewModel: {
+                                        data: {
+                                            parent_field: 'filter.place_id',
+                                            autoSelect: true,
+                                            required: true
+                                        },
+                                        links: {
+                                            place_id: '{filter.place_id}'
+                                        }
+                                    }
                                 }
                             ]
                         }
@@ -62,7 +61,7 @@ Ext.define('Erp.view.sell.pos_sell.edit.SellConfig', {
             margin: '0 0 0 10',
             cls: 'green-dark-bg white',
             text: i18n.gettext('Apply'),
-            handler: 'onStartSell'
+            handler: 'onSelectPos'
         }
     ]
 });

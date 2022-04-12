@@ -27,19 +27,18 @@ Ext.define('Erp.view.sell.pos_list.Grid', {
                     },
                 },
                 {
-                    xtype: 'combobox',
-                    reference: 'pos_place_combobox',
-                    margin: '0 15 0 0',
-                    clearable: true,
-                    editable: false,
-                    queryMode: 'local',
-                    width: 200,
-                    label: i18n.gettext('Point of sale'),
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{filter.place_id}'
+                    xtype: 'placebox',
+                    width: 250,
+                    reference: 'pos_list_place_combobox',
+                    viewModel: {
+                        data: {
+                            parent_field: 'filter.place_id',
+                            clearable: true,
+                            placeholder: i18n.gettext('All points of sale'),
+                        },
+                        links: {
+                            place_id: '{filter.place_id}'
+                        }
                     }
                 },
                 {
@@ -52,7 +51,6 @@ Ext.define('Erp.view.sell.pos_list.Grid', {
                         boxLabel: `{!filter.is_active ? "${i18n.gettext('Off')}" : "${i18n.gettext('Yes')}"}`
                     }
                 },
-
             ]
         }
     ],

@@ -57,10 +57,10 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const vm = this.getViewModel();
         const posKey = localStorage.getItem('posKey');
         const posExp = localStorage.getItem('posExp');
-        const placeField = me.lookup('pos_place_combobox');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-        }
+        // const placeField = me.lookup('pos_place_combobox');
+        // if (placeField) {
+        //     placeField.setStore(User.placesStore);
+        // }
         if(!posKey ||
             posKey === '' ||
             (Math.floor((new Date()).getTime() / 1000) > Number(posExp))) {
@@ -112,7 +112,7 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const sell_pos_config = me.lookup('sell_pos_config');
-        vm.set('config_place_id', User.defStoreId);
+        // vm.set('config_place_id', User.defStoreId);
         sell_pos_config.show();
     },
     onStartSell(btn) {
@@ -177,11 +177,13 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
         const vm = this.getViewModel();
         const place_id = localStorage.getItem('posPlaceId');
         const checkout = localStorage.getItem('posCheckout');
+        const placeField = this.lookup('pos_place_combobox');
+        const store = placeField.getViewModel().getStore('places_store');
         vm.set('pos_market_place', '');
         vm.set('pos_cash_register', '');
         vm.set('filter.place_id', null);
         if(place_id) {
-            const record = User.placesStore.getById(place_id);
+            const record = store.getById(place_id);
             if(record) {
                 vm.set('pos_market_place', record.get('title'));
                 vm.set('filter.place_id', place_id);
@@ -194,7 +196,9 @@ Ext.define('Erp.view.sell.pos.PosCtrl', {
     onPlaceChange(place_id) {
         const vm = this.getViewModel();
         const cashField = this.lookup('pos_cash_combobox');
-        const placeRecord = User.placesStore.getById(place_id);
+        const placeField = this.lookup('pos_place_combobox');
+        const store = placeField.getViewModel().getStore('places_store');
+        const placeRecord = store.getById(place_id);
         if(placeRecord) {
             const checkouts = placeRecord.get('params').checkouts;
             if (cashField && checkouts && checkouts.length > 0) {

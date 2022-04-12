@@ -27,22 +27,24 @@ Ext.define('Erp.view.report.period.Stat', {
                     html: i18n.gettext('Point of sale')
                 },
                 {
-                    xtype: 'combobox',
+                    xtype: 'placebox',
+                    // width: 250,
                     reference: 'report_period_pos_combobox',
-                    autoSelect: true,
-                    forceSelection: true,
-                    editable: false,
-                    clearable: true,
-                    queryMode: 'local',
-                    placeholder: i18n.gettext('All points of sale'),
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{filter_place_id}',
-                        store: '{place_data}'
+                    viewModel: {
+                        data: {
+                            parent_field: 'filter_place_id',
+                            // autoSelect: true,
+                            editable: false,
+                            clearable: true,
+                            placeholder: i18n.gettext('All points of sale'),
+                            label: false
+                        },
+                        links: {
+                            place_id: '{filter_place_id}'
+                        }
                     }
                 }
+
             ]
         }, {
             xtype: 'container',

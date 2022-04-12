@@ -12,6 +12,11 @@ Ext.define('Erp.view.movement.list.Grid', {
 
         {
             xtype: 'head1',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'center'
+            },
             items: [
                 {
                     xtype: 'label',
@@ -32,21 +37,19 @@ Ext.define('Erp.view.movement.list.Grid', {
                     }
                 },
                 {
-                    xtype: 'combobox',
-                    reference: 'move_place_combobox',
-                    autoSelect: true,
-                    forceSelection: true,
-                    editable: false,
-                    queryMode: 'local',
-                    width: 300,
-                    label: i18n.gettext('Point of sale'),
-                    labelAlign: 'left',
-                    labelWidth: 120,
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{filter.place_id}'
+                    xtype: 'placebox',
+                    width: 250,
+                    reference: 'move_list_place_combobox',
+                    viewModel: {
+                        data: {
+                            parent_field: 'filter.place_id',
+                            autoSelect: true,
+                            required: true,
+                            forceSelection: true,
+                        },
+                        links: {
+                            place_id: '{filter.place_id}'
+                        }
                     }
                 },
             ]

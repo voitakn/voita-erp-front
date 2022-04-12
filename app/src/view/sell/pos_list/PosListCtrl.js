@@ -10,11 +10,7 @@ Ext.define('Erp.view.sell.pos_list.PosListCtrl', {
     },
     onViewRender() {
         const vm = this.getViewModel();
-        const placeField = this.lookup('pos_place_combobox');
         const field = this.lookup('filter_by_date');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-        }
         vm.set('filter.by_date', field.getFormattedValue());
     },
     onViewShow() {

@@ -22,7 +22,13 @@ Ext.define('Erp.view.sell.card.CardModel', {
                     period: '{show_invoice.period}'
                 }
             }
-        }
+        },
+        workers_store: {
+            type: 'workersStore',
+        },
+        places_store: {
+            type: 'placesStore',
+        },
     },
     formulas: {
         paid_status: {

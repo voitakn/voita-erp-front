@@ -12,11 +12,46 @@ Ext.define('Erp.view.sell.revert_list.Grid', {
         {
             xtype: 'containerfield',
             docked: 'top',
+            margin: '5 0 5 0',
+            cls: 'border-bottom',
+            label: i18n.gettext('Filter by place and progress'),
+            items: [
+                {
+                    xtype: 'placebox',
+                    width: 250,
+                    reference: 'revert_place_combobox',
+                    viewModel: {
+                        data: {
+                            parent_field: 'filter.place_id',
+                            clearable: true,
+                            placeholder: i18n.gettext('All points of sale'),
+                        },
+                        links: {
+                            place_id: '{filter.place_id}'
+                        }
+                    }
+                },
+
+                {
+                    xtype: 'togglefield',
+                    margin: '0 0 0 20',
+                    width: 250,
+                    label: i18n.gettext('Only in progress'),
+                    reference: 'revert_list_process_fld',
+                    // labelAlign: 'left',
+                    labelWidth: 150,
+                    bind: {
+                        value: '{filter.is_active}',
+                        boxLabel: `{!filter.is_active ? "${i18n.gettext('Off')}" : "${i18n.gettext('Yes')}"}`
+                    }
+                }]
+        },
+        {
+            xtype: 'containerfield',
+            docked: 'top',
+            margin: '5 0 5 0',
+            cls: 'border-bottom',
             label: i18n.gettext('Filter by year and period'),
-            layout: {
-                type: 'hbox',
-                align: 'end'
-            },
             items: [
                 {
                     xtype: 'combobox',

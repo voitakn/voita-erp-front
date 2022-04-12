@@ -20,7 +20,7 @@ Ext.define('Erp.view.report.period.PeriodCtrl', {
     },
     onViewShow() {},
     onChangeMode(reportParams) {
-        console.log('onChangeMode', reportParams);
+        // console.log('onChangeMode', reportParams);
         const me = this;
         const vm = me.getViewModel();
         const chartsStore = vm.getStore('charts_stat_store');

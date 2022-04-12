@@ -12,11 +12,11 @@ Ext.define('Erp.view.sell.revert_list.RevertCtrl', {
     is_rendered: false,
     onViewRender() {
         const vm = this.getViewModel();
-        const placeField = this.lookup('revert_place_combobox');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-            vm.set('filter.place_id', User.defStoreId);
-        }
+        // const placeField = this.lookup('revert_place_combobox');
+        // if (placeField) {
+        //     placeField.setStore(User.placesStore);
+        //     vm.set('filter.place_id', User.defStoreId);
+        // }
     },
     onViewShow() {
         const me = this;

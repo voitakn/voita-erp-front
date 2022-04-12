@@ -13,7 +13,6 @@ Ext.define('Erp.store.Places', {
     proxy: {
         type: 'erp_api',
         api: {
-            //create: Api.com.place_save,
             read: Api.com.place_list_all
         },
     },

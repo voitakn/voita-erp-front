@@ -28,7 +28,7 @@ Ext.define('Erp.view.dashboard.DashboardCtrl', {
         const me = this;
         const vm = this.getViewModel();
         Ext.Ajax.request({
-            url: Api.com.desk_main_stat,
+            url: Api.report.desk_main_stat,
             jsonData: {},
             method: "POST",
             success(resp, opt) {
@@ -50,7 +50,7 @@ Ext.define('Erp.view.dashboard.DashboardCtrl', {
         const me = this;
         const vm = this.getViewModel();
         Ext.Ajax.request({
-            url: Api.com.desk_places_stat,
+            url: Api.report.desk_places_stat,
             jsonData: {},
             method: "POST",
             success(resp, opt) {

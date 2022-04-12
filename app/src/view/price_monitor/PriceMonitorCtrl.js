@@ -10,13 +10,13 @@ Ext.define('Erp.view.price_monitor.PriceMonitorCtrl', {
     },
     onViewRender() {
         const vm = this.getViewModel();
-        const placeField = this.lookup('place_combobox');
+        // const placeField = this.lookup('place_combobox');
         const field = this.lookup('filter_by_date');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-        }
+        // if (placeField) {
+        //     placeField.setStore(User.placesStore);
+        // }
         vm.set('filter.by_date', field.getFormattedValue());
-        vm.set('filter.place_id', User.defStoreId);
+        // vm.set('filter.place_id', User.defStoreId);
 
     },
     onViewShow() {

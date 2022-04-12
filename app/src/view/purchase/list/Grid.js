@@ -12,13 +12,18 @@ Ext.define('Erp.view.purchase.list.Grid', {
     items: [
         {
             xtype: 'head1',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'center'
+            },
             items: [{
                 xtype: 'label',
                 cls: 'title',
                 html: i18n.gettext('Purchases')
             },{
                 xtype: 'button',
-                margin: '0 0 0 15',
+                margin: '0 20 0 10',
                 iconCls: 'x-fa fa-plus green-dark',
                 text: i18n.gettext('Add purchase'),
                 hidden: true,
@@ -27,22 +32,18 @@ Ext.define('Erp.view.purchase.list.Grid', {
                 },
                 handler: 'onNewPurchase'
             },{
-                xtype: 'combobox',
-                reference: 'purchase_place_combobox',
-                margin: '0 0 0 15',
-                autoSelect: true,
-                forceSelection: true,
-                editable: false,
-                queryMode: 'local',
-                width: 300,
-                label: i18n.gettext('Point of sale'),
-                labelAlign: 'left',
-                labelWidth: 120,
-                valueField: 'id',
-                displayField: 'title',
-                store: {},
-                bind: {
-                    value: '{filter_place_id}'
+                xtype: 'placebox',
+                width: 250,
+                reference: 'purchase_list_place_combobox',
+                viewModel: {
+                    data: {
+                        parent_field: 'filter_place_id',
+                        autoSelect: true,
+                        required: true,
+                    },
+                    links: {
+                        place_id: '{filter_place_id}'
+                    }
                 }
             },{
                 xtype: 'combobox',
@@ -57,7 +58,6 @@ Ext.define('Erp.view.purchase.list.Grid', {
                     store: '{suppliers_store}'
                 },
                 label: i18n.gettext('Supplier'),
-                labelAlign: 'left',
             }]
         },{
             xtype: 'containerfield',

@@ -15,20 +15,18 @@ Ext.define('Erp.view.catalog.InventoryGrid', {
 			xtype: 'head2',
 			items: [
 				{
-					xtype: 'combobox',
+					xtype: 'placebox',
 					reference: 'inventory_place_combobox',
-					autoSelect: true,
-					forceSelection: true,
-					required: true,
-					editable: false,
-					queryMode: 'local',
-					width: 200,
-					label: i18n.gettext('Point of sale'),
-					valueField: 'id',
-					displayField: 'title',
-					store: {},
-					bind: {
-						value: '{filter_place_id}'
+					viewModel: {
+						data: {
+							parent_field: 'filter_place_id',
+							autoSelect: true,
+							required: true,
+							forceSelection: true,
+						},
+						links: {
+							place_id: '{filter_place_id}'
+						}
 					}
 				},
 				{

@@ -10,17 +10,18 @@ Ext.define('Erp.view.expense.edit.NewExpense', {
             width: 300,
             items: [
                 {
-                    xtype: 'combobox',
-                    reference: 'expense_place_combobox',
-                    clearable: true,
-                    label: i18n.gettext('Point of sale'),
-                    queryMode: 'local',
-                    valueField: 'id',
-                    displayField: 'title',
-                    store: {},
-                    bind: {
-                        value: '{newExpense.place_id}'
-                    },
+                    xtype: 'placebox',
+                    reference: 'expenses_new_place_combobox',
+                    viewModel: {
+                        data: {
+                            parent_field: 'newExpense.place_id',
+                            forceSelection: true,
+                            clearable: true,
+                        },
+                        links: {
+                            place_id: '{newExpense.place_id}'
+                        }
+                    }
                 },
                 {
                     xtype: 'textfield',

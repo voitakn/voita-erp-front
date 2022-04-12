@@ -26,18 +26,11 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         if (!me.all_rendered) {
             me.all_rendered = true;
         }
-        vm.set('filter.place_id', User.defStoreId);
-        me.updatePosPlace();
     },
     onViewShow() {
         const me = this;
         const vm = this.getViewModel();
         let customerConfigs = User.data.customer.configs || {};
-        me.setActiveRetailMenu('pos');
-        me.updatePosPlace();
-        setTimeout(() => {
-            me.focusBarcode();
-        }, 200);
         if (customerConfigs.receipt_cfg) {
             vm.set({
                 'text_1': customerConfigs.receipt_cfg.texts.text_1,
@@ -45,6 +38,13 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
                 'type_invoice': 'FR',
             });
         }
+        me.setActiveRetailMenu('pos');
+        setTimeout(() => {
+            me.focusBarcode();
+        }, 200);
+        setTimeout(() => {
+            me.updatePosPlace();
+        }, 1000);
     },
     focusBarcode() {
         const barcode_field = this.lookup('find_barcode');
@@ -58,11 +58,6 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         const me = this;
         const vm = me.getViewModel();
         const pos_sell_config = me.lookup('pos_sell_config');
-        const placeField = me.lookup('pos_sell_place_combobox');
-        if (placeField) {
-            placeField.setStore(User.placesStore);
-        }
-        vm.set('config.place_id', vm.get('filter.place_id'));
         pos_sell_config.show();
     },
     reloadProduceGrid() {
@@ -479,21 +474,24 @@ Ext.define('Erp.view.sell.pos_sell.PosCtrl', {
         }
         me.loadStore();
     },
-    onStartSell(btn) {
+    onSelectPos(btn) {
         const me = this;
         const vm = this.getViewModel();
         const pos_sell_config = btn.up('pos_sell_config');
-        const place_id = vm.get('config.place_id');
-        vm.set('filter.place_id', place_id);
-        vm.set('sell_data.place_id', place_id);
+        // const place_id = vm.get('config.place_id');
+        // vm.set('filter.place_id', place_id);
+        // vm.set('sell_data.place_id', place_id);
+        vm.set('sell_data.place_id', vm.get('filter.place_id'));
         me.updatePosPlace();
         pos_sell_config.hide();
         me.focusBarcode();
     },
     updatePosPlace() {
         const vm = this.getViewModel();
+        const placeField = this.lookup('pos_sell_place_combobox');
+        const store = placeField.getViewModel().getStore('places_store');
         const place_id = vm.get('filter.place_id');
-        const record = User.placesStore.getById(place_id);
+        const record = store.getById(place_id);
         if (record) {
             vm.set('pos_market_place', record.get('title'));
         }

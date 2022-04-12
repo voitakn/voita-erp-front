@@ -7,12 +7,8 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
     },
     is_rendered: false,
     onLoadPlaceStore(yes, place_id) {
-        console.log('onLoadPlaceStore');
-        //console.log('onLoadPlaceStore id-0', store.getAt(0).getId());
-        //console.log('onLoadPlaceStore place_id', place_id);
         const me = this;
         const vm = me.getViewModel();
-        //vm.set('filter_place_id', place_id);
         if (!me.is_rendered) {
             me.is_rendered = true;
         } else {
@@ -21,43 +17,18 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
                 store.load();
             }
         }
-
     },
     onViewShow() {
         const me = this;
         const vm = me.getViewModel();
-        // if (!me.is_rendered) {
-        //     me.is_rendered = true;
-        // } else {
-        //     const store = vm.getStore('sell_invoices');
-        //     if(store) {
-        //         store.load();
-        //     }
-        // }
         me.setActiveRetailMenu('sell_bills');
     },
     onViewRender() {
         const me = this;
         const vm = me.getViewModel();
-        const placeField = this.lookup('bills_place_combobox');
-        const vm_placeField = placeField.getViewModel();
-        console.log('vm_placeField', vm_placeField);
-        if(placeField) {
-            // let store = vm_placeField.getStore('placesStore');
-            // console.log('places_store', store);
-            // console.log('places_store data', store.getRange());
-
-            // console.log('place_id', store.getAt(0).getId());
-            // vm.set('filter_place_id', store.getData().items[0].id);
-            // placeField.setStore(User.placesStore);
-            // if (User.placesStore.getAt(0)) {
-            //     vm.set('filter_place_id', User.placesStore.getAt(0).getId());
-            // }
-        }
         me.onCloseBill();
     },
     loadIvoicesData() {
-        console.log('loadIvoicesData');
         const me = this;
         const vm = me.getViewModel();
         const store = vm.getStore('sell_invoices');
@@ -78,7 +49,6 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
         }
     },
     onFilterPlace(place_id) {
-        console.log('onFilterPlace', 'place_id', place_id);
         const me = this;
         const vm = me.getViewModel();
         if(place_id) {
@@ -112,7 +82,6 @@ Ext.define('Erp.view.sell.bills.BillsCtrl', {
         const vm = me.getViewModel();
         const form = me.lookup('bills_cancel_sale_form');
         const store = vm.getStore('sell_invoices');
-
         if (form.validate()) {
             Ext.Ajax.request({
                 url: Api.inv.sell_revert,

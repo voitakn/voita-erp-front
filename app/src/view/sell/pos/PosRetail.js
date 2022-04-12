@@ -148,7 +148,8 @@ Ext.define('Erp.view.sell.pos.PosRetail', {
                 hide: 'onClosePaycash',
                 onSavePayCash: 'savePayCash'
             }
-        },{
+        },
+        {
             xtype: 'base_dialog',
             reference: 'pos_dialog_finish',
             width: 500,
@@ -160,7 +161,8 @@ Ext.define('Erp.view.sell.pos.PosRetail', {
             listeners: {
                 onSave: 'sendFinishRequest'
             }
-        },{
+        },
+        {
             xtype: 'sell_pos_trash',
             reference: 'sell_pos_trash_confirm',
         }
