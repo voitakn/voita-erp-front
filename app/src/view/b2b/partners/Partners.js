@@ -2,6 +2,9 @@ Ext.define('Erp.view.b2b.partners.Partners', {
     extend: 'Erp.base.Module',
     xtype: 'partners',
     controller: 'partners_ctrl',
+    requires: [
+        'Erp.common.MenuB2b'
+    ],
     viewModel: {
         type: 'partners_vm'
     },
@@ -15,6 +18,7 @@ Ext.define('Erp.view.b2b.partners.Partners', {
         },
         {
             xtype: 'partners_tabs',
+            reference: 'partners_tabs',
             flex: 1,
         },
         {

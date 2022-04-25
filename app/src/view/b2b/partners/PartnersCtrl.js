@@ -1,17 +1,25 @@
 Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
     extend: 'Erp.view.base.BaseCtrl',
     alias: 'controller.partners_ctrl',
+    allRendered: false,
     bindings: {
         onChangeCountry: '{createCard.country_id}',
         doSearch: '{filter_search}',
         reloadPartnersGrid: '{partner_type}',
         changeTypePartner: '{editCard.params.client}'
     },
+    onViewRender() {
+        const me = this;
+        console.log('PartnersCtrl.onViewRender', me);
+        me.setActiveB2bMenu('partners');
+        me.allRendered = true;
+    },
     onViewShow() {
         const me = this;
-        me.onShowPartners();
-        me.setActiveB2bMenu('partners');
-        me.lookup('partners_tabs').setActiveItem(0);
+        if(me.allRendered) {
+            me.lookup('partners_tabs').setActiveItem(0);
+            me.setActiveB2bMenu('partners');
+        }
     },
     reloadPartnersGrid() {
         const partners_store = this.getViewModel().getStore('partners_store');
@@ -21,21 +29,22 @@ Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
     },
     doSearch(search) {
         if (!search || search.length === 0 || search.length > 2) {
-            this.getViewModel().getStore('partners_store').loadPage(1);
+            this.reloadPartnersGrid();
         }
     },
-    onShowPartners() {
+    onPartnersTabs(tabPanel, tab, oldTab) {
         const me = this;
-        const vm = this.getViewModel();
-        const partner_type = this.getView().lookup('partnertype');
-        const partners_store = vm.getStore('partners_store');
-        if (vm.get('filter_search') || vm.get('partner_type') !== null) {
-            vm.set('filter_search', '');
-            partner_type.setValue('');
-            partner_type.setInputValue(`${i18n.gettext('All')}`);
-        }
-        if (partners_store) {
-            me.reloadPartnersGrid();
+        console.log('onPartnersTabs', tab.reference);
+        switch (tab.reference) {
+            case 'tab_partners':
+                me.reloadPartnersGrid();
+                break;
+            case 'tab_outgoing':
+                me.onShowPartnersOutgoing();
+                break;
+            case 'tab_incoming':
+                me.onShowPartnersIncoming();
+                break;
         }
     },
     onShowPartnersIncoming() {

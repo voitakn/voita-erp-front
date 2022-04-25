@@ -33,6 +33,9 @@ Ext.define('Erp.view.base.BaseCtrl', {
     setActiveB2bMenu(item) {
         const me = this;
         const vm = me.getViewModel();
-        vm.set('active_b2b_menu', item);
+        console.log('setActiveB2bMenu', vm);
+        if(vm) {
+            vm.set('active_b2b_menu', item);
+        }
     },
 });

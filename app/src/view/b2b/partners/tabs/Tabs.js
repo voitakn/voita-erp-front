@@ -1,55 +1,50 @@
 Ext.define('Erp.view.b2b.partners.tabs.Tabs', {
     extend: 'Ext.tab.Panel',
     xtype: 'partners_tabs',
-    reference: 'partners_tabs',
     defaults: {
         layout: 'fit'
     },
     tabBar: {
         layout: {
             pack: 'start',
-            overflow: 'scroller'
         }
+    },
+    listeners: {
+        activeItemchange: 'onPartnersTabs',
     },
     items: [
         {
             title: 'Partners',
             xtype: 'container',
-            listeners: {
-                show: 'onShowPartners'
-            },
+            reference: 'tab_partners',
             items: [
                 {
                     xtype: 'partners_grid',
-                    margin: '5 0 0 0',
+                    margin: '10 0 0 0',
                 }
             ]
         },
         {
             title: 'Sent requests',
             xtype: 'container',
-            listeners: {
-                show: 'onShowPartnersOutgoing'
-            },
+            reference: 'tab_outgoing',
             items: [
                 {
                     xtype: 'partners_outgoing_grid',
-                    margin: '5 0 0 0',
+                    margin: '10 0 0 0',
                 }
             ]
         },
         {
             title: 'Received requests',
             xtype: 'container',
-            listeners: {
-                show: 'onShowPartnersIncoming'
-            },
+            reference: 'tab_incoming',
             items: [
                 {
                     xtype: 'partners_incoming_grid',
-                    margin: '5 0 0 0',
+                    margin: '10 0 0 0',
                 },
             ]
-        },
+        }
     ]
 });

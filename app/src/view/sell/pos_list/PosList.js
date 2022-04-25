@@ -2,7 +2,7 @@ Ext.define('Erp.view.sell.pos_list.PosList', {
     extend: 'Erp.base.Module',
     xtype: 'pos_list',
     requires: [
-        'Erp.view.common.MenuRetail'
+        'Erp.common.MenuRetail'
     ],
     controller: 'pos_list_ctrl',
     viewModel: {

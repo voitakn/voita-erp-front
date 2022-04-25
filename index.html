@@ -11,7 +11,10 @@
     <link type="text/css" rel="stylesheet" href="/resources/css/receipt.css" />
     <link type="text/css" rel="stylesheet" href="/resources/css/no-print.css" />
     <link type="text/css" rel="stylesheet" media="print" href="/resources/css/print.css" />
-    <script src="/resources/data/config.js"></script>
+    <!-- Todo remove or comment dev.js for prod -->
+    <script src="/resources/js/dev.js"></script>
+    <!-- Todo remove or comment dev.js for prod -->
+    <script src="/resources/js/config.js"></script>
     <script src="/resources/js/JedParser.js"></script>
     <script src="/resources/js/Jed.js"></script>
     <!--<script src="https://js.stripe.com/v3/"></script>-->
@@ -32,8 +35,6 @@
     </style>
 
     <script type="text/javascript">
-        document.cookie = "GP_SSID=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbHVzdGVyX2lkIjoidnQxIiwiY3VzdG9tZXJfaWQiOiJhMTNhZTViMy03ZWVmLTQ1NWYtYjJlZC00NDhiYjk5MzIxYzciLCJleHAiOjE2NTE1MDYzMjUsInVzZXJfaWQiOiI1NTk3YjVmOC05NDk2LTQxM2MtOTUyOS0yYzc0NjIwYjk2ZjEifQ.eMjv1dmLVXcGx8pWUyBkXOMegvOYZjN1-LOw-qDF0Zg";
-        document.cookie = "VT_ID=vt1";
         const authCookie = document.cookie.split('; ').find(row => row.startsWith('GP_SSID='));
         const clusterCookie = document.cookie.split('; ').find(row => row.startsWith('VT_ID='));
         let authKey, clusterKey;
@@ -65,7 +66,7 @@
         Ext.beforeLoad = (tags) => {
             Ext.mainCfg = CfgData;
             if (!authKey || authKey === '') {
-                //document.location.href = Ext.mainCfg.authUrl;
+                document.location.href = Ext.mainCfg.authUrl;
             }
             Ext.mainCfg.cluster = clusterKey;
             Ext.mainCfg.token = authKey;
@@ -78,7 +79,6 @@
                     "domain" : "messages",
                     "locale_data" : locale_data
                 });
-                Ext.manifest ='bootstrap';
             };
             const loadDefLng = () => {
                 i18n = new Jed({
@@ -103,7 +103,6 @@
                 }
             }
             loadDefLng();
-            Ext.manifest ='bootstrap';
         };
 
         //var stripe = Stripe('pk_test_51JRuvxCvPhmwoDSLTA9vN6gZIqjQ6HmazKfFKbQFrTsrj09zMheICPgtSftq669hxnmSKMxrZkV6L0MoJDmiCfgH001INV5oFi');
@@ -118,7 +117,7 @@
         <div class="row justify-content-center h-100">
             <div class="col-10 col-md-8 col-lg-6 align-self-center shadow-sm py-2 p-lg-3 px-lg-5 bg-white border border-1 rounded">
                 <div class="my-3">
-                    <div class="text-center" style="height: 60px"><img src="/auth/src/images/voita-logo-full.webp" alt="Voita ERP" class="h-100"></div>
+                    <div class="text-center" style="height: 60px"><img src="/resources/shared/images/voita-logo-full.webp" alt="Voita ERP" class="h-100"></div>
                 </div>
                 <div id="erp-verify" class="row justify-content-center">
                     <div class="text-center mt-3">

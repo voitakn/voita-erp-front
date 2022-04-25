@@ -2,7 +2,7 @@ Ext.define('Erp.view.sell.revert_list.Revert', {
     extend: 'Erp.base.Module',
     xtype: 'revert_list',
     requires: [
-        'Erp.view.common.MenuRetail'
+        'Erp.common.MenuRetail'
     ],
     controller: 'revert_list_ctrl',
     viewModel: {

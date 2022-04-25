@@ -1,4 +1,4 @@
-Ext.define('Erp.view.common.MenuRetail', {
+Ext.define('Erp.common.MenuRetail', {
     extend: 'Ext.Container',
     xtype: 'retail_menu',
     requires: [

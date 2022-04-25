@@ -7,7 +7,7 @@ Ext.define('Erp.view.sell.bills.Bills', {
         'Erp.view.sell.bills.BillsModel',
         'Erp.view.sell.bills.Grid',
         'Erp.view.sell.bills.Invoice',
-        'Erp.view.common.MenuRetail'
+        'Erp.common.MenuRetail'
     ],
     controller: 'sell_bills_ctrl',
     viewModel: {

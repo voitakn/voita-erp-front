@@ -3,7 +3,7 @@ Ext.define('Erp.view.sell.pos_sell.PosSell', {
     requires: [
         'Erp.base.Dialog',
         'Erp.util.Nominal',
-        'Erp.view.common.MenuRetail'
+        'Erp.common.MenuRetail'
     ],
     xtype: 'pos_sell',
     controller: 'pos_sell_ctrl',

@@ -1,16 +1,6 @@
-Ext.define('Erp.view.common.MenuB2b', {
+Ext.define('Erp.common.MenuB2b', {
     extend: 'Ext.Container',
     xtype: 'b2b_menu',
-    requires: [
-        'Erp.view.base.BaseCtrl'
-    ],
-    viewModel: {
-        formulas: {
-            // no_inv_sell_list_date_user(get) {
-            //     return !User.checkAccess('inv.sell_list_date_user');
-            // },
-        }
-    },
     items: [
         {
             xtype: 'container',

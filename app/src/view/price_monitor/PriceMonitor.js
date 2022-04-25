@@ -2,7 +2,7 @@ Ext.define('Erp.view.price_monitor.PriceMonitor', {
     extend: 'Erp.base.Module',
     xtype: 'price_monitor',
     requires: [
-        'Erp.view.common.MenuRetail'
+        'Erp.common.MenuRetail'
     ],
     controller: 'price_monitor_ctrl',
     viewModel: {

@@ -1,38 +1,4 @@
 /* Fonts */
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: normal;
-  font-style: normal;
-  src: url('/auth/fonts/OpenSans-Regular.woff2') format('woff2'), url('/auth/fonts/OpenSans-Regular.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: 600;
-  font-style: normal;
-  src: url('/auth/fonts/OpenSans-SemiBold.woff2') format('woff2'), url('/auth/fonts/OpenSans-SemiBold.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: bold;
-  font-style: normal;
-  src: url('/auth/fonts/OpenSans-Bold.woff2') format('woff2'), url('/auth/fonts/OpenSans-Bold.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-weight: 800;
-  font-style: normal;
-  src: url('/auth/fonts/OpenSans-ExtraBold.woff2') format('woff2'), url('/auth/fonts/OpenSans-ExtraBold.woff') format('woff');
-  font-display: swap;
-}
-
-/* Fonts */
 @font-face {
   font-family: 'Noto Sans';
   font-weight: normal;
