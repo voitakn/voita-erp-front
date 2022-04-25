@@ -16,12 +16,13 @@ Ext.define('Erp.common.DeleteConfirm', {
     buttonAlign: 'center',
     buttons: {
         cancel: {
-            margin: '0 15 0 0',
+            margin: '0 5 0 5',
             iconCls: 'x-fa fa-times red',
             text: i18n.gettext('Cancel'),
             handler: (btn) => btn.up('delete_confirm').destroy()
         },
         ok: {
+            margin: '0 5 0 5',
             iconCls: 'x-fa fa-check green-dark',
             text: i18n.gettext('Yes!'),
             handler: 'clickOk'

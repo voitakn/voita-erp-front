@@ -5,6 +5,7 @@ Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
         onChangeCountry: '{createCard.country_id}',
         doSearch: '{filter_search}',
         reloadPartnersGrid: '{partner_type}',
+        changeTypePartner: '{editCard.params.client}'
     },
     onViewShow() {
         const me = this;
@@ -24,6 +25,7 @@ Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
         }
     },
     onShowPartners() {
+        const me = this;
         const vm = this.getViewModel();
         const partner_type = this.getView().lookup('partnertype');
         const partners_store = vm.getStore('partners_store');
@@ -31,10 +33,9 @@ Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
             vm.set('filter_search', '');
             partner_type.setValue('');
             partner_type.setInputValue(`${i18n.gettext('All')}`);
-        } else {
-            if (partners_store) {
-                partners_store.loadPage(1);
-            }
+        }
+        if (partners_store) {
+            me.reloadPartnersGrid();
         }
     },
     onShowPartnersIncoming() {
@@ -137,7 +138,6 @@ Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
         const vm = me.getViewModel();
         const form = me.lookup('add_partner_form');
         if (form.validate()) {
-            // console.log('addNewPartner newCard', vm.get('newCard'));
             Ext.Ajax.request({
                 url: Api.b2b.partner_invite,
                 jsonData: {
@@ -305,7 +305,7 @@ Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
         // console.log(grid, row);
         const me = this;
         const vm = me.getViewModel();
-        const tooltip = this.lookup('edit_partner');
+        const tooltip = me.lookup('edit_partner');
         const edit_data = Ext.clone(row.record.data);
         const edit_price_row_combobox = me.lookup('edit_price_row_combobox');
         const country_list = vm.getStore('country_store').load();
@@ -334,28 +334,76 @@ Ext.define('Erp.view.b2b.partners.PartnersCtrl', {
     savePartner(btn) {
         const me = this;
         const vm = me.getViewModel();
+        const edit_partner_form = me.lookup('edit_partner_form');
         const jsonData = {
             invite_id: vm.get('editCard.id'),
             params: vm.get('editCard.params'),
         }
-        Ext.Ajax.request({
-            url: Api.b2b.partner_save,
-            jsonData,
-            method: "POST",
-            success: function (resp, opt) {
-                let result = Ext.JSON.decode(resp.responseText);
-                Notice.showToast(result);
-                btn.up('tooltip').hide();
-            },
-            failure: function (resp, opt) {
-                let result = Ext.JSON.decode(resp.responseText);
-                Notice.showToast(result);
-            },
-        });
+        if (edit_partner_form.validate()) {
+            Ext.Ajax.request({
+                url: Api.b2b.partner_save,
+                jsonData,
+                method: "POST",
+                success: function (resp, opt) {
+                    let result = Ext.JSON.decode(resp.responseText);
+                    Notice.showToast(result);
+                    me.reloadPartnersGrid();
+                    btn.up('tooltip').hide();
+                },
+                failure: function (resp, opt) {
+                    let result = Ext.JSON.decode(resp.responseText);
+                    Notice.showToast(result);
+                },
+            });
+        }
     },
     goToCatalog(grid, row) {
         const id = Ext.clone(row.record.data.id);
         console.log('redirect to ', `b2b_catalog/${id}`);
         this.redirectTo(`b2b_catalog/${id}`)
+    },
+    changeTypePartner(type) {
+        console.log('changeTypePartner', type);
+        const me = this;
+        const vm = me.getViewModel();
+        if (!type) {
+            vm.set('editCard.params.price_row', null)
+        }
+    },
+    onRemoveInvite(grid, row) {
+        const me = this;
+        const vm = me.getViewModel();
+        const confirm = Ext.create('Erp.common.DeleteConfirm', {
+            target: row.event.target,
+            viewModel: {
+                data: {
+                    title: i18n.gettext('Attention'),
+                    message: i18n.gettext('Do you want to remove invite?')
+                }
+            },
+            listeners: {
+                onConfirm(tooltip) {
+                    let jsonData = {
+                        invite_id: row.record.id
+                    }
+                    Ext.Ajax.request({
+                        url: Api.b2b.partner_remove,
+                        jsonData,
+                        method: "POST",
+                        success: function (resp, opt) {
+                            let result = Ext.JSON.decode(resp.responseText);
+                            Notice.showToast(result);
+                            me.onShowPartnersOutgoing();
+                            tooltip.destroy();
+                        },
+                        failure: function (resp, opt) {
+                            let result = Ext.JSON.decode(resp.responseText);
+                            Notice.showToast(result);
+                        },
+                    });
+                }
+            }
+        });
+        confirm.show();
     }
 });

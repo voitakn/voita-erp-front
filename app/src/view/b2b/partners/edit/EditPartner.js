@@ -86,12 +86,12 @@ Ext.define('Erp.view.b2b.partners.edit.EditPartner', {
                             items: [
                                 {
                                     cls: 'bolder',
-                                    html: i18n.gettext('Editress:'),
+                                    html: i18n.gettext('Address:'),
                                     flex: 1
                                 },
                                 {
                                     bind: {
-                                        html: '{editCard.params_partner.editress}'
+                                        html: '{editCard.params_partner.address}'
                                     }
                                 }
                             ]
@@ -155,6 +155,7 @@ Ext.define('Erp.view.b2b.partners.edit.EditPartner', {
                             forceSelection: true,
                             editable: false,
                             clearable: true,
+                            required: true,
                             label: i18n.gettext('Price'),
                             queryMode: 'local',
                             valueField: 'id',

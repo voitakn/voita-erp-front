@@ -395,6 +395,9 @@ Ext.define('Erp.util.Notice', {
         partner_save: {
             info: i18n.gettext('Request was successfully saved.')
         },
+        partner_remove: {
+            info: i18n.gettext('Invite was successfully removed.')
+        },
         partner_create: {
             info: i18n.gettext('Request was successfully saved.')
         },

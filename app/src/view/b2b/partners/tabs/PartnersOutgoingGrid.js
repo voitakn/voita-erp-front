@@ -22,15 +22,16 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersOutgoingGrid', {
                 encodeHtml: false,
                 height: 48,
                 tools: {
-                    edit: {
-                        cls: 'blue',
+                    plus: {
+                        iconCls: 'x-fa fa-times red',
+                        tooltip: i18n.gettext('Remove partner invite'),
                         hidden: true,
-                        handler: 'onEditItem',
+                        handler: 'onRemoveInvite',
                         bind: {
                             hidden: '{no_b2b_partner_create}'
                         },
                         zone: 'end'
-                    }
+                    },
                 }
             }
         },

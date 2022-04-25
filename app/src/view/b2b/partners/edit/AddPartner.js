@@ -154,6 +154,7 @@ Ext.define('Erp.view.b2b.partners.edit.AddPartner', {
                             autoSelect: true,
                             forceSelection: true,
                             editable: false,
+                            required: true,
                             clearable: true,
                             label: i18n.gettext('Price'),
                             queryMode: 'local',

@@ -107,27 +107,8 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
                         zone: 'end'
                     },
                 }
-
             },
         },
-        // {
-        //     width: 50,
-        //     menu: false,
-        //     cell: {
-        //         encodeHtml: false,
-        //         height: 48,
-        //         tools: {
-        //             edit: {
-        //                 cls: 'blue',
-        //                 hidden: true,
-        //                 handler: 'onEditItem',
-        //                 bind: {
-        //                     hidden: '{no_b2b_partner_create}'
-        //                 },
-        //             },
-        //         }
-        //     }
-        // },
         {
             menu: false,
             text: i18n.gettext('Client'),
