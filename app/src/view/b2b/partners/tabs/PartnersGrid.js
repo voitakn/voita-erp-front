@@ -81,9 +81,8 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
                 if (!!record.get('has_catalog')) {
                     return `<div><a href="/#b2b_catalog/${record.get("id")}"><b>${record.get("title")}</b></a></div>`;
                 }
-                return `<div><b>{title}</b></div>`;
+                return `<div><b>${record.get("title")}</b></div>`;
             },
-            //tpl: `<div><a href="/#partner_catalog/{id}"><b>{title}</b></a></div>`,
             cell: {
                 encodeHtml: false,
                 height: 48,
