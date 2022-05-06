@@ -8,6 +8,24 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
     },
 
     stores: {
+        b2bTreeCatalog: {
+            type: 'tree',
+            rootVisible: false,
+            proxy: {
+                type: 'ajax',
+                url: Api.markets.catalog_tree,
+                paramsAsJson: true,
+                extraParams: {
+                    connId: '{cardId}'
+                },
+                actionMethods: {
+                    read: 'POST'
+                },
+                reader: {
+                    type: 'json',
+                }
+            }
+        },
         select_produce_store: {
             extend: 'Erp.data.Store',
             model: 'Erp.model.RetailProduceList',
@@ -26,24 +44,6 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
                 //     only_amount: '{filter.only_amount}',
                 // }
             }
-        },
-        partners_store: {
-            extend: 'Erp.data.Store',
-            model: 'Erp.model.Partners',
-            autoLoad: true,
-            autoSync: false,
-            pageSize: 25,
-            proxy: {
-                type: 'erp_api',
-                api: {
-                    read: Api.b2b.partners_list
-                },
-                extraParams: {
-                    search: '{filter_search}',
-                    partner_type: '{partner_type}',
-                }
-            },
-        },
-
+        }
     },
 });

@@ -245,3 +245,14 @@ body.x-ios.x-webview.x-portrait {
     $input-color: $erp-blue,
     $input-font-weight : 600,
 );
+
+.no-icon {
+  &.x-treelist-nav  {
+    .x-treelist-item-text {
+      margin-left: 0 !important;
+    }
+    .x-treelist-item-icon {
+      display: none !important;
+    }
+  }
+}

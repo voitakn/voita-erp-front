@@ -1,4 +1,4 @@
-Ext.define('Erp.store.Catalogs', {
+Ext.define('Erp.store.CatalogsCl', {
     extend: 'Erp.data.TreeStore',
     alias: 'store.catalog_tree_list',
     requires: [

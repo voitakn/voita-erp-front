@@ -72,36 +72,41 @@ Ext.define('Erp.util.User', {
         }
         return false;
     },
-    clusterApi(url, cluster) {
-        if(url.startsWith('/logos/')) {
-            return url;
+    clusterApi(options, cluster, token) {
+        const url = options.url;
+
+        if(!options.headers) {
+            options.headers = {};
         }
-        if(url.startsWith('/api/customer/logout')) {
-            document.location.href = '/user/logout';
+        options.headers['Authorization'] = `Bearer ${token}`;
+
+        if(url.startsWith('/logos/')) {
+            return options;
+        }
+        if(url.startsWith('/api/user/logout')) {
+            document.location.href = options.url;
             return false;
         }
-
         if(url.startsWith('/api/user/data')) {
-            return url;
+            return options;
         }
-
         if(url.startsWith('/api/billing/tariff_list')) {
-            return url;
+            return options;
         }
         if(url.startsWith('/api/billing/create_card')) {
-            return url;
+            return options;
         }
         if(url.startsWith('/api/billing/create_sepa')) {
-            return url;
+            return options;
         }
         if(url.startsWith('/api/billing/subscription_check')) {
-            return url;
+            return options;
         }
         if(url.startsWith('/api/billing/subs_pos_method')) {
-            return url;
+            return options;
         }
         if(url.startsWith('/api/user/reload')) {
-            return url;
+            return options;
         }
 
         if(User.data && User.data.roles) {
@@ -120,13 +125,36 @@ Ext.define('Erp.util.User', {
 
             if(User.data.roles[urlRole]) {
                 if(User.data.roles[urlRole].cl === true) {
-                    return `${Ext.mainCfg.clsApi.protocol}://${cluster}.${Ext.mainCfg.clsApi.domain}${Ext.mainCfg.clsApi.port}${url}`;
+                    options.url = `${Ext.mainCfg.clsApi.protocol}://${cluster}.${Ext.mainCfg.clsApi.domain}${Ext.mainCfg.clsApi.port}${url}`;
+                    return options;
                 } else {
-                    return url;
+                    return options;
                 }
             }
         }
         return false;
+    },
+    marketsApi(options) {
+        console.log('marketsApi', options);
+        const connId = options.jsonData.connId;
+        if(connId) {
+            const pKey = localStorage.getItem(connId);
+            const tokenSplit = pKey.split('.');
+            const tokenData = Ext.JSON.decode(atob(tokenSplit[1]));
+            const cluster = tokenData.partner_cl;
+            let port = Ext.mainCfg.clsApi.port;
+            //Todo for prod need comment port
+            if(cluster === 'vt1') {
+                port = ':8008';
+            }
+
+            options.url = `${Ext.mainCfg.clsApi.protocol}://${cluster}.${Ext.mainCfg.clsApi.domain}${port}${options.url}`;
+            if(!options.headers) {
+                options.headers = {};
+            }
+            options.headers['Authorization'] = `Bearer ${pKey}`;
+        }
+        return options;
     },
     checkMenus() {
         const me = this;

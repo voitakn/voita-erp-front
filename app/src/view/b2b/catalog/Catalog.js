@@ -47,28 +47,32 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
                 {
                     xtype: 'container',
                     margin: '0 20 0 0',
-                    width: 300,
+                    width: 240,
+                    layout: 'fit',
                     items: [
                         {
-                            xtype: 'head1',
+                            xtype: 'toolbar',
+                            docked: 'top',
                             items: [
                                 {
                                     xtype: 'label',
                                     cls: 'title',
-                                    html: i18n.gettext('Partners list')
-                                }
+                                    html: i18n.gettext('Categories')
+                                },'->',{
+                                    xtype: 'button',
+                                    iconCls: 'erp-icon remove-done green-dark',
+                                    tooltip: i18n.gettext('Clear selection'),
+                                    handler: 'deselectCategory'
+                                },
                             ]
                         },
                         {
-                            xtype: 'list',
-                            itemTpl: '{title}',
-                            bind: {
-                                store: '{partners_store}'
-                            },
+                            xtype: 'container',
+                            reference: 'b2b_catalog_tree_container',
+                            layout: 'fit',
                         }
                     ]
-                },
-                {
+                },{
                     xtype: 'container',
                     layout: 'fit',
                     flex: 1,

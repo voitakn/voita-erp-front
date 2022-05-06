@@ -1,7 +1,7 @@
 CfgData = {
   "debug": true,
   "authUrl": "https://auth.voita.eu/auth/signin",
-  "logoutUrl": "/user/logout",
+  "logoutUrl": "/api/user/logout",
   "clsApi": {
     "domain": "voita.local",
     "protocol": "http",

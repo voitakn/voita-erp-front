@@ -30,21 +30,18 @@ Ext.define('Erp.Application', {
 			//console.log('beforerequest', conn);
 			const token = Ext.util.Cookies.get("GP_SSID");
 			const cluster = Ext.util.Cookies.get("VT_ID");
-			// For login from phone
-			/*if(options.url === '/api/customer/login') {
-				return true;
-			}*/
 
-			options.url = User.clusterApi(options.url, cluster);
 			if(!token ||
 				token === '' ) {
 				document.location.href = Ext.mainCfg.authUrl;
 				return false;
 			}
-			if(!options.headers) {
-				options.headers = {};
+			if(options.url && options.url.startsWith('/api/markets/')) {
+				options = User.marketsApi(options);
+			} else {
+				options = User.clusterApi(options, cluster, token);
 			}
-			options.headers['Authorization'] = `Bearer ${token}`;
+
 			if(!options.url) {
 				return false;
 			}

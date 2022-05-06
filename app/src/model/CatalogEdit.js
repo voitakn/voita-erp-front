@@ -1,5 +1,6 @@
 Ext.define('Erp.model.CatalogEdit', {
 	extend: 'Ext.data.TreeModel',
+
 	idProperty: 'id',
 	fields: [
 		{name: 'id', type: 'string'},

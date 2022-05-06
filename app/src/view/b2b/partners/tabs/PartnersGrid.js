@@ -77,25 +77,25 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
             text: i18n.gettext('Partner name'),
             flex: 1,
             dataIndex: 'title',
-            tpl: `<div><a href="/#partners_card/{id}"><b>{title}</b></a></div>`,
+            renderer(value, record) {
+                if (!!record.get('has_catalog')) {
+                    return `<div><a href="/#b2b_catalog/${record.get("id")}"><b>${record.get("title")}</b></a></div>`;
+                }
+                return `<div><b>{title}</b></div>`;
+            },
+            //tpl: `<div><a href="/#partner_catalog/{id}"><b>{title}</b></a></div>`,
             cell: {
                 encodeHtml: false,
                 height: 48,
             }
         },
         {
-            width: 230,
+            width: 40,
             menu: false,
             align: 'center',
             cell: {
                 encodeHtml: false,
                 height: 48,
-                renderer(value, record) {
-                    if (!record.get('has_catalog')) {
-                        return;
-                    }
-                    return `<a href="/#b2b_catalog/${record.get('id')}"><div class="x-component x-button x-has-text x-layout-box-item"><div class="x-inner-el"><div class="x-body-el"><div class="x-text-el"><b>${i18n.gettext('Go to catalog')}</b></div></div><div class="x-arrow-el x-font-icon"></div></div><div class="x-badge-el"></div><button class="x-button-el" type="button"></button></div></a>`;
-                },
                 tools: {
                     edit: {
                         cls: 'blue',
@@ -113,12 +113,7 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
             menu: false,
             text: i18n.gettext('Client'),
             align: 'center',
-            renderer(value, record) {
-                if (record.get('params')) {
-                    return Ext.util.Format.checkIcon(record.get('params').client);
-                }
-                return Ext.util.Format.checkIcon(!record.get('params').client);
-            },
+            tpl: `{params.client:checkIcon}`,
             cell: {
                 encodeHtml: false,
                 align: 'center',
@@ -128,12 +123,7 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
             menu: false,
             text: i18n.gettext('Supplier'),
             align: 'center',
-            renderer(value, record) {
-                if (record.get('params')) {
-                    return Ext.util.Format.checkIcon(record.get('params').supplier);
-                }
-                return Ext.util.Format.checkIcon(!record.get('params').supplier);
-            },
+            tpl: `{params.supplier:checkIcon}`,
             cell: {
                 encodeHtml: false,
                 align: 'center',
@@ -141,7 +131,8 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
         },
         {
             text: i18n.gettext('E-mail'),
-            width: 160,
+            flex: 1,
+            minWidth: 200,
             dataIndex: 'email',
             tpl: `<div>{email}</div><div>{phone}</div>`,
             cell: {encodeHtml: false, height: 48},
@@ -149,14 +140,14 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
         {
             text: i18n.gettext('Created'),
             dataIndex: 'created',
-            flex: 1,
+            width: 180,
             tpl: `<div>{created_short}</div>`,
             cell: {encodeHtml: false, height: 48},
         },
         {
             text: i18n.gettext('Applied'),
             dataIndex: 'applied',
-            flex: 1,
+            width: 180,
             tpl: `<div>{applied_short}</div>`,
             cell: {encodeHtml: false, height: 48},
         },
