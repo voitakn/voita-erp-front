@@ -139,7 +139,8 @@ Ext.define('Erp.util.Api', () => {
             partner_save: `${b2b}partner_save`,
             partner_remove: `${b2b}partner_remove`,
             partners_search: `${b2b}partners_search`,
-            partner_connect: `${b2b}partner_connect`,
+            partner_token: `${b2b}partner_token`,
+            partner_data: `${b2b}partner_data`,
         },
         markets: {
             catalog_tree: `${markets}catalog_tree`,

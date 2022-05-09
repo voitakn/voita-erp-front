@@ -23,7 +23,7 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
             const partnerKey = localStorage.getItem(cardId);
             if(!partnerKey) {
                 Ext.Ajax.request({
-                    url: Api.b2b.partner_connect,
+                    url: Api.b2b.partner_token,
                     jsonData: {
                         invite_id: cardId
                     },

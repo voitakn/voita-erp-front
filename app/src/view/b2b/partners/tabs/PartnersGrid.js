@@ -43,7 +43,7 @@ Ext.define('Erp.view.b2b.partners.tabs.PartnersGrid', {
                         {
                             xtype: 'combobox',
                             reference: 'partnertype',
-                            label: `<b>${i18n.gettext('Type partners')}</b>`,
+                            label: `<b>${i18n.gettext('Partner type')}</b>`,
                             width: 180,
                             editable: false,
                             displayField: 'display',
