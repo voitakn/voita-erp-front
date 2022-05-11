@@ -145,7 +145,7 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
                     xtype: 'container',
                     margin: '0 20 0 0',
                     layout: 'fit',
-                    flex: 1,b
+                    flex: 1,
                     items: [
                         {
                             xtype: 'head1',
