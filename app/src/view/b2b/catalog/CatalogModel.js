@@ -5,6 +5,9 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
         cardId: null,
         partner_type: 'supplier',
         filter_search: '',
+        item_data: {
+            amount: 1
+        }
     },
 
     stores: {
@@ -13,7 +16,7 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
             rootVisible: false,
             proxy: {
                 type: 'ajax',
-                url: Api.markets.catalog_tree,
+                url: Api.markets.catalog_json,
                 paramsAsJson: true,
                 extraParams: {
                     connId: '{cardId}'
@@ -44,6 +47,16 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
                 //     only_amount: '{filter.only_amount}',
                 // }
             }
-        }
+        },
+        cart_items_store: {
+            model: 'Erp.model.RetailSell',
+            autoSync: true,
+            proxy: {
+                type: 'memory'
+            },
+            // listeners: {
+            //     datachanged: 'sellItemsChanged'
+            // }
+        },
     },
 });

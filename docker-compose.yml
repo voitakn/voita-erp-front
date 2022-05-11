@@ -11,6 +11,7 @@ services:
       - "80:80"
       - "8080:80"
       - "8004:8004"
+      - "8005:8005"
   voita-sencha:
     image: docker.voita.eu/voita-sencha:latest
     container_name: voita-sencha

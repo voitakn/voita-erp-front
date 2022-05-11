@@ -6,7 +6,8 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
     ],
     bindings: {
         onCardId: '{cardId}',
-        onCatalogRecord: '{catalogSelected}'
+        onCatalogRecord: '{catalogSelected}',
+        // onSelectDataRec: '{dataview_rec}',
     },
     onViewShow() {
         const store = this.getViewModel().getStore('select_produce_store');
@@ -19,6 +20,7 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
     },
     onCardId(cardId) {
         const me = this;
+        const vm = me.getViewModel();
         if(cardId && cardId.length === 36) {
             const partnerKey = localStorage.getItem(cardId);
             if(!partnerKey) {
@@ -32,17 +34,41 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
                         let result = Ext.JSON.decode(resp.responseText);
                         if(!result.success || !result.data.token) {
                             Notice.showToast(result);
+                            me.toBack();
                             return;
                         }
                         localStorage.setItem(cardId, result.data.token);
+                        vm.set('partner', result.data.partner);
                         me.catalogInit(result.data.token);
                     },
                     failure(resp, opt) {
                         let result = Ext.JSON.decode(resp.responseText);
                         Notice.showToast(result);
+                        me.toBack();
                     },
                 });
             } else {
+                Ext.Ajax.request({
+                    url: Api.b2b.partner_data,
+                    jsonData: {
+                        invite_id: cardId
+                    },
+                    method: "POST",
+                    success(resp, opt) {
+                        let result = Ext.JSON.decode(resp.responseText);
+                        if(!result.success || !result.data.partner) {
+                            Notice.showToast(result);
+                            me.toBack();
+                            return;
+                        }
+                        vm.set('partner', result.data.partner);
+                    },
+                    failure(resp, opt) {
+                        let result = Ext.JSON.decode(resp.responseText);
+                        Notice.showToast(result);
+                        me.toBack();
+                    },
+                });
                 me.catalogInit(partnerKey);
             }
         } else {
@@ -66,7 +92,27 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
         const treeStore = vm.getStore('b2bTreeCatalog');
         treeStore.load();
     },
-
+    addProdToCart(btn) {
+        const me = this;
+        const vm = me.getViewModel();
+        const record = btn.up('dataitem').getRecord();
+        const cart_items_store = vm.getStore('cart_items_store');
+        if (record && record.isModel) {
+            const record_data = record.getData();
+            const spinner = btn.up('container').down('spinnerfield');
+            const item_data = Ext.clone(record_data);
+            item_data.amount = spinner.getValue();
+            const item_prod = cart_items_store.getById(item_data.id);
+            if (item_prod && item_prod.isModel) {
+                let amount = item_prod.get('amount') + item_data.amount;
+                item_prod.set('amount', amount);
+            } else {
+                cart_items_store.add(item_data);
+            }
+            spinner.setValue(1);
+        }
+        // console.log('onSelectDataRec cart_items_store', cart_items_store);
+    },
     toBack(btn) {
         Ext.util.History.back();
     },

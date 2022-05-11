@@ -144,6 +144,7 @@ Ext.define('Erp.util.Api', () => {
         },
         markets: {
             catalog_tree: `${markets}catalog_tree`,
+b            catalog_json: `${markets}catalog_json`,
         }
     };
 });
