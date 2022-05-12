@@ -13,3 +13,6 @@ docker-compose.yml
 Dockerfile-dev
 Dockerfile
 /nginx
+/resources/js/dev.js
+/Dockerfile-build
+/SenchaCmd.sh
