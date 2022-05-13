@@ -143,8 +143,8 @@ Ext.define('Erp.util.Api', () => {
             partner_data: `${b2b}partner_data`,
         },
         markets: {
-            catalog_tree: `${markets}catalog_tree`,
             catalog_json: `${markets}catalog_json`,
+            produce_list: `${markets}produce_list`
         }
     };
 });
