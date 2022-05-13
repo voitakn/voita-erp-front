@@ -5,6 +5,7 @@ CfgData = {
   "clsApi": {
     "domain": "voita.local",
     "protocol": "http",
-    "port": ":8006"
+    //"port": ":8006",
+    "port": ":8004"
   }
 };
