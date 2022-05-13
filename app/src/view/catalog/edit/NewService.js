@@ -46,10 +46,9 @@ Ext.define('Erp.view.catalog.edit.NewService', {
                     margin: '0 20 0 0',
                     width: 150,
                     required: true,
-                    label: i18n.gettext('Price'),
+                    label: i18n.gettext('Retail price'),
                     bind: {
-                        label: '{newServ.cols_title}',
-                        value: '{newServ.price}'
+                        value: '{newServ.priceRetail}'
                     },
                 },
                 {

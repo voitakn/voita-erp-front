@@ -2,7 +2,7 @@ Ext.define('Erp.base.Module', {
     extend: 'Ext.Container',
     layout: 'fit',
     autoSize: true,
-    padding: '5 10 5 20',
+    padding: '15 15 15 30',
     onRender() {
         this.callParent();
         const ctrl = this.getController();

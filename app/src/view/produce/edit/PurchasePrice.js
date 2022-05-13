@@ -10,7 +10,7 @@ Ext.define('Erp.view.produce.edit.PurchasePrice', {
     items: [
         {
             xtype: 'formpanel',
-            width: 250,
+            width: 240,
             buttonAlign: 'center',
             buttons: [
                 {
@@ -28,37 +28,17 @@ Ext.define('Erp.view.produce.edit.PurchasePrice', {
             ],
             items: [
                 {
-                    xtype: 'container',
-                    margin: '5 0',
-                    layout: {
-                        type: 'hbox',
-                        pack: 'end',
-                        align: 'center'
+                    xtype: 'numberfield',
+                    reference: 'purchase_price_base_field',
+                    required: true,
+                    label: `${i18n.gettext('Purchase price')}`,
+                    bind: {
+                        value: '{purchasePrice.price_base}',
                     },
-                    items: [
-                        {
-                            xtype: 'container',
-                            flex: 1,
-                            items: [
-                                {
-                                    xtype: 'numberfield',
-                                    width: 160,
-                                    // labelAlign: 'left',
-                                    // labelWidth: 180,
-                                    reference: 'purchase_price_base_field',
-                                    required: true,
-                                    label: `${i18n.gettext('Purchase price')}`,
-                                    bind: {
-                                        value: '{purchasePrice.price_base}',
-                                    },
-                                    listeners: {
-                                        blur: 'onCalcPurchasePriceSale'
-                                    }
-                                }
-                            ]
-                        },
-                    ]
-                },
+                    listeners: {
+                        blur: 'onCalcPurchasePriceSale'
+                    }
+                }
             ]
         }
     ]

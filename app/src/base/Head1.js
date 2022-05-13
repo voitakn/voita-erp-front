@@ -8,9 +8,9 @@ Ext.define('Erp.base.Head1', {
         pack: 'start',
         align: 'stretch'
     },
-    padding: '0 0 5 0',
+    padding: '0 0 15 0',
     defaults: {
         xtype: 'button',
-        margin: '0 10 0 0',
+        margin: '0 15 0 0',
     },
 });

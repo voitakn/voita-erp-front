@@ -42,9 +42,7 @@ Ext.define('Erp.view.produce.edit.MainPrice', {
                             items: [
                                 {
                                     xtype: 'numberfield',
-                                    width: 160,
-                                    // labelAlign: 'left',
-                                    // labelWidth: 110,
+                                    width: 150,
                                     reference: 'main_price_base_field',
                                     required: true,
                                     label: `${i18n.gettext('Basic price')}`,
@@ -61,19 +59,18 @@ Ext.define('Erp.view.produce.edit.MainPrice', {
                             xtype: 'container',
                             layout: {
                                 type: 'vbox',
-                                pack: 'center',
-                                align: 'center'
+                                pack: 'end',
+                                align: 'end'
                             },
                             items: [
                                 {
-                                    xtype: 'displayfield',
-                                    margin: '0 15',
-                                    cls: 'size-16 blue',
-                                    html: `${i18n.gettext('Total price')}:`,
+                                    xtype: 'label',
+                                    cls: 'size-16',
+                                    html: `${i18n.gettext('Total price')}`,
                                 },
                                 {
-                                    xtype: 'displayfield',
-                                    cls: 'size-16 blue bolder',
+                                    xtype: 'label',
+                                    cls: 'size-16 bolder',
                                     bind: {
                                         html: '{mainPrice.price:erpMoney}'
                                     },
@@ -96,9 +93,7 @@ Ext.define('Erp.view.produce.edit.MainPrice', {
                             items: [
                                 {
                                     xtype: 'numberfield',
-                                    width: 160,
-                                    // labelAlign: 'left',
-                                    // labelWidth: 110,
+                                    width: 150,
                                     margin: '0 20 0 0',
                                     label: i18n.gettext('Discount %'),
                                     bind: {
@@ -115,17 +110,16 @@ Ext.define('Erp.view.produce.edit.MainPrice', {
                             layout: {
                                 type: 'vbox',
                                 pack: 'end',
-                                align: 'center'
+                                align: 'end'
                             },
                             items: [
                                 {
-                                    xtype: 'displayfield',
-                                    margin: '0 15',
+                                    xtype: 'label',
                                     cls: 'size-16 green-dark',
-                                    html: `${i18n.gettext('Discount')}:`,
+                                    html: `${i18n.gettext('Discount')}`,
                                 },
                                 {
-                                    xtype: 'displayfield',
+                                    xtype: 'label',
                                     cls: 'size-16 green-dark bolder',
                                     bind: {
                                         html: '{mainPrice.sale:erpMoney}'

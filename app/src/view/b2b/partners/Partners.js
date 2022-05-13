@@ -8,18 +8,20 @@ Ext.define('Erp.view.b2b.partners.Partners', {
     viewModel: {
         type: 'partners_vm'
     },
-    autoSize: true,
-    scrollable: 'y',
     items: [
         {
-            xtype: 'b2b_menu',
-            docked: 'top',
-            margin: '5 0 0 20',
-        },
-        {
-            xtype: 'partners_tabs',
-            reference: 'partners_tabs',
-            flex: 1,
+            xtype: 'container',
+            layout: 'fit',
+            items: [
+                {
+                    xtype: 'b2b_menu',
+                    docked: 'top',
+                },
+                {
+                    xtype: 'partners_tabs',
+                    reference: 'partners_tabs',
+                },
+            ]
         },
         {
             xtype: 'create_partner',

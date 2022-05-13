@@ -144,8 +144,8 @@ Ext.define('Erp.util.User', {
             const cluster = tokenData.partner_cl;
             let port = Ext.mainCfg.clsApi.port;
             //Todo for prod need comment port
-            if(cluster === 'vt2') {
-                port = ':8005';
+            if(cluster === 'vt1') {
+                port = ':8008';
             }
 
             options.url = `${Ext.mainCfg.clsApi.protocol}://${cluster}.${Ext.mainCfg.clsApi.domain}${port}${options.url}`;

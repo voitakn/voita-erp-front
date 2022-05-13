@@ -14,11 +14,7 @@ Ext.define('Erp.view.catalog.ProdGrid', {
         {
             xtype: 'head1',
             items: [
-                /*{
-                    xtype: 'label',
-                    cls: 'title',
-                    html: i18n.gettext('Products and services')
-                },*/{
+                {
                     text: i18n.gettext('Product'),
                     iconCls: 'x-fa fa-plus green-dark',
                     handler: 'addNewProduce',
@@ -48,7 +44,7 @@ Ext.define('Erp.view.catalog.ProdGrid', {
     ],
     columns: [
         {
-            text: i18n.gettext('Product name'),
+            text: i18n.gettext('Item name'),
             flex: 1,
             tpl: `<a href="/#produce/{id}"><b>{title}</b></a><div>{params.description}</div>`,
             cell: {encodeHtml: false}
@@ -56,8 +52,8 @@ Ext.define('Erp.view.catalog.ProdGrid', {
             text: i18n.gettext('Price'),
             width: 160,
             align: 'right',
-            tpl: `<div>${i18n.gettext('Basic price')}: {price_base:erpMoney}</div>
-                  <div class="blue">${i18n.gettext('Total price')}: <b>{price:erpMoney}</b></div>`,
+            tpl: `<div>${i18n.gettext('Basic')}: {price_base:erpMoney}</div>
+                  <div class="blue-dark mt-2">${i18n.gettext('Full')}: <b>{price:erpMoney}</b></div>`,
             cell: {align: 'right', encodeHtml: false}
         },{
             text: i18n.gettext('Discount'),

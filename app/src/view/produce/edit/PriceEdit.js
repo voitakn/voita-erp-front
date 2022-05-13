@@ -51,7 +51,6 @@ Ext.define('Erp.view.produce.edit.PriceEdit', {
                                 {
                                     xtype: 'numberfield',
                                     width: 160,
-                                    // labelWidth: 110,
                                     required: true,
                                     disabled: true,
                                     name: 'priceEdit_price',

@@ -21,7 +21,7 @@ Ext.define('Erp.view.produce.tabs.PriceCnt', {
                         {
                             xtype: 'label',
                             cls: 'title',
-                            html: i18n.gettext('Retail prices')
+                            html: i18n.gettext('Base prices')
                         },
                     ]
                 },
@@ -32,86 +32,125 @@ Ext.define('Erp.view.produce.tabs.PriceCnt', {
             cls: 'border-bottom',
             layout: {
                 type: 'hbox',
-                pack: 'end',
+                pack: 'start',
                 align: 'center'
             },
             defaults: {
                 xtype: 'container',
-                flex: 1,
-                defaults: {
-                    xtype: 'label',
-                    margin: '7 0',
-                },
+                cls: 'size-16',
+                margin: '0 20 10 0'
             },
             items: [
                 {
-                    items: [
-                        {
-                            cls: 'bolder size-15',
-                            html: `${i18n.gettext('Basic price')}`
-                        }, {
-                            cls: 'bolder size-16',
-                            bind: {
-                                html: '{mainPrice.price_base:erpMoney}'
-                            }
-                        }
-                    ]
-                },
-                {
-                    items: [
-                        {
-                            cls: 'bolder size-15 green-dark',
-                            html: `${i18n.gettext('Discount')}`
-                        }, {
-                            cls: 'bolder size-16 green-dark',
-                            bind: {
-                                html: '{mainPrice.sale_percent}% = {mainPrice.sale:erpMoney}'
-                            }
-                        }
-                    ]
-                },
-                {
-                    items: [
-                        {
-                            cls: 'bolder size-15 blue',
-                            html: `${i18n.gettext('Total price')}`
-                        }, {
-                            cls: 'bolder size-16 blue',
-                            bind: {
-                                html: '{mainPrice.price:erpMoney}'
-                            }
-                        }
-                    ]
-                },
-                {
-                    xtype: 'button',
-                    flex: 0,
-                    text: i18n.gettext('Edit'),
-                    iconCls: 'fi-pencil',
-                    hidden: true,
-                    handler: 'editMainPrice',
+                    width: 180,
                     bind: {
-                        hidden: '{no_price_retail_save}'
+                        html: `${i18n.gettext('Purchase price')}</br> <b>{purchasePrice.price_base:erpMoney}</b>`
                     }
+                },{
+                    width: 180,
+                },{
+                    width: 180,
+                    bind: {
+                        html: `${i18n.gettext('Full purchase')}</br> <b>{purchasePrice.price:erpMoney}</b>`
+                    }
+                }, {
+                    flex: 1,
+                    margin: '0 0 0 0',
+                },
+                {
+                    margin: '0 0 10 0',
+                    items: [
+                        {
+                            xtype: 'button',
+                            text: i18n.gettext('Purchase price'),
+                            iconCls: 'fi-pencil',
+                            hidden: true,
+                            handler: 'editPurchasePrice',
+                            bind: {
+                                hidden: '{no_price_purchase_save}'
+                            }
+                        }
+                    ]
                 }
+
             ]
         },
         {
             xtype: 'container',
-            margin: '0 0 20 0',
+            cls: 'border-bottom',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'center'
+            },
+            defaults: {
+                xtype: 'container',
+                cls: 'size-16',
+                margin: '10 20 10 0'
+            },
+            items: [
+                {
+                    width: 180,
+                    bind: {
+                        html: `${i18n.gettext('Retail price')}</br> <b>{mainPrice.price_base:erpMoney}</b>`,
+                    }
+                },
+                {
+                    width: 180,
+                    cls: 'size-16 green-dark',
+                    bind: {
+                        html: `${i18n.gettext('Discount')} {mainPrice.sale_percent}%</br> <b> {mainPrice.sale:erpMoney}</b>`
+                    }
+                },
+                {
+                    width: 180,
+                    bind: {
+                        html: `${i18n.gettext('Full retail price')}</br> <b>{mainPrice.price:erpMoney}</b>`
+                    }
+                }, {
+                    flex: 1,
+                    margin: '0 0 0 0',
+                }, {
+                    margin: '10 0 10 0',
+                    items: [
+                        {
+                            xtype: 'button',
+                            text: i18n.gettext('Retail price'),
+                            iconCls: 'fi-pencil',
+                            hidden: true,
+                            handler: 'editMainPrice',
+                            bind: {
+                                hidden: '{no_price_retail_save}'
+                            }
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            xtype: 'container',
             cls: 'border-bottom',
             items: [
                 {
-                    xtype: 'head2',
+                    xtype: 'container',
+                    margin: '10 0 10 0',
+                    cls: 'head-1',
+                    docked: 'top',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'start',
+                        align: 'center'
+                    },
                     items: [
                         {
                             xtype: 'label',
-                            cls: 'bolder',
+                            cls: 'title',
                             html: i18n.gettext('POS prices')
                         },
                         {
                             xtype: 'togglefield',
-                            margin: '10 0 0 10',
+                            margin: '0 0 0 25',
                             flex: 1,
                             boxLabel: i18n.gettext('Enable different prices for each POS'),
                             readOnly: true,
@@ -127,7 +166,7 @@ Ext.define('Erp.view.produce.tabs.PriceCnt', {
                 },
                 {
                     xtype: 'container',
-                    margin: '0 0 20 0',
+                    margin: '0 0 15 0',
                     hidden: false,
                     bind: {
                         hidden: '{theCardOrigin.params.places_prices}'
@@ -136,7 +175,7 @@ Ext.define('Erp.view.produce.tabs.PriceCnt', {
                         {
                             xtype: 'label',
                             cls: 'size-15',
-                            html: i18n.gettext('Manage prices of each POS is inactive. You can turn it on.')
+                            html: i18n.gettext('For managing prices of each POS you can turn it on.')
                         }
                     ]
                 },
@@ -150,59 +189,6 @@ Ext.define('Erp.view.produce.tabs.PriceCnt', {
                     }
                 },
 
-            ]
-        },
-        {
-            xtype: 'container',
-            margin: '0 0 10 0',
-            layout: {
-                type: 'hbox',
-                pack: 'start',
-                align: 'center'
-            },
-            defaults: {
-                xtype: 'container',
-                flex: 1,
-                defaults: {
-                    xtype: 'label',
-                    margin: '7 0',
-                },
-            },
-            items: [
-                {
-                    items: [
-                        {
-                            cls: 'bolder size-16',
-                            bind: {
-                                html: '{purchasePrice.title}'
-                            }
-                        }
-                    ]
-                },
-                {
-                    items: [
-                        {
-                            cls: 'bolder size-15 blue',
-                            html: `${i18n.gettext('Total price')}`
-                        }, {
-                            cls: 'bolder size-16 blue',
-                            bind: {
-                                html: '{purchasePrice.price:erpMoney}'
-                            }
-                        }
-                    ]
-                },
-                {
-                    xtype: 'button',
-                    flex: 0,
-                    text: i18n.gettext('Edit'),
-                    iconCls: 'fi-pencil',
-                    hidden: true,
-                    handler: 'editPurchasePrice',
-                    bind: {
-                        hidden: '{no_price_purchase_save}'
-                    }
-                }
             ]
         },
         {

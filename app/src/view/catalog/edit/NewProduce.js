@@ -39,8 +39,6 @@ Ext.define('Erp.view.catalog.edit.NewProduce', {
         },
         {
             xtype: 'container',
-            margin: '0 10 0 0',
-            //padding: '0 10 0 0',
             width: 520,
             scrollable: 'y',
             autoSize: true,
@@ -60,16 +58,17 @@ Ext.define('Erp.view.catalog.edit.NewProduce', {
                         {
                             xtype: 'textfield',
                             margin: '0 20 0 0',
-                            width: 240,
+                            width: 180,
                             label: i18n.gettext('Barcode'),
                             bind: {
                                 value: '{newProd.barcode}'
                             },
                         },{
                             xtype: 'selectfield',
+                            margin: '0 20 0 0',
                             clearable: true,
                             required: true,
-                            width: 240,
+                            width: 180,
                             label: i18n.gettext('tax VAT'),
                             valueField: 'value',
                             displayTpl: '{name}',
@@ -77,6 +76,14 @@ Ext.define('Erp.view.catalog.edit.NewProduce', {
                             bind: {
                                 value: '{newProd.tax_rate}',
                                 store: '{taxes_store}'
+                            }
+                        },{
+                            xtype: 'textfield',
+                            label: i18n.gettext('Currency'),
+                            readOnly: true,
+                            width: 100,
+                            bind: {
+                                value: `{currencySymbol}`
                             }
                         }
                     ]
@@ -87,19 +94,28 @@ Ext.define('Erp.view.catalog.edit.NewProduce', {
                         {
                             xtype: 'numberfield',
                             margin: '0 20 0 0',
-                            width: 150,
+                            width: 140,
                             required: true,
-                            label: i18n.gettext('Price'),
+                            label: i18n.gettext('Purchase price'),
                             bind: {
-                                label: '{newProd.cols_title}',
-                                value: '{newProd.price}'
+                                //label: '{newProd.cols_title}',
+                                value: '{newProd.pricePurchase}'
+                            },
+                        },{
+                            xtype: 'numberfield',
+                            margin: '0 20 0 0',
+                            width: 140,
+                            required: true,
+                            label: i18n.gettext('Retail price'),
+                            bind: {
+                                //label: '{newProd.cols_title}',
+                                value: '{newProd.priceRetail}'
                             },
                         },{
                             xtype: 'selectfield',
                             clearable: true,
                             required: true,
-                            width: 210,
-                            margin: '0 20 0 0',
+                            width: 180,
                             label: i18n.gettext('Unit type per'),
                             valueField: 'id',
                             displayTpl: '{name} {abr}',
@@ -110,20 +126,12 @@ Ext.define('Erp.view.catalog.edit.NewProduce', {
                             bind: {
                                 value: '{newProd.unit_type}',
                             }
-                        },{
-                            xtype: 'textfield',
-                            label: i18n.gettext('Currency'),
-                            readOnly: true,
-                            width: 100,
-                            bind: {
-                                value: `{currencySymbol}`
-                            }
-                        },
+                        }
 
                     ]
                 },{
                     xtype: 'textareafield',
-                    label: i18n.gettext('Full description'),
+                    label: i18n.gettext('Product description'),
                     width: 500,
                     maxRows: 5,
                     bind: {
@@ -151,6 +159,8 @@ Ext.define('Erp.view.catalog.edit.NewProduce', {
                     }
                 }
             ]
+        },{
+
         }
 
     ]

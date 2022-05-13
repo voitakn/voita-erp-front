@@ -6,7 +6,7 @@ Ext.define('Erp.base.Head2', {
     layout: {
         type: 'hbox',
         pack: 'start',
-        align: 'stretch'
+        align: 'center'
     },
     padding: '0 0 10 0',
     defaults: {
