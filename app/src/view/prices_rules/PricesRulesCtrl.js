@@ -25,6 +25,7 @@ Ext.define('Erp.view.prices_rules.RulesCtrl', {
             title: '',
             type_change: 1,
             percent: null,
+            active: true
         });
         grid.deselectAll();
         prices_defs_rules_store.each((record) => {

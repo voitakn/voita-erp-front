@@ -5,10 +5,6 @@ Ext.define('Erp.view.prices_rules.PricesRulesModel', {
 		'Erp.store.PricesRules'
 	],
 	data: {
-		newPricesRules: {
-			params: {},
-			active: true
-		},
 		editCard: false,
 		clickEdit: false,
 		fullCard: {},
