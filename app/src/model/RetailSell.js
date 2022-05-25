@@ -13,28 +13,29 @@ Ext.define('Erp.model.RetailSell', {
 			calculate(data){
 				return data.price ? data.price.price : 0.00;
 			}
-		}, {name: 'tax_value',  type: 'number',
+		},
+		{name: 'tax_value',  type: 'number',
 			calculate(data){
 				if(data.tax_rate > 1) {
 					return Math.ceil((data.tax_rate - 1) * 100);
 				}
 				return 0.00;
 			}
-		}, {
-			name: 'price_total', type: 'number',
+		},
+		{name: 'price_total', type: 'number',
 			calculate(data){
 				return data.price ? Ext.Number.roundToPrecision((data.price.price * data.amount), 2) : 0.00;
 			}
-		}, {
-			name: 'tax_price', type: 'number',
+		},
+		{name: 'tax_price', type: 'number',
 			calculate(data){
 				if(data.price && data.price.price > 0 && data.tax_rate > 0) {
 					return data.price.price - (data.price.price / data.tax_rate);
 				}
 				return 0.00;
 			}
-		}, {
-			name: 'tax_total', type: 'number',
+		},
+		{name: 'tax_total', type: 'number',
 			calculate(data){
 				let tax_pr = 0.00;
 				if(data.price && data.price.price > 0 && data.tax_rate > 0) {
@@ -42,8 +43,8 @@ Ext.define('Erp.model.RetailSell', {
 				}
 				return tax_pr * data.amount;
 			}
-		}, {
-			name: 'sale_total', type: 'number',
+		},
+		{name: 'sale_total', type: 'number',
 			calculate(data){
 				return data.price ? data.price.sale * data.amount : 0.00;
 			}

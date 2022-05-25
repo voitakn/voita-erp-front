@@ -7,10 +7,10 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
     bindings: {
         onCardId: '{cardId}',
         onCatalogRecord: '{catalogSelected}',
-        // onSelectDataRec: '{dataview_rec}',
+        reloadStore: '{filter.catalog_id}',
     },
     onViewShow() {
-        const store = this.getViewModel().getStore('select_produce_store');
+        const store = this.getViewModel().getStore('market_produce_store');
         if (store) {
             store.loadPage(1);
         }
@@ -77,7 +77,7 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
     },
     clearData() {
         this.lookup('b2b_catalog_tree_container').removeAll(true, true);
-        this.getViewModel().getStore('select_produce_store').loadData([]);
+        this.getViewModel().getStore('market_produce_store').loadData([]);
     },
     catalogInit(token) {
         const me = this;
@@ -111,17 +111,69 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
             }
             spinner.setValue(1);
         }
-        // console.log('onSelectDataRec cart_items_store', cart_items_store);
     },
     toBack(btn) {
         Ext.util.History.back();
     },
     deselectCategory(btn) {
+        const me = this;
+        const vm = me.getViewModel();
         this.lookup('b2b_catalog_treelist').setSelection(null);
+        vm.set('filter.catalog_id', null);
     },
-    onCatalogRecord(catalogRow) {
-        // Todo here filter by catalog_id
-        console.log('onCatalogRecord', catalogRow);
-    }
-
+    reloadStore() {
+        const me = this;
+        const vm = me.getViewModel();
+        const store = vm.getStore('market_produce_store');
+        if (store) {
+            store.loadPage(1);
+        }
+    },
+    onCatalogRecord(record) {
+        const me =this;
+        const vm = me.getViewModel();
+        if (record) {
+            vm.set('filter.catalog_id', record.data.id);
+        }
+    },
+    cartItemsChanged(store) {
+        const me = this;
+        const vm = me.getViewModel();
+        let bill_amount_total = 0.00;
+        let bill_price_total = 0.00;
+        let bill_tax_total = 0.00;
+        let bill_sale_total = 0.00;
+        let bill_products_total = 0;
+        if (store) {
+            store.each(rec => {
+                bill_amount_total += rec.get('amount');
+                bill_price_total += rec.get('price_total');
+                bill_tax_total += rec.get('tax_total');
+                bill_sale_total += rec.get('sale_total');
+                bill_products_total++;
+            });
+        }
+        vm.set({
+            bill_amount_total: bill_amount_total,
+            bill_price_total: bill_price_total,
+            bill_tax_total: bill_tax_total,
+            bill_sale_total: bill_sale_total,
+            bill_products_total: bill_products_total
+        });
+    },
+    onRemoveFromCart(btn, row) {
+        const me = this;
+        const store = this.getViewModel().getStore('cart_items_store');
+        const record = btn.up('dataitem').getRecord();
+        const confirm = Ext.create('Erp.common.DeleteConfirm', {
+            target: row.event.target,
+            listeners: {
+                onConfirm(tooltip) {
+                    store.remove(record);
+                    tooltip.destroy();
+                }
+            }
+        });
+        confirm.show();
+    },
 });

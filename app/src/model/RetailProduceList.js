@@ -10,6 +10,7 @@ Ext.define('Erp.model.RetailProduceList', {
 		{name: 'serv',  type: 'boolean'},
 		{name: 'tax_value',  type: 'number',
 			calculate(data){
+			console.log('data', data);
 				if(data.tax_rate > 1) {
 					return Math.ceil((data.tax_rate - 1) * 100);
 				}

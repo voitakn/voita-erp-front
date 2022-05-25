@@ -6,22 +6,19 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
     viewModel: {
         type: 'b2b_catalog_vm'
     },
-    autoSize: true,
-    scrollable: 'y',
     layout: {
         type: 'hbox',
         pack: 'start',
-
     },
     items: [
         {
             xtype: 'container',
-            width: 240,
+            width: 250,
+            margin: '0 20 0 0',
             items: [
                 {
                     xtype: 'container',
                     docked: 'top',
-                    margin: '0 20 0 0',
                     layout: {
                         type: 'hbox',
                         pack: 'start',
@@ -46,8 +43,6 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
                 },
                 {
                     xtype: 'container',
-                    margin: '0 20 0 0',
-                    // width: 240,
                     layout: 'fit',
                     items: [
                         {
@@ -134,21 +129,17 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
         },
         {
             xtype: 'container',
+            margin: '0 20 0 0',
             flex: 1,
-            layout: {
-                type: 'hbox',
-                pack: 'start',
-                align: 'stretch'
-            },
+            layout: 'fit',
             items: [
                 {
                     xtype: 'container',
-                    margin: '0 20 0 0',
-                    layout: 'fit',
-                    flex: 1,
+                    docked: 'top',
                     items: [
                         {
                             xtype: 'head1',
+                            padding: '0 0 5 0',
                             items: [
                                 {
                                     xtype: 'label',
@@ -157,134 +148,31 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
                                 }
                             ]
                         },
-                        {
-                            xtype: 'componentdataview',
-                            inline: true,
-                            itemConfig: {
-                                bodyCls: 'shadow-sm bg-white border border-1 rounded margin-sh',
-                                padding: '5 5 5 5',
-                                textAlign: 'center',
-                                // viewModel: true, // enable per-item record binding
-                                items: [
-                                    {
-                                        xtype: 'container',
-                                        width: 200,
-                                        layout: {
-                                            type: 'vbox',
-                                            align: 'center',
-                                        },
-
-                                        items: [
-                                            {
-                                                xtype: 'image',
-                                                // bodyCls: 'border border-1 rounded margin-sh',
-                                                margin: '0 0 5 0',
-                                                width: 100,
-                                                height: 100,
-                                                bind: {
-                                                    src: 'resources/shared/images/no_logo.png',
-                                                }
-                                            },
-                                            {
-                                                items: [
-                                                    {
-                                                        xtype: 'label',
-                                                        margin: '0 0 5 0',
-                                                        cls: 'bolder',
-                                                        reference: 'textTitle'
-                                                    },
-                                                    {
-                                                        xtype: 'label',
-                                                        margin: '0 0 5 0',
-                                                        cls: '',
-                                                        reference: 'textBarcode'
-                                                    },
-                                                    {
-                                                        xtype: 'label',
-                                                        margin: '0 0 5 0',
-                                                        cls: 'bolder',
-                                                        // reference: 'textPrice'
-                                                    },
-                                                ]
-                                            },
-                                            {
-                                                xtype: 'spinnerfield',
-                                                ui: 'payment',
-                                                margin: '0 5 0 0',
-                                                width: 80,
-                                                clearable: true,
-                                                minValue: 1,
-                                                value: 1,
-                                            },
-                                            {
-                                                xtype: 'button',
-                                                width: 80,
-                                                // iconCls: 'x-fas fa-arrow-right green-dark size-24',
-                                                text: i18n.gettext('Add'),
-                                                tooltip: i18n.gettext('Add to cart'),
-                                                handler: 'addProdToCart'
-                                            }
-                                        ]
-                                    },
-                                ],
-                            },
-                            itemDataMap: {
-                                textTitle: {
-                                    html: 'title'
-                                },
-                                textBarcode: {
-                                    html: 'barcode'
-                                },
-                                textAmount: {
-                                    html: 'amount'
-                                },
-                                textPrice: {
-                                    html: 'price:erpMoney'
-                                },
-                            },
-                            bind: {
-                                store: '{select_produce_store}',
-                            },
-                        },
                     ]
                 },
                 {
-                    xtype: 'container',
-                    layout: 'fit',
-                    width: 250,
-                    items: [
-                        {
-                            xtype: 'head1',
-                            items: [
-                                {
-                                    xtype: 'label',
-                                    cls: 'title',
-                                    html: i18n.gettext('Cart')
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'componentdataview',
-                            // inline: true,
-                            itemConfig: {
-                                bodyCls: 'shadow-sm bg-white border border-1 rounded margin-sh',
-                                padding: '5 5 5 5',
-                                textAlign: 'center',
-                                defaults: {
-                                    xtype: 'container',
-                                    cls: 'size-12',
-                                    defaults: {
-                                        xtype: 'label',
-                                    }
-                                },
+                    xtype: 'componentdataview',
+                    inline: true,
+                    itemConfig: {
+                        bodyCls: 'shadow-sm gray-light-bg border border-1 rounded margin-sh',
+                        textAlign: 'center',
+                        items: [
+                            {
+                                xtype: 'container',
+                                padding: '10 5 10 5',
+                                height: 260,
                                 layout: {
                                     type: 'vbox',
-                                    align: 'center',
+                                    pack: 'start',
+                                    align: 'center'
+                                },
+                                cls: 'text-center',
+                                defaults: {
+                                    width: 130,
                                 },
                                 items: [
                                     {
                                         xtype: 'image',
-                                        // bodyCls: 'border border-1 rounded margin-sh',
                                         margin: '0 0 5 0',
                                         width: 100,
                                         height: 100,
@@ -293,63 +181,266 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
                                         }
                                     },
                                     {
-                                        items: [
-                                            {
-                                                margin: '0 0 5 0',
-                                                cls: 'bolder',
-                                                reference: 'textTitle'
-                                            },
-                                            {
-                                                margin: '0 0 5 0',
-                                                cls: '',
-                                                reference: 'textBarcode'
-                                            },
-                                            {
-                                                margin: '0 0 5 0',
-                                                cls: 'bolder blue',
-                                                reference: 'textAmount'
-                                            },
-                                            {
-                                                margin: '0 0 5 0',
-                                                cls: 'bolder',
-                                                // reference: 'textPrice'
-                                            },
-                                        ]
+                                        xtype: 'label',
+                                        margin: '0 0 5 0',
+                                        cls: 'bolder',
+                                        reference: 'textTitle'
+                                    },
+                                    {
+                                        xtype: 'label',
+                                        margin: '0 0 5 0',
+                                        cls: '',
+                                        reference: 'textBarcode'
+                                    },
+                                    {
+                                        xtype: 'label',
+                                        margin: '0 0 5 0',
+                                        cls: 'bolder blue',
+                                        reference: 'textPrice'
+                                    },
+                                    {
+                                        xtype: 'spinnerfield',
+                                        margin: '0 5 0 0',
+                                        clearable: true,
+                                        minValue: 1,
+                                        decimals: 3,
+                                        value: 1,
                                     },
                                     {
                                         xtype: 'button',
                                         width: 80,
-                                        // iconCls: 'x-fas fa-arrow-right green-dark size-24',
                                         text: i18n.gettext('Add'),
                                         tooltip: i18n.gettext('Add to cart'),
-                                        // handler: 'addProdToCart'
+                                        handler: 'addProdToCart'
                                     }
-                                ],
-
+                                ]
                             },
-                            itemDataMap: {
-                                textTitle: {
-                                    html: 'title'
-                                },
-                                textBarcode: {
-                                    html: 'barcode'
-                                },
-                                textAmount: {
-                                    html: 'amount'
-                                },
-                                textPrice: {
-                                    html: 'price:erpMoney'
-                                },
-                            },
-                            bind: {
-                                store: '{cart_items_store}',
-                                // selection: '{dataview_rec}',
-                            },
+                        ],
+                    },
+                    itemDataMap: {
+                        textTitle: {
+                            html: 'title'
                         },
-
-                    ]
+                        textBarcode: {
+                            html: 'barcode'
+                        },
+                        textAmount: {
+                            html: 'amount'
+                        },
+                        textPrice: {
+                            html: 'fmt_price'
+                        },
+                        textRetail: {
+                            html: 'fmt_retail'
+                        },
+                    },
+                    bind: {
+                        store: '{market_produce_store}',
+                    },
                 },
             ]
         },
+        {
+            xtype: 'container',
+            width: 280,
+            layout: 'vbox',
+            items: [
+                {
+                    xtype: 'head1',
+                    padding: '0 0 5 0',
+                    items: [
+                        {
+                            xtype: 'label',
+                            cls: 'title',
+                            html: i18n.gettext('Cart')
+                        }
+                    ]
+                },
+                {
+                    xtype: 'componentdataview',
+                    margin: '0 0 10 0',
+                    flex: 1,
+                    // inline: true,
+                    itemConfig: {
+                        bodyCls: 'shadow-sm gray-light-bg border border-1 rounded margin-sh',
+                        items: [
+                            {
+                                xtype: 'container',
+                                // width: 120,
+                                // height: 180,
+                                padding: '10 10 10 10',
+                                defaults: {
+                                    xtype: 'container',
+                                    cls: 'size-12',
+                                },
+                                items: [
+                                    {
+                                        layout: {
+                                            type: 'hbox',
+                                            pack: 'end',
+                                            align: 'start'
+                                        },
+                                        items: [
+                                            {
+                                                margin: '0 10 0 0',
+                                                flex: 1,
+                                                defaults: {
+                                                    xtype: 'container',
+                                                    height: 40,
+                                                    defaults: {
+                                                        xtype: 'label',
+                                                    }
+                                                },
+                                                items: [
+                                                    {
+                                                        items: [
+                                                            {
+                                                                cls: 'bolder',
+                                                                reference: 'textTitle'
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        items: [
+                                                            {
+                                                                cls: 'bolder',
+                                                                reference: 'textBarcode'
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        items: [
+                                                            {
+                                                                cls: 'bolder blue',
+                                                                reference: 'textPrice'
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        items: [
+                                                            {
+                                                                cls: 'bolder',
+                                                                reference: 'textAmount',
+                                                            },
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'image',
+                                                width: 80,
+                                                height: 80,
+                                                bind: {
+                                                    src: 'resources/shared/images/no_logo.png',
+                                                }
+                                            },
+                                            {
+                                                xtype: 'button',
+                                                ui: 'decline noborder',
+                                                iconCls: 'x-fa fa-times',
+                                                tooltip: i18n.gettext('Remove from list'),
+                                                handler: 'onRemoveFromCart',
+                                            },
+                                        ],
+                                    },
+                                ]
+                            }
+                        ],
+                    },
+                    itemDataMap: {
+                        textTitle: {
+                            html: 'title'
+                        },
+                        textBarcode: {
+                            html: 'barcode'
+                        },
+                        textAmount: {
+                            html: 'amount'
+                        },
+                        textPrice: {
+                            html: 'fmt_price',
+                        },
+                    },
+                    bind: {
+                        store: '{cart_items_store}',
+                    },
+                },
+                {
+                    xtype: 'container',
+                    cls: 'blue-bg text-white',
+                    items: [
+                        {
+                            xtype: 'container',
+                            margin: '5 10 5 10',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'start',
+                                align: 'middle'
+                            },
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    layout: {
+                                        type: 'hbox',
+                                        pack: 'start',
+                                        align: 'middle'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            cls: 'bolder text-left',
+                                            bind: {
+                                                html: `${i18n.gettext('Products')}: {bill_products_total}`,
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    flex: 1,
+                                    layout: {
+                                        type: 'hbox',
+                                        pack: 'end',
+                                        align: 'middle'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            cls: 'bolder text-left',
+                                            bind: {
+                                                html: `${i18n.gettext('Quantity')}: {bill_amount_total:number("0.00")}`,
+                                            }
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            margin: '0 10 10 10',
+                            layout: {
+                                type: 'hbox',
+                                pack: 'start',
+                                align: 'middle'
+                            },
+                            items: [
+                                {
+                                    xtype: 'label',
+                                    cls: 'size-24 bolder',
+                                    flex: 1,
+                                    html: `${i18n.gettext('Total')}:`,
+                                },
+                                {
+                                    xtype: 'label',
+                                    width: 100,
+                                    cls: 'size-24 bolder text-right',
+                                    bind: {html: '{bill_price_total:erpMoney}'},
+                                }
+                            ]
+                        },
+                    ]
+                }
+            ],
+        }
     ]
 });

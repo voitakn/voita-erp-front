@@ -3,7 +3,7 @@ Ext.define('Erp.view.b2b.catalog.ProduceGrid', {
     xtype: 'b2b_produce_grid',
     autoSize: true,
     bind: {
-        store: '{select_produce_store}',
+        store: '{market_produce_store}',
     },
     plugins: {
         gridpagingtoolbar: true

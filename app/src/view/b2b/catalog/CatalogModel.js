@@ -4,10 +4,21 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
     data: {
         cardId: null,
         partner_type: 'supplier',
-        filter_search: '',
         item_data: {
             amount: 1
-        }
+        },
+        filter: {
+            catalog_id: null,
+            search: null,
+        },
+        bill_tax_total: 0.00,
+        bill_amount_total: 0.00,
+        bill_price_total: 0.00,
+        bill_sale_total: 0.00,
+        bill_products_total: 0,
+        bill_sell_current: 1,
+        bill_sell_total: 1,
+
     },
 
     stores: {
@@ -29,34 +40,34 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
                 }
             }
         },
-        select_produce_store: {
+        market_produce_store: {
             extend: 'Erp.data.Store',
-            model: 'Erp.model.RetailProduceList',
+            model: 'Erp.model.MarketProduceList',
             autoLoad: true,
             autoSync: false,
             pageSize: 25,
             proxy: {
                 type: 'erp_api',
+                paramsAsJson: true,
                 api: {
-                    read: Api.items.retail_produce_list
+                    read: Api.markets.produce_list
                 },
-                // extraParams: {
-                //     catalog_id: '{filter.catalog_id}',
-                //     place_id: '{filter.place_id}',
-                //     search: '{filter.search}',
-                //     only_amount: '{filter.only_amount}',
-                // }
-            }
+                extraParams: {
+                    connId: '{cardId}',
+                    catalog_id: '{filter.catalog_id}',
+                    search: '{filter.search}',
+                }
+            },
         },
         cart_items_store: {
-            model: 'Erp.model.RetailSell',
+            model: 'Erp.model.MarketSell',
             autoSync: true,
             proxy: {
                 type: 'memory'
             },
-            // listeners: {
-            //     datachanged: 'sellItemsChanged'
-            // }
+            listeners: {
+                datachanged: 'cartItemsChanged'
+            }
         },
     },
 });
