@@ -144,7 +144,9 @@ Ext.define('Erp.util.Api', () => {
         },
         markets: {
             catalog_json: `${markets}catalog_json`,
-            produce_list: `${markets}produce_list`
+            produce_list: `${markets}produce_list`,
+            order_create: `${markets}order_create`,
+            order_save: `${markets}order_save`,
         }
     };
 });

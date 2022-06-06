@@ -367,6 +367,30 @@ Ext.define('Erp.view.b2b.catalog.Catalog', {
                 },
                 {
                     xtype: 'container',
+                    layout: {
+                        type: 'hbox',
+                        pack: 'center',
+                        align: 'end'
+                    },
+                    items: [
+                        {
+                            xtype: 'button',
+                            margin: '0 15 10 0',
+                            minWidth: 150,
+                            cls: 'green-dark-bg text-white',
+                            iconAlign: 'bottom',
+                            iconCls: 'x-far fa-credit-card white',
+                            text: i18n.gettext('Order Send'),
+                            handler: 'saveOrder',
+                            disabled: true,
+                            bind: {
+                                disabled: '{bill_price_total > 0 ? false : true}'
+                            },
+                        },
+                    ]
+                },
+                {
+                    xtype: 'container',
                     cls: 'blue-bg text-white',
                     items: [
                         {

@@ -23,6 +23,7 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
         const vm = me.getViewModel();
         if(cardId && cardId.length === 36) {
             const partnerKey = localStorage.getItem(cardId);
+            vm.set('connId', cardId);
             if(!partnerKey) {
                 Ext.Ajax.request({
                     url: Api.b2b.partner_token,
@@ -71,6 +72,13 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
                 });
                 me.catalogInit(partnerKey);
             }
+            me.reloadStore();
+            let key = 'cart' + cardId;
+            // if (!localStorage.getItem(key)) {
+            //     vm.getStore('cart_items_store').loadData([]);
+            // } else {
+            //     vm.getStore('cart_items_store').loadData([localStorage.getItem(key)]);
+            // }
         } else {
             me.clearData();
         }
@@ -104,13 +112,86 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
             item_data.amount = spinner.getValue();
             const item_prod = cart_items_store.getById(item_data.id);
             if (item_prod && item_prod.isModel) {
-                let amount = item_prod.get('amount') + item_data.amount;
-                item_prod.set('amount', amount);
+                item_data.amount = item_prod.get('amount') + item_data.amount;
+                item_prod.set('amount', item_data.amount);
             } else {
                 cart_items_store.add(item_data);
             }
+            Ext.Ajax.request({
+                url: Api.markets.order_create,
+                jsonData: {
+                    connId: vm.get('cardId'),
+                    item: {
+                        barcode: item_data.barcode,
+                        id: item_data.id,
+                        price: item_data.price_total,
+                        serv: item_data.serv,
+                        tax_rate: item_data.tax_rate,
+                        title: item_data.title,
+                        unit_type: item_data.unit_type,
+                        amount: item_data.amount,
+                    }
+                },
+                method: "POST",
+                success(resp, opt) {
+                    let result = Ext.JSON.decode(resp.responseText);
+                    Notice.showToast(result);
+                    if(result.success || result.data) {
+                        console.log('result data', result.data)
+                    }
+                },
+                failure(resp, opt) {
+                    let result = Ext.JSON.decode(resp.responseText);
+                    Notice.showToast(result);
+                },
+            });
+
             spinner.setValue(1);
         }
+    },
+    saveOrder() {
+        const me = this;
+        const vm = me.getViewModel();
+        const cart_items_store = vm.getStore('cart_items_store');
+        const items_data = cart_items_store.getRange();
+        const items = [];
+        console.log('data', items_data);
+        items_data.forEach((el) => {
+            console.log('el', el);
+            let item = {
+                serv: el.data.serv,
+                title: el.data.title,
+                price: el.data.prices.price,
+                barcode: el.data.barcode,
+                tax_rate: el.data.tax_rate,
+                parent_id: el.data.parent_id,
+                unit_type: el.data.unit_type,
+                amount: el.data.amount,
+                price_total: el.data.price_total,
+            }
+            items.push(item);
+        })
+        console.log('items', items);
+        Ext.Ajax.request({
+            url: Api.markets.order_save,
+            jsonData: {
+                connId: vm.get('cardId'),
+                items
+            },
+            method: "POST",
+            success(resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+                if(result.success || result.data) {
+                    console.log('result data', result.data)
+                }
+            },
+            failure(resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+            },
+        });
+
     },
     toBack(btn) {
         Ext.util.History.back();
@@ -152,6 +233,9 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
                 bill_sale_total += rec.get('sale_total');
                 bill_products_total++;
             });
+            let key = 'cart' + vm.get('cardId');
+            // localStorage.setItem(key, vm.get('cardId'));
+            // localStorage.setItem(key, store.getRange());
         }
         vm.set({
             bill_amount_total: bill_amount_total,

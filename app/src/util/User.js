@@ -135,7 +135,7 @@ Ext.define('Erp.util.User', {
         return false;
     },
     marketsApi(options) {
-        // console.log('marketsApi', options);
+        console.log('marketsApi', options);
         const connId = options.jsonData.connId;
         if(connId) {
             const pKey = localStorage.getItem(connId);
