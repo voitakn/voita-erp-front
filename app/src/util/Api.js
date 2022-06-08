@@ -147,6 +147,7 @@ Ext.define('Erp.util.Api', () => {
             produce_list: `${markets}produce_list`,
             order_create: `${markets}order_create`,
             order_save: `${markets}order_save`,
+            order_exists: `${markets}order_exists`,
         }
     };
 });

@@ -13,6 +13,10 @@ Ext.define('Erp.model.MarketSell', {
 				return data.prices.price ? Ext.Number.roundToPrecision((data.prices.price * data.amount), 2) : 0.00;
 			}
 		},
-
+		{name: 'fmt_price',  type: 'string',
+			calculate(data){
+				return Ext.util.Format.erpMoney(data.prices.price || 0.00);
+			}
+		},
 	]
 });

@@ -18,7 +18,7 @@ Ext.define('Erp.view.b2b.catalog.CatalogModel', {
         bill_products_total: 0,
         bill_sell_current: 1,
         bill_sell_total: 1,
-        previous_order: false
+        previous_order: false,
     },
 
     stores: {

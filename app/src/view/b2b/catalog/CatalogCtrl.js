@@ -72,13 +72,6 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
                 });
                 me.catalogInit(partnerKey);
             }
-            me.reloadStore();
-            let key = 'cart' + cardId;
-            // if (!localStorage.getItem(key)) {
-            //     vm.getStore('cart_items_store').loadData([]);
-            // } else {
-            //     vm.getStore('cart_items_store').loadData([localStorage.getItem(key)]);
-            // }
         } else {
             me.clearData();
         }
@@ -99,6 +92,52 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
         });
         const treeStore = vm.getStore('b2bTreeCatalog');
         treeStore.load();
+        me.reloadStore();
+        me.checkExistsCart();
+    },
+    checkExistsCart() {
+        const me = this;
+        const vm = me.getViewModel();
+        Ext.Ajax.request({
+            url: Api.markets.order_exists,
+            jsonData: {
+                connId: vm.get('cardId'),
+            },
+            method: "POST",
+            success(resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                if(!result.success || !result.data) {
+                    Notice.showToast(result);
+                    me.toBack();
+                    return;
+                }
+                let result_data = result.data.items;
+                let data = [];
+                result_data.forEach((item) => {
+                    data.push({
+                        amount: item.amount,
+                        barcode: item.barcode,
+                        id: item.id,
+                        prices: {
+                            price: item.price
+                        },
+                        price_total: item.price_total,
+                        serv: item.serv,
+                        tax_rate: item.tax_rate,
+                        tax_total: item.tax_total,
+                        title: item.title,
+                        unit_type: item.unit_type
+                    })
+                })
+                console.log('data', data);
+                vm.getStore('cart_items_store').loadData(data);
+            },
+            failure(resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+                me.toBack();
+            },
+        });
     },
     addProdToCart(btn) {
         const me = this;
@@ -117,34 +156,37 @@ Ext.define('Erp.view.b2b.catalog.CatalogCtrl', {
             } else {
                 cart_items_store.add(item_data);
             }
-            Ext.Ajax.request({
-                url: Api.markets.order_create,
-                jsonData: {
-                    connId: vm.get('cardId'),
-                    item: {
-                        barcode: item_data.barcode,
-                        id: item_data.id,
-                        price: item_data.price_total,
-                        serv: item_data.serv,
-                        tax_rate: item_data.tax_rate,
-                        title: item_data.title,
-                        unit_type: item_data.unit_type,
-                        amount: item_data.amount,
-                    }
-                },
-                method: "POST",
-                success(resp, opt) {
-                    let result = Ext.JSON.decode(resp.responseText);
-                    Notice.showToast(result);
-                    if(result.success || result.data) {
-                        console.log('result data', result.data)
-                    }
-                },
-                failure(resp, opt) {
-                    let result = Ext.JSON.decode(resp.responseText);
-                    Notice.showToast(result);
-                },
-            });
+            if (!cart_items_store.getRange().length) {
+                Ext.Ajax.request({
+                    url: Api.markets.order_create,
+                    jsonData: {
+                        connId: vm.get('cardId'),
+                        item: {
+                            barcode: item_data.barcode,
+                            id: item_data.id,
+                            price: item_data.price_total,
+                            serv: item_data.serv,
+                            tax_rate: item_data.tax_rate,
+                            title: item_data.title,
+                            unit_type: item_data.unit_type,
+                            amount: item_data.amount,
+                        }
+                    },
+                    method: "POST",
+                    success(resp, opt) {
+                        let result = Ext.JSON.decode(resp.responseText);
+                        Notice.showToast(result);
+                        if(result.success || result.data) {
+                            console.log('result data', result.data)
+                        }
+                    },
+                    failure(resp, opt) {
+                        let result = Ext.JSON.decode(resp.responseText);
+                        Notice.showToast(result);
+                    },
+                });
+            }
+
 
             spinner.setValue(1);
         }
