@@ -300,4 +300,44 @@ Ext.define('Erp.view.catalog.CatalogCtrl', {
         cpm.validate();
     },
 
+    showWholesalePrice(grid, row) {
+        const me = this;
+        const vm = me.getViewModel();
+        console.log('showWholesalePrice');
+        const record = row.record;
+        const prices = [];
+        const tooltip = me.lookup('wholesale_price');
+        Ext.Ajax.request({
+            url: Api.price.produce_cols,
+            jsonData: {
+                produce_id: record.data.id
+            },
+            method: "POST",
+            success(resp, opt) {
+                const result = Ext.JSON.decode(resp.responseText);
+                if (result.success) {
+                    if (result.data) {
+                        let resultData = result.data;
+                        if (resultData && resultData.length > 0) {
+                            Ext.each(resultData, recPr => {
+                                if (!recPr.purchase && !recPr.retail) {
+                                    prices.push(recPr);
+                                }
+                            })
+                        }
+                        const store = vm.getStore('wholesale_price_store');
+                        store.loadData(prices);
+                        tooltip.setTarget(row.event.target);
+                        tooltip.show();
+                    }
+                } else {
+                    Notice.showToast(result);
+                }
+            },
+            failure(resp, opt) {
+                let result = Ext.JSON.decode(resp.responseText);
+                Notice.showToast(result);
+            }
+        });
+    }
 });

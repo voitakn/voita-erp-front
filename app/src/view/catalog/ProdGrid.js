@@ -47,7 +47,17 @@ Ext.define('Erp.view.catalog.ProdGrid', {
             text: i18n.gettext('Item name'),
             flex: 1,
             tpl: `<a href="/#produce/{id}"><b>{title}</b></a><div>{params.description}</div>`,
-            cell: {encodeHtml: false}
+            cell: {
+                encodeHtml: false,
+                tools: {
+                    edit: {
+                        iconCls: 'erp-icon more-prices blue',
+                        tooltip: i18n.gettext('Wholesale price'),
+                        zone: 'end',
+                        handler: 'showWholesalePrice',
+                    }
+                }
+            }
         },{
             text: i18n.gettext('Price'),
             width: 160,

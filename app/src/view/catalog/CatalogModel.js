@@ -41,7 +41,16 @@ Ext.define('Erp.view.catalog.CatalogModel', {
                 type: 'memory'
             },
             data: []
-        }
+        },
+        wholesale_price_store: {
+            extend: 'Erp.data.Store',
+            model: 'Erp.model.CatalogWhosalePriceList',
+            proxy: {
+                type: 'memory'
+            },
+            data: []
+        },
+
     },
     formulas: {
         no_items_produce_save(get) {

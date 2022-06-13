@@ -81,4 +81,7 @@
   &.prices-rules:before {
     content: 'attach_money';
   }
+  &.more-prices:before {
+    content: 'more_vert';
+  }
 }

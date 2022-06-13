@@ -12,11 +12,16 @@ Ext.define('Erp.view.catalog.Catalog', {
         {
             xtype: 'catalog_panel',
             autoSize: true,
-        }, {
+        },
+        {
             xtype: 'catalog_edit_tooltip',
             listeners: {
                 onCancel: 'cancelCatalogEdit'
             }
+        },
+        {
+            xtype: 'wholesale_price'
         }
+
     ]
 });
